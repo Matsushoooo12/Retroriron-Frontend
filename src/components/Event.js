@@ -18,14 +18,14 @@ const Event = () => {
         handleGetEvent();
     }, [])
 
-    const image = `http://localhost:3001`
+    const imageURL = `http://localhost:3001`
     return (
         <div>
             {events.map((event) => (
                 <div key={event.id}>
                     <p>{event.title}</p>
                     <p>{event.date}</p>
-                    <img src={image + event.image.url} alt="image"/>
+                    <img src={imageURL + event.image.url} alt="image"/>
                 </div>
             ))}
         </div>
