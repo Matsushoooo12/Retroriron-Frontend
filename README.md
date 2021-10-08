@@ -68,3 +68,70 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## React プロジェクトに Sass 導入 → 一応今後使うためのまとめ
+
+```
+$ yarn add node-sass@4.14.1
+```
+
+バージョン指定をせずに node-sass をインストールすると
+
+```
+Error: Node Sass version 6.0.1 is incompatible with ^4.0.0 || ^5.0.0.
+```
+
+というエラーが出る。
+
+## Sass 反映
+
+スタイル名.module.scss というファイルを作って、普通にスタイルを書く
+
+```
+.text{
+    background-color: black;
+    width: 100px;
+    height: 100px;
+}
+```
+
+そして、コンポーネントにインポートして使う
+
+```
+import React from 'react'
+import sass from './'
+
+const Text = () => {
+    return(
+        <div class={sass.container}>
+        </div>
+    )
+}
+```
+
+## React プロジェクトに css in JS を導入
+
+```
+$ npm i @emotion/styled @emotion/react
+```
+
+コンポーネントに css in JS を記述
+
+```
+import styled from '@emotion/styled';
+
+const Container = styled.div`
+  background-color: blue;
+  width: 100px;
+  height: 100px;
+`
+
+const コンポーネント名 = () => {
+    return(
+        <Container>
+        </Container>
+    )
+}
+```
+
+これで表示ができる。
