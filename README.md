@@ -135,3 +135,7 @@ const コンポーネント名 = () => {
 ```
 
 これで表示ができる。
+
+## PC 版ヘッダー作成
+
+<img width="1680" alt="スクリーンショット 2021-10-09 4 34 26" src="https://user-images.githubusercontent.com/66903388/136615662-6c5898ad-0176-4fa0-aeb4-e792560c49f5.png">
