@@ -25,7 +25,7 @@ const Event = () => {
                 <div key={event.id}>
                     <p>{event.title}</p>
                     <p>{event.date}</p>
-                    <img src={imageURL + event.image.url} alt="image"/>
+                    <img src={imageURL + event.image.url} alt="event_image"/>
                 </div>
             ))}
         </div>
