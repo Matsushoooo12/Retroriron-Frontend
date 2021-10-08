@@ -2,6 +2,12 @@ import './App.css';
 import React from 'react'
 import styled from '@emotion/styled';
 import Header from './components/Header';
+import {
+  BrowserRouter,
+  Route,
+  Link,
+  Switch
+} from 'react-router-dom'
 
 const Container = styled.div`
   display: block;
@@ -21,9 +27,13 @@ const MainContainer = styled.div`
 function App() {
   return (
     <Container>
-      <Header />
-      <MainContainer>
-      </MainContainer>
+      <BrowserRouter>
+        <Header />
+        <MainContainer>
+            <Switch>
+            </Switch>
+        </MainContainer>
+      </BrowserRouter>
     </Container>
   );
 }
