@@ -138,4 +138,4 @@ const コンポーネント名 = () => {
 
 ## PC 版ヘッダー作成
 
-<img width="1680" alt="スクリーンショット 2021-10-09 4 34 26" src="https://user-images.githubusercontent.com/66903388/136615662-6c5898ad-0176-4fa0-aeb4-e792560c49f5.png">
+<img width="1680" alt="スクリーンショット 2021-10-09 4 48 07" src="https://user-images.githubusercontent.com/66903388/136617121-e7847a44-0947-498d-bb2f-23bbafb69b6b.png">

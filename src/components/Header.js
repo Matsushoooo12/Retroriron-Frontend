@@ -4,7 +4,7 @@ import { css, jsx } from '@emotion/react'
 import Logo from '../images/logo.PNG'
 import Twitter from '../images/twitter.png'
 import Instagram from '../images/instagram.png'
-import Youtube from '../images/youtube.png'
+import Youtube from '../images/youtube2.png'
 import { Link } from 'react-router-dom';
 
 const Container = styled.div`
@@ -53,7 +53,7 @@ const MenuLi = styled.li`
     }
 `
 
-const StyledLink = styled(Link)`
+const MenuLink = styled(Link)`
     @media screen and (min-width: 1024px){
         text-decoration: none;
         color: #292929;
@@ -74,9 +74,11 @@ const SnsIcon = styled.img`
     height: 60px;
     border-radius: 50%;
     margin-bottom: 32px;
-    &:last-child{
-        border: 1px solid #292929;
-    }
+    filter: drop-shadow(5px 5px 5px #aaa);
+`
+
+const SnsLink = styled(Link)`
+    link-style: none;
 `
 
 
@@ -86,16 +88,16 @@ const Header = () => {
         <Container>
             <Link to="#"><LogoImage src={Logo} /></Link>
             <MenuUl>
-                <MenuLi><StyledLink to="#">Home</StyledLink></MenuLi>
-                <MenuLi><StyledLink to="#">News</StyledLink></MenuLi>
-                <MenuLi><StyledLink to="#">Live</StyledLink></MenuLi>
-                <MenuLi><StyledLink to="#">Discography</StyledLink></MenuLi>
-                <MenuLi><StyledLink to="#">Contact</StyledLink></MenuLi>
+                <MenuLi><MenuLink to="#">Home</MenuLink></MenuLi>
+                <MenuLi><MenuLink to="#">News</MenuLink></MenuLi>
+                <MenuLi><MenuLink to="#">Live</MenuLink></MenuLi>
+                <MenuLi><MenuLink to="#">Discography</MenuLink></MenuLi>
+                <MenuLi><MenuLink to="#">Contact</MenuLink></MenuLi>
             </MenuUl>
             <SnsContainer>
-                <SnsIcon src={Twitter} />
-                <SnsIcon src={Instagram} />
-                <SnsIcon src={Youtube} />
+                <SnsLink to="#"><SnsIcon src={Twitter} /></SnsLink>
+                <SnsLink to="#"><SnsIcon src={Instagram} /></SnsLink>
+                <SnsLink to="#"><SnsIcon src={Youtube} /></SnsLink>
             </SnsContainer>
         </Container>
     )
