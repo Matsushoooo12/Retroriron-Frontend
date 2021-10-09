@@ -13,21 +13,6 @@ import News from './components/News';
 import Discography from './components/Discography';
 import Contact from './components/Contact';
 
-const Container = styled.div`
-  display: block;
-  @media screen and (min-width: 900px) {
-    display: flex;
-  }
-`
-
-const MainContainer = styled.div`
-  @media screen and (min-width: 900px) {
-    position: relative;
-    left: 314px;
-    top: 0;
-  }
-`
-
 function App() {
   return (
     <Container>
@@ -48,3 +33,18 @@ function App() {
 }
 
 export default App;
+
+const Container = styled.div`
+  display: block;
+  @media screen and (min-width: 900px) {
+    display: flex;
+  }
+`
+
+const MainContainer = styled.div`
+  @media screen and (min-width: 900px) {
+    position: relative;
+    left: 314px;
+    top: 0;
+  }
+`

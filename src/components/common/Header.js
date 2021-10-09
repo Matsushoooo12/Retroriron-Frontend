@@ -6,6 +6,28 @@ import Instagram from '../../images/instagram.png'
 import Youtube from '../../images/youtube.png'
 import { Link } from 'react-router-dom';
 
+const Header = () => {
+    return (
+        <HeaderContainer>
+            <Link to="/"><LogoImage src={Logo} /></Link>
+            <MenuUl>
+                <MenuLi><MenuLink to="/">Home</MenuLink></MenuLi>
+                <MenuLi><MenuLink to="/news">News</MenuLink></MenuLi>
+                <MenuLi><MenuLink to="/live">Live</MenuLink></MenuLi>
+                <MenuLi><MenuLink to="/discography">Discography</MenuLink></MenuLi>
+                <MenuLi><MenuLink to="/contact">Contact</MenuLink></MenuLi>
+            </MenuUl>
+            <SnsContainer>
+                <SnsLink to="#"><SnsIcon src={Twitter} /></SnsLink>
+                <SnsLink to="#"><SnsIcon src={Instagram} /></SnsLink>
+                <SnsLink to="#"><SnsIcon src={Youtube} /></SnsLink>
+            </SnsContainer>
+        </HeaderContainer>
+    )
+}
+
+export default Header
+
 // HeaderContainer
 
 const HeaderContainer = styled.div`
@@ -98,25 +120,3 @@ const SnsIcon = styled.img`
 const SnsLink = styled(Link)`
     link-style: none;
 `
-
-const Header = () => {
-    return (
-        <HeaderContainer>
-            <Link to="/"><LogoImage src={Logo} /></Link>
-            <MenuUl>
-                <MenuLi><MenuLink to="/">Home</MenuLink></MenuLi>
-                <MenuLi><MenuLink to="/news">News</MenuLink></MenuLi>
-                <MenuLi><MenuLink to="/live">Live</MenuLink></MenuLi>
-                <MenuLi><MenuLink to="/discography">Discography</MenuLink></MenuLi>
-                <MenuLi><MenuLink to="/contact">Contact</MenuLink></MenuLi>
-            </MenuUl>
-            <SnsContainer>
-                <SnsLink to="#"><SnsIcon src={Twitter} /></SnsLink>
-                <SnsLink to="#"><SnsIcon src={Instagram} /></SnsLink>
-                <SnsLink to="#"><SnsIcon src={Youtube} /></SnsLink>
-            </SnsContainer>
-        </HeaderContainer>
-    )
-}
-
-export default Header
