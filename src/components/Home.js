@@ -133,7 +133,14 @@ const HomeContainer = styled.div`
 
 const FvContainer = styled.div`
     text-align: center;
-    margin-top: 64px;
+    margin-top: 68px;
+    background-image: url(${FvFrame});
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100vw;
+    height: 67vw;
+    position: relative;
     @media screen and (min-width: 900px){
         background-image: url(${FvFrame});
         background-size: cover;
@@ -147,17 +154,14 @@ const FvContainer = styled.div`
 `
 
 const FvImageBlock = styled.img`
-    width: 100%;
-    @media screen and (min-width: 900px){
-        width: 86%;
-        height: 86%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-    }
+    width: 86%;
+    height: 86%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
 `
 
 // BandIntroduce

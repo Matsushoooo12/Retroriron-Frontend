@@ -37,6 +37,7 @@ const HeaderContainer = styled.div`
     left: 0;
     top: 0;
     display: flex;
+    z-index: 100;
     @media screen and (min-width: 900px) {
         background-color: white;
         width: 314px;
@@ -54,8 +55,9 @@ const LogoImage = styled.img`
     cursor: pointer;
     width: 150px;
     height: 64px;
+    margin-left: 32px;
     @media screen and (min-width: 900px) {
-        margin-top: 64px;
+        margin: 64px 0 0
     } 
 `
 
