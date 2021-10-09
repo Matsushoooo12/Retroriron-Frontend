@@ -32,11 +32,13 @@ export default Header
 
 const HeaderContainer = styled.div`
     width: 100%;
+    height: 80px;
     background-color: white;
     position: fixed;
     left: 0;
     top: 0;
     display: flex;
+    align-items: center;
     z-index: 100;
     @media screen and (min-width: 900px) {
         background-color: white;

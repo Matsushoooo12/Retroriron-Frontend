@@ -133,7 +133,7 @@ const HomeContainer = styled.div`
 
 const FvContainer = styled.div`
     text-align: center;
-    margin-top: 68px;
+    margin-top: 83px;
     background-image: url(${FvFrame});
     background-size: cover;
     background-repeat: no-repeat;
@@ -168,11 +168,11 @@ const FvImageBlock = styled.img`
 
 const BandIntroduceContainer = styled.div`
     width: 100%;
-    margin: 0;
+    margin: 40px 0;
     @media screen and (min-width: 768px){
         width: 550px;
         margin-left: 32px;
-        margin: 0 auto;
+        margin: 64px auto;
     }
     @media screen and (min-width: 900px){
         margin: 68px 0 0;
@@ -182,6 +182,7 @@ const BandIntroduceContainer = styled.div`
 const BandTitleBlock = styled.img`
     width: 90%;
     margin-left: 16px;
+    margin-bottom: 32px;
     @media screen and (min-width: 768px){
         margin: 0;
         width: 100%;
@@ -203,6 +204,9 @@ const BandTextH1 = styled.h1`
 
 const BandTextPBlock = styled.div`
     margin-top: 32px;
+    @media screen and (min-width: 768px){
+        margin-top: 64px;
+    }
 `
 
 const BandTextP = styled.p`
@@ -210,18 +214,18 @@ const BandTextP = styled.p`
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 1.6rem;
     font-weight: 500;
-    line-height: 2.4rem;
+    line-height: 2.8rem;
     color: #292929;
     margin: 0 32px 16px;
     @media screen and (min-width: 768px){
-        margin: 0 0 16px;
+        margin: 0 0 32px;
     }
 `
 
 // BandMemberContainer
 const BandMemberContainer = styled.div`
     text-align: center;
-    margin-top: 40px;
+    margin-top: 80px;
     @media screen and (min-width: 1000px){
         text-align: left;
         margin-top: 152px;
@@ -236,9 +240,12 @@ const MemberItemContainer = styled.div`
 `
 
 const MemberImage = styled.img`
-    width: 360px;
-    height: 250px;
+    width: 60%;
     margin-bottom: 16px;
+    @media screen and (min-width: 768px){
+        width: 360px;
+        height: 250px;
+    }
     @media screen and (min-width: 1000px){
         margin: 0;
     }
