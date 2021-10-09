@@ -1,0 +1,11 @@
+{
+    "port": 3000,
+    "buildDirectory": "./build",
+    "routes": [
+      "/",
+      "/news",
+      "/live",
+      "/discography",
+      "/contact"
+    ]
+  }
