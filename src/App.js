@@ -6,11 +6,11 @@ import {
   Route,
   Switch
 } from 'react-router-dom'
-import Home from './components/Home';
-import Live from './components/Live';
-import News from './components/News';
-import Discography from './components/Discography';
-import Contact from './components/Contact';
+import Home from './pages/Home';
+import Live from './pages/Live';
+import News from './pages/News';
+import Discography from './pages/Discography';
+import Contact from './pages/Contact';
 
 function App() {
   return (
