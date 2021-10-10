@@ -303,7 +303,7 @@ const SnsIcon = styled.img`
 `
 
 const SnsLink = styled.a`
-    &:first-child{
+    &:first-of-type{
         margin-right: 16px;
     }
 `
