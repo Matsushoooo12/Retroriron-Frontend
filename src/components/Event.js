@@ -26,7 +26,7 @@ const Event = () => {
                 <div key={event.id}>
                     <p>{event.title}</p>
                     <p>{event.date}</p>
-                    <img src={image + event.image.url} alt="event_image"/>
+                    <img src={process.env.REACT_APP_DEV_API_URL + event.image.url} alt="event_image"/>
                 </div>
             ))}
         </div>
