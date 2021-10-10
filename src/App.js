@@ -11,6 +11,7 @@ import Live from './pages/Live';
 import News from './pages/News';
 import Discography from './pages/Discography';
 import Contact from './pages/Contact';
+import Event from './components/Event'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
               <Route exact path="/live" component={Live} />
               <Route exact path="/discography" component={Discography} />
               <Route exact path="/contact" component={Contact} />
+              <Route exact path="/event" component={Event} />
             </Switch>
         </MainContainer>
       </BrowserRouter>
