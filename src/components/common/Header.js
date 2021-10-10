@@ -18,9 +18,9 @@ const Header = () => {
                 <MenuLi><MenuLink to="/contact">Contact</MenuLink></MenuLi>
             </MenuUl>
             <SnsContainer>
-                <SnsLink to="#"><SnsIcon src={Twitter} /></SnsLink>
-                <SnsLink to="#"><SnsIcon src={Instagram} /></SnsLink>
-                <SnsLink to="#"><SnsIcon src={Youtube} /></SnsLink>
+                <SnsLink href="#"><SnsIcon src={Twitter} /></SnsLink>
+                <SnsLink href="#"><SnsIcon src={Instagram} /></SnsLink>
+                <SnsLink href="#"><SnsIcon src={Youtube} /></SnsLink>
             </SnsContainer>
         </HeaderContainer>
     )
@@ -32,12 +32,12 @@ export default Header
 
 const HeaderContainer = styled.div`
     width: 100%;
-    height: 64px;
-    background-color: blue;
+    background-color: white;
     position: fixed;
     left: 0;
     top: 0;
     display: flex;
+    z-index: 100;
     @media screen and (min-width: 900px) {
         background-color: white;
         width: 314px;
@@ -55,8 +55,9 @@ const LogoImage = styled.img`
     cursor: pointer;
     width: 150px;
     height: 64px;
+    margin-left: 32px;
     @media screen and (min-width: 900px) {
-        margin-top: 64px;
+        margin: 64px 0 0
     } 
 `
 
@@ -117,6 +118,5 @@ const SnsIcon = styled.img`
     }
 `
 
-const SnsLink = styled(Link)`
-    link-style: none;
+const SnsLink = styled.a`
 `
