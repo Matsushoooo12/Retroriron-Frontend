@@ -33,6 +33,10 @@ const News = () => {
         setContent(i);
     };
 
+    // Date
+
+    const now = moment();
+
     return (
         <>
             <Helmet>
@@ -43,7 +47,11 @@ const News = () => {
                 {news.map((item, i) => (
                     <NewsItemContainer key={i}>
                         <NewsItemOtherContainer>
-                            <NewsTagText>News</NewsTagText>
+                            {now.subtract(2, 'weeks') < moment(item.date) ? (
+                                <NewsTagText>News</NewsTagText>
+                            ):(
+                                <NewsTagText className="hidden">News</NewsTagText>
+                            )}
                             <NewsDate>{moment(item.date).format("YYYY.MM.DD")}</NewsDate>
                         </NewsItemOtherContainer>
                         <NewsContentsContainer>
