@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Helmet from 'react-helmet';
-import dateFormat from "dateformat";
+import moment from 'moment'
 import styled from '@emotion/styled';
 import { getNews } from '../api';
 import { useEffect } from 'react/cjs/react.development';
@@ -44,7 +44,7 @@ const News = () => {
                     <NewsItemContainer key={i}>
                         <NewsItemOtherContainer>
                             <NewsTagText>News</NewsTagText>
-                            <NewsDate>{dateFormat(item.date, "yyyy.mm.dd")}</NewsDate>
+                            <NewsDate>{moment(item.date).format("YYYY.MM.DD")}</NewsDate>
                         </NewsItemOtherContainer>
                         <NewsContentsContainer>
                             <NewsTitle className={content === i ? "active" : ""} onClick={() => toggleAccordion(i)}>{item.title}</NewsTitle>
