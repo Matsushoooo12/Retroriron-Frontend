@@ -151,3 +151,11 @@ const コンポーネント名 = () => {
 <img width="1680" alt="スクリーンショット 2021-10-10 3 10 46" src="https://user-images.githubusercontent.com/66903388/136669690-90a6ab57-f9b3-4e99-a9dd-c9437cea3841.png">
 
 <img width="1680" alt="スクリーンショット 2021-10-10 3 10 52" src="https://user-images.githubusercontent.com/66903388/136669707-c0ffd0d3-047e-4869-bb52-02a242366c92.png">
+
+## News ページ
+
+### PC
+
+---
+
+<img width="1680" alt="スクリーンショット 2021-10-12 4 48 18" src="https://user-images.githubusercontent.com/66903388/136847581-493a029c-126a-4935-880d-c2f6147d521b.png">
