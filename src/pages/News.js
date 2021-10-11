@@ -55,7 +55,7 @@ const News = () => {
                             <NewsDate>{moment(item.date).format("YYYY.MM.DD")}</NewsDate>
                         </NewsItemOtherContainer>
                         <NewsContentsContainer>
-                            <NewsTitle className={content === i ? "active" : ""} onClick={() => toggleAccordion(i)}>{item.title}</NewsTitle>
+                            <NewsTitle className={content === i ? "active" : ""} onClick={() => toggleAccordion(i)}>【 {item.title} 】</NewsTitle>
                             <NewsTextContainer className={content === i ? "active" : ""}>
                                 <NewsText>
                                     {item.content}
@@ -152,7 +152,6 @@ const NewsTitle = styled.a`
 
 const NewsTextContainer = styled.div`
     display: none;
-    margin-left: 32px;
     &.active{
         display: block;
     }
@@ -164,17 +163,18 @@ const NewsText = styled.p`
     font-family: 'Noto Sans JP', sans-serif;
     color: #292929;
     line-height: 2.4rem;
-    margin-left: 16px;
     margin-top: 16px;
     margin-bottom: 16px;
     white-space: pre-wrap;
+    margin-right: 16px;
+    margin-left: 32px;
 `
 
 const NewsImage = styled.img`
     display: block;
-    margin-left: 16px;
     width: 300px;
     height: 100%;
+    margin-left: 32px;
     &.vertical{
         height: 300px;
         width: 200px;
