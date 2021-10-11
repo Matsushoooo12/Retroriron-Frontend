@@ -18,8 +18,6 @@ const Event = () => {
         handleGetEvent();
     }, [])
 
-    const image = "http://localhost:3001"
-
     return (
         <div>
             {events.map((event) => (

@@ -224,6 +224,7 @@ const BandTextP = styled.p`
 `
 
 // BandMemberContainer
+
 const BandMemberContainer = styled.div`
     text-align: center;
     margin-top: 80px;
