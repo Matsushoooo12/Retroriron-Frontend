@@ -46,14 +46,14 @@ const Live = () => {
                             {item.detail ? (
                                 <LiveButton className={content === i ? "active" : ""} src={content === i ? Minus : Plus} onClick={() => toggleAccordion(i)} />
                             ):(
-                                <LiveButton src={Plus} />
+                                <LiveButton className="cursor-default" src={Plus} />
                             )}
                             <LiveContentsContainer>
                                 <LiveTitleContainer>
                                     {item.detail ? (
                                         <LiveTitle className={content === i ? "active" : ""} onClick={() => toggleAccordion(i)}>{item.title}</LiveTitle>
                                     ):(
-                                        <LiveTitle>{item.title}</LiveTitle>
+                                        <LiveTitle className="cursor-default">{item.title}</LiveTitle>
                                     )}
                                     {now < moment(item.date) ? (
                                         <LiveFinish>終了</LiveFinish>
@@ -139,6 +139,9 @@ const LiveButton = styled.img`
     margin-top: 8px;
     margin-right: 14px;
     cursor: pointer;
+    &.cursor-default{
+        cursor: default;
+    }
 `
 
 // LiveContentsContainer
@@ -158,6 +161,9 @@ const LiveTitle = styled.a`
     font-family: 'Noto Sans JP', sans-serif;
     color: #292929;
     cursor: pointer;
+    &.cursor-default{
+        cursor: default;
+    }
 `
 
 const LiveTextContainer = styled.div`
