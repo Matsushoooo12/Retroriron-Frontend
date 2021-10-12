@@ -3,6 +3,8 @@ import Helmet from 'react-helmet';
 import moment from 'moment'
 import styled from '@emotion/styled';
 import { getNews } from '../api';
+import Plus from '../images/open-btn.png'
+import Minus from '../images/close-btn.png'
 
 const News = () => {
 
@@ -54,19 +56,14 @@ const News = () => {
                                 <NewsTagText className="hidden">News</NewsTagText>
                             )}
                             <NewsDate>{moment(item.date).format("YYYY.MM.DD")}</NewsDate>
+                            <NewsButton className={content === i ? "active" : ""} src={content === i ? Minus : Plus} onClick={() => toggleAccordion(i)} />
                         </NewsItemOtherContainer>
                         <NewsContentsContainer>
-                            <NewsTitle className={content === i ? "active" : ""} onClick={() => toggleAccordion(i)}>【 {item.title} 】</NewsTitle>
-                            <NewsTextContainer className={content === i ? "active" : ""}>
-                                <NewsText>
-                                    {item.content}
-                                </NewsText>
-                                {item.image ? (
-                                    <NewsImage className={item.image_vertical ? "vertical" : ""} src={process.env.REACT_APP_DEV_API_URL + item.image.url} />
-                                ):(
-                                    <></>
-                                )}
-                            </NewsTextContainer>
+                            <NewsTitle onClick={() => toggleAccordion(i)} className={content === i ? "active" : ""}>{item.title}</NewsTitle>
+                            <NewsText className={content === i ? "active" : ""}>
+                                {item.content}
+                                <NewsImage className={item.imageVertical ? "vertical" : ""} src={process.env.REACT_APP_DEV_API_URL + item.image.url} />
+                            </NewsText>
                         </NewsContentsContainer>
                     </NewsItemContainer>
                 ))}
@@ -93,6 +90,7 @@ const NewsItemContainer = styled.li`
     margin: 0 auto;
     padding: 24px 0;
     display: flex;
+    align-items: start
 `
 
 // NewsItemOtherContainer
@@ -126,11 +124,20 @@ const NewsDate = styled.p`
     margin-top: 3px;
 `
 
+const NewsButton = styled.img`
+    display: block;
+    width: 14px;
+    height: 14px;
+    margin-top: 6px;
+    margin-left: 32px;
+    margin-right: 32px;
+    cursor: pointer;
+`
+
 // NewsContentsContainer
 
 const NewsContentsContainer = styled.div`
     display: block;
-    cursor: pointer;
     width: 100%;
 `
 
@@ -140,25 +147,10 @@ const NewsTitle = styled.a`
     font-family: 'Noto Sans JP', sans-serif;
     color: #292929;
     cursor: pointer;
-    margin-left: 32px;
-    &::before{
-        content: "+";
-        margin-right: 16px;
-    }
-    &.active::before{
-        content: "- ";
-        margin-right: 16px;
-    }
-`
-
-const NewsTextContainer = styled.div`
-    display: none;
-    &.active{
-        display: block;
-    }
 `
 
 const NewsText = styled.p`
+    display: none;
     font-size: 1.6rem;
     font-weight: 500;
     font-family: 'Noto Sans JP', sans-serif;
@@ -168,16 +160,18 @@ const NewsText = styled.p`
     margin-bottom: 16px;
     white-space: pre-wrap;
     margin-right: 16px;
-    margin-left: 32px;
+    &.active{
+        display: block;
+    }
 `
 
 const NewsImage = styled.img`
     display: block;
     width: 300px;
     height: 100%;
-    margin-left: 32px;
+    margin-top: 16px;
     &.vertical{
-        height: 300px;
         width: 200px;
+        height: 300px;
     }
 `

@@ -138,6 +138,7 @@ const LiveButton = styled.img`
     height: 14px;
     margin-top: 8px;
     margin-right: 14px;
+    cursor: pointer;
 `
 
 // LiveContentsContainer
