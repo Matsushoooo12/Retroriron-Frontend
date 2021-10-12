@@ -7,3 +7,7 @@ export const getEvent = () => {
 export const getNews = () => {
     return client.get('/news')
 }
+
+export const getLive = () => {
+    return client.get('/lives')
+}
