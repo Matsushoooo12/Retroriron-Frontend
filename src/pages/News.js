@@ -29,8 +29,9 @@ const News = () => {
     const toggleAccordion = (i) => {
         if(content === i){
             setContent(null)
+        } else{
+            setContent(i);
         }
-        setContent(i);
     };
 
     // Date

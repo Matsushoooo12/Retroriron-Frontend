@@ -12,11 +12,13 @@ const Live = () => {
     // アコーディオン
 
     const [content, setContent] = useState(null)
+
     const toggleAccordion = (i) => {
-        if(content === i){
+        if(content === i ){
             setContent(null)
+        } else{
+            setContent(i);
         }
-        setContent(i);
     };
 
     // Date
@@ -28,6 +30,8 @@ const Live = () => {
         {title: "test2test2test2test2", date: "2021-09-24", open_time: "2014-07-16T18:00:00+09:00", start_time: "2014-07-16T18:30:00+09:00", place: "赤坂のライブハウス", price: "2500円", image: `${LiveVertical}`, image_vertical: true, performer: "いいいいい、いいいいい、いいいいい、いいいいい、いいいいい、いいいいい"},
         {title: "test3test3test3test3", date: "2021-08-24", open_time: "2014-07-16T19:00:00+09:00", start_time: "2014-07-16T19:30:00+09:00", place: "渋谷のライブハウス", price: "2600円", detail: "あああああああああ", image: `${Retroriron}`, image_vertical: false, performer: "ううううう、ううううう、ううううう、ううううう、ううううう、ううううう"},
     ]
+
+    console.log(content)
     return (
         <>
             <Helmet>
