@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Helmet from 'react-helmet';
 import moment from 'moment'
 import styled from '@emotion/styled';
@@ -8,6 +8,26 @@ import Minus from '../images/close-btn.png'
 import LiveVertical from '../images/live.jpeg'
 
 const Live = () => {
+
+    // アコーディオン
+
+    const [content, setContent] = useState(null)
+    const toggleAccordion = (i) => {
+        if(content === i){
+            setContent(null)
+        }
+        setContent(i);
+    };
+
+    // Date
+
+    const now = moment();
+
+    const data = [
+        {title: "test1test1test1test1", date: "2021-10-24", open_time: "2014-07-16T09:00:00+09:00", start_time: "2014-07-16T09:30:00+09:00", place: "下北沢のライブハウス", price: "3000円", detail: "あああああああああ", image: `${Retroriron}`, image_vertical: false, performer: "あああああ、あああああ、あああああ、あああああ、あああああ、あああああ"},
+        {title: "test2test2test2test2", date: "2021-09-24", open_time: "2014-07-16T18:00:00+09:00", start_time: "2014-07-16T18:30:00+09:00", place: "赤坂のライブハウス", price: "2500円", image: `${LiveVertical}`, image_vertical: true, performer: "いいいいい、いいいいい、いいいいい、いいいいい、いいいいい、いいいいい"},
+        {title: "test3test3test3test3", date: "2021-08-24", open_time: "2014-07-16T19:00:00+09:00", start_time: "2014-07-16T19:30:00+09:00", place: "渋谷のライブハウス", price: "2600円", detail: "あああああああああ", image: `${Retroriron}`, image_vertical: false, performer: "ううううう、ううううう、ううううう、ううううう、ううううう、ううううう"},
+    ]
     return (
         <>
             <Helmet>
@@ -15,69 +35,48 @@ const Live = () => {
                 <meta name="the Live page of a pop band called Retroriron." content="live page" />
             </Helmet>
             <LiveContainer>
-                <LiveItemContainer>
-                    <LiveInfoContainer>
-                        <LiveDate>2021.08.24</LiveDate>
-                        <LiveButton src={Plus} />
-                        <LiveContentsContainer>
-                            <LiveTitleContainer>
-                                <LiveTitle>testtesttesttest</LiveTitle>
-                                <LiveFinish>終了</LiveFinish>
-                            </LiveTitleContainer>
-                            <LiveTextContainer>
-                                <LiveText>テストテストテスト</LiveText>
-                                <LiveText>テストテストテスト</LiveText>
-                                <LiveText>テストテストテスト</LiveText>
-                            </LiveTextContainer>
-                            <LiveChicketButton>チケットをご希望の方はこちら</LiveChicketButton>
-                            <LiveDetailText>
-                                詳細情報 |<br/><br/>
-                                あああああああああああああああ<br/>
-                                いいいいいいいいいいいいいいいいいいいいい<br/>
-                                ううううううううう
-                            </LiveDetailText>
-                        </LiveContentsContainer>
-                    </LiveInfoContainer>
-                    <LiveImage src={Retroriron} />
-                </LiveItemContainer>
-                <LiveItemContainer>
-                    <LiveInfoContainer>
-                        <LiveDate>2021.08.24</LiveDate>
-                        <LiveButton src={Plus} />
-                        <LiveContentsContainer>
-                            <LiveTitleContainer>
-                                <LiveTitle>testtesttesttest</LiveTitle>
-                                <LiveFinish>終了</LiveFinish>
-                            </LiveTitleContainer>
-                            <LiveTextContainer>
-                                <LiveText>テストテストテスト</LiveText>
-                                <LiveText>テストテストテスト</LiveText>
-                                <LiveText>テストテストテスト</LiveText>
-                            </LiveTextContainer>
-                            <LiveChicketButton>チケットをご希望の方はこちら</LiveChicketButton>
-                        </LiveContentsContainer>
-                    </LiveInfoContainer>
-                    <LiveImage className="vertical" src={LiveVertical} />
-                </LiveItemContainer>
-                <LiveItemContainer>
-                    <LiveInfoContainer>
-                        <LiveDate>2021.08.24</LiveDate>
-                        <LiveButton src={Plus} />
-                        <LiveContentsContainer>
-                            <LiveTitleContainer>
-                                <LiveTitle>testtesttesttest</LiveTitle>
-                                <LiveFinish className="finish">終了</LiveFinish>
-                            </LiveTitleContainer>
-                            <LiveTextContainer>
-                                <LiveText>テストテストテスト</LiveText>
-                                <LiveText>テストテストテスト</LiveText>
-                                <LiveText>テストテストテスト</LiveText>
-                            </LiveTextContainer>
-                            <LiveChicketButton>チケットをご希望の方はこちら</LiveChicketButton>
-                        </LiveContentsContainer>
-                    </LiveInfoContainer>
-                    <LiveImage src={Retroriron} />
-                </LiveItemContainer>
+                {data.map((item, i) => (
+                    <LiveItemContainer key={i}>
+                        <LiveInfoContainer>
+                            <LiveDate>{moment(item.date).format("YYYY.MM.DD")}</LiveDate>
+                            {item.detail ? (
+                                <LiveButton className={content === i ? "active" : ""} src={content === i ? Minus : Plus} onClick={() => toggleAccordion(i)} />
+                            ):(
+                                <LiveButton src={Plus} />
+                            )}
+                            <LiveContentsContainer>
+                                <LiveTitleContainer>
+                                    {item.detail ? (
+                                        <LiveTitle className={content === i ? "active" : ""} onClick={() => toggleAccordion(i)}>{item.title}</LiveTitle>
+                                    ):(
+                                        <LiveTitle>{item.title}</LiveTitle>
+                                    )}
+                                    {now < moment(item.date) ? (
+                                        <LiveFinish>終了</LiveFinish>
+                                    ):(
+                                        <LiveFinish className="finish">終了</LiveFinish>
+                                    )}
+                                </LiveTitleContainer>
+                                <LiveTextContainer>
+                                    <LiveText>開場時間 | {moment(item.open_time).format("HH:mm")}   開演時間 | {moment(item.start_time).format("HH:mm")}</LiveText>
+                                    <LiveText>場所 | {item.place}</LiveText>
+                                    <LiveText>料金 | {item.price}</LiveText>
+                                    <LiveText>出演者 | {item.performer}</LiveText>
+                                </LiveTextContainer>
+                                {now < moment(item.date) ? (
+                                    <LiveChicketButton>チケットをご希望の方はこちら</LiveChicketButton>
+                                ):(
+                                    <></>
+                                )}
+                                <LiveDetailText className={content === i ? "active" : ""}>
+                                    詳細情報 |<br/><br/>
+                                    {item.detail}
+                                </LiveDetailText>
+                            </LiveContentsContainer>
+                        </LiveInfoContainer>
+                        <LiveImage className={item.image_vertical ? "vertical" : ""} src={item.image} />
+                    </LiveItemContainer>
+                ))}
             </LiveContainer>
         </>
     )
@@ -114,6 +113,7 @@ const LiveImage = styled.img`
     display: block;
     width: 200px;
     height: 100%;
+    margin-left: 24px;
     &.vertical{
         width: 160px;
         height: 200px;
@@ -195,16 +195,17 @@ const LiveDetailText = styled.p`
     margin-bottom: 4px;
     white-space: pre-wrap;
     margin-top: 16px;
-    // display: none;
+    display: none;
+    &.active{
+        display: block;
+    }
 `
 
 // LiveFinish
 
 const LiveFinish =  styled.div`
-    // display: none;
     opacity: 0;
     &.finish{
-        // disoplay: block;
         opacity: 1;
         color: #fff;
         font-size: 1.2rem;
