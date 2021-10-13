@@ -2,7 +2,9 @@ import React from 'react'
 import Helmet from 'react-helmet';
 import moment from 'moment'
 import styled from '@emotion/styled';
-import Life from '../images/life.JPG'
+import Life from '../images/life.JPG';
+import MvIcon from '../images/vector-mv.png'
+import SubscriptionIcon from '../images/vector-musuic.png'
 
 const Discography = () => {
     return (
@@ -23,8 +25,14 @@ const Discography = () => {
                             <DiscographyTitle>Mo-so</DiscographyTitle>
                         </DiscographyTitleContainer>
                         <DiscographyLinkContainer>
-                            <DiscographyLinkItemContainer></DiscographyLinkItemContainer>
-                            <DiscographyLinkItemContainer></DiscographyLinkItemContainer>
+                            <DiscographyLinkItemContainer>
+                                <DiscographyLinkIcon src={MvIcon} />
+                                <DiscographyLinkText>MVを見る</DiscographyLinkText>
+                            </DiscographyLinkItemContainer>
+                            <DiscographyLinkItemContainer>
+                                <DiscographyLinkIcon src={SubscriptionIcon} />
+                                <DiscographyLinkText>音楽を聴く</DiscographyLinkText>
+                            </DiscographyLinkItemContainer>
                         </DiscographyLinkContainer>
                     </DiscographyInfoContainer>
                     <DiscographyInfoContainer>
@@ -34,16 +42,139 @@ const Discography = () => {
                             <DiscographyImageTag>Single</DiscographyImageTag>
                         </DiscographyImageContainer>
                         <DiscographyTitleContainer>
-                            <DiscographyTitle className="long">あああああああああああああああああああ</DiscographyTitle>
+                            <DiscographyTitle>Mo-so</DiscographyTitle>
                         </DiscographyTitleContainer>
-                        <DiscographyLinkContainer></DiscographyLinkContainer>
+                        <DiscographyLinkContainer>
+                            <DiscographyLinkItemContainer>
+                                <DiscographyLinkIcon src={MvIcon} />
+                                <DiscographyLinkText>MVを見る</DiscographyLinkText>
+                            </DiscographyLinkItemContainer>
+                            <DiscographyLinkItemContainer>
+                                <DiscographyLinkIcon src={SubscriptionIcon} />
+                                <DiscographyLinkText>音楽を聴く</DiscographyLinkText>
+                            </DiscographyLinkItemContainer>
+                        </DiscographyLinkContainer>
                     </DiscographyInfoContainer>
-                    <DiscographyInfoContainer></DiscographyInfoContainer>
-                    <DiscographyInfoContainer></DiscographyInfoContainer>
-                    <DiscographyInfoContainer></DiscographyInfoContainer>
-                    <DiscographyInfoContainer></DiscographyInfoContainer>
-                    <DiscographyInfoContainer></DiscographyInfoContainer>
-                    <DiscographyInfoContainer></DiscographyInfoContainer>
+                    <DiscographyInfoContainer>
+                        <DiscographyDate>2021.9.21. Release</DiscographyDate>
+                        <DiscographyImageContainer>
+                            <DiscographyImage src={Life} />
+                            <DiscographyImageTag>Single</DiscographyImageTag>
+                        </DiscographyImageContainer>
+                        <DiscographyTitleContainer>
+                            <DiscographyTitle>Mo-so</DiscographyTitle>
+                        </DiscographyTitleContainer>
+                        <DiscographyLinkContainer>
+                            <DiscographyLinkItemContainer>
+                                <DiscographyLinkIcon src={MvIcon} />
+                                <DiscographyLinkText>MVを見る</DiscographyLinkText>
+                            </DiscographyLinkItemContainer>
+                            <DiscographyLinkItemContainer>
+                                <DiscographyLinkIcon src={SubscriptionIcon} />
+                                <DiscographyLinkText>音楽を聴く</DiscographyLinkText>
+                            </DiscographyLinkItemContainer>
+                        </DiscographyLinkContainer>
+                    </DiscographyInfoContainer>
+                    <DiscographyInfoContainer>
+                        <DiscographyDate>2021.9.21. Release</DiscographyDate>
+                        <DiscographyImageContainer>
+                            <DiscographyImage src={Life} />
+                            <DiscographyImageTag>Single</DiscographyImageTag>
+                        </DiscographyImageContainer>
+                        <DiscographyTitleContainer>
+                            <DiscographyTitle>Mo-so</DiscographyTitle>
+                        </DiscographyTitleContainer>
+                        <DiscographyLinkContainer>
+                            <DiscographyLinkItemContainer>
+                                <DiscographyLinkIcon src={MvIcon} />
+                                <DiscographyLinkText>MVを見る</DiscographyLinkText>
+                            </DiscographyLinkItemContainer>
+                            <DiscographyLinkItemContainer>
+                                <DiscographyLinkIcon src={SubscriptionIcon} />
+                                <DiscographyLinkText>音楽を聴く</DiscographyLinkText>
+                            </DiscographyLinkItemContainer>
+                        </DiscographyLinkContainer>
+                    </DiscographyInfoContainer>
+                    <DiscographyInfoContainer>
+                        <DiscographyDate>2021.9.21. Release</DiscographyDate>
+                        <DiscographyImageContainer>
+                            <DiscographyImage src={Life} />
+                            <DiscographyImageTag>Single</DiscographyImageTag>
+                        </DiscographyImageContainer>
+                        <DiscographyTitleContainer>
+                            <DiscographyTitle>Mo-so</DiscographyTitle>
+                        </DiscographyTitleContainer>
+                        <DiscographyLinkContainer>
+                            <DiscographyLinkItemContainer>
+                                <DiscographyLinkIcon src={MvIcon} />
+                                <DiscographyLinkText>MVを見る</DiscographyLinkText>
+                            </DiscographyLinkItemContainer>
+                            <DiscographyLinkItemContainer>
+                                <DiscographyLinkIcon src={SubscriptionIcon} />
+                                <DiscographyLinkText>音楽を聴く</DiscographyLinkText>
+                            </DiscographyLinkItemContainer>
+                        </DiscographyLinkContainer>
+                    </DiscographyInfoContainer>
+                    <DiscographyInfoContainer>
+                        <DiscographyDate>2021.9.21. Release</DiscographyDate>
+                        <DiscographyImageContainer>
+                            <DiscographyImage src={Life} />
+                            <DiscographyImageTag>Single</DiscographyImageTag>
+                        </DiscographyImageContainer>
+                        <DiscographyTitleContainer>
+                            <DiscographyTitle>Mo-so</DiscographyTitle>
+                        </DiscographyTitleContainer>
+                        <DiscographyLinkContainer>
+                            <DiscographyLinkItemContainer>
+                                <DiscographyLinkIcon src={MvIcon} />
+                                <DiscographyLinkText>MVを見る</DiscographyLinkText>
+                            </DiscographyLinkItemContainer>
+                            <DiscographyLinkItemContainer>
+                                <DiscographyLinkIcon src={SubscriptionIcon} />
+                                <DiscographyLinkText>音楽を聴く</DiscographyLinkText>
+                            </DiscographyLinkItemContainer>
+                        </DiscographyLinkContainer>
+                    </DiscographyInfoContainer>
+                    <DiscographyInfoContainer>
+                        <DiscographyDate>2021.9.21. Release</DiscographyDate>
+                        <DiscographyImageContainer>
+                            <DiscographyImage src={Life} />
+                            <DiscographyImageTag>Single</DiscographyImageTag>
+                        </DiscographyImageContainer>
+                        <DiscographyTitleContainer>
+                            <DiscographyTitle>Mo-so</DiscographyTitle>
+                        </DiscographyTitleContainer>
+                        <DiscographyLinkContainer>
+                            <DiscographyLinkItemContainer>
+                                <DiscographyLinkIcon src={MvIcon} />
+                                <DiscographyLinkText>MVを見る</DiscographyLinkText>
+                            </DiscographyLinkItemContainer>
+                            <DiscographyLinkItemContainer>
+                                <DiscographyLinkIcon src={SubscriptionIcon} />
+                                <DiscographyLinkText>音楽を聴く</DiscographyLinkText>
+                            </DiscographyLinkItemContainer>
+                        </DiscographyLinkContainer>
+                    </DiscographyInfoContainer>
+                    <DiscographyInfoContainer>
+                        <DiscographyDate>2021.9.21. Release</DiscographyDate>
+                        <DiscographyImageContainer>
+                            <DiscographyImage src={Life} />
+                            <DiscographyImageTag>Single</DiscographyImageTag>
+                        </DiscographyImageContainer>
+                        <DiscographyTitleContainer>
+                            <DiscographyTitle>Mo-so</DiscographyTitle>
+                        </DiscographyTitleContainer>
+                        <DiscographyLinkContainer>
+                            <DiscographyLinkItemContainer>
+                                <DiscographyLinkIcon src={MvIcon} />
+                                <DiscographyLinkText>MVを見る</DiscographyLinkText>
+                            </DiscographyLinkItemContainer>
+                            <DiscographyLinkItemContainer>
+                                <DiscographyLinkIcon src={SubscriptionIcon} />
+                                <DiscographyLinkText>音楽を聴く</DiscographyLinkText>
+                            </DiscographyLinkItemContainer>
+                        </DiscographyLinkContainer>
+                    </DiscographyInfoContainer>
                 </DiscographyItemContainer>
             </DiscographyContainer>
         </>
@@ -77,11 +208,10 @@ const DiscographyItemContainer = styled.div`
 
 const DiscographyInfoContainer = styled.div`
     width: 200px;
-    height: 380px;
-    background-color: blue;
+    height: 100%;
     margin-right: 23px;
     margin-left: 23px;
-    margin-bottom: 64px;
+    margin-bottom: 48px;
 `
 
 const DiscographyDate = styled.p`
@@ -97,7 +227,6 @@ const DiscographyDate = styled.p`
 const DiscographyImageContainer = styled.div`
     width: 200px;
     height: 200px;
-    background-color: red;
     position: relative;
     margin-bottom: 8px;
 `
@@ -126,7 +255,6 @@ const DiscographyImageTag = styled.p`
 const DiscographyTitleContainer = styled.div`
     height: 48px;
     width: 100%;
-    background-color: green;
     margin-bottom: 8px;
 `
 
@@ -146,12 +274,12 @@ const DiscographyTitle = styled.h1`
 
 const DiscographyLinkContainer = styled.div`
     width: 100%;
-    height: 96px;
-    background-color: yellow;
 `
 
 const DiscographyLinkItemContainer = styled.a`
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
     background-color: #fff;
     border: 1px solid #FFFFFF;
@@ -160,4 +288,19 @@ const DiscographyLinkItemContainer = styled.a`
     width: 100%;
     height: 40px;
     margin-bottom: 16px;
+`
+
+const DiscographyLinkIcon = styled.img`
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+`
+
+const DiscographyLinkText = styled.p`
+    font-size: 1.6rem;
+    font-weight: 700;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #292929;
+    margin-left: 8px;
 `
