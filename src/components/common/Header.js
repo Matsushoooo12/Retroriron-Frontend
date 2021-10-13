@@ -116,7 +116,7 @@ const SnsIcon = styled.img`
         height: 60px;
         border-radius: 50%;
         margin-bottom: 32px;
-        filter: drop-shadow(5px 5px 5px #aaa);
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
     }
 `
 
