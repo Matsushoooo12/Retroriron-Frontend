@@ -2,10 +2,8 @@ import React, { useState, useEffect } from 'react'
 import Helmet from 'react-helmet';
 import moment from 'moment'
 import styled from '@emotion/styled';
-import Retroriron from '../images/retroriron.jpeg'
 import Plus from '../images/open-btn.png'
 import Minus from '../images/close-btn.png'
-import LiveVertical from '../images/live.jpeg'
 import { getLive } from '../api';
 // import * as moment from 'moment-timezone';
 
@@ -45,12 +43,6 @@ const Live = () => {
 
     const now = moment();
 
-    // const data = [
-    //     {title: "test1test1test1test1", date: "2021-10-24", open_time: "2014-07-16T09:00:00+09:00", start_time: "2014-07-16T09:30:00+09:00", place: "下北沢のライブハウス", price: "3000円", detail: "あああああああああ", image: `${Retroriron}`, imageVertical: false, performer: "あああああ、あああああ、あああああ、あああああ、あああああ、あああああ"},
-    //     {title: "test2test2test2test2", date: "2021-09-24", open_time: "2014-07-16T18:00:00+09:00", start_time: "2014-07-16T18:30:00+09:00", place: "赤坂のライブハウス", price: "2500円", image: `${LiveVertical}`, imageVertical: true, performer: "いいいいい、いいいいい、いいいいい、いいいいい、いいいいい、いいいいい"},
-    //     {title: "test3test3test3test3", date: "2021-08-24", open_time: "2014-07-16T19:00:00+09:00", start_time: "2014-07-16T19:30:00+09:00", place: "渋谷のライブハウス", price: "2600円", detail: "あああああああああ", image: `${Retroriron}`, imageVertical: false, performer: "ううううう、ううううう、ううううう、ううううう、ううううう、ううううう"},
-    // ]
-
     return (
         <>
             <Helmet>
@@ -81,7 +73,7 @@ const Live = () => {
                                     )}
                                 </LiveTitleContainer>
                                 <LiveTextContainer>
-                                    <LiveText>開場時間 | {moment(item.openTime).format("HH:mm")}   開演時間 | {moment(item.startTime).format("HH:mm")}</LiveText>
+                                    <LiveText>開場時間 | {moment(item.openTime).add(15, "H").format("HH:mm")}   開演時間 | {moment(item.startTime).add(15, "H").format("HH:mm")}</LiveText>
                                     <LiveText>場所 | {item.place}</LiveText>
                                     <LiveText>料金 | {item.price}</LiveText>
                                     <LiveText>出演者 | {item.performer}</LiveText>
