@@ -12,6 +12,15 @@ const Discography = () => {
         {title: "Mo-so", date: "2021-09-21", image: `${Life}`, MvLink: "#", SubscriptionLink: "#", tag: "Single"},
         {title: "Life", date: "2021-07-21", image: `${Life}`, MvLink: "#", SubscriptionLink: "https://linkco.re/5g7epSR5", tag: "album"},
         {title: "Mo-so", date: "2021-09-21", image: `${Life}`, MvLink: "#", SubscriptionLink: "#", tag: "Single"},
+        {title: "Mo-so", date: "2021-09-21", image: `${Life}`, MvLink: "#", SubscriptionLink: "#", tag: "Single"},
+        {title: "Mo-so", date: "2021-09-21", image: `${Life}`, MvLink: "#", SubscriptionLink: "#", tag: "Single"},
+        {title: "Mo-so", date: "2021-09-21", image: `${Life}`, MvLink: "#", SubscriptionLink: "#", tag: "Single"},
+        {title: "Mo-so", date: "2021-09-21", image: `${Life}`, MvLink: "#", SubscriptionLink: "#", tag: "Single"},
+        {title: "Mo-so", date: "2021-09-21", image: `${Life}`, MvLink: "#", SubscriptionLink: "#", tag: "Single"},
+        {title: "Mo-so", date: "2021-09-21", image: `${Life}`, MvLink: "#", SubscriptionLink: "#", tag: "Single"},
+        {title: "Mo-so", date: "2021-09-21", image: `${Life}`, MvLink: "#", SubscriptionLink: "#", tag: "Single"},
+        {title: "Mo-so", date: "2021-09-21", image: `${Life}`, MvLink: "#", SubscriptionLink: "#", tag: "Single"},
+        {title: "Mo-so", date: "2021-09-21", image: `${Life}`, MvLink: "#", SubscriptionLink: "#", tag: "Single"},
     ]
     return (
         <>
