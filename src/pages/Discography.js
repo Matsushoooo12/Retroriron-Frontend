@@ -1,5 +1,8 @@
 import React from 'react'
 import Helmet from 'react-helmet';
+import moment from 'moment'
+import styled from '@emotion/styled';
+import Life from '../images/life.JPG'
 
 const Discography = () => {
     return (
@@ -8,11 +11,153 @@ const Discography = () => {
                 <title>Discography page</title>
                 <meta name="the Discography page of a pop band called Retroriron." content="discography page" />
             </Helmet>
-            <div>
-                Discography
-            </div>
+            <DiscographyContainer>
+                <DiscographyItemContainer>
+                    <DiscographyInfoContainer>
+                        <DiscographyDate>2021.9.21. Release</DiscographyDate>
+                        <DiscographyImageContainer>
+                            <DiscographyImage src={Life} />
+                            <DiscographyImageTag>Single</DiscographyImageTag>
+                        </DiscographyImageContainer>
+                        <DiscographyTitleContainer>
+                            <DiscographyTitle>Mo-so</DiscographyTitle>
+                        </DiscographyTitleContainer>
+                        <DiscographyLinkContainer>
+                            <DiscographyLinkItemContainer></DiscographyLinkItemContainer>
+                            <DiscographyLinkItemContainer></DiscographyLinkItemContainer>
+                        </DiscographyLinkContainer>
+                    </DiscographyInfoContainer>
+                    <DiscographyInfoContainer>
+                        <DiscographyDate>2021.9.21. Release</DiscographyDate>
+                        <DiscographyImageContainer>
+                            <DiscographyImage src={Life} />
+                            <DiscographyImageTag>Single</DiscographyImageTag>
+                        </DiscographyImageContainer>
+                        <DiscographyTitleContainer>
+                            <DiscographyTitle className="long">あああああああああああああああああああ</DiscographyTitle>
+                        </DiscographyTitleContainer>
+                        <DiscographyLinkContainer></DiscographyLinkContainer>
+                    </DiscographyInfoContainer>
+                    <DiscographyInfoContainer></DiscographyInfoContainer>
+                    <DiscographyInfoContainer></DiscographyInfoContainer>
+                    <DiscographyInfoContainer></DiscographyInfoContainer>
+                    <DiscographyInfoContainer></DiscographyInfoContainer>
+                    <DiscographyInfoContainer></DiscographyInfoContainer>
+                    <DiscographyInfoContainer></DiscographyInfoContainer>
+                </DiscographyItemContainer>
+            </DiscographyContainer>
         </>
     )
 }
 
 export default Discography
+
+// DiscographyContainer
+
+const DiscographyContainer = styled.div`
+    margin-top: 32px;
+`
+
+// DiscographyItemContainer
+
+const DiscographyItemContainer = styled.div`
+    width: 65vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    @media screen and (min-width: 1350px){
+        width: 72vw;
+    }
+    @media screen and (min-width: 1515px){
+        width: 65vw;
+    }
+`
+
+// DiscographyInfoContainer
+
+const DiscographyInfoContainer = styled.div`
+    width: 200px;
+    height: 380px;
+    background-color: blue;
+    margin-right: 23px;
+    margin-left: 23px;
+    margin-bottom: 64px;
+`
+
+const DiscographyDate = styled.p`
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #292929;
+    margin-bottom: 4px;
+`
+
+// DiscographyImageContainer
+
+const DiscographyImageContainer = styled.div`
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    position: relative;
+    margin-bottom: 8px;
+`
+
+const DiscographyImage = styled.img`
+    width: 100%;
+    height: 100%;
+`
+
+const DiscographyImageTag = styled.p`
+    font-size: 1.2rem;
+    font-weight: 900;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #292929;
+    padding: 2px 8px;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    position: absolute;
+    left: 4px;
+    bottom: 4px;
+`
+
+// DiscographyTitleContainer
+
+const DiscographyTitleContainer = styled.div`
+    height: 48px;
+    width: 100%;
+    background-color: green;
+    margin-bottom: 8px;
+`
+
+const DiscographyTitle = styled.h1`
+    font-size: 2.0rem;
+    font-weight: 700;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #292929;
+    padding-top: 7px;
+    &.long{
+        font-size: 1.6rem;
+        padding-top: 0;
+    }
+`
+
+// DiscographyLinkContainer
+
+const DiscographyLinkContainer = styled.div`
+    width: 100%;
+    height: 96px;
+    background-color: yellow;
+`
+
+const DiscographyLinkItemContainer = styled.a`
+    display: block;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #FFFFFF;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 16px;
+`
