@@ -42,7 +42,7 @@ const Discography = () => {
                                 <DiscographyImageTag>{item.tag}</DiscographyImageTag>
                             </DiscographyImageContainer>
                             <DiscographyTitleContainer>
-                                <DiscographyTitle>{item.title}</DiscographyTitle>
+                                <DiscographyTitle className={item.title.length > 18 ? "long" : ""}>{item.title}</DiscographyTitle>
                             </DiscographyTitleContainer>
                             <DiscographyLinkContainer>
                                 <DiscographyLinkItemContainer className={item.mvLink ? "" : "hidden"} target="_blank" href={item.mvLink}>
@@ -67,7 +67,7 @@ export default Discography
 // DiscographyContainer
 
 const DiscographyContainer = styled.div`
-    margin-top: 32px;
+    margin-top: 80px;
 `
 
 // DiscographyItemContainer
@@ -145,6 +145,8 @@ const DiscographyTitle = styled.h1`
     font-family: 'Noto Sans JP', sans-serif;
     color: #292929;
     padding-top: 7px;
+    overflow-wrap:  break-word;
+    word-break: break-all;
     &.long{
         font-size: 1.6rem;
         padding-top: 0;
