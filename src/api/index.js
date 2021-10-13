@@ -11,3 +11,7 @@ export const getNews = () => {
 export const getLive = () => {
     return client.get('/lives')
 }
+
+export const getDiscography = () => {
+    return client.get('/discographies')
+}

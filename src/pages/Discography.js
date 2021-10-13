@@ -1,27 +1,31 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Helmet from 'react-helmet';
 import moment from 'moment'
 import styled from '@emotion/styled';
-import Life from '../images/life.JPG';
 import MvIcon from '../images/vector-mv.png'
 import SubscriptionIcon from '../images/vector-musuic.png'
+import { getDiscography } from '../api';
 
 const Discography = () => {
 
-    const data = [
-        {title: "Mo-so", date: "2021-09-21", image: `${Life}`, MvLink: "#", SubscriptionLink: "#", tag: "Single"},
-        {title: "Life", date: "2021-07-21", image: `${Life}`, MvLink: "#", SubscriptionLink: "https://linkco.re/5g7epSR5", tag: "album"},
-        {title: "Mo-so", date: "2021-09-21", image: `${Life}`, MvLink: "#", SubscriptionLink: "#", tag: "Single"},
-        {title: "Mo-so", date: "2021-09-21", image: `${Life}`, MvLink: "#", SubscriptionLink: "#", tag: "Single"},
-        {title: "Mo-so", date: "2021-09-21", image: `${Life}`, MvLink: "#", SubscriptionLink: "#", tag: "Single"},
-        {title: "Mo-so", date: "2021-09-21", image: `${Life}`, MvLink: "#", SubscriptionLink: "#", tag: "Single"},
-        {title: "Mo-so", date: "2021-09-21", image: `${Life}`, MvLink: "#", SubscriptionLink: "#", tag: "Single"},
-        {title: "Mo-so", date: "2021-09-21", image: `${Life}`, MvLink: "#", SubscriptionLink: "#", tag: "Single"},
-        {title: "Mo-so", date: "2021-09-21", image: `${Life}`, MvLink: "#", SubscriptionLink: "#", tag: "Single"},
-        {title: "Mo-so", date: "2021-09-21", image: `${Life}`, MvLink: "#", SubscriptionLink: "#", tag: "Single"},
-        {title: "Mo-so", date: "2021-09-21", image: `${Life}`, MvLink: "#", SubscriptionLink: "#", tag: "Single"},
-        {title: "Mo-so", date: "2021-09-21", image: `${Life}`, MvLink: "#", SubscriptionLink: "#", tag: "Single"},
-    ]
+    // API
+
+    const [discographies, setDiscographies] = useState([])
+
+    const handleGetDiscography = async () => {
+        try{
+            const res = await getDiscography();
+            setDiscographies(res.data)
+            console.log(res.data)
+        } catch(e){
+            console.log(e)
+        }
+    }
+
+    useEffect(() => {
+        handleGetDiscography();
+    }, [])
+
     return (
         <>
             <Helmet>
@@ -30,22 +34,22 @@ const Discography = () => {
             </Helmet>
             <DiscographyContainer>
                 <DiscographyItemContainer>
-                    {data.map((item, i) => (
+                    {discographies.map((item, i) => (
                         <DiscographyInfoContainer key={i}>
                             <DiscographyDate>{moment(item.date).format("YYYY.MM.DD.")} Release</DiscographyDate>
                             <DiscographyImageContainer>
-                                <DiscographyImage src={item.image} />
+                                <DiscographyImage src={process.env.REACT_APP_DEV_API_URL + item.image.url} />
                                 <DiscographyImageTag>{item.tag}</DiscographyImageTag>
                             </DiscographyImageContainer>
                             <DiscographyTitleContainer>
                                 <DiscographyTitle>{item.title}</DiscographyTitle>
                             </DiscographyTitleContainer>
                             <DiscographyLinkContainer>
-                                <DiscographyLinkItemContainer target="_blank" href={item.MvLink}>
+                                <DiscographyLinkItemContainer className={item.mvLink ? "" : "hidden"} target="_blank" href={item.mvLink}>
                                     <DiscographyLinkIcon src={MvIcon} />
                                     <DiscographyLinkText>MVを見る</DiscographyLinkText>
                                 </DiscographyLinkItemContainer>
-                                <DiscographyLinkItemContainer target="_blank" href={item.SubscriptionLink}>
+                                <DiscographyLinkItemContainer className={item.subscriptionLink ? "" : "hidden"} target="_blank" href={item.subscriptionLink}>
                                     <DiscographyLinkIcon src={SubscriptionIcon} />
                                     <DiscographyLinkText>音楽を聴く</DiscographyLinkText>
                                 </DiscographyLinkItemContainer>
@@ -166,6 +170,10 @@ const DiscographyLinkItemContainer = styled.a`
     height: 40px;
     margin-bottom: 16px;
     cursor: pointer;
+    &.hidden{
+        opacity: 0.6;
+        cursor: default;
+    }
 `
 
 const DiscographyLinkIcon = styled.img`
