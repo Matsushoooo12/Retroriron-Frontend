@@ -167,11 +167,11 @@ const NewsText = styled.p`
 
 const NewsImage = styled.img`
     display: block;
-    width: 300px;
+    width: 200px;
     height: 100%;
     margin-top: 16px;
     &.vertical{
-        width: 200px;
-        height: 300px;
+        width: 150px;
+        height: 200px;
     }
 `
