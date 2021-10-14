@@ -6,7 +6,7 @@ import ContactConfirm from './ContactConfirm';
 
 const Contact = () => {
     // useForm
-    const { register, formState: { errors }, getValues, reset, handleSubmit } = useForm();
+    const { register, formState: { errors }, getValues, handleSubmit } = useForm();
 
     // isConfirmationVisibleにstateを持たせて、入力内容確認画面の表示・非表示をコントロール
     // isConfirmationVisibleの初期値はfalseで入力内容確認画面は非表示に

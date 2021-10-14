@@ -6,7 +6,7 @@ import ContactComplete from './ContactComplete';
 const ContactConfirm = (props) => {
     const {values, hideConfirmation} = props
 
-    const [value, setValue] = useState({
+    const value = ({
         name: values.name,
         email: values.email,
         phone: values.phone,
@@ -106,13 +106,6 @@ const ContactConfirm = (props) => {
 }
 
 export default ContactConfirm
-
-// ContactContainer
-
-const ContactContainer = styled.div`
-    margin-top: 64px;
-    width: 100%;
-`
 
 // ContactTextContainer
 

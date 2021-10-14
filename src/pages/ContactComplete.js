@@ -1,11 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from '@emotion/styled';
-import Contact from './Contact';
 import { useHistory } from 'react-router';
 
 const ContactComplete = ({values}) => {
-
-    const [isContactVisible, setIsContactVisible] = useState(false)
 
     const history = useHistory();
 
@@ -100,14 +97,6 @@ const ContactText = styled.p`
     font-family: 'Noto Sans JP', sans-serif;
     color: #292929;
     line-height: 2.4rem;
-    margin-bottom: 1.6rem;
-`
-
-const ContactTextCaution = styled.p`
-    font-size: 1.2rem;
-    font-weight: 700;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: #292929;
     margin-bottom: 1.6rem;
 `
 
