@@ -15,3 +15,7 @@ export const getLive = () => {
 export const getDiscography = () => {
     return client.get('/discographies')
 }
+
+export const createContact = (params) => {
+    return client.post('/contacts', params);
+}

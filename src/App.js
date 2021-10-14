@@ -13,6 +13,7 @@ import Discography from './pages/Discography';
 import Contact from './pages/Contact';
 import Event from './components/Event'
 import ContactConfirm from './pages/ContactConfirm';
+import ContactComplete from './pages/ContactComplete';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
               <Route exact path="/contact" component={Contact} />
               <Route exact path="/event" component={Event} />
               <Route exact path="/contact/confirm" component={ContactConfirm} />
+              <Route exact path="contact/complete" component={ContactComplete} />
             </Switch>
         </MainContainer>
       </BrowserRouter>
