@@ -12,6 +12,7 @@ import News from './pages/News';
 import Discography from './pages/Discography';
 import Contact from './pages/Contact';
 import Event from './components/Event'
+import ContactConfirm from './pages/ContactConfirm';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
               <Route exact path="/discography" component={Discography} />
               <Route exact path="/contact" component={Contact} />
               <Route exact path="/event" component={Event} />
+              <Route exact path="/contact/confirm" component={ContactConfirm} />
             </Switch>
         </MainContainer>
       </BrowserRouter>
