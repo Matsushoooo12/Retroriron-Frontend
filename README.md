@@ -158,4 +158,64 @@ const コンポーネント名 = () => {
 
 ---
 
-<img width="1680" alt="スクリーンショット 2021-10-12 4 48 18" src="https://user-images.githubusercontent.com/66903388/136847581-493a029c-126a-4935-880d-c2f6147d521b.png">
+<img width="1680" alt="スクリーンショット 2021-10-15 16 23 47" src="https://user-images.githubusercontent.com/66903388/137448836-fd3c9290-daa5-4901-b4e7-b9c9e4ef03c3.png">
+
+## Live ページ
+
+### PC
+
+---
+
+<img width="1680" alt="スクリーンショット 2021-10-15 16 23 57" src="https://user-images.githubusercontent.com/66903388/137448909-43faee77-4829-470f-a595-205fcb1c3d2c.png">
+
+## Chicket モーダル
+
+### ChicketForm
+
+---
+
+<img width="1680" alt="スクリーンショット 2021-10-15 16 24 03" src="https://user-images.githubusercontent.com/66903388/137449056-4bff8ab1-3e84-4268-921c-b81fc8024b88.png">
+
+### ChicketConfirm
+
+---
+
+<img width="1680" alt="スクリーンショット 2021-10-15 16 24 17" src="https://user-images.githubusercontent.com/66903388/137449112-3811f377-ddfa-458a-ac58-4b7d8a15ae57.png">
+
+### ChicketComplete
+
+---
+
+<img width="1680" alt="スクリーンショット 2021-10-15 16 24 24" src="https://user-images.githubusercontent.com/66903388/137449190-c76577f7-847b-40fb-b88e-95836b38ca2e.png">
+
+## Discography ページ
+
+### PC
+
+---
+
+<img width="1680" alt="スクリーンショット 2021-10-15 16 24 34" src="https://user-images.githubusercontent.com/66903388/137449279-3151bcd1-58b8-4995-a6d0-f541cdf3c969.png">
+
+## Contact ページ
+
+### PC
+
+---
+
+#### ContactForm
+
+---
+
+<img width="1680" alt="スクリーンショット 2021-10-15 16 24 41" src="https://user-images.githubusercontent.com/66903388/137449378-abc1f337-8eda-4732-ac63-b7b371b8eba4.png">
+
+#### ContactConfirm
+
+---
+
+<img width="1680" alt="スクリーンショット 2021-10-15 16 24 58" src="https://user-images.githubusercontent.com/66903388/137449435-58257062-b61f-4143-88b6-9fe4f170c6fb.png">
+
+#### ContactComplete
+
+---
+
+<img width="1680" alt="スクリーンショット 2021-10-15 16 26 18" src="https://user-images.githubusercontent.com/66903388/137449492-d16f12e1-ec6a-40a2-a2ae-8aa319f99101.png">
