@@ -134,14 +134,17 @@ const HomeContainer = styled.div`
 
 const FvContainer = styled.div`
     text-align: center;
-    margin-top: 83px;
     background-image: url(${FvFrame});
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    width: 100vw;
-    height: 67vw;
+    width: 80vw;
+    height: 54vw;
     position: relative;
+    margin: 125px auto 0;
+    @media screen and (min-width: 768px){
+        margin: 132px auto 0;
+    }
     @media screen and (min-width: 900px){
         background-image: url(${FvFrame});
         background-size: cover;
@@ -181,12 +184,13 @@ const BandIntroduceContainer = styled.div`
 `
 
 const BandTitleBlock = styled.img`
-    width: 90%;
-    margin-left: 16px;
-    margin-bottom: 32px;
+    width: 75%;
+    margin-left: 80px;
+    margin-bottom: 16px;
     @media screen and (min-width: 768px){
         margin: 0;
         width: 100%;
+        margin-bottom: 32px;
     }
 `
 
@@ -198,9 +202,9 @@ const BandTextH1 = styled.h1`
     font-size: 2.4rem;
     font-weight: 700;
     font-family: 'Noto Sans JP', sans-serif;
-    margin-top: 24px;
     color: #292929;
-    margin: 0 32px;
+    margin-left: 80px;
+    margin-right: 24px;
 `
 
 const BandTextPBlock = styled.div`
@@ -217,7 +221,12 @@ const BandTextP = styled.p`
     font-weight: 500;
     line-height: 2.8rem;
     color: #292929;
-    margin: 0 32px 16px;
+    margin-left: 80px;
+    margin-right: 24px;
+    margin-bottom: 24px;
+    &:last-of-type{
+        margin-bottom: 56px;
+    }
     @media screen and (min-width: 768px){
         margin: 0 0 32px;
     }
@@ -227,7 +236,9 @@ const BandTextP = styled.p`
 
 const BandMemberContainer = styled.div`
     text-align: center;
-    margin-top: 80px;
+    width: 60%;
+    margin: auto;
+    text-align: left;
     @media screen and (min-width: 1000px){
         text-align: left;
         margin-top: 152px;
@@ -235,14 +246,14 @@ const BandMemberContainer = styled.div`
 `
 
 const MemberItemContainer = styled.div`
-    margin-bottom: 64px;
+    margin-bottom: 56px;
     @media screen and (min-width: 1000px){
         display: flex;
     }
 `
 
 const MemberImage = styled.img`
-    width: 60%;
+    width: 100%;
     margin-bottom: 16px;
     @media screen and (min-width: 768px){
         width: 360px;
@@ -267,6 +278,10 @@ const MemberInstrument = styled.p`
     font-size: 1.2rem;
     font-family: 'Noto Sans JP', sans-serif;
     font-weight: bold;
+    margin-bottom: 4px;
+    @media screen and (min-width: 900px){
+        margin-bottom: 0;
+    }
 `
 
 const MemberName = styled.h1`
@@ -279,19 +294,31 @@ const MemberNameRomaji = styled.span`
     color: #292929;
     font-size: 1.6rem;
     font-family: 'Noto Sans JP', sans-serif;
+    display: block;
+    margin-top: 4px;
+    @media screen and (min-width: 900px){
+        display: inline-block;
+        margin-top: 0;
+    }
 `
 
 const MemberText = styled.p`
     color: #292929;
     font-size: 1.6rem;
     font-family: 'Noto Sans JP', sans-serif;
-    margin-top: 24px;
+    margin-top: 12px;
+    @media screen and (min-width: 900px){
+        margin-top: 24px;
+    }
 `
 
 const MemberSnsContainer = styled.div`
-    margin-top: 24px;
+    margin-top: 16px;
     display: flex;
-    justify-content: center;
+    justify-content: start;
+    @media screen and (min-width: 1000px){
+        margin-top: 24px;
+    }
     @media screen and (min-width: 1000px){
         justify-content: left;
     }

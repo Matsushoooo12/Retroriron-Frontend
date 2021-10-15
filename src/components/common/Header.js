@@ -127,10 +127,11 @@ const HamburgerButtonContainer = styled.div`
     position: relative;
     width: 32px;
     height: 18px;
-    margin-left: 32px;
+    margin-left: 24px;
     @media screen and (min-width: 768px){
         width: 48px;
         height: 27px;
+        margin-left: 56px;
     }
 `
 
@@ -211,7 +212,7 @@ const HamburgerMenuContentText = styled.li`
     margin-bottom: 16px;
     margin-left: 24px;
     @media screen and (min-width: 768px){
-        margin-left: 32px;
+        margin-left: 56px;
     }
 `
 
@@ -229,7 +230,7 @@ const HamburgerMenuSnsContainer = styled.div`
     width: 150px;
     margin: 0 24px 85px;
     @media screen and (min-width: 768px){
-        margin: 0 32px 85px;
+        margin: 0 56px 85px;
     }
 `
 
@@ -281,7 +282,7 @@ const HamburgerMenuCopyright = styled.p`
     font-weight: 700;
     margin-left: 24px;
     @media screen and (min-width: 768px){
-        margin-left: 32px;
+        margin-left: 56px;
     }
 `
 
@@ -295,7 +296,7 @@ const LogoImage = styled.img`
     @media screen and (min-width: 768px){
         width: 150px;
         height: 64px;
-        margin-right: 32px;
+        margin-right: 56px;
     }
     @media screen and (min-width: 900px) {
         margin: 64px 0 0;
