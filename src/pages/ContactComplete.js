@@ -1,13 +1,11 @@
 import React from 'react'
 import styled from '@emotion/styled';
-import { useHistory } from 'react-router';
 
 const ContactComplete = ({values}) => {
 
-    const history = useHistory();
-
     const handleClick = () => {
-        history.push('/')
+        // eslint-disable-next-line no-restricted-globals
+        return location.reload();
     }
     return (
         <>
