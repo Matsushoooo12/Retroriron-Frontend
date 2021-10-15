@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import styled from '@emotion/styled';
+import { createChicket } from '../api';
+import ChicketComplete from './ChicketComplete';
 
 const ChicketConfirm = (props) => {
     const {values, hideConfirmation} = props
@@ -12,69 +14,94 @@ const ChicketConfirm = (props) => {
         description: values.description
     })
 
+    // isCompleteVisibleにstateを持たせて、入力内容確認画面の表示・非表示をコントロール
+    // isCompleteVisibleの初期値はfalseで入力内容確認画面は非表示に
+    const [isCompleteVisible, setIsCompleteVisible] = useState(false)
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try{
+            const res = await createChicket(value);
+            console.log(res)
+            setIsCompleteVisible(true)
+        } catch(e){
+            console.log(e)
+        }
+    }
+
+
+
     return (
-        <ChicketItemContainer>
-            <ChicketTitle>チケット予約内容の確認</ChicketTitle>
-            <ChicketText>
-                ※こちらはチケットのお取り置きをするためのフォームです。<br/>
-                当日は会場受付で担当者にお名前をお伝えの上、お支払いをお願いいたします。
-            </ChicketText>
-            <ChicketCautionText>
-                ※下記のライブのお申し込みでお間違いないかご確認ください。
-            </ChicketCautionText>
-            <ChicketFormContainer>
-                <ChicketFormTextField
-                    className="date_and_title"
-                    type="text"
-                    value={value.dateAndTitle}
-                    disabled
+        <>
+            {!isCompleteVisible ? (
+                <ChicketItemContainer>
+                    <ChicketTitle>チケット予約内容の確認</ChicketTitle>
+                    <ChicketText>
+                        ※こちらはチケットのお取り置きをするためのフォームです。<br/>
+                        当日は会場受付で担当者にお名前をお伝えの上、お支払いをお願いいたします。
+                    </ChicketText>
+                    <ChicketCautionText>
+                        ※下記のライブのお申し込みでお間違いないかご確認ください。
+                    </ChicketCautionText>
+                    <ChicketFormContainer>
+                        <ChicketFormTextField
+                            className="date_and_title"
+                            type="text"
+                            value={value.dateAndTitle}
+                            disabled
+                        />
+                        <ChicketFormGroup>
+                            <ChicketFormLabel htmlFor="nameKana">ナマエ
+                                <ChicketFormRequiredSign>*</ChicketFormRequiredSign>
+                            </ChicketFormLabel>
+                            <ChicketFormTextField
+                                name="nameKana"
+                                type="text"
+                                value={value.nameKana}
+                                disabled
+                                className="disabled"
+                            />
+                            <ChicketFormLabel htmlFor="email">メールアドレス
+                                <ChicketFormRequiredSign>*</ChicketFormRequiredSign>
+                            </ChicketFormLabel>
+                            <ChicketFormTextField
+                                name="email"
+                                type="email"
+                                value={value.email}
+                                disabled
+                                className="disabled"
+                            />
+                            <ChicketFormLabel htmlFor="number">枚数
+                                <ChicketFormRequiredSign>*</ChicketFormRequiredSign>
+                            </ChicketFormLabel>
+                            <ChicketFormNumber
+                                name="number"
+                                type="number"
+                                value={value.number}
+                                disabled
+                                className="disabled"
+                            />
+                            <ChicketFormLabel htmlFor="description">備考</ChicketFormLabel>
+                            <ChicketFormTextField
+                                name="description"
+                                type="text"
+                                value={value.description}
+                                disabled
+                                className="disabled"
+                            />
+                        </ChicketFormGroup>
+                        <ChicketFormGroup className="right">
+                            <ChicketFormSubmitButton type="button" className="back" value="戻る" onClick={hideConfirmation} />
+                            <ChicketFormSubmitButton type="submit" value="予約する" onClick={(e) => handleSubmit(e)} />
+                        </ChicketFormGroup>
+                    </ChicketFormContainer>
+                </ChicketItemContainer>
+            ):(
+                <ChicketComplete
+                    values={values}
                 />
-                <ChicketFormGroup>
-                    <ChicketFormLabel htmlFor="nameKana">ナマエ
-                        <ChicketFormRequiredSign>*</ChicketFormRequiredSign>
-                    </ChicketFormLabel>
-                    <ChicketFormTextField
-                        name="nameKana"
-                        type="text"
-                        value={value.nameKana}
-                        disabled
-                        className="disabled"
-                    />
-                    <ChicketFormLabel htmlFor="email">メールアドレス
-                        <ChicketFormRequiredSign>*</ChicketFormRequiredSign>
-                    </ChicketFormLabel>
-                    <ChicketFormTextField
-                        name="email"
-                        type="email"
-                        value={value.email}
-                        disabled
-                        className="disabled"
-                    />
-                    <ChicketFormLabel htmlFor="number">枚数
-                        <ChicketFormRequiredSign>*</ChicketFormRequiredSign>
-                    </ChicketFormLabel>
-                    <ChicketFormNumber
-                        name="number"
-                        type="number"
-                        value={value.number}
-                        disabled
-                        className="disabled"
-                    />
-                    <ChicketFormLabel htmlFor="description">備考</ChicketFormLabel>
-                    <ChicketFormTextField
-                        name="description"
-                        type="text"
-                        value={value.description}
-                        disabled
-                        className="disabled"
-                    />
-                </ChicketFormGroup>
-                <ChicketFormGroup className="right">
-                    <ChicketFormSubmitButton type="button" className="back" value="戻る" onClick={hideConfirmation} />
-                    <ChicketFormSubmitButton type="submit" value="確認する" />
-                </ChicketFormGroup>
-            </ChicketFormContainer>
-        </ChicketItemContainer>
+            )}
+        </>
     )
 }
 

@@ -30,7 +30,6 @@ const ContactConfirm = (props) => {
 
     console.log(isCompleteVisible)
     return (
-        // <ContactContainer>
         <>
             {!isCompleteVisible ? (
                 <>
