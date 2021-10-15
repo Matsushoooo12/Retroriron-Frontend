@@ -64,7 +64,7 @@ const ContactComplete = ({values}) => {
                     />
                 </ContactFormGroup>
                 <ContactFormGroup className="right">
-                    <ContactFormSubmitButton type="button" className="back" onClick={handleClick} value="戻る"/>
+                    <ContactFormSubmitButton type="button" className="back" onClick={handleClick} value="お問い合わせに戻る"/>
                 </ContactFormGroup>
             </ContactFormContainer>
         </>
