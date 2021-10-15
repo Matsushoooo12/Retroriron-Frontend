@@ -74,6 +74,14 @@ const Header = () => {
             ):(
                 <HamburgerMenuContentContainer></HamburgerMenuContentContainer>
             )}
+            <SnsFixedContainer>
+                    <SnsFixedBorder></SnsFixedBorder>
+                    <SnsFixedText>our sns</SnsFixedText>
+                    <SnsFixedIconLink href="#"><SnsFixedIconImage src={TwitterOrange} /></SnsFixedIconLink>
+                    <SnsFixedIconLink href="#"><SnsFixedIconImage src={InstagramOrange} /></SnsFixedIconLink>
+                    <SnsFixedIconLink href="#"><SnsFixedIconImage src={YoutubeOrange} /></SnsFixedIconLink>
+                    <SnsFixedBorder></SnsFixedBorder>
+            </SnsFixedContainer>
         </>
     )
 }
@@ -276,13 +284,15 @@ const HamburgerMenuSnsIconLink = styled(Link)`
 // HamburgerMenuCopyright
 
 const HamburgerMenuCopyright = styled.p`
-    font-family: 'Noto Sans JP', sans-serif;
-    color: #292929;
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-left: 24px;
+    display: none;
     @media screen and (min-width: 768px){
+        display: block;
         margin-left: 56px;
+        font-family: 'Noto Sans JP', sans-serif;
+        color: #292929;
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-left: 24px;
     }
 `
 
@@ -363,4 +373,46 @@ const SnsIcon = styled.img`
 `
 
 const SnsLink = styled.a`
+`
+
+// SP SNS固定
+
+const SnsFixedContainer = styled.div`
+    display: flex;
+    position: fixed;
+    height: 32px;
+    width: 263px;
+    left: -90px;
+    top: 480px;
+    transform: rotate(90deg);
+    align-items: center;
+    @media screen and (min-width: 900px){
+        display: none;
+    }
+`
+
+const SnsFixedBorder = styled.div`
+    height: 1px;
+    width: 24px;
+    background-color: #000000;
+`
+
+const SnsFixedText = styled.p`
+    color: #292929;
+    font-size: 1.0rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 700;
+    margin-left: 16px;
+    margin-right: 16px;
+`
+
+const SnsFixedIconLink = styled.a`
+    text-decoration: none;
+    margin-right: 16px;
+`
+
+const SnsFixedIconImage = styled.img`
+    width: 32px;
+    height: 30px;
+    transform: rotate(-90deg);
 `

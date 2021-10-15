@@ -239,9 +239,10 @@ const BandMemberContainer = styled.div`
     width: 60%;
     margin: auto;
     text-align: left;
-    @media screen and (min-width: 1000px){
+    @media screen and (min-width: 900px){
         text-align: left;
         margin-top: 152px;
+        width: 100%;
     }
 `
 
@@ -307,6 +308,7 @@ const MemberText = styled.p`
     font-size: 1.6rem;
     font-family: 'Noto Sans JP', sans-serif;
     margin-top: 12px;
+    line-height: 2.4rem;
     @media screen and (min-width: 900px){
         margin-top: 24px;
     }
