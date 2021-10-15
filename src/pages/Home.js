@@ -26,7 +26,7 @@ const Home = () => {
                     <BandTitleBlock src={BandTitle} />
                     <BandTextBlock>
                         <BandTextH1>
-                            ー  "明日"ではなく"今日"を生きよう 
+                            ー  "明日"ではなく<br/>"今日"を生きよう 
                         </BandTextH1>
                         <BandTextPBlock>
                             <BandTextP>
@@ -114,7 +114,6 @@ const Home = () => {
                         </MemberTextContainer>
                     </MemberItemContainer>
                 </BandMemberContainer>
-                <CopyRight>© 2021 retririon.</CopyRight>
             </HomeContainer>
         </>
     )
@@ -205,6 +204,7 @@ const BandTextH1 = styled.h1`
     color: #292929;
     margin-left: 80px;
     margin-right: 24px;
+    line-height: 3.2rem;
 `
 
 const BandTextPBlock = styled.div`
@@ -335,16 +335,5 @@ const SnsIcon = styled.img`
 const SnsLink = styled.a`
     &:first-of-type{
         margin-right: 16px;
-    }
-`
-
-const CopyRight = styled.p`
-    color: #292929;
-    font-size: 1.2rem;
-    font-family: 'Noto Sans JP', sans-serif;
-    margin: 32px 0;
-    text-align: center;
-    @media screen and (min-width: 900px){
-        margin: 184px 0 32px;
     }
 `

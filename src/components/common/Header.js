@@ -284,16 +284,13 @@ const HamburgerMenuSnsIconLink = styled(Link)`
 // HamburgerMenuCopyright
 
 const HamburgerMenuCopyright = styled.p`
-    display: none;
-    @media screen and (min-width: 768px){
-        display: block;
-        margin-left: 56px;
-        font-family: 'Noto Sans JP', sans-serif;
-        color: #292929;
-        font-size: 1.2rem;
-        font-weight: 700;
-        margin-left: 24px;
-    }
+    display: block;
+    margin-left: 56px;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #292929;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 24px;
 `
 
 // ロゴ
