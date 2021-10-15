@@ -1,28 +1,80 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from '@emotion/styled';
 import Logo from '../../images/logo.PNG'
 import Twitter from '../../images/twitter.png'
 import Instagram from '../../images/instagram.png'
 import Youtube from '../../images/youtube.png'
 import { Link } from 'react-router-dom';
+import TwitterOrange from '../../images/twitter-icon-orange.png'
+import InstagramOrange from '../../images/insta-icon-orange.png'
+import YoutubeOrange from '../../images/youtube-icon-orange.png'
 
 const Header = () => {
+
+    // Hamburger
+    const [hamburger, setHamburger] = useState(false)
+
+    const handleClick = () => {
+        if(hamburger === false){
+            setHamburger(true)
+        } else{
+            setHamburger(false)
+        }
+    }
     return (
-        <HeaderContainer>
-            <Link to="/"><LogoImage src={Logo} /></Link>
-            <MenuUl>
-                <MenuLi><MenuLink to="/">Home</MenuLink></MenuLi>
-                <MenuLi><MenuLink to="/news">News</MenuLink></MenuLi>
-                <MenuLi><MenuLink to="/live">Live</MenuLink></MenuLi>
-                <MenuLi><MenuLink to="/discography">Discography</MenuLink></MenuLi>
-                <MenuLi><MenuLink to="/contact">Contact</MenuLink></MenuLi>
-            </MenuUl>
-            <SnsContainer>
-                <SnsLink href="#"><SnsIcon src={Twitter} /></SnsLink>
-                <SnsLink href="#"><SnsIcon src={Instagram} /></SnsLink>
-                <SnsLink href="#"><SnsIcon src={Youtube} /></SnsLink>
-            </SnsContainer>
-        </HeaderContainer>
+        <>
+            <HeaderContainer>
+                <HamburgerMenuContainer>
+                    <HamburgerButtonContainer onClick={handleClick}>
+                        <HamburgerButtonLine className={!hamburger ? "line1":"line1 transform"} />
+                        <HamburgerButtonLine className={!hamburger ? "line2":"line2 transform"} />
+                    </HamburgerButtonContainer>
+                    {!hamburger ? (
+                        <HamburgerButtonText>menu - home</HamburgerButtonText>
+                    ):(
+                        <HamburgerButtonText>close</HamburgerButtonText>
+                    )}
+                </HamburgerMenuContainer>
+                <Link to="/"><LogoImage src={Logo} /></Link>
+                <MenuUl>
+                    <MenuLi><MenuLink to="/">Home</MenuLink></MenuLi>
+                    <MenuLi><MenuLink to="/news">News</MenuLink></MenuLi>
+                    <MenuLi><MenuLink to="/live">Live</MenuLink></MenuLi>
+                    <MenuLi><MenuLink to="/discography">Discography</MenuLink></MenuLi>
+                    <MenuLi><MenuLink to="/contact">Contact</MenuLink></MenuLi>
+                </MenuUl>
+                <SnsContainer>
+                    <SnsLink href="#"><SnsIcon src={Twitter} /></SnsLink>
+                    <SnsLink href="#"><SnsIcon src={Instagram} /></SnsLink>
+                    <SnsLink href="#"><SnsIcon src={Youtube} /></SnsLink>
+                </SnsContainer>
+            </HeaderContainer>
+            {hamburger ? (
+                <HamburgerMenuContentContainer className="hidden">
+                    <HamburgerMenuContentTextContainer>
+                        <HamburgerMenuContentText><HamburgerMenuLink to="/">Home</HamburgerMenuLink></HamburgerMenuContentText>
+                        <HamburgerMenuContentText><HamburgerMenuLink to="/news">News</HamburgerMenuLink></HamburgerMenuContentText>
+                        <HamburgerMenuContentText><HamburgerMenuLink to="/live">Live</HamburgerMenuLink></HamburgerMenuContentText>
+                        <HamburgerMenuContentText><HamburgerMenuLink to="/discography">Discography</HamburgerMenuLink></HamburgerMenuContentText>
+                        <HamburgerMenuContentText><HamburgerMenuLink to="/contact">Contact</HamburgerMenuLink></HamburgerMenuContentText>
+                    </HamburgerMenuContentTextContainer>
+                    <HamburgerMenuSnsContainer>
+                        <HamburgerMenuSnsTextContainer>
+                            <HamburgerMenuSnsText>our sns </HamburgerMenuSnsText>
+                            <HamburgerMenuSnsBorder></HamburgerMenuSnsBorder>
+                        </HamburgerMenuSnsTextContainer>
+                        <HamburgerMenuSnsIconContainer>
+                            <HamburgerMenuSnsIconLink><HamburgerMenuSnsIcon src={TwitterOrange} /></HamburgerMenuSnsIconLink>
+                            <HamburgerMenuSnsIconLink><HamburgerMenuSnsIcon src={InstagramOrange} /></HamburgerMenuSnsIconLink>
+                            <HamburgerMenuSnsIconLink><HamburgerMenuSnsIcon src={YoutubeOrange} /></HamburgerMenuSnsIconLink>
+                        </HamburgerMenuSnsIconContainer>
+                    </HamburgerMenuSnsContainer>
+                    <HamburgerMenuCopyright>© 2021 retririon.</HamburgerMenuCopyright>
+                </HamburgerMenuContentContainer>
+            ):(
+                <HamburgerMenuContentContainer></HamburgerMenuContentContainer>
+            )}
+        </>
     )
 }
 
@@ -32,14 +84,18 @@ export default Header
 
 const HeaderContainer = styled.div`
     width: 100%;
-    height: 80px;
-    background-color: white;
+    height: 93px;
+    background-color: #fff;
     position: fixed;
     left: 0;
     top: 0;
     display: flex;
-    align-items: center;
+    justify-content: space-between;
+    align-items: end;
     z-index: 100;
+    @media screen and (min-width: 768px){
+        height: 100px;
+    }
     @media screen and (min-width: 900px) {
         background-color: white;
         width: 250px;
@@ -55,15 +111,197 @@ const HeaderContainer = styled.div`
     }
 `
 
+// HamburgerMenu
+
+const HamburgerMenuContainer = styled.div`
+    display: flex;
+    margin-bottom: 16px;
+    @media screen and (min-width: 900px){
+        display: none;
+    }
+`
+
+// HamburgerButtonContainer
+
+const HamburgerButtonContainer = styled.div`
+    position: relative;
+    width: 32px;
+    height: 18px;
+    margin-left: 32px;
+    @media screen and (min-width: 768px){
+        width: 48px;
+        height: 27px;
+    }
+`
+
+const HamburgerButtonLine = styled.span`
+    position: absolute;
+    left: 0;
+    width: 32px;
+    height: 3px;
+    background-color: #292929;
+    transition: all 0.3s;
+    &.line1{
+        top: 0;
+        &.transform{
+            transform: rotate(-25deg);
+            margin-top: 7.5px;
+        }
+    }
+    &.line2{
+        bottom: 0;
+        &.transform{
+            transform: rotate(25deg);
+            margin-bottom: 7.5px;
+        }
+    }
+    @media screen and (min-width: 768px){
+        width: 48px;
+        height: 4px;
+        &.line1{
+            &.transform{
+                transform: rotate(-25deg);
+                margin-top: 11px;
+            }
+        }
+        &.line2{
+            &.transform{
+                transform: rotate(25deg);
+                margin-bottom: 11px;
+            }
+        }
+    }
+`
+
+// HamburgerButtonText
+
+const HamburgerButtonText = styled.p`
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #292929;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 12px;
+    margin-bottom: 4px;
+    @media screen and (min-width: 768px){
+        font-size: 1.6rem;
+    }
+`
+
+// HamburgerMenuContentContainer
+
+const HamburgerMenuContentContainer = styled.div`
+    position: fixed;
+    top: 93px;
+    right: 100%;
+    width: 100%;
+    z-index: 100;
+    height: 100vh;
+    background-color: #fff;
+    transition: all 0.3s;
+    &.hidden{
+        right: 0;
+    }
+`
+
+const HamburgerMenuContentTextContainer = styled.ul`
+    margin: 40px 0 56px;
+`
+
+const HamburgerMenuContentText = styled.li`
+    margin-bottom: 16px;
+    margin-left: 24px;
+    @media screen and (min-width: 768px){
+        margin-left: 32px;
+    }
+`
+
+const HamburgerMenuLink = styled.a`
+    text-decoration: none;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #292929;
+    font-size: 2.0rem;
+    font-weight: 700;
+`
+
+// HamburgerMenuSnsContainer
+
+const HamburgerMenuSnsContainer = styled.div`
+    width: 150px;
+    margin: 0 24px 85px;
+    @media screen and (min-width: 768px){
+        margin: 0 32px 85px;
+    }
+`
+
+// HamburgerMenuSnsTextContainer
+
+const HamburgerMenuSnsTextContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+`
+
+const HamburgerMenuSnsText = styled.p`
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #292929;
+    font-size: 1.0rem;
+    font-weight: 700;
+`
+
+const HamburgerMenuSnsBorder = styled.div`
+    width: 97px;
+    height: 1px;
+    background-color: #000;
+    margin-top: 4px;
+`
+
+// HamburgerMenuSnsIconContainer
+
+const HamburgerMenuSnsIconContainer = styled.div`
+    display: flex;
+    justify-content: space-around;
+`
+
+const HamburgerMenuSnsIcon = styled.img`
+    width: 32px;
+    height: 30px;
+`
+
+const HamburgerMenuSnsIconLink = styled(Link)`
+    text-decoration: none;
+`
+
+// HamburgerMenuCopyright
+
+const HamburgerMenuCopyright = styled.p`
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #292929;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 24px;
+    @media screen and (min-width: 768px){
+        margin-left: 32px;
+    }
+`
+
 // ロゴ
 
 const LogoImage = styled.img`
     cursor: pointer;
-    width: 150px;
-    height: 64px;
-    margin-left: 32px;
+    width: 88px;
+    height: 37px;
+    margin-right: 24px;
+    @media screen and (min-width: 768px){
+        width: 150px;
+        height: 64px;
+        margin-right: 32px;
+    }
     @media screen and (min-width: 900px) {
-        margin: 64px 0 0
+        margin: 64px 0 0;
+        width: 150px;
+        height: 64px;
+        margin-left: 32px;
     } 
 `
 
