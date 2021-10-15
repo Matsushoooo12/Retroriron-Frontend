@@ -152,6 +152,14 @@ const コンポーネント名 = () => {
 
 <img width="1680" alt="スクリーンショット 2021-10-10 3 10 52" src="https://user-images.githubusercontent.com/66903388/136669707-c0ffd0d3-047e-4869-bb52-02a242366c92.png">
 
+### Tab
+
+---
+
+<img width="764" alt="スクリーンショット 2021-10-15 18 04 11" src="https://user-images.githubusercontent.com/66903388/137462315-c6be77c4-f22e-49d1-a397-42374828c62e.png">
+
+<img width="764" alt="スクリーンショット 2021-10-15 18 04 19" src="https://user-images.githubusercontent.com/66903388/137462375-919e307b-0edc-49f1-a766-1a57474c8655.png">
+
 ## News ページ
 
 ### PC
@@ -159,6 +167,14 @@ const コンポーネント名 = () => {
 ---
 
 <img width="1680" alt="スクリーンショット 2021-10-15 16 23 47" src="https://user-images.githubusercontent.com/66903388/137448836-fd3c9290-daa5-4901-b4e7-b9c9e4ef03c3.png">
+
+### Tab
+
+---
+
+<img width="764" alt="スクリーンショット 2021-10-15 18 04 24" src="https://user-images.githubusercontent.com/66903388/137462448-6a9b8675-f830-48a0-8889-8c2848725800.png">
+
+<img width="764" alt="スクリーンショット 2021-10-15 18 04 28" src="https://user-images.githubusercontent.com/66903388/137462485-679e3011-da0a-42ae-8df7-a22d64f1f532.png">
 
 ## Live ページ
 
@@ -188,6 +204,18 @@ const コンポーネント名 = () => {
 
 <img width="1680" alt="スクリーンショット 2021-10-15 16 24 24" src="https://user-images.githubusercontent.com/66903388/137449190-c76577f7-847b-40fb-b88e-95836b38ca2e.png">
 
+### Tab
+
+---
+
+<img width="764" alt="スクリーンショット 2021-10-15 18 04 32" src="https://user-images.githubusercontent.com/66903388/137462613-7b0ca3fa-013f-4651-a6c5-7a7c1c4cc4b3.png">
+
+## ChicketForm
+
+---
+
+<img width="764" alt="スクリーンショット 2021-10-15 18 04 37" src="https://user-images.githubusercontent.com/66903388/137462700-a2702ef2-d6b5-44fd-8f43-8c4669e3543b.png">
+
 ## Discography ページ
 
 ### PC
@@ -195,6 +223,10 @@ const コンポーネント名 = () => {
 ---
 
 <img width="1680" alt="スクリーンショット 2021-10-15 16 24 34" src="https://user-images.githubusercontent.com/66903388/137449279-3151bcd1-58b8-4995-a6d0-f541cdf3c969.png">
+
+### Tab
+
+<img width="764" alt="スクリーンショット 2021-10-15 18 04 42" src="https://user-images.githubusercontent.com/66903388/137462761-32d93381-89aa-49c2-8cff-3bd521600b27.png">
 
 ## Contact ページ
 
@@ -219,3 +251,13 @@ const コンポーネント名 = () => {
 ---
 
 <img width="1680" alt="スクリーンショット 2021-10-15 16 26 18" src="https://user-images.githubusercontent.com/66903388/137449492-d16f12e1-ec6a-40a2-a2ae-8aa319f99101.png">
+
+### Tab
+
+---
+
+#### ContactForm
+
+---
+
+<img width="764" alt="スクリーンショット 2021-10-15 18 04 46" src="https://user-images.githubusercontent.com/66903388/137462832-30b23c92-0fc7-4a0f-8a8a-2a6b29c5b656.png">

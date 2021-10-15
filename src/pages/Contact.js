@@ -105,6 +105,13 @@ export default Contact
 const ContactContainer = styled.div`
     margin-top: 64px;
     width: 85%;
+    margin-left: 50px;
+    @media screen and (min-width: 1024px){
+        margin-left: 80px;
+    }
+    @media screen and (min-width: 1150px){
+        margin-left: 100px;
+    }
     @media screen and (min-width: 1260px){
         margin-left: 150px;
     }

@@ -42,13 +42,17 @@ const HeaderContainer = styled.div`
     z-index: 100;
     @media screen and (min-width: 900px) {
         background-color: white;
-        width: 314px;
+        width: 250px;
+        height: 100%;
         position: fixed;
         left: 0;
         top: 0;
         display: block;
         text-align: center
     } 
+    @media screen and (min-width: 1150px){
+        width: 314px;
+    }
 `
 
 // ロゴ

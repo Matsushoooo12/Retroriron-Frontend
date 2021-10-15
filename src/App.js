@@ -28,8 +28,6 @@ function App() {
               <Route exact path="/discography" component={Discography} />
               <Route exact path="/contact" component={Contact} />
               <Route exact path="/event" component={Event} />
-              <Route exact path="/contact/confirm" component={ContactConfirm} />
-              <Route exact path="contact/complete" component={ContactComplete} />
             </Switch>
         </MainContainer>
       </BrowserRouter>
@@ -50,7 +48,10 @@ const Container = styled.div`
 const MainContainer = styled.div`
   @media screen and (min-width: 900px) {
     position: relative;
-    left: 314px;
+    left: 250px;
     top: 0;
+  }
+  @media screen and (min-width: 1150px){
+    left: 314px;
   }
 `

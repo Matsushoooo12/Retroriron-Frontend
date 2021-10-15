@@ -73,11 +73,11 @@ const DiscographyContainer = styled.div`
 // DiscographyItemContainer
 
 const DiscographyItemContainer = styled.div`
-    width: 65vw;
+    width: 74vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    @media screen and (min-width: 1350px){
+    @media screen and (min-width: 1150px){
         width: 72vw;
     }
     @media screen and (min-width: 1515px){
