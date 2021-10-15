@@ -12,6 +12,7 @@ import News from './pages/News';
 import Discography from './pages/Discography';
 import Contact from './pages/Contact';
 import Event from './components/Event'
+import './components/common/reset.css'
 
 function App() {
   return (
