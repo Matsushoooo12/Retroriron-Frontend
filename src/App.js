@@ -12,8 +12,6 @@ import News from './pages/News';
 import Discography from './pages/Discography';
 import Contact from './pages/Contact';
 import Event from './components/Event'
-import ContactConfirm from './pages/ContactConfirm';
-import ContactComplete from './pages/ContactComplete';
 
 function App() {
   return (

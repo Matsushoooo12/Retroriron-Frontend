@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from '@emotion/styled';
-import Minus from '../images/close-btn.png'
 
 const ChicketComplete = ({values}) => {
     const handleClick = () => {
