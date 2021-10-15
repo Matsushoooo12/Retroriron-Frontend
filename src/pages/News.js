@@ -29,11 +29,7 @@ const News = () => {
 
     const [content, setContent] = useState(null)
     const toggleAccordion = (i) => {
-        if(content === i){
-            setContent(null)
-        } else{
-            setContent(i);
-        }
+        return () => setContent(content === i ? null : i)
     };
 
     // Date
@@ -51,15 +47,15 @@ const News = () => {
                     <NewsItemContainer key={i}>
                         <NewsItemOtherContainer>
                             {now.subtract(2, 'weeks') < moment(item.date) ? (
-                                <NewsTagText>News</NewsTagText>
+                                <NewsTagText>New</NewsTagText>
                             ):(
-                                <NewsTagText className="hidden">News</NewsTagText>
+                                <NewsTagText className="hidden">New</NewsTagText>
                             )}
                             <NewsDate>{moment(item.date).format("YYYY.MM.DD")}</NewsDate>
-                            <NewsButton className={content === i ? "active" : ""} src={content === i ? Minus : Plus} onClick={() => toggleAccordion(i)} />
+                            <NewsButton className={content === i ? "active" : ""} src={content === i ? Minus : Plus} onClick={toggleAccordion(i)} />
                         </NewsItemOtherContainer>
                         <NewsContentsContainer>
-                            <NewsTitle onClick={() => toggleAccordion(i)} className={content === i ? "active" : ""}>{item.title}</NewsTitle>
+                            <NewsTitle onClick={toggleAccordion(i)} className={content === i ? "active" : ""}>{item.title}</NewsTitle>
                             <NewsText className={content === i ? "active" : ""}>
                                 {item.content}
                                 <NewsImage className={item.imageVertical ? "vertical" : ""} src={process.env.REACT_APP_DEV_API_URL + item.image.url} />

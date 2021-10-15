@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Helmet from 'react-helmet';
 import styled from '@emotion/styled';
 import { useForm } from 'react-hook-form';
-import ContactConfirm from './ContactConfirm';
+import ContactConfirm from '../components/contact/ContactConfirm';
 
 const Contact = () => {
     // useForm

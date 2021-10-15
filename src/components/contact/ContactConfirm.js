@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from '@emotion/styled';
-import { createContact } from '../api';
+import { createContact } from '../../api';
 import ContactComplete from './ContactComplete';
 
 const ContactConfirm = (props) => {

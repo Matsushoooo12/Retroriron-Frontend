@@ -52,11 +52,11 @@ const Header = () => {
             {hamburger ? (
                 <HamburgerMenuContentContainer className="hidden">
                     <HamburgerMenuContentTextContainer>
-                        <HamburgerMenuContentText><HamburgerMenuLink to="/">Home</HamburgerMenuLink></HamburgerMenuContentText>
-                        <HamburgerMenuContentText><HamburgerMenuLink to="/news">News</HamburgerMenuLink></HamburgerMenuContentText>
-                        <HamburgerMenuContentText><HamburgerMenuLink to="/live">Live</HamburgerMenuLink></HamburgerMenuContentText>
-                        <HamburgerMenuContentText><HamburgerMenuLink to="/discography">Discography</HamburgerMenuLink></HamburgerMenuContentText>
-                        <HamburgerMenuContentText><HamburgerMenuLink to="/contact">Contact</HamburgerMenuLink></HamburgerMenuContentText>
+                        <HamburgerMenuContentText><HamburgerMenuLink href="/">Home</HamburgerMenuLink></HamburgerMenuContentText>
+                        <HamburgerMenuContentText><HamburgerMenuLink href="/news">News</HamburgerMenuLink></HamburgerMenuContentText>
+                        <HamburgerMenuContentText><HamburgerMenuLink href="/live">Live</HamburgerMenuLink></HamburgerMenuContentText>
+                        <HamburgerMenuContentText><HamburgerMenuLink href="/discography">Discography</HamburgerMenuLink></HamburgerMenuContentText>
+                        <HamburgerMenuContentText><HamburgerMenuLink href="/contact">Contact</HamburgerMenuLink></HamburgerMenuContentText>
                     </HamburgerMenuContentTextContainer>
                     <HamburgerMenuSnsContainer>
                         <HamburgerMenuSnsTextContainer>
@@ -301,7 +301,6 @@ const LogoImage = styled.img`
         margin: 64px 0 0;
         width: 150px;
         height: 64px;
-        margin-left: 32px;
     } 
 `
 

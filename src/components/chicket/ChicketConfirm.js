@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from '@emotion/styled';
-import { createChicket } from '../api';
+import { createChicket } from '../../api';
 import ChicketComplete from './ChicketComplete';
 
 const ChicketConfirm = (props) => {

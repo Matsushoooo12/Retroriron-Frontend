@@ -19,14 +19,14 @@ function App() {
       <BrowserRouter>
         <Header />
         <MainContainer>
-            <Switch>
+          <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/news" component={News} />
               <Route exact path="/live" component={Live} />
               <Route exact path="/discography" component={Discography} />
               <Route exact path="/contact" component={Contact} />
               <Route exact path="/event" component={Event} />
-            </Switch>
+          </Switch>
         </MainContainer>
       </BrowserRouter>
     </Container>

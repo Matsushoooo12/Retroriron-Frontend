@@ -6,7 +6,7 @@ import Plus from '../images/open-btn.png'
 import Minus from '../images/close-btn.png'
 import { getLive } from '../api';
 import { useForm } from 'react-hook-form';
-import ChicketConfirm from './ChicketConfirm';
+import ChicketConfirm from '../components/chicket/ChicketConfirm';
 
 const Live = () => {
     // useForm
@@ -61,11 +61,7 @@ const Live = () => {
     const [content, setContent] = useState(null)
 
     const toggleAccordion = (i) => {
-        if(content === i ){
-            setContent(null)
-        } else{
-            setContent(i);
-        }
+        return () => setContent(content === i ? null : i)
     };
 
     // Date
@@ -86,14 +82,14 @@ const Live = () => {
                         <LiveInfoContainer>
                             <LiveDate>{moment(item.date).format("YYYY.MM.DD")}</LiveDate>
                             {item.detail ? (
-                                <LiveButton className={content === i ? "active" : ""} src={content === i ? Minus : Plus} onClick={() => toggleAccordion(i)} />
+                                <LiveButton className={content === i ? "active" : ""} src={content === i ? Minus : Plus} onClick={toggleAccordion(i)} />
                             ):(
                                 <LiveButton className="cursor-default" src={Plus} />
                             )}
                             <LiveContentsContainer>
                                 <LiveTitleContainer>
                                     {item.detail ? (
-                                        <LiveTitle className={content === i ? "active" : ""} onClick={() => toggleAccordion(i)}>{item.title}</LiveTitle>
+                                        <LiveTitle className={content === i ? "active" : ""} onClick={toggleAccordion(i)}>{item.title}</LiveTitle>
                                     ):(
                                         <LiveTitle className="cursor-default">{item.title}</LiveTitle>
                                     )}
