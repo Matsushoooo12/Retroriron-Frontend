@@ -32,6 +32,12 @@ const Live = () => {
         open: false
     })
 
+    const handleClick = () => {
+        setChicketValue({open: false})
+        // eslint-disable-next-line no-restricted-globals
+        return location.reload()
+    }
+
     // API
 
     const [lives, setLives] = useState([])
@@ -120,7 +126,7 @@ const Live = () => {
                 <ModalContainer
                     className={chicketValue.open ? "open" : ""}
                 >
-                    <ModalBack onClick={() => setChicketValue({open: false})}></ModalBack>
+                    <ModalBack onClick={handleClick}></ModalBack>
                     {!isConfirmationVisible ? (
                         <ChicketItemContainer>
                             <ChicketTitle>チケット予約フォーム</ChicketTitle>
