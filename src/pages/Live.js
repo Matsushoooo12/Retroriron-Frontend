@@ -35,7 +35,7 @@ const Live = () => {
     const handleClick = () => {
         setChicketValue({open: false})
         // eslint-disable-next-line no-restricted-globals
-        return location.reload()
+        location.reload()
     }
 
     // API
