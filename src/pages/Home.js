@@ -26,7 +26,7 @@ const Home = () => {
                     <BandTitleBlock src={BandTitle} />
                     <BandTextBlock>
                         <BandTextH1>
-                            ー  "明日"ではなく<BandTitleBr/>"今日"を生きよう 
+                            ー  "明日"ではなく<BandTitleBr/><BandTitleSpace>　 </BandTitleSpace>"今日"を生きよう 
                         </BandTextH1>
                         <BandTextPBlock>
                             <BandTextP>
@@ -211,6 +211,12 @@ const BandTextH1 = styled.h1`
 `
 
 const BandTitleBr = styled.br`
+    @media screen and (min-width: 768px){
+        display: none;
+    }
+`
+
+const BandTitleSpace = styled.span`
     @media screen and (min-width: 768px){
         display: none;
     }
