@@ -26,7 +26,7 @@ const Home = () => {
                     <BandTitleBlock src={BandTitle} />
                     <BandTextBlock>
                         <BandTextH1>
-                            ー  "明日"ではなく<br/>"今日"を生きよう 
+                            ー  "明日"ではなく<BandTitleBr/>"今日"を生きよう 
                         </BandTextH1>
                         <BandTextPBlock>
                             <BandTextP>
@@ -198,14 +198,24 @@ const BandTextBlock = styled.div`
 `
 
 const BandTextH1 = styled.h1`
-    font-size: 2.4rem;
+    font-size: 2.0rem;
     font-weight: 700;
     font-family: 'Noto Sans JP', sans-serif;
     color: #292929;
     margin-left: 80px;
     margin-right: 24px;
     line-height: 3.2rem;
+    @media screen and (min-width: 768px){
+        font-size: 2.4rem;
+    }
 `
+
+const BandTitleBr = styled.br`
+    @media screen and (min-width: 768px){
+        display: none;
+    }
+`
+
 
 const BandTextPBlock = styled.div`
     margin-top: 32px;

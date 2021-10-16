@@ -285,12 +285,14 @@ const HamburgerMenuSnsIconLink = styled(Link)`
 
 const HamburgerMenuCopyright = styled.p`
     display: block;
-    margin-left: 56px;
     font-family: 'Noto Sans JP', sans-serif;
     color: #292929;
     font-size: 1.2rem;
     font-weight: 700;
     margin-left: 24px;
+    @media screen and (min-width: 768px){
+        margin-left: 56px;
+    }
 `
 
 // ロゴ
