@@ -253,7 +253,7 @@ const BandTextP = styled.p`
 
 const BandMemberContainer = styled.div`
     text-align: center;
-    width: 200px;
+    width: 60%;
     margin-left: 80px;
     text-align: left;
     @media screen and (min-width: 768px){
