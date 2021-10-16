@@ -81,6 +81,25 @@ const Live = () => {
                     <LiveItemContainer key={i}>
                         <LiveInfoContainer>
                             <LiveDate>{moment(item.date).format("YYYY.MM.DD")}</LiveDate>
+                            <SpLiveTitleContainer>
+                                <SpLiveDate>{moment(item.date).format("YYYY.MM.DD")}</SpLiveDate>
+                                <SpLiveTitle className={content === i ? "active" : ""} onClick={toggleAccordion(i)}>{item.title}</SpLiveTitle>
+                                {now < moment(item.date) ? (
+                                    <LiveChicketButton className="sp">チケットをご希望の方はこちら</LiveChicketButton>
+                                ):(
+                                    <LiveFinish className="finish sp">終了</LiveFinish>
+                                )}
+                                <SpLiveContentsContainer className={content === i ? "active" : ""}>
+                                    <LiveTextContainer className="sp">
+                                        <LiveText>開場時間 | {moment(item.openTime).add(15, "H").format("HH:mm")}   開演時間 | {moment(item.startTime).add(15, "H").format("HH:mm")}</LiveText>
+                                        <LiveText>場所 | {item.place}</LiveText>
+                                        <LiveText>料金 | {item.price}</LiveText>
+                                        <LiveText>出演者 | {item.performer}</LiveText>
+                                    </LiveTextContainer>
+                                    <LiveImage className={item.imageVertical ? "vertical sp" : "sp"} src={process.env.REACT_APP_DEV_API_URL + item.image.url} />
+                                </SpLiveContentsContainer>
+                            </SpLiveTitleContainer>
+                            <SpLiveButton className={content === i ? "active" : ""} src={content === i ? Minus : Plus} onClick={toggleAccordion(i)} />
                             {item.detail ? (
                                 <LiveButton className={content === i ? "active" : ""} src={content === i ? Minus : Plus} onClick={toggleAccordion(i)} />
                             ):(
@@ -205,34 +224,56 @@ export default Live
 const LiveContainer = styled.ul`
     width: 100%;
     height: 100%;
-    margin-top: 80px;
+    margin-top: 100px;
+    @media screen and (min-width: 900px){
+        margin-top: 80px;
+    }
 `
 
 // LiveItemContainer
 
 const LiveItemContainer = styled.li`
-    width: 64vw;
+    width: 70vw;
     border-top: 1px solid #BEBEBE;
-    margin: 0 auto;
-    padding: 24px 0;
+    margin-left: 64px;
+    padding: 16px 0;
     display: flex;
     justify-content: space-between;
+    @media screen and (min-width: 900px){
+        padding: 24px 0;
+        width: 64vw;
+    }
 `
 
 // LiveInfoContainer
 
 const LiveInfoContainer = styled.div`
     display: flex;
+    flex-direction: row-reverse;
+    @media screen and (min-width: 900px){
+        flex-direction: initial;
+    }
 `
 
 const LiveImage = styled.img`
-    display: block;
-    width: 200px;
-    height: 100%;
-    margin-left: 24px;
+    display: none;
+    &.sp{
+        display: block;
+        width: 200px;
+    }
     &.vertical{
         width: 160px;
         height: 200px;
+    }
+    @media screen and (min-width: 900px){
+        display: block;
+        width: 200px;
+        height: 100%;
+        margin-left: 24px;
+        &.vertical{
+            width: 160px;
+            height: 200px;
+        }
     }
 `
 
@@ -242,23 +283,94 @@ const LiveDate = styled.p`
     font-family: 'Noto Sans JP', sans-serif;
     color: #292929;
     margin-top: 6px;
-    margin-right: 24px;
+    margin-left: 24px;
+    display: none;
+    @media screen and (min-width: 900px){
+        margin-right: 24px;
+        display: block;
+    }
 `
 
 const LiveButton = styled.img`
     width: 14px;
     height: 14px;
-    margin-top: 8px;
-    margin-right: 14px;
+    cursor: pointer;
+    margin-top: 2px;
+    &.cursor-default{
+        cursor: default;
+    }
+    display: none;
+    @media screen and (min-width: 900px){
+        display: none;
+        margin-right: 14px;
+        margin-top: 8px;
+    }
+`
+
+// SP dateAndTitleContainer
+
+const SpLiveTitleContainer = styled.div`
+    display: block;
+    margin-left: 24px;
+    @media screen and (min-width: 900px){
+        display: none;
+    }
+`
+
+const SpLiveTitle = styled.a`
+    font-size: 1.4rem;
+    font-weight: 700;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #292929;
     cursor: pointer;
     &.cursor-default{
         cursor: default;
+    }
+    @media screen and (min-width: 900px){
+        font-size: 2.0rem;
+    }
+`
+
+const SpLiveDate = styled.p`
+    font-size: 1.0rem;
+    font-weight: 700;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #292929;
+    margin-bottom: 4px;
+`
+
+const SpLiveButton = styled.img`
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    margin-top: 2px;
+    &.cursor-default{
+        cursor: default;
+    }
+    display: block;
+    @media screen and (min-width: 900px){
+        display:none
+    }
+`
+
+// SpLiveDetailContainer
+
+const SpLiveContentsContainer = styled.div`
+    height: 100%;
+    display: none;
+    margin-top: 16px;
+    &.active{
+        display: block;
     }
 `
 
 // LiveContentsContainer
 
 const LiveContentsContainer = styled.div`
+    display: none;
+    @media screen and (min-width: 900px){
+        display; block;
+    }
 `
 
 // LiveTitleContainer
@@ -276,35 +388,68 @@ const LiveTitle = styled.a`
     &.cursor-default{
         cursor: default;
     }
+    display: none;
+    @media screen and (min-width: 900px){
+        display: block;
+    }
 `
 
 const LiveTextContainer = styled.div`
-    margin-top: 8px;
+    display: none;
     margin-bottom: 16px;
+    &.sp{
+        display: block;
+    }
+    @media screen and (min-width: 900px){
+        margin-top: 8px;
+        display: block;
+    }
 `
 
 const LiveText = styled.p`
-    font-size: 1.6rem;
-    font-weight: 700;
+    font-size: 1.4rem;
+    font-weight: 500;
     font-family: 'Noto Sans JP', sans-serif;
     color: #292929;
     line-height: 2.4rem;
     margin-bottom: 4px;
     white-space: pre-wrap;
+    @media screen and (min-width: 900px){
+        font-size: 1.6rem;
+        font-weight: 700;
+    }
 `
 
 // LiveChicketButton
 
 const LiveChicketButton = styled.a`
-    display: inline-block;
-    font-size: 1.6rem;
-    font-weight: 700;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: #fff;
-    background-color: #F1A01A;
-    padding: 10px 16px;
-    border-radius: 7px;
-    cursor: pointer;
+    display: none;
+    &.sp{
+        display: inline-block;
+        font-size: 1.0rem;
+        font-weight: 700;
+        font-family: 'Noto Sans JP', sans-serif;
+        color: #fff;
+        background-color: #F1A01A;
+        padding: 8px 16px;
+        border-radius: 7px;
+        cursor: pointer;
+        margin-top: 16px;
+        @media screen and (min-width: 321px){
+            font-size: 1.2rem;
+        }
+    }
+    @media screen and (min-width: 900px){
+        display: inline-block;
+        font-size: 1.6rem;
+        font-weight: 700;
+        font-family: 'Noto Sans JP', sans-serif;
+        color: #fff;
+        background-color: #F1A01A;
+        padding: 10px 16px;
+        border-radius: 7px;
+        cursor: pointer;
+    }
 `
 
 // LiveDetailText
@@ -338,6 +483,12 @@ const LiveFinish =  styled.div`
         padding: 3px 8px;
         border-radius: 3px;
         margin-left: 16px;
+    }
+    &.sp{
+        margin-top: 16px;
+        margin-left: 0;
+        width: 40px;
+        height: 24px;
     }
 `
 
