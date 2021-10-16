@@ -82,10 +82,10 @@ const Live = () => {
                         <LiveInfoContainer>
                             <LiveDate>{moment(item.date).format("YYYY.MM.DD")}</LiveDate>
                             <SpLiveTitleContainer>
-                                <SpLiveDate>{moment(item.date).format("YYYY.MM.DD")}</SpLiveDate>
+                                <SpLiveDate className={content === i ? "active" : ""} onClick={toggleAccordion(i)}>{moment(item.date).format("YYYY.MM.DD")}</SpLiveDate>
                                 <SpLiveTitle className={content === i ? "active" : ""} onClick={toggleAccordion(i)}>{item.title}</SpLiveTitle>
                                 {now < moment(item.date) ? (
-                                    <LiveChicketButton className="sp">チケットをご希望の方はこちら</LiveChicketButton>
+                                    <LiveChicketButton className="sp" onClick={() => setChicketValue({dateAndTitle: item.date + "    " + item.title, open: true})}>チケットをご希望の方はこちら</LiveChicketButton>
                                 ):(
                                     <LiveFinish className="finish sp">終了</LiveFinish>
                                 )}
@@ -106,6 +106,7 @@ const Live = () => {
                                 <LiveButton className="cursor-default" src={Plus} />
                             )}
                             <LiveContentsContainer>
+                                <LiveDate className="tab">{moment(item.date).format("YYYY.MM.DD")}</LiveDate>
                                 <LiveTitleContainer>
                                     {item.detail ? (
                                         <LiveTitle className={content === i ? "active" : ""} onClick={toggleAccordion(i)}>{item.title}</LiveTitle>
@@ -125,7 +126,7 @@ const Live = () => {
                                     <LiveText>出演者 | {item.performer}</LiveText>
                                 </LiveTextContainer>
                                 {now < moment(item.date) ? (
-                                    <LiveChicketButton onClick={() => setChicketValue({dateAndTitle: item.date + "    " + item.title, open: true})}>チケットをご希望の方はこちら</LiveChicketButton>
+                                    <LiveChicketButton className="tab" onClick={() => setChicketValue({dateAndTitle: item.date + "    " + item.title, open: true})}>チケットをご希望の方はこちら</LiveChicketButton>
                                 ):(
                                     <></>
                                 )}
@@ -239,6 +240,10 @@ const LiveItemContainer = styled.li`
     padding: 16px 0;
     display: flex;
     justify-content: space-between;
+    @media screen and (min-width: 768px){
+        margin: 0 auto;
+        width: 64vw;
+    }
     @media screen and (min-width: 900px){
         padding: 24px 0;
         width: 64vw;
@@ -250,7 +255,7 @@ const LiveItemContainer = styled.li`
 const LiveInfoContainer = styled.div`
     display: flex;
     flex-direction: row-reverse;
-    @media screen and (min-width: 900px){
+    @media screen and (min-width: 768px){
         flex-direction: initial;
     }
 `
@@ -259,13 +264,13 @@ const LiveImage = styled.img`
     display: none;
     &.sp{
         display: block;
-        width: 200px;
+        width: 160px;
     }
     &.vertical{
-        width: 160px;
-        height: 200px;
+        width: 128px;
+        height: 160px;
     }
-    @media screen and (min-width: 900px){
+    @media screen and (min-width: 768px){
         display: block;
         width: 200px;
         height: 100%;
@@ -285,7 +290,15 @@ const LiveDate = styled.p`
     margin-top: 6px;
     margin-left: 24px;
     display: none;
+    &.tab{
+        display: block;
+        margin-left: 0;
+        margin-bottom: 4px;
+    }
     @media screen and (min-width: 900px){
+        &.tab{
+            display: none;
+        }
         margin-right: 24px;
         display: block;
     }
@@ -300,8 +313,8 @@ const LiveButton = styled.img`
         cursor: default;
     }
     display: none;
-    @media screen and (min-width: 900px){
-        display: none;
+    @media screen and (min-width: 768px){
+        display: block;
         margin-right: 14px;
         margin-top: 8px;
     }
@@ -312,7 +325,7 @@ const LiveButton = styled.img`
 const SpLiveTitleContainer = styled.div`
     display: block;
     margin-left: 24px;
-    @media screen and (min-width: 900px){
+    @media screen and (min-width: 768px){
         display: none;
     }
 `
@@ -337,6 +350,7 @@ const SpLiveDate = styled.p`
     font-family: 'Noto Sans JP', sans-serif;
     color: #292929;
     margin-bottom: 4px;
+    cursor: pointer;
 `
 
 const SpLiveButton = styled.img`
@@ -348,8 +362,8 @@ const SpLiveButton = styled.img`
         cursor: default;
     }
     display: block;
-    @media screen and (min-width: 900px){
-        display:none
+    @media screen and (min-width: 768px){
+        display: none;
     }
 `
 
@@ -368,8 +382,13 @@ const SpLiveContentsContainer = styled.div`
 
 const LiveContentsContainer = styled.div`
     display: none;
+    @media screen and (min-width: 768px){
+        display: block;
+        width: 240px;
+    }
     @media screen and (min-width: 900px){
-        display; block;
+        display: block;
+        width: 100%;
     }
 `
 
@@ -385,11 +404,12 @@ const LiveTitle = styled.a`
     font-family: 'Noto Sans JP', sans-serif;
     color: #292929;
     cursor: pointer;
+    word-break: break-all;
     &.cursor-default{
         cursor: default;
     }
     display: none;
-    @media screen and (min-width: 900px){
+    @media screen and (min-width: 768px){
         display: block;
     }
 `
@@ -400,7 +420,7 @@ const LiveTextContainer = styled.div`
     &.sp{
         display: block;
     }
-    @media screen and (min-width: 900px){
+    @media screen and (min-width: 768px){
         margin-top: 8px;
         display: block;
     }
@@ -414,7 +434,7 @@ const LiveText = styled.p`
     line-height: 2.4rem;
     margin-bottom: 4px;
     white-space: pre-wrap;
-    @media screen and (min-width: 900px){
+    @media screen and (min-width: 768px){
         font-size: 1.6rem;
         font-weight: 700;
     }
@@ -435,11 +455,12 @@ const LiveChicketButton = styled.a`
         border-radius: 7px;
         cursor: pointer;
         margin-top: 16px;
-        @media screen and (min-width: 321px){
-            font-size: 1.2rem;
-        }
     }
-    @media screen and (min-width: 900px){
+    @media screen and (min-width: 321px){
+        font-size: 1.2rem;
+    }
+    @media screen and (min-width: 768px){
+        display: block;
         display: inline-block;
         font-size: 1.6rem;
         font-weight: 700;
@@ -449,6 +470,11 @@ const LiveChicketButton = styled.a`
         padding: 10px 16px;
         border-radius: 7px;
         cursor: pointer;
+        &.tab{
+            display: block;
+            width: 200px;
+            font-size: 1.2rem;
+        }
     }
 `
 
@@ -464,6 +490,7 @@ const LiveDetailText = styled.p`
     white-space: pre-wrap;
     margin-top: 16px;
     display: none;
+    word-break: break-all;
     &.active{
         display: block;
     }
@@ -490,6 +517,11 @@ const LiveFinish =  styled.div`
         width: 40px;
         height: 24px;
     }
+    @media screen and (min-width: 768px){
+        width: 50px;
+        height: 24px;
+        margin-left: 0;
+    }
 `
 
 // ModalContainer
@@ -509,7 +541,7 @@ const ModalBack = styled.div`
     top: 0;
     left: 0;
     z-index: 200;
-    background-color: rgba(0, 0, 0, 0.7)
+    background-color: rgba(0, 0, 0, 0.7);
 `
 
 // ChicketFormContainer

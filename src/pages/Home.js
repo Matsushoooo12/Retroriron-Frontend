@@ -175,7 +175,7 @@ const BandIntroduceContainer = styled.div`
     @media screen and (min-width: 768px){
         width: 550px;
         margin-left: 32px;
-        margin: 64px auto;
+        margin: 64px 0 64px 120px;
     }
     @media screen and (min-width: 900px){
         margin: 68px 0 0;
@@ -207,6 +207,7 @@ const BandTextH1 = styled.h1`
     line-height: 3.2rem;
     @media screen and (min-width: 768px){
         font-size: 2.4rem;
+        margin-left: 0;
     }
 `
 
@@ -255,10 +256,15 @@ const BandMemberContainer = styled.div`
     width: 200px;
     margin-left: 80px;
     text-align: left;
+    @media screen and (min-width: 768px){
+        margin-left: 120px;
+        width: auto;
+    }
     @media screen and (min-width: 900px){
         text-align: left;
         margin-top: 152px;
         width: 100%;
+        margin-left: 0;
     }
 `
 
@@ -335,10 +341,8 @@ const MemberSnsContainer = styled.div`
     display: flex;
     justify-content: start;
     @media screen and (min-width: 1000px){
-        margin-top: 24px;
-    }
-    @media screen and (min-width: 1000px){
         justify-content: left;
+        margin-top: 24px;
     }
 `
 

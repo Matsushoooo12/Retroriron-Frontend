@@ -89,11 +89,14 @@ const NewsItemContainer = styled.li`
     margin-left: 64px;
     padding: 16px 0;
     display: block;
+    @media screen and (min-width: 768px){
+        margin: 0 auto;
+    }
     @media screen and (min-width: 900px){
         width: 64vw;
         display: flex;
         padding: 24px 0;
-        align-items: start
+        align-items: start;
     }
 `
 
@@ -196,11 +199,18 @@ const NewsText = styled.p`
 
 const NewsImage = styled.img`
     display: block;
-    width: 200px;
+    width: 160px;
     height: 100%;
     margin-top: 16px;
     &.vertical{
-        width: 150px;
-        height: 200px;
+        width: 128px;
+        height: 160px;
+    }
+    @media screen and (min-width: 768px){
+        width: 200px;
+        &.vertical{
+            width: 160px;
+            height: 200px;
+        }
     }
 `
