@@ -4,12 +4,29 @@ import Logo from '../../images/logo.PNG'
 import Twitter from '../../images/twitter.png'
 import Instagram from '../../images/instagram.png'
 import Youtube from '../../images/youtube.png'
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import TwitterOrange from '../../images/twitter-icon-orange.png'
 import InstagramOrange from '../../images/insta-icon-orange.png'
 import YoutubeOrange from '../../images/youtube-icon-orange.png'
 
 const Header = () => {
+
+    // URL取得
+    const location = useLocation();
+
+    const getLocation = () => {
+        if(location.pathname === "/"){
+            return "home"
+        } else if(location.pathname === "/news"){
+            return "news"
+        } else if(location.pathname === "/live"){
+            return "live"
+        } else if(location.pathname === "/discography"){
+            return "discography"
+        } else if(location.pathname === "/contact"){
+            return "contact"
+        }
+    }
 
     // Hamburger
     const [hamburger, setHamburger] = useState(false)
@@ -30,7 +47,7 @@ const Header = () => {
                         <HamburgerButtonLine className={!hamburger ? "line2":"line2 transform"} />
                     </HamburgerButtonContainer>
                     {!hamburger ? (
-                        <HamburgerButtonText>menu - home</HamburgerButtonText>
+                        <HamburgerButtonText>menu - {getLocation()}</HamburgerButtonText>
                     ):(
                         <HamburgerButtonText>close</HamburgerButtonText>
                     )}
