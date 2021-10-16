@@ -382,9 +382,16 @@ const SnsFixedContainer = styled.div`
     height: 32px;
     width: 263px;
     left: -90px;
-    top: 480px;
+    bottom: 150px;
     transform: rotate(90deg);
     align-items: center;
+    @media screen and (min-width: 361px){
+        top: 480px;
+    }
+    @media screen and (min-width: 768px){
+        top: 700px;
+        left: -60px;
+    }
     @media screen and (min-width: 900px){
         display: none;
     }
