@@ -75,18 +75,26 @@ export default News
 const NewsContainer = styled.ul`
     width: 100%;
     height: 100%;
-    margin-top: 80px;
+    margin-top: 100px;
+    @media screen and (min-width: 900px){
+        margin-top: 80px;
+    }
 `
 
 // NewsItemContainer
 
 const NewsItemContainer = styled.li`
-    width: 64vw;
+    width: 70vw;
     border-top: 1px solid #BEBEBE;
-    margin: 0 auto;
-    padding: 24px 0;
-    display: flex;
-    align-items: start
+    margin-left: 64px;
+    padding: 16px 0;
+    display: block;
+    @media screen and (min-width: 900px){
+        width: 64vw;
+        display: flex;
+        padding: 24px 0;
+        align-items: start
+    }
 `
 
 // NewsItemOtherContainer
@@ -94,6 +102,13 @@ const NewsItemContainer = styled.li`
 const NewsItemOtherContainer = styled.div`
     display: flex;
     align-items: start;
+    justify-content: start;
+    flex-direction: row-reverse;
+    margin-bottom: 4px;
+    @media screen and (min-width: 900px){
+        flex-direction: initial;
+        margin-bottom: 0;
+    }
 `
 
 // NewsTag
@@ -118,16 +133,25 @@ const NewsDate = styled.p`
     font-family: 'Noto Sans JP', sans-serif;
     color: #292929;
     margin-top: 3px;
+    margin-left: 24px;
+    margin-right: 8px;
+    @media screen and (min-width: 900px){
+        margin-left: 0;
+        margin-right: 0;
+    }
 `
 
 const NewsButton = styled.img`
     display: block;
     width: 14px;
     height: 14px;
-    margin-top: 6px;
-    margin-left: 32px;
-    margin-right: 32px;
+    margin-top: 4px;
     cursor: pointer;
+    @media screen and (min-width: 900px){
+        margin-left: 32px;
+        margin-right: 32px;
+        margin-top: 6px;
+    }
 `
 
 // NewsContentsContainer
@@ -135,6 +159,10 @@ const NewsButton = styled.img`
 const NewsContentsContainer = styled.div`
     display: block;
     width: 100%;
+    padding-left: 38px;
+    @media screen and (min-width: 900px){
+        padding-left: 0;
+    }
 `
 
 const NewsTitle = styled.a`
@@ -143,6 +171,7 @@ const NewsTitle = styled.a`
     font-family: 'Noto Sans JP', sans-serif;
     color: #292929;
     cursor: pointer;
+    line-height: 2.4rem;
 `
 
 const NewsText = styled.p`
@@ -155,9 +184,13 @@ const NewsText = styled.p`
     margin-top: 16px;
     margin-bottom: 16px;
     white-space: pre-wrap;
-    margin-right: 16px;
+    word-break: break-all;
+    transition: all 0.3s;
     &.active{
         display: block;
+    }
+    @media screen and (min-width: 900px){
+        margin-right: 16px;
     }
 `
 
