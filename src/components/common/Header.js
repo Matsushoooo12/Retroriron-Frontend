@@ -116,7 +116,7 @@ const HeaderContainer = styled.div`
     top: 0;
     display: flex;
     justify-content: space-between;
-    align-items: end;
+    align-items: flex-end;
     z-index: 100;
     @media screen and (min-width: 768px){
         height: 100px;
