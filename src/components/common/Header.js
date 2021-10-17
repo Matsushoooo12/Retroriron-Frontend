@@ -109,7 +109,7 @@ export default Header
 
 const HeaderContainer = styled.div`
     width: 100%;
-    height: 93px;
+    height: 50px;
     background-color: #fff;
     position: fixed;
     left: 0;
