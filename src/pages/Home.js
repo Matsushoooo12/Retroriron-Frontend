@@ -279,10 +279,11 @@ const MemberImage = styled.img`
     width: 100%;
     margin-bottom: 16px;
     @media screen and (min-width: 768px){
-        width: 360px;
-        height: 250px;
+        width: 60%;
     }
     @media screen and (min-width: 1000px){
+        width: 360px;
+        height: 250px;
         margin: 0;
     }
 `

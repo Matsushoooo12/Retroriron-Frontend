@@ -103,11 +103,16 @@ export default Contact
 // ContactContainer
 
 const ContactContainer = styled.div`
-    margin-top: 64px;
-    width: 85%;
-    margin-left: 50px;
+    width: 80%;
+    margin: 100px auto 0;
+    @media screen and (min-width: 768px){
+        width: 60%;
+        margin: 110px auto 0;
+    }
     @media screen and (min-width: 1024px){
         margin-left: 80px;
+        width: 85%;
+        margin-top: 64px;
     }
     @media screen and (min-width: 1150px){
         margin-left: 100px;
@@ -122,7 +127,10 @@ const ContactContainer = styled.div`
 const ContactTextContainer = styled.div`
     border-bottom: 1px solid #BEBEBE;
     width: 100%;
-    margin-bottom: 72px;
+    margin-bottom: 28px;
+    @media screen and (min-width: 768px){
+        margin-bottom: 72px;
+    }
 `
 
 const ContactTitle = styled.h1`
@@ -153,7 +161,9 @@ const ContactTextCaution = styled.p`
 // ContactFormContainer
 
 const ContactFormContainer = styled.form`
-    margin-left: 16px;
+    @media screen and (min-width: 768px){
+        margin-left: 16px;
+    }
 `
 
 const ContactFormLabel = styled.label`
@@ -164,10 +174,17 @@ const ContactFormLabel = styled.label`
 `
 
 const ContactFormGroup = styled.div`
-    width: 80%;
+    width: 100%;
     margin-bottom: 16px;
+    margin: auto;
     &.right{
-        text-align: right;
+        text-align: center;
+    }
+    @media screen and (min-width: 768px){
+        margin-left: 16px;
+        &.right{
+            text-align: right;
+        }
     }
 `
 
@@ -192,9 +209,13 @@ const ContactFormTextField = styled.input`
     border: 1px solid #BEBEBE;
     border-radius: 7px;
     margin-top: 8px;
-    width: 93.5%;
+    margin-bottom: 16px;
+    width: 100%;
     &:focus{
         outline: none;
+    }
+    @media screen and (min-width: 768px){
+        margin-bottom: 0;
     }
 `
 
@@ -210,7 +231,7 @@ const ContactFormTextArea = styled.textarea`
     border: 1px solid #BEBEBE;
     border-radius: 7px;
     margin-top: 8px;
-    width: 93.5%;
+    width: 100%;
     resize: none;
     &:focus{
         outline: none;
@@ -228,6 +249,9 @@ const ContactFormSubmitButton = styled.input`
     border: none;
     border-radius: 6px;
     margin-top: 16px;
-    margin-bottom: 24px;
+    margin-bottom: 72px;
     cursor: pointer;
+    @media screen and (min-width: 768px){
+        margin-bottom: 24px;
+    }
 `

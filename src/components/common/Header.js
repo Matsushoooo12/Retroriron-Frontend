@@ -91,7 +91,7 @@ const Header = () => {
             ):(
                 <HamburgerMenuContentContainer></HamburgerMenuContentContainer>
             )}
-            <SnsFixedContainer>
+            <SnsFixedContainer className={location.pathname === "/contact" ? "" : "open"}>
                     <SnsFixedBorder></SnsFixedBorder>
                     <SnsFixedText>our sns</SnsFixedText>
                     <SnsFixedIconLink href="#"><SnsFixedIconImage src={TwitterOrange} /></SnsFixedIconLink>
@@ -394,8 +394,13 @@ const SnsLink = styled.a`
 // SP SNS固定
 
 const SnsFixedContainer = styled.div`
-    display: flex;
+    display: none;
+    &.open{
+        display: flex;
+    }
+    // display: flex;
     position: fixed;
+    z-index: 50;
     height: 32px;
     width: 263px;
     left: -90px;

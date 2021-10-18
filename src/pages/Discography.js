@@ -37,6 +37,27 @@ const Discography = () => {
                     {discographies.map((item, i) => (
                         <DiscographyInfoContainer key={i}>
                             <DiscographyDate>{moment(item.date).format("YYYY.MM.DD.")} Release</DiscographyDate>
+                            <DiscographyTitleContainer className="sp">
+                                <DiscographyTitle className={item.title.length > 18 ? "long" : ""}>{item.title}</DiscographyTitle>
+                            </DiscographyTitleContainer>
+                            {/* Sp */}
+                            <DiscographySpFlex>
+                                <DiscographyImageContainer className="sp">
+                                    <DiscographyImage src={process.env.REACT_APP_DEV_API_URL + item.image.url} />
+                                    <DiscographyImageTag>{item.tag}</DiscographyImageTag>
+                                </DiscographyImageContainer>
+                                <DiscographyLinkContainer className="sp">
+                                    <DiscographyLinkItemContainer className={item.mvLink ? "" : "hidden"} target="_blank" href={item.mvLink}>
+                                        <DiscographyLinkIcon src={MvIcon} />
+                                        <DiscographyLinkText>MVを見る</DiscographyLinkText>
+                                    </DiscographyLinkItemContainer>
+                                    <DiscographyLinkItemContainer className={item.subscriptionLink ? "" : "hidden"} target="_blank" href={item.subscriptionLink}>
+                                        <DiscographyLinkIcon src={SubscriptionIcon} />
+                                        <DiscographyLinkText>音楽を聴く</DiscographyLinkText>
+                                    </DiscographyLinkItemContainer>
+                                </DiscographyLinkContainer>
+                            </DiscographySpFlex>
+                            {/* Sp */}
                             <DiscographyImageContainer>
                                 <DiscographyImage src={process.env.REACT_APP_DEV_API_URL + item.image.url} />
                                 <DiscographyImageTag>{item.tag}</DiscographyImageTag>
@@ -67,16 +88,30 @@ export default Discography
 // DiscographyContainer
 
 const DiscographyContainer = styled.div`
-    margin-top: 80px;
+    margin-top: 100px;
+    @media screen and (min-width: 768px){
+        margin-top: 110px;
+    }
+    @media screen and (min-width: 900px){
+        margin-top: 80px;
+    }
 `
 
 // DiscographyItemContainer
 
 const DiscographyItemContainer = styled.div`
-    width: 74vw;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    width: 80%;
+    margin-left: 60px;
+    @media screen and (min-width: 768px){
+        width: 100vw;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-left: 0;
+    }
+    @media screen and (min-width: 1024px){
+        width: 74vw;
+    }
     @media screen and (min-width: 1150px){
         width: 72vw;
     }
@@ -88,11 +123,15 @@ const DiscographyItemContainer = styled.div`
 // DiscographyInfoContainer
 
 const DiscographyInfoContainer = styled.div`
-    width: 200px;
+    width: 100%;
     height: 100%;
-    margin-right: 23px;
-    margin-left: 23px;
-    margin-bottom: 48px;
+    margin-bottom: 32px;
+    @media screen and (min-width: 768px){
+        width: 200px;
+        margin-right: 23px;
+        margin-left: 23px;
+        margin-bottom: 48px;
+    }
 `
 
 const DiscographyDate = styled.p`
@@ -106,10 +145,22 @@ const DiscographyDate = styled.p`
 // DiscographyImageContainer
 
 const DiscographyImageContainer = styled.div`
-    width: 200px;
-    height: 200px;
-    position: relative;
-    margin-bottom: 8px;
+    display: none;
+    &.sp{
+        display: block;
+        width: 120px;
+        height: 120px;
+        position: relative;
+    }
+    @media screen and (min-width: 768px){
+        display: block;
+        position: relative;
+        width: 200px;
+        height: 200px;
+        &.sp{
+            display: none;
+        }
+    }
 `
 
 const DiscographyImage = styled.img`
@@ -134,9 +185,22 @@ const DiscographyImageTag = styled.p`
 // DiscographyTitleContainer
 
 const DiscographyTitleContainer = styled.div`
-    height: 48px;
-    width: 100%;
-    margin-bottom: 8px;
+    display: none;
+    &.sp{
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+        height: 48px;
+    }
+    @media screen and (min-width: 768px){
+        height: 48px;
+        width: 100%;
+        margin-bottom: 8px;
+        display: block;
+        &.sp{
+            display: none;
+        }
+    }
 `
 
 const DiscographyTitle = styled.h1`
@@ -144,19 +208,37 @@ const DiscographyTitle = styled.h1`
     font-weight: 700;
     font-family: 'Noto Sans JP', sans-serif;
     color: #292929;
-    padding-top: 7px;
     overflow-wrap:  break-word;
     word-break: break-all;
+    height: 100%;
+    line-height: 48px;
+    padding-top: 7px;
     &.long{
         font-size: 1.6rem;
         padding-top: 0;
+        line-height: 2.0rem;
+        padding-top: 7px;
+    }
+    @media screen and (min-width: 768px){
+        line-height: 4.0rem;
     }
 `
 
 // DiscographyLinkContainer
 
 const DiscographyLinkContainer = styled.div`
-    width: 100%;
+    width: 60%;
+    display: none;
+    &.sp{
+        display: block;
+    }
+    @media screen and (min-width: 768px){
+        display: block;
+        width: 100%;
+        &.sp{
+            display: none;
+        }
+    }
 `
 
 const DiscographyLinkItemContainer = styled.a`
@@ -168,13 +250,21 @@ const DiscographyLinkItemContainer = styled.a`
     border: 1px solid #FFFFFF;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
-    width: 100%;
+    width: 153px;
     height: 40px;
-    margin-bottom: 16px;
     cursor: pointer;
+    margin-left: 8px;
     &.hidden{
         opacity: 0.6;
         cursor: default;
+    }
+    &:last-of-type{
+        margin-top: 10px;
+    }
+    @media screen and (min-width: 768px){
+        margin-bottom: 16px;
+        margin-left: 0;
+        width: 100%;
     }
 `
 
@@ -191,4 +281,15 @@ const DiscographyLinkText = styled.p`
     font-family: 'Noto Sans JP', sans-serif;
     color: #292929;
     margin-left: 8px;
+`
+
+// DiscographyTabFlex
+
+const DiscographySpFlex = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    @media screen and (min-width: 768px){
+        display: none;
+    }
 `
