@@ -58,7 +58,7 @@ const News = () => {
                             <NewsTitle onClick={toggleAccordion(i)} className={content === i ? "active" : ""}>{item.title}</NewsTitle>
                             <NewsText className={content === i ? "active" : ""}>
                                 {item.content}
-                                <NewsImage className={item.imageVertical ? "vertical" : ""} src={process.env.REACT_APP_DEV_API_URL + item.image.url} />
+                                <NewsImage className={item.imageVertical ? "vertical" : ""} src={process.env.REACT_APP_PRO_API_URL + item.image.url} />
                             </NewsText>
                         </NewsContentsContainer>
                     </NewsItemContainer>
