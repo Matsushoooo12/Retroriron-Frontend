@@ -106,8 +106,11 @@ const NewsItemContainer = styled.li`
 
 const NewsItemOtherContainer = styled.div`
     display: flex;
+    display: -ms-flex;
+    display: -webkit-flex;
+    display: -webkit-box;
     align-items: flex-start;
-    justify-content: left;
+    justify-content: start;
     flex-direction: row-reverse;
     margin-bottom: 4px;
     @media screen and (min-width: 900px){
