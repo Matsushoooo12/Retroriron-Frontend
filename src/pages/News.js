@@ -41,6 +41,7 @@ const News = () => {
     return (
         <>
             <Helmet>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
                 <title>News page</title>
                 <meta name="the News page of a pop band called Retroriron." content="news page" />
             </Helmet>
@@ -106,6 +107,7 @@ const NewsItemContainer = styled.li`
 
 const NewsItemOtherContainer = styled.div`
     align-items: flex-start;
+    justify-content: start;
     flex-direction: row-reverse;
     margin-bottom: 4px;
     display: flex;

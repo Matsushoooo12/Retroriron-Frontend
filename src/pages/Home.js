@@ -15,6 +15,7 @@ const Home = () => {
     return (
         <>
             <Helmet>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
                 <title>Home page</title>
                 <meta name="the Home page of a pop band called Retroriron." content="home page" />
             </Helmet>
