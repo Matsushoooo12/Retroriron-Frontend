@@ -105,12 +105,7 @@ const NewsItemContainer = styled.li`
 // NewsItemOtherContainer
 
 const NewsItemOtherContainer = styled.div`
-    display: flex;
-    display: -ms-flex;
-    display: -webkit-flex;
-    display: -webkit-box;
     align-items: flex-start;
-    justify-content: start;
     flex-direction: row-reverse;
     margin-bottom: 4px;
     display: flex;
