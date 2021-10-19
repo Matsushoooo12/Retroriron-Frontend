@@ -36,6 +36,8 @@ const News = () => {
 
     const now = moment();
 
+    console.log(news.map((item) => process.env.REACT_APP_PRO_API_URL + item.image.url))
+
     return (
         <>
             <Helmet>
@@ -104,8 +106,8 @@ const NewsItemContainer = styled.li`
 
 const NewsItemOtherContainer = styled.div`
     display: flex;
-    align-items: start;
-    justify-content: start;
+    align-items: flex-start;
+    justify-content: flex-start;
     flex-direction: row-reverse;
     margin-bottom: 4px;
     @media screen and (min-width: 900px){
