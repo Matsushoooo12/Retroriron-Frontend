@@ -43,7 +43,7 @@ const Discography = () => {
                             {/* Sp */}
                             <DiscographySpFlex>
                                 <DiscographyImageContainer className="sp">
-                                    <DiscographyImage src={process.env.REACT_APP_DEV_API_URL + item.image.url} />
+                                    <DiscographyImage src={process.env.REACT_APP_PRO_API_URL + item.image.url} />
                                     <DiscographyImageTag>{item.tag}</DiscographyImageTag>
                                 </DiscographyImageContainer>
                                 <DiscographyLinkContainer className="sp">
@@ -59,7 +59,7 @@ const Discography = () => {
                             </DiscographySpFlex>
                             {/* Sp */}
                             <DiscographyImageContainer>
-                                <DiscographyImage src={process.env.REACT_APP_DEV_API_URL + item.image.url} />
+                                <DiscographyImage src={process.env.REACT_APP_PRO_API_URL + item.image.url} />
                                 <DiscographyImageTag>{item.tag}</DiscographyImageTag>
                             </DiscographyImageContainer>
                             <DiscographyTitleContainer>

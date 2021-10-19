@@ -96,7 +96,7 @@ const Live = () => {
                                         <LiveText>料金 | {item.price}</LiveText>
                                         <LiveText>出演者 | {item.performer}</LiveText>
                                     </LiveTextContainer>
-                                    <LiveImage className={item.imageVertical ? "vertical sp" : "sp"} src={process.env.REACT_APP_DEV_API_URL + item.image.url} />
+                                    <LiveImage className={item.imageVertical ? "vertical sp" : "sp"} src={process.env.REACT_APP_PRO_API_URL + item.image.url} />
                                 </SpLiveContentsContainer>
                             </SpLiveTitleContainer>
                             <SpLiveButton className={content === i ? "active" : ""} src={content === i ? Minus : Plus} onClick={toggleAccordion(i)} />
@@ -136,7 +136,7 @@ const Live = () => {
                                 </LiveDetailText>
                             </LiveContentsContainer>
                         </LiveInfoContainer>
-                        <LiveImage className={item.imageVertical ? "vertical" : ""} src={process.env.REACT_APP_DEV_API_URL + item.image.url} />
+                        <LiveImage className={item.imageVertical ? "vertical" : ""} src={process.env.REACT_APP_PRO_API_URL + item.image.url} />
                     </LiveItemContainer>
                 ))}
                 <ModalContainer
