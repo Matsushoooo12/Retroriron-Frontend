@@ -98,7 +98,7 @@ const NewsItemContainer = styled.li`
         width: 64vw;
         display: flex;
         padding: 24px 0;
-        align-items: start;
+        align-items: flex-start;
     }
 `
 
