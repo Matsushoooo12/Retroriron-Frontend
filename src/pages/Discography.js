@@ -89,6 +89,7 @@ export default Discography
 // DiscographyContainer
 
 const DiscographyContainer = styled.div`
+    z-index: 1;
     margin-top: 100px;
     @media screen and (min-width: 768px){
         margin-top: 110px;
