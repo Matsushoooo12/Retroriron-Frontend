@@ -153,6 +153,7 @@ const FvContainer = styled.div`
         height: 41vw;
         margin-top: 72px;
         position: relative;
+        margin: 72px 0 0;
     }
 `
 
@@ -212,13 +213,13 @@ const BandTextH1 = styled.h1`
 `
 
 const BandTitleBr = styled.br`
-    @media screen and (min-width: 768px){
+    @media screen and (min-width: 500px){
         display: none;
     }
 `
 
 const BandTitleSpace = styled.span`
-    @media screen and (min-width: 768px){
+    @media screen and (min-width: 500px){
         display: none;
     }
 `

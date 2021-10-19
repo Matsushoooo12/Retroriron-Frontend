@@ -47,10 +47,10 @@ const Container = styled.div`
 const MainContainer = styled.div`
   @media screen and (min-width: 900px) {
     position: relative;
-    left: 250px;
+    margin-left: 250px;
     top: 0;
   }
   @media screen and (min-width: 1150px){
-    left: 314px;
+    margin-left: 314px;
   }
 `
