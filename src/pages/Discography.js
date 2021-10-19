@@ -127,6 +127,9 @@ const DiscographyInfoContainer = styled.div`
     width: 100%;
     height: 100%;
     margin-bottom: 32px;
+    &:first-type-of{
+        margin-top: 100px;
+    }
     @media screen and (min-width: 768px){
         width: 200px;
         margin-right: 23px;
@@ -141,6 +144,10 @@ const DiscographyDate = styled.p`
     font-family: 'Noto Sans JP', sans-serif;
     color: #292929;
     margin-bottom: 4px;
+    margin-left: 60px;
+    @media screen and (min-width: 768px){
+        margin-left: 0;
+    }
 `
 
 // DiscographyImageContainer
@@ -214,6 +221,7 @@ const DiscographyTitle = styled.h1`
     height: 100%;
     line-height: 48px;
     padding-top: 7px;
+    margin-left: 60px;
     &.long{
         font-size: 1.6rem;
         padding-top: 0;
@@ -222,6 +230,7 @@ const DiscographyTitle = styled.h1`
     }
     @media screen and (min-width: 768px){
         line-height: 4.0rem;
+        margin-left: 0;
     }
 `
 
@@ -290,6 +299,8 @@ const DiscographySpFlex = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    width: 80%;
+    margin-left: 60%;
     @media screen and (min-width: 768px){
         display: none;
     }
