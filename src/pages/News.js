@@ -113,6 +113,7 @@ const NewsItemOtherContainer = styled.div`
     justify-content: start;
     flex-direction: row-reverse;
     margin-bottom: 4px;
+    display: flex;
     @media screen and (min-width: 900px){
         flex-direction: initial;
         margin-bottom: 0;
