@@ -109,6 +109,14 @@ const NewsItemOtherContainer = styled.div`
     justify-content: left;
     flex-direction: row-reverse;
     margin-bottom: 4px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flexbox;
+    display: -moz-flexbox;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: -moz-flex;
+    -js-display: flex;
     display: flex;
     @media screen and (min-width: 900px){
         flex-direction: initial;
