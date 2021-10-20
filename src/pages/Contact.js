@@ -21,7 +21,6 @@ const Contact = () => {
     return (
         <>
             <Helmet>
-                <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
                 <title>Contact page</title>
                 <meta name="the Contact page of a pop band called Retroriron." content="contact page" />
             </Helmet>

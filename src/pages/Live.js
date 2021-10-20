@@ -73,7 +73,6 @@ const Live = () => {
     return (
         <>
             <Helmet>
-                <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
                 <title>Live page</title>
                 <meta name="the Live page of a pop band called Retroriron." content="live page" />
             </Helmet>
