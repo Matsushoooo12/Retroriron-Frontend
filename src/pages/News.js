@@ -106,7 +106,7 @@ const NewsItemContainer = styled.li`
 
 const NewsItemOtherContainer = styled.div`
     align-items: flex-start;
-    justify-content: start;
+    justify-content: flex-start;
     flex-direction: row-reverse;
     margin-bottom: 4px;
     display: flex;
