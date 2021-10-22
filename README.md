@@ -184,21 +184,21 @@ const コンポーネント名 = () => {
 
 <img width="1680" alt="スクリーンショット 2021-10-15 16 23 57" src="https://user-images.githubusercontent.com/66903388/137448909-43faee77-4829-470f-a595-205fcb1c3d2c.png">
 
-## Chicket モーダル
+## Ticket モーダル
 
-### ChicketForm
+### TicketForm
 
 ---
 
 <img width="1680" alt="スクリーンショット 2021-10-15 16 24 03" src="https://user-images.githubusercontent.com/66903388/137449056-4bff8ab1-3e84-4268-921c-b81fc8024b88.png">
 
-### ChicketConfirm
+### TicketConfirm
 
 ---
 
 <img width="1680" alt="スクリーンショット 2021-10-15 16 24 17" src="https://user-images.githubusercontent.com/66903388/137449112-3811f377-ddfa-458a-ac58-4b7d8a15ae57.png">
 
-### ChicketComplete
+### TicketComplete
 
 ---
 
@@ -210,7 +210,7 @@ const コンポーネント名 = () => {
 
 <img width="764" alt="スクリーンショット 2021-10-15 18 04 32" src="https://user-images.githubusercontent.com/66903388/137462613-7b0ca3fa-013f-4651-a6c5-7a7c1c4cc4b3.png">
 
-## ChicketForm
+## TicketForm
 
 ---
 
