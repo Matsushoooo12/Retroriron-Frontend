@@ -1,50 +1,50 @@
 import React from 'react'
 import styled from '@emotion/styled';
 
-const ChicketComplete = ({values}) => {
+const TicketComplete = ({values}) => {
     const handleClick = () => {
         // eslint-disable-next-line no-restricted-globals
         return location.reload()
     }
     return (
-        <ChicketItemContainer>
-            <ChicketTitleContainer>
-                <ChicketTitle>チケット予約内容の確認</ChicketTitle>
-                <ChicketBackButton onClick={handleClick}>×</ChicketBackButton>
-            </ChicketTitleContainer>
-            <ChicketText>
+        <TicketItemContainer>
+            <TicketTitleContainer>
+                <TicketTitle>チケット予約内容の確認</TicketTitle>
+                <TicketBackButton onClick={handleClick}>×</TicketBackButton>
+            </TicketTitleContainer>
+            <TicketText>
                 ※こちらはチケットのお取り置きをするためのフォームです。<br/>
                 当日は会場受付で担当者にお名前をお伝えの上、お支払いをお願いいたします。
-            </ChicketText>
-            <ChicketCompleteBlock>
-                <ChicketCompleteTitle>{values.dateAndTitle}</ChicketCompleteTitle>
-                <ChicketCompleteText>
+            </TicketText>
+            <TicketCompleteBlock>
+                <TicketCompleteTitle>{values.dateAndTitle}</TicketCompleteTitle>
+                <TicketCompleteText>
                     ナマエ｜{values.nameKana}
-                </ChicketCompleteText>
-                <ChicketCompleteText>
+                </TicketCompleteText>
+                <TicketCompleteText>
                     メールアドレス｜{values.email}
-                </ChicketCompleteText>
-                <ChicketCompleteText>
+                </TicketCompleteText>
+                <TicketCompleteText>
                     {values.number}
-                </ChicketCompleteText>
-                <ChicketCompleteText>
+                </TicketCompleteText>
+                <TicketCompleteText>
                     備考：{values.description}
-                </ChicketCompleteText>
-            </ChicketCompleteBlock>
-            <ChicketText>
+                </TicketCompleteText>
+            </TicketCompleteBlock>
+            <TicketText>
                 ※こちらはチケットのお取り置きをするためのフォームです。<br/>
                 当日は会場受付で担当者にお名前をお伝えの上、お支払いをお願いいたします。
-            </ChicketText>
-            <ChicketText>
+            </TicketText>
+            <TicketText>
                 ※ご入力内容にお間違いがあった場合や、キャンセル等はお問い合わせフォームからご連絡してください。
-            </ChicketText>
-        </ChicketItemContainer>
+            </TicketText>
+        </TicketItemContainer>
     )
 }
 
-export default ChicketComplete
+export default TicketComplete
 
-const ChicketItemContainer = styled.div`
+const TicketItemContainer = styled.div`
     width: 584px;
     height: 600px;
     position: fixed;
@@ -58,14 +58,14 @@ const ChicketItemContainer = styled.div`
     border-radius: 24px;
 `
 
-// ChicketTitleContainer
+// TicketTitleContainer
 
-const ChicketTitleContainer = styled.div`
+const TicketTitleContainer = styled.div`
     display: flex;
     justify-content: space-between;
 `
 
-const ChicketBackButton = styled.a`
+const TicketBackButton = styled.a`
     text-decoration: none;
     font-size: 3.6rem;
     cursor: pointer;
@@ -73,7 +73,7 @@ const ChicketBackButton = styled.a`
     margin-right: 16px;
 `
 
-const ChicketTitle = styled.h1`
+const TicketTitle = styled.h1`
     font-size: 2.4rem;
     font-weight: 700;
     font-family: 'Noto Sans JP', sans-serif;
@@ -81,7 +81,7 @@ const ChicketTitle = styled.h1`
     margin: 24px 24px 8px;
 `
 
-const ChicketText = styled.p`
+const TicketText = styled.p`
     font-size: 1.6rem;
     font-weight: 500;
     font-family: 'Noto Sans JP', sans-serif;
@@ -89,7 +89,7 @@ const ChicketText = styled.p`
     margin: 0 24px 24px;
 `
 
-const ChicketCompleteBlock = styled.div`
+const TicketCompleteBlock = styled.div`
     width: 90%;
     height: 200px;
     margin: 0 auto 24px;
@@ -97,7 +97,7 @@ const ChicketCompleteBlock = styled.div`
     border-radius: 6px;
 `
 
-const ChicketCompleteTitle = styled.h1`
+const TicketCompleteTitle = styled.h1`
     font-size: 1.6rem;
     font-weight: 700;
     font-family: 'Noto Sans JP', sans-serif;
@@ -107,7 +107,7 @@ const ChicketCompleteTitle = styled.h1`
     padding-top: 16px;
 `
 
-const ChicketCompleteText = styled.p`
+const TicketCompleteText = styled.p`
     font-size: 1.6rem;
     font-weight: 500;
     font-family: 'Noto Sans JP', sans-serif;

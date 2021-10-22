@@ -20,6 +20,6 @@ export const createContact = (params) => {
     return client.post('/contacts', params);
 }
 
-export const createChicket = (params) => {
+export const createTicket = (params) => {
     return client.post('/chickets', params);
 }

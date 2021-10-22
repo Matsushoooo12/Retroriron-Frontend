@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import styled from '@emotion/styled';
-import { createChicket } from '../../api';
-import ChicketComplete from './ChicketComplete';
+import { createTicket } from '../../api';
+import TicketComplete from './TicketComplete';
 
-const ChicketConfirm = (props) => {
+const TicketConfirm = (props) => {
     const {values, hideConfirmation} = props
 
     const value = ({
@@ -21,7 +21,7 @@ const ChicketConfirm = (props) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try{
-            const res = await createChicket(value);
+            const res = await createTicket(value);
             console.log(res)
             setIsCompleteVisible(true)
         } catch(e){
@@ -34,70 +34,70 @@ const ChicketConfirm = (props) => {
     return (
         <>
             {!isCompleteVisible ? (
-                <ChicketItemContainer>
-                    <ChicketTitle>チケット予約内容の確認</ChicketTitle>
-                    <ChicketText>
+                <TicketItemContainer>
+                    <TicketTitle>チケット予約内容の確認</TicketTitle>
+                    <TicketText>
                         ※こちらはチケットのお取り置きをするためのフォームです。<br/>
                         当日は会場受付で担当者にお名前をお伝えの上、お支払いをお願いいたします。
-                    </ChicketText>
-                    <ChicketCautionText>
+                    </TicketText>
+                    <TicketCautionText>
                         ※下記のライブのお申し込みでお間違いないかご確認ください。
-                    </ChicketCautionText>
-                    <ChicketFormContainer>
-                        <ChicketFormTextField
+                    </TicketCautionText>
+                    <TicketFormContainer>
+                        <TicketFormTextField
                             className="date_and_title"
                             type="text"
                             value={value.dateAndTitle}
                             disabled
                         />
-                        <ChicketFormGroup>
-                            <ChicketFormLabel htmlFor="nameKana">ナマエ
-                                <ChicketFormRequiredSign>*</ChicketFormRequiredSign>
-                            </ChicketFormLabel>
-                            <ChicketFormTextField
+                        <TicketFormGroup>
+                            <TicketFormLabel htmlFor="nameKana">ナマエ
+                                <TicketFormRequiredSign>*</TicketFormRequiredSign>
+                            </TicketFormLabel>
+                            <TicketFormTextField
                                 name="nameKana"
                                 type="text"
                                 value={value.nameKana}
                                 disabled
                                 className="disabled"
                             />
-                            <ChicketFormLabel htmlFor="email">メールアドレス
-                                <ChicketFormRequiredSign>*</ChicketFormRequiredSign>
-                            </ChicketFormLabel>
-                            <ChicketFormTextField
+                            <TicketFormLabel htmlFor="email">メールアドレス
+                                <TicketFormRequiredSign>*</TicketFormRequiredSign>
+                            </TicketFormLabel>
+                            <TicketFormTextField
                                 name="email"
                                 type="email"
                                 value={value.email}
                                 disabled
                                 className="disabled"
                             />
-                            <ChicketFormLabel htmlFor="number">枚数
-                                <ChicketFormRequiredSign>*</ChicketFormRequiredSign>
-                            </ChicketFormLabel>
-                            <ChicketFormNumber
+                            <TicketFormLabel htmlFor="number">枚数
+                                <TicketFormRequiredSign>*</TicketFormRequiredSign>
+                            </TicketFormLabel>
+                            <TicketFormNumber
                                 name="number"
                                 type="number"
                                 value={value.number}
                                 disabled
                                 className="disabled"
                             />
-                            <ChicketFormLabel htmlFor="description">備考</ChicketFormLabel>
-                            <ChicketFormTextField
+                            <TicketFormLabel htmlFor="description">備考</TicketFormLabel>
+                            <TicketFormTextField
                                 name="description"
                                 type="text"
                                 value={value.description}
                                 disabled
                                 className="disabled"
                             />
-                        </ChicketFormGroup>
-                        <ChicketFormGroup className="right">
-                            <ChicketFormSubmitButton type="button" className="back" value="戻る" onClick={hideConfirmation} />
-                            <ChicketFormSubmitButton type="submit" value="予約する" onClick={(e) => handleSubmit(e)} />
-                        </ChicketFormGroup>
-                    </ChicketFormContainer>
-                </ChicketItemContainer>
+                        </TicketFormGroup>
+                        <TicketFormGroup className="right">
+                            <TicketFormSubmitButton type="button" className="back" value="戻る" onClick={hideConfirmation} />
+                            <TicketFormSubmitButton type="submit" value="予約する" onClick={(e) => handleSubmit(e)} />
+                        </TicketFormGroup>
+                    </TicketFormContainer>
+                </TicketItemContainer>
             ):(
-                <ChicketComplete
+                <TicketComplete
                     values={values}
                 />
             )}
@@ -105,11 +105,11 @@ const ChicketConfirm = (props) => {
     )
 }
 
-export default ChicketConfirm
+export default TicketConfirm
 
-// ChicketFormContainer
+// TicketFormContainer
 
-const ChicketItemContainer = styled.div`
+const TicketItemContainer = styled.div`
     width: 584px;
     height: 695px;
     position: fixed;
@@ -123,7 +123,7 @@ const ChicketItemContainer = styled.div`
     border-radius: 24px;
 `
 
-const ChicketTitle = styled.h1`
+const TicketTitle = styled.h1`
     font-size: 2.4rem;
     font-weight: 700;
     font-family: 'Noto Sans JP', sans-serif;
@@ -131,7 +131,7 @@ const ChicketTitle = styled.h1`
     margin: 24px 24px 8px;
 `
 
-const ChicketText = styled.p`
+const TicketText = styled.p`
     font-size: 1.6rem;
     font-weight: 500;
     font-family: 'Noto Sans JP', sans-serif;
@@ -139,7 +139,7 @@ const ChicketText = styled.p`
     margin: 0 24px 4px;
 `
 
-const ChicketCautionText = styled.p`
+const TicketCautionText = styled.p`
     font-size: 1.6rem;
     font-weight: 500;
     font-family: 'Noto Sans JP', sans-serif;
@@ -147,21 +147,21 @@ const ChicketCautionText = styled.p`
     margin: 0 24px 24px;
 `
 
-// ChicketFormContainer
+// TicketFormContainer
 
-const ChicketFormContainer = styled.form`
+const TicketFormContainer = styled.form`
 `
 
 // ContactFormContainer
 
-const ChicketFormLabel = styled.label`
+const TicketFormLabel = styled.label`
     font-size: 1.6rem;
     font-weight: 700;
     font-family: 'Noto Sans JP', sans-serif;
     color: #292929;
 `
 
-const ChicketFormGroup = styled.div`
+const TicketFormGroup = styled.div`
     width: 90%;
     margin: 0 auto;
     margin-bottom: 16px;
@@ -174,7 +174,7 @@ const ChicketFormGroup = styled.div`
     }
 `
 
-const ChicketFormRequiredSign = styled.span`
+const TicketFormRequiredSign = styled.span`
     font-size: 1.2rem;
     font-weight: 700;
     font-family: 'Noto Sans JP', sans-serif;
@@ -185,7 +185,7 @@ const ChicketFormRequiredSign = styled.span`
 
 // input:text
 
-const ChicketFormTextField = styled.input`
+const TicketFormTextField = styled.input`
     font-size: 1.6rem;
     font-weight: 500;
     font-family: 'Noto Sans JP', sans-serif;
@@ -214,7 +214,7 @@ const ChicketFormTextField = styled.input`
 
 // input:number
 
-const ChicketFormNumber = styled.input`
+const TicketFormNumber = styled.input`
     font-size: 1.6rem;
     font-weight: 500;
     font-family: 'Noto Sans JP', sans-serif;
@@ -231,7 +231,7 @@ const ChicketFormNumber = styled.input`
     }
 `
 
-const ChicketFormSubmitButton = styled.input`
+const TicketFormSubmitButton = styled.input`
     background-color: #F1A11B;
     font-size: 1.6rem;
     font-weight: 700;

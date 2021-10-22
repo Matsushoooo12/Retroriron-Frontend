@@ -6,7 +6,7 @@ import Plus from '../images/open-btn.png'
 import Minus from '../images/close-btn.png'
 import { getLive } from '../api';
 import { useForm } from 'react-hook-form';
-import ChicketConfirm from '../components/chicket/ChicketConfirm';
+import TicketConfirm from '../components/ticket/TicketConfirm';
 
 const Live = () => {
     // useForm
@@ -22,8 +22,8 @@ const Live = () => {
     //submitボタンを押した時、入力内容確認画面を表示させる
     const onSubmitData = () => setIsConfirmationVisible(true)
 
-    // ChicketValue
-    const [chicketValue, setChicketValue] = useState({
+    // TicketValue
+    const [ticketValue, setTicketValue] = useState({
         dateAndTitle: "",
         nameKana: "",
         email: "",
@@ -33,7 +33,7 @@ const Live = () => {
     })
 
     const handleClick = () => {
-        setChicketValue({open: false})
+        setTicketValue({open: false})
         // eslint-disable-next-line no-restricted-globals
         location.reload()
     }
@@ -68,7 +68,7 @@ const Live = () => {
 
     const now = moment();
 
-    console.log(chicketValue.open)
+    console.log(ticketValue.open)
 
     return (
         <>
@@ -85,7 +85,7 @@ const Live = () => {
                                 <SpLiveDate className={content === i ? "active" : ""} onClick={toggleAccordion(i)}>{moment(item.date).format("YYYY.MM.DD")}</SpLiveDate>
                                 <SpLiveTitle className={content === i ? "active" : ""} onClick={toggleAccordion(i)}>{item.title}</SpLiveTitle>
                                 {now < moment(item.date) ? (
-                                    <LiveChicketButton className="sp" onClick={() => setChicketValue({dateAndTitle: item.date + "    " + item.title, open: true})}>チケットをご希望の方はこちら</LiveChicketButton>
+                                    <LiveTicketButton className="sp" onClick={() => setTicketValue({dateAndTitle: item.date + "    " + item.title, open: true})}>チケットをご希望の方はこちら</LiveTicketButton>
                                 ):(
                                     <LiveFinish className="finish sp">終了</LiveFinish>
                                 )}
@@ -96,7 +96,7 @@ const Live = () => {
                                         <LiveText>料金 | {item.price}</LiveText>
                                         <LiveText>出演者 | {item.performer}</LiveText>
                                     </LiveTextContainer>
-                                    <LiveImage className={item.imageVertical ? "vertical sp" : "sp"} src={process.env.REACT_APP_PRO_API_URL + item.image.url} />
+                                    <LiveImage className={item.imageVertical ? "vertical sp" : "sp"} src={process.env.REACT_APP_DEV_API_URL + item.image.url} />
                                 </SpLiveContentsContainer>
                             </SpLiveTitleContainer>
                             <SpLiveButton className={content === i ? "active" : ""} src={content === i ? Minus : Plus} onClick={toggleAccordion(i)} />
@@ -126,7 +126,7 @@ const Live = () => {
                                     <LiveText>出演者 | {item.performer}</LiveText>
                                 </LiveTextContainer>
                                 {now < moment(item.date) ? (
-                                    <LiveChicketButton className="tab" onClick={() => setChicketValue({dateAndTitle: item.date + "    " + item.title, open: true})}>チケットをご希望の方はこちら</LiveChicketButton>
+                                    <LiveTicketButton className="tab" onClick={() => setTicketValue({dateAndTitle: item.date + "    " + item.title, open: true})}>チケットをご希望の方はこちら</LiveTicketButton>
                                 ):(
                                     <></>
                                 )}
@@ -136,76 +136,76 @@ const Live = () => {
                                 </LiveDetailText>
                             </LiveContentsContainer>
                         </LiveInfoContainer>
-                        <LiveImage className={item.imageVertical ? "vertical" : ""} src={process.env.REACT_APP_PRO_API_URL + item.image.url} />
+                        <LiveImage className={item.imageVertical ? "vertical" : ""} src={process.env.REACT_APP_DEV_API_URL + item.image.url} />
                     </LiveItemContainer>
                 ))}
                 <ModalContainer
-                    className={chicketValue.open ? "open" : ""}
+                    className={ticketValue.open ? "open" : ""}
                 >
                     <ModalBack onClick={handleClick}></ModalBack>
                     {!isConfirmationVisible ? (
-                        <ChicketItemContainer>
-                            <ChicketTitle>チケット予約フォーム</ChicketTitle>
-                            <ChicketText>
+                        <TicketItemContainer>
+                            <TicketTitle>チケット予約フォーム</TicketTitle>
+                            <TicketText>
                                 ※こちらはチケットのお取り置きをするためのフォームです。<br/>
                                 当日は会場受付で担当者にお名前をお伝えの上、お支払いをお願いいたします。
-                            </ChicketText>
-                            <ChicketCautionText>
+                            </TicketText>
+                            <TicketCautionText>
                                 ※下記のライブのお申し込みでお間違いないかご確認ください。
-                            </ChicketCautionText>
-                            <ChicketFormContainer onSubmit={handleSubmit(onSubmitData)}>
-                                <ChicketFormTextField
+                            </TicketCautionText>
+                            <TicketFormContainer onSubmit={handleSubmit(onSubmitData)}>
+                                <TicketFormTextField
                                     className="date_and_title"
                                     type="text"
                                     name="dateAndTitle"
-                                    value={chicketValue.dateAndTitle}
+                                    value={ticketValue.dateAndTitle}
                                     readOnly
                                     {...register('dateAndTitle', {required: true})}
                                 />
-                                <ChicketFormGroup>
-                                    <ChicketFormLabel htmlFor="nameKana">ナマエ
-                                        <ChicketFormRequiredSign>*</ChicketFormRequiredSign>
-                                        {errors.nameKana && <ChicketFormRequiredSign>こちらは必須項目です。</ChicketFormRequiredSign>}
-                                    </ChicketFormLabel>
-                                    <ChicketFormTextField
+                                <TicketFormGroup>
+                                    <TicketFormLabel htmlFor="nameKana">ナマエ
+                                        <TicketFormRequiredSign>*</TicketFormRequiredSign>
+                                        {errors.nameKana && <TicketFormRequiredSign>こちらは必須項目です。</TicketFormRequiredSign>}
+                                    </TicketFormLabel>
+                                    <TicketFormTextField
                                         name="nameKana"
                                         type="text"
                                         {...register('nameKana', {required: true})}
                                     />
-                                    <ChicketFormLabel htmlFor="email">メールアドレス
-                                        <ChicketFormRequiredSign>*</ChicketFormRequiredSign>
-                                        {errors.email && <ChicketFormRequiredSign>こちらは必須項目です。</ChicketFormRequiredSign>}
-                                    </ChicketFormLabel>
-                                    <ChicketFormTextField
+                                    <TicketFormLabel htmlFor="email">メールアドレス
+                                        <TicketFormRequiredSign>*</TicketFormRequiredSign>
+                                        {errors.email && <TicketFormRequiredSign>こちらは必須項目です。</TicketFormRequiredSign>}
+                                    </TicketFormLabel>
+                                    <TicketFormTextField
                                         name="email"
                                         type="email"
                                         {...register('email', {required: true})}
                                     />
-                                    <ChicketFormLabel htmlFor="number">枚数
-                                        <ChicketFormRequiredSign>*</ChicketFormRequiredSign>
-                                        {errors.number && <ChicketFormRequiredSign>こちらは必須項目です。</ChicketFormRequiredSign>}
-                                    </ChicketFormLabel>
-                                    <ChicketFormNumber
+                                    <TicketFormLabel htmlFor="number">枚数
+                                        <TicketFormRequiredSign>*</TicketFormRequiredSign>
+                                        {errors.number && <TicketFormRequiredSign>こちらは必須項目です。</TicketFormRequiredSign>}
+                                    </TicketFormLabel>
+                                    <TicketFormNumber
                                         name="number"
                                         type="number"
                                         onChange={(e) => e.target.value}
                                         defaultValue="1"
                                         {...register('number', {required: true})}
                                     />
-                                    <ChicketFormLabel htmlFor="description">備考</ChicketFormLabel>
-                                    <ChicketFormTextField
+                                    <TicketFormLabel htmlFor="description">備考</TicketFormLabel>
+                                    <TicketFormTextField
                                         name="description"
                                         type="text"
                                         {...register('description', {required: false})}
                                     />
-                                </ChicketFormGroup>
-                                <ChicketFormGroup className="right">
-                                    <ChicketFormSubmitButton type="submit" value="確認する" />
-                                </ChicketFormGroup>
-                            </ChicketFormContainer>
-                        </ChicketItemContainer>
+                                </TicketFormGroup>
+                                <TicketFormGroup className="right">
+                                    <TicketFormSubmitButton type="submit" value="確認する" />
+                                </TicketFormGroup>
+                            </TicketFormContainer>
+                        </TicketItemContainer>
                     ):(
-                        <ChicketConfirm
+                        <TicketConfirm
                             values={getValues()}
                             hideConfirmation={hideConfirmation}
                         />
@@ -440,9 +440,9 @@ const LiveText = styled.p`
     }
 `
 
-// LiveChicketButton
+// LiveTicketButton
 
-const LiveChicketButton = styled.a`
+const LiveTicketButton = styled.a`
     display: none;
     &.sp{
         display: inline-block;
@@ -544,9 +544,9 @@ const ModalBack = styled.div`
     background-color: rgba(0, 0, 0, 0.7);
 `
 
-// ChicketFormContainer
+// TicketFormContainer
 
-const ChicketItemContainer = styled.div`
+const TicketItemContainer = styled.div`
     width: 584px;
     height: 695px;
     position: fixed;
@@ -560,7 +560,7 @@ const ChicketItemContainer = styled.div`
     border-radius: 24px;
 `
 
-const ChicketTitle = styled.h1`
+const TicketTitle = styled.h1`
     font-size: 2.4rem;
     font-weight: 700;
     font-family: 'Noto Sans JP', sans-serif;
@@ -568,7 +568,7 @@ const ChicketTitle = styled.h1`
     margin: 24px 24px 8px;
 `
 
-const ChicketText = styled.p`
+const TicketText = styled.p`
     font-size: 1.6rem;
     font-weight: 500;
     font-family: 'Noto Sans JP', sans-serif;
@@ -576,7 +576,7 @@ const ChicketText = styled.p`
     margin: 0 24px 4px;
 `
 
-const ChicketCautionText = styled.p`
+const TicketCautionText = styled.p`
     font-size: 1.6rem;
     font-weight: 500;
     font-family: 'Noto Sans JP', sans-serif;
@@ -584,21 +584,21 @@ const ChicketCautionText = styled.p`
     margin: 0 24px 24px;
 `
 
-// ChicketFormContainer
+// TicketFormContainer
 
-const ChicketFormContainer = styled.form`
+const TicketFormContainer = styled.form`
 `
 
 // ContactFormContainer
 
-const ChicketFormLabel = styled.label`
+const TicketFormLabel = styled.label`
     font-size: 1.6rem;
     font-weight: 700;
     font-family: 'Noto Sans JP', sans-serif;
     color: #292929;
 `
 
-const ChicketFormGroup = styled.div`
+const TicketFormGroup = styled.div`
     width: 90%;
     margin: 0 auto;
     margin-bottom: 16px;
@@ -611,7 +611,7 @@ const ChicketFormGroup = styled.div`
     }
 `
 
-const ChicketFormRequiredSign = styled.span`
+const TicketFormRequiredSign = styled.span`
     font-size: 1.2rem;
     font-weight: 700;
     font-family: 'Noto Sans JP', sans-serif;
@@ -622,7 +622,7 @@ const ChicketFormRequiredSign = styled.span`
 
 // input:text
 
-const ChicketFormTextField = styled.input`
+const TicketFormTextField = styled.input`
     font-size: 1.6rem;
     font-weight: 500;
     font-family: 'Noto Sans JP', sans-serif;
@@ -648,7 +648,7 @@ const ChicketFormTextField = styled.input`
 
 // input:number
 
-const ChicketFormNumber = styled.input`
+const TicketFormNumber = styled.input`
     font-size: 1.6rem;
     font-weight: 500;
     font-family: 'Noto Sans JP', sans-serif;
@@ -665,7 +665,7 @@ const ChicketFormNumber = styled.input`
     }
 `
 
-const ChicketFormSubmitButton = styled.input`
+const TicketFormSubmitButton = styled.input`
     background-color: #F1A11B;
     font-size: 1.6rem;
     font-weight: 700;

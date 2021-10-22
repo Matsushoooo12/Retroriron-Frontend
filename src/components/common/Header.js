@@ -81,9 +81,9 @@ const Header = () => {
                             <HamburgerMenuSnsBorder></HamburgerMenuSnsBorder>
                         </HamburgerMenuSnsTextContainer>
                         <HamburgerMenuSnsIconContainer>
-                            <HamburgerMenuSnsIconLink><HamburgerMenuSnsIcon src={TwitterOrange} /></HamburgerMenuSnsIconLink>
-                            <HamburgerMenuSnsIconLink><HamburgerMenuSnsIcon src={InstagramOrange} /></HamburgerMenuSnsIconLink>
-                            <HamburgerMenuSnsIconLink><HamburgerMenuSnsIcon src={YoutubeOrange} /></HamburgerMenuSnsIconLink>
+                            <HamburgerMenuSnsIconLink href="#"><HamburgerMenuSnsIcon src={TwitterOrange} /></HamburgerMenuSnsIconLink>
+                            <HamburgerMenuSnsIconLink href="#"><HamburgerMenuSnsIcon src={InstagramOrange} /></HamburgerMenuSnsIconLink>
+                            <HamburgerMenuSnsIconLink href="#"><HamburgerMenuSnsIcon src={YoutubeOrange} /></HamburgerMenuSnsIconLink>
                         </HamburgerMenuSnsIconContainer>
                     </HamburgerMenuSnsContainer>
                     <HamburgerMenuCopyright>© 2021 retririon.</HamburgerMenuCopyright>
@@ -294,7 +294,7 @@ const HamburgerMenuSnsIcon = styled.img`
     height: 30px;
 `
 
-const HamburgerMenuSnsIconLink = styled(Link)`
+const HamburgerMenuSnsIconLink = styled.a`
     text-decoration: none;
 `
 
