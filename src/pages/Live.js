@@ -70,6 +70,10 @@ const Live = () => {
 
     console.log(ticketValue.open)
 
+    // Active
+
+    const isActive = (index) => content === index;
+
     return (
         <>
             <Helmet>
@@ -89,14 +93,14 @@ const Live = () => {
                                 ):(
                                     <LiveFinish className="finish sp">終了</LiveFinish>
                                 )}
-                                <SpLiveContentsContainer className={content === i ? "active" : ""}>
+                                <SpLiveContentsContainer active={isActive(i)}>
                                     <LiveTextContainer className="sp">
                                         <LiveText>開場時間 | {moment(item.openTime).add(15, "H").format("HH:mm")}   開演時間 | {moment(item.startTime).add(15, "H").format("HH:mm")}</LiveText>
                                         <LiveText>場所 | {item.place}</LiveText>
                                         <LiveText>料金 | {item.price}</LiveText>
                                         <LiveText>出演者 | {item.performer}</LiveText>
                                     </LiveTextContainer>
-                                    <LiveImage className={item.imageVertical ? "vertical sp" : "sp"} src={process.env.REACT_APP_PRO_API_URL + item.image.url} />
+                                    <LiveImage vartical={item.imageVertical} className={item.imageVertical ? "sp" : "sp"} src={process.env.REACT_APP_PRO_API_URL + item.image.url} />
                                 </SpLiveContentsContainer>
                             </SpLiveTitleContainer>
                             <SpLiveButton className={content === i ? "active" : ""} src={content === i ? Minus : Plus} onClick={toggleAccordion(i)} />
@@ -136,7 +140,7 @@ const Live = () => {
                                 </LiveDetailText>
                             </LiveContentsContainer>
                         </LiveInfoContainer>
-                        <LiveImage className={item.imageVertical ? "vertical" : ""} src={process.env.REACT_APP_PRO_API_URL + item.image.url} />
+                        <LiveImage vartical={item.imageVertical} src={process.env.REACT_APP_PRO_API_URL + item.image.url} />
                     </LiveItemContainer>
                 ))}
                 <ModalContainer
@@ -266,10 +270,10 @@ const LiveImage = styled.img`
         display: block;
         width: 160px;
     }
-    &.vertical{
+    ${props => props.vertical && `
         width: 128px;
         height: 160px;
-    }
+    `}
     @media screen and (min-width: 768px){
         display: block;
         width: 200px;
@@ -373,9 +377,7 @@ const SpLiveContentsContainer = styled.div`
     height: 100%;
     display: none;
     margin-top: 16px;
-    &.active{
-        display: block;
-    }
+    ${props => props.active && `display: block;`}
 `
 
 // LiveContentsContainer
