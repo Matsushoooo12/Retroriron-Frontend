@@ -395,21 +395,16 @@ const SnsFixedContainer = styled.div`
     &.open{
         display: flex;
     }
-    // display: flex;
     position: fixed;
     z-index: 50;
     height: 32px;
     width: 263px;
     left: -90px;
-    bottom: 150px;
+    top: 70%;
     transform: rotate(90deg);
     align-items: center;
-    @media screen and (min-width: 361px){
-        top: 480px;
-    }
     @media screen and (min-width: 768px){
-        top: 700px;
-        left: -60px;
+        left: -50px;
     }
     @media screen and (min-width: 900px){
         display: none;
@@ -429,6 +424,7 @@ const SnsFixedText = styled.p`
     font-weight: 700;
     margin-left: 16px;
     margin-right: 16px;
+    white-space: pre-wrap;
 `
 
 const SnsFixedIconLink = styled.a`

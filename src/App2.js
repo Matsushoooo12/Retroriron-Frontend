@@ -38,20 +38,6 @@ function App() {
 
 export default App;
 
-// const HeaderContainer = styled.div`
-//     position: fixed;
-//     left: 0;
-//     background-color: #000;
-//     width: 314px;
-//     height: 100vh;
-// `
-
-// const HeaderItems = styled.div`
-//     width: 100px;
-//     height: 100px;
-//     background-color: yellow;
-// `
-
 const MainAllContainer = styled.div`
     font-family: 'Noto Sans JP', sans-serif;
     color: #292929;
