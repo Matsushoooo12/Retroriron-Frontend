@@ -381,6 +381,7 @@ const PcSnsIcon = styled.img`
     width: 40px;
     height: 40px;
     border-radius: 50%;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
 `
 
 const PcSnsLink = styled.a`
@@ -504,6 +505,7 @@ const TabSnsIcon = styled.img`
     width: 40px;
     height: 40px;
     border-radius: 50%;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
 `
 
 const TabSnsLink = styled.a`
@@ -631,6 +633,7 @@ const SpSnsIcon = styled.img`
     width: 40px;
     height: 40px;
     border-radius: 50%;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
 `
 
 const SpSnsLink = styled.a`
