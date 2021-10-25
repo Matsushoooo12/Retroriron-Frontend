@@ -41,6 +41,8 @@ const News = () => {
 
     const isActive = (index) => content === index;
 
+    console.log(now.subtract(2, 'weeks'))
+
     return (
         <>
             {/* HEAD */}
@@ -50,9 +52,10 @@ const News = () => {
             </Helmet>
             {/* HEAD */}
             {/* PC */}
-            <PcNewsContainer>
+            <NewsContainer>
                 {news.map((item) => (
-                    <PcNewsItemContainer key={item.id}>
+                    <NewsItemContainer key={item.id}>
+                        {/* PC */}
                         <PcNewsItemOtherContainer>
                             <PcNewsTagText IsHidden={now.subtract(2, 'weeks') > moment(item.date)}>New</PcNewsTagText>
                             <PcNewsDate>{moment(item.date).format("YYYY.MM.DD")}</PcNewsDate>
@@ -67,14 +70,7 @@ const News = () => {
                                 </PcNewsText>
                             </PcNewsTextContainer>
                         </PcNewsMainContainer>
-                    </PcNewsItemContainer>
-                ))}
-            </PcNewsContainer>
-            {/* PC */}
-            {/* TAB */}
-            <TabNewsContainer>
-                {news.map((item) => (
-                    <TabNewsItemContainer key={item.id}>
+                        {/* TAB */}
                         <TabNewsItemOtherContainer>
                             <TabNewsTagText IsHidden={now.subtract(2, 'weeks') > moment(item.date)}>New</TabNewsTagText>
                             <TabNewsDate>{moment(item.date).format("YYYY.MM.DD")}</TabNewsDate>
@@ -89,14 +85,7 @@ const News = () => {
                                 </TabNewsText>
                             </TabNewsTextContainer>
                         </TabNewsMainContainer>
-                    </TabNewsItemContainer>
-                ))}
-            </TabNewsContainer>
-            {/* TAB */}
-            {/* SP */}
-            <SpNewsContainer>
-                {news.map((item) => (
-                    <SpNewsItemContainer key={item.id}>
+                        {/* SP */}
                         <SpNewsButton onClick={toggleAccordion(item.id)} src={content === item.id ? Minus : Plus} />
                         <SpNewsMainContainer>
                             <SpNewsItemOtherContainer onClick={toggleAccordion(item.id)}>
@@ -109,40 +98,67 @@ const News = () => {
                                 <SpNewsImage vertical={item.imageVertical} src={process.env.REACT_APP_PRO_API_URL + item.image.url} />
                             </SpNewsText>
                         </SpNewsMainContainer>
-                    </SpNewsItemContainer>
+                    </NewsItemContainer>
                 ))}
-            </SpNewsContainer>
-            {/* SP */}
+            </NewsContainer>
         </>
     )
 }
 
 export default News
 
-// PC
-
-const PcNewsContainer = styled.ul`
-    display: none;
+const NewsContainer = styled.ul`
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin-left: 20px;
+    background-color: yellow;
+    margin-bottom: 96px;
+    @media screen and (min-width: 768px){
+        display: block;
+        width: 100%;
+        height: 100%;
+        margin-left: 40px;
+        background-color: yellow;
+        margin-bottom: 24px;
+    }
     @media screen and (min-width: 900px){
         display: block;
         width: 100%;
         height: 100%;
         background-color: yellow;
+        margin-left: 0;
     }
 `
 
-const PcNewsItemContainer = styled.li`
+const NewsItemContainer = styled.li`
     border-top: 1px solid #BEBEBE;
     padding: 16px 0;
     display: flex;
+    align-items: flex-start;
+    @media screen and (min-width: 768px){
+        border-top: 1px solid #BEBEBE;
+        padding: 16px 0;
+        display: flex;
+    }
+    @media screen and (min-width: 900px){
+        border-top: 1px solid #BEBEBE;
+        padding: 16px 0;
+        display: flex;
+    }
 `
+
+// PC
 
 // PC-タグ、日付
 
 const PcNewsItemOtherContainer = styled.div`
-    display: flex;
-    justify-content: left;
-    aling-items: flex-start;
+    display: none;
+    @media screen and (min-width: 900px){
+        display: flex;
+        justify-content: left;
+        aling-items: flex-start;
+    }
 `
 
 const PcNewsTagText = styled.p`
@@ -163,9 +179,12 @@ const PcNewsDate = styled.p`
 // PC-テキスト
 
 const PcNewsMainContainer = styled.div`
-    display: flex;
-    align-items: flex-start;
-    justify-content: left;
+    display:  none;
+    @media screen and (min-width: 900px){
+        display: flex;
+        align-items: flex-start;
+        justify-content: left;
+}
 `
 
 const PcNewsButton = styled.img`
@@ -217,33 +236,18 @@ const PcNewsImage = styled.img`
 
 // Tab
 
-const TabNewsContainer = styled.ul`
+// Tab-タグ、日付
+
+const TabNewsItemOtherContainer = styled.div`
     display: none;
     @media screen and (min-width: 768px){
-        display: block;
-        width: 100%;
-        height: 100%;
-        margin-left: 40px;
-        background-color: yellow;
-        margin-bottom: 24px;
+        display: flex;
+        justify-content: left;
+        aling-items: flex-start;
     }
     @media screen and (min-width: 900px){
         display: none;
     }
-`
-
-const TabNewsItemContainer = styled.li`
-    border-top: 1px solid #BEBEBE;
-    padding: 16px 0;
-    display: flex;
-`
-
-// Tab-タグ、日付
-
-const TabNewsItemOtherContainer = styled.div`
-    display: flex;
-    justify-content: left;
-    aling-items: flex-start;
 `
 
 const TabNewsTagText = styled.p`
@@ -264,9 +268,15 @@ const TabNewsDate = styled.p`
 // Tab-テキスト
 
 const TabNewsMainContainer = styled.div`
-    display: flex;
-    align-items: flex-start;
-    justify-content: left;
+    display: none;
+    @media screen and (min-width: 768px){
+        display: flex;
+        align-items: flex-start;
+        justify-content: left;
+    }
+    @media screen and (min-width: 900px){
+        display: none;
+    }
 `
 
 const TabNewsButton = styled.img`
@@ -318,41 +328,29 @@ const TabNewsImage = styled.img`
 
 // SP
 
-const SpNewsContainer = styled.ul`
-    display: block;
-    width: 100%;
-    height: 100%;
-    margin-left: 20px;
-    background-color: yellow;
-    margin-bottom: 96px;
-    @media screen and (min-width: 768px){
-        display: none;
-    }
-`
-
-const SpNewsItemContainer = styled.li`
-    border-top: 1px solid #BEBEBE;
-    padding: 16px 0;
-    display: flex;
-    align-items: flex-start;
-`
-
 const SpNewsButton = styled.img`
     display: block;
     width: 14px;
     height: 14px;
     cursor: pointer;
+    @media screen and (min-width: 768px){
+        display: none;
+    }
 `
 
 const SpNewsMainContainer = styled.div`
     display: block;
     margin-left: 24px;
+    @media screen and (min-width: 768px){
+        display: none;
+    }
 `
 
 const SpNewsItemOtherContainer = styled.div`
     display: flex;
     align-items: flex-start;
     margin-bottom: 16px;
+    cursor: pointer;
 `
 
 const SpNewsDate = styled.p`
