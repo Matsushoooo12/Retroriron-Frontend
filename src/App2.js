@@ -41,9 +41,9 @@ export default App;
 const MainAllContainer = styled.div`
     font-family: 'Noto Sans JP', sans-serif;
     color: #292929;
-    padding-top: 93px;
+    padding-top: 117px;
     @media screen and (min-width: 768px){
-        padding-top: 100px;
+        padding-top: 124px;
     }
     @media screen and (min-width: 900px){
         padding-top: 0;
