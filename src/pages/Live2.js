@@ -92,7 +92,7 @@ const Live = () => {
                             <PcLiveContentsContainer>
                                 <PcLiveTextContainer>
                                     <PcLiveTitle cursorPointer={item.detail} onClick={toggleAccordion(item.id)}>{item.title}<PcLiveFinishTag finish={now > moment(item.date)}>終了</PcLiveFinishTag></PcLiveTitle><br/>
-                                    <PcLiveTicketButton active={now < moment(item.date)}>チケットをご希望の方はこちら</PcLiveTicketButton>
+                                    <PcLiveTicketButton onClick={() => setTicketValue({dateAndTitle: item.date + "    " + item.title, open: true})} active={now < moment(item.date)}>チケットをご希望の方はこちら</PcLiveTicketButton>
                                     <PcLiveInfoContainer>
                                         <PcLiveInfoText>開場時間 | {moment(item.openTime).add(15, "H").format("HH:mm")}   開演時間 | {moment(item.startTime).add(15, "H").format("HH:mm")}</PcLiveInfoText>
                                         <PcLiveInfoText>場所 | {item.place}</PcLiveInfoText>
@@ -109,6 +109,78 @@ const Live = () => {
                         <PcLiveImage vertical={item.imageVertical} src={process.env.REACT_APP_PRO_API_URL + item.image.url} />
                     </PcLiveItemContainer>
                 ))}
+                <ModalContainer
+                    className={ticketValue.open ? "open" : ""}
+                >
+                    <ModalBack onClick={handleClick}></ModalBack>
+                    {!isConfirmationVisible ? (
+                        <TicketItemContainer>
+                            <TicketTitle>チケット予約フォーム</TicketTitle>
+                            <TicketText>
+                                ※こちらはチケットのお取り置きをするためのフォームです。<br/>
+                                当日は会場受付で担当者にお名前をお伝えの上、お支払いをお願いいたします。
+                            </TicketText>
+                            <TicketCautionText>
+                                ※下記のライブのお申し込みでお間違いないかご確認ください。
+                            </TicketCautionText>
+                            <TicketFormContainer onSubmit={handleSubmit(onSubmitData)}>
+                                <TicketFormTextField
+                                    className="date_and_title"
+                                    type="text"
+                                    name="dateAndTitle"
+                                    value={ticketValue.dateAndTitle}
+                                    readOnly
+                                    {...register('dateAndTitle', {required: true})}
+                                />
+                                <TicketFormGroup>
+                                    <TicketFormLabel htmlFor="nameKana">ナマエ
+                                        <TicketFormRequiredSign>*</TicketFormRequiredSign>
+                                        {errors.nameKana && <TicketFormRequiredSign>こちらは必須項目です。</TicketFormRequiredSign>}
+                                    </TicketFormLabel>
+                                    <TicketFormTextField
+                                        name="nameKana"
+                                        type="text"
+                                        {...register('nameKana', {required: true})}
+                                    />
+                                    <TicketFormLabel htmlFor="email">メールアドレス
+                                        <TicketFormRequiredSign>*</TicketFormRequiredSign>
+                                        {errors.email && <TicketFormRequiredSign>こちらは必須項目です。</TicketFormRequiredSign>}
+                                    </TicketFormLabel>
+                                    <TicketFormTextField
+                                        name="email"
+                                        type="email"
+                                        {...register('email', {required: true})}
+                                    />
+                                    <TicketFormLabel htmlFor="number">枚数
+                                        <TicketFormRequiredSign>*</TicketFormRequiredSign>
+                                        {errors.number && <TicketFormRequiredSign>こちらは必須項目です。</TicketFormRequiredSign>}
+                                    </TicketFormLabel>
+                                    <TicketFormNumber
+                                        name="number"
+                                        type="number"
+                                        onChange={(e) => e.target.value}
+                                        defaultValue="1"
+                                        {...register('number', {required: true})}
+                                    />
+                                    <TicketFormLabel htmlFor="description">備考</TicketFormLabel>
+                                    <TicketFormTextField
+                                        name="description"
+                                        type="text"
+                                        {...register('description', {required: false})}
+                                    />
+                                </TicketFormGroup>
+                                <TicketFormGroup className="right">
+                                    <TicketFormSubmitButton type="submit" value="確認する" />
+                                </TicketFormGroup>
+                            </TicketFormContainer>
+                        </TicketItemContainer>
+                    ):(
+                        <TicketConfirm
+                            values={getValues()}
+                            hideConfirmation={hideConfirmation}
+                        />
+                    )}
+                </ModalContainer>
             </PcLiveContainer>
             {/* TAB */}
             <TabLiveContainer>
@@ -288,6 +360,163 @@ const PcLiveFinishTag = styled.p`
     border-radius: 3px;
     margin-left: 16px;
     ${props => props.finish && `display: inline-block;`}
+`
+
+// PC-チケット
+
+// ModalContainer
+
+const ModalContainer = styled.div`
+    width: 100%;
+    display: none;
+    &.open{
+        display: block;
+    }
+`
+
+const ModalBack = styled.div`
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    background-color: rgba(0, 0, 0, 0.7);
+`
+
+// TicketFormContainer
+
+const TicketItemContainer = styled.div`
+    width: 584px;
+    height: 695px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    z-index: 250;
+    background-color: #fff;
+    border-radius: 24px;
+`
+
+const TicketTitle = styled.h1`
+    font-size: 2.4rem;
+    font-weight: 700;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #292929;
+    margin: 24px 24px 8px;
+`
+
+const TicketText = styled.p`
+    font-size: 1.6rem;
+    font-weight: 500;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #292929;
+    margin: 0 24px 4px;
+`
+
+const TicketCautionText = styled.p`
+    font-size: 1.6rem;
+    font-weight: 500;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #F42626;
+    margin: 0 24px 24px;
+`
+
+// TicketFormContainer
+
+const TicketFormContainer = styled.form`
+`
+
+// ContactFormContainer
+
+const TicketFormLabel = styled.label`
+    font-size: 1.6rem;
+    font-weight: 700;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #292929;
+`
+
+const TicketFormGroup = styled.div`
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 16px;
+    border-top: 2px solid #BEBEBE;
+    padding-top: 24px;
+    &.right{
+        text-align: right;
+        border: none;
+        padding: 0;
+    }
+`
+
+const TicketFormRequiredSign = styled.span`
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #F42626;
+    margin-left: 4px;
+    margin-right: 16px;
+`
+
+// input:text
+
+const TicketFormTextField = styled.input`
+    font-size: 1.6rem;
+    font-weight: 500;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #292929;
+    padding: 8px 16px;
+    display: block;
+    border: 1px solid #BEBEBE;
+    border-radius: 7px;
+    margin: 0 auto;
+    width: 100%;
+    margin-top: 4px;
+    margin-bottom: 16px;
+    &:focus{
+        outline: none;
+    }
+    &.date_and_title{
+        background-color: #F0F0F0;
+        margin-bottom: 24px;
+        width: 90%;
+        margin-top: 0;
+    }
+`
+
+// input:number
+
+const TicketFormNumber = styled.input`
+    font-size: 1.6rem;
+    font-weight: 500;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #292929;
+    border: 1px solid #BEBEBE;
+    padding: 8px 16px;
+    border-radius: 7px;
+    width: 100px;
+    display: block;
+    margin-top: 4px;
+    margin-bottom: 16px;
+    &:focus{
+        outline: none;
+    }
+`
+
+const TicketFormSubmitButton = styled.input`
+    background-color: #F1A11B;
+    font-size: 1.6rem;
+    font-weight: 700;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #292929;
+    padding: 8px 16px;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 8px;
 `
 
 // TAB

@@ -195,7 +195,7 @@ const TicketFormTextField = styled.input`
     border: 1px solid #BEBEBE;
     border-radius: 7px;
     margin: 0 auto;
-    width: 93.5%;
+    width: 100%;
     margin-top: 4px;
     margin-bottom: 16px;
     &:focus{
@@ -204,7 +204,7 @@ const TicketFormTextField = styled.input`
     &.date_and_title{
         background-color: #F0F0F0;
         margin-bottom: 24px;
-        width: 85%;
+        width: 90%;
         margin-top: 0;
     }
     &.disabled{
