@@ -151,6 +151,7 @@ const HamburgerButtonContainer = styled.div`
     position: relative;
     width: 32px;
     height: 18px;
+    cursor: pointer;
     @media screen and (min-width: 768px){
         width: 48px;
         height: 27px;
@@ -232,8 +233,8 @@ const HamburgerMenuContentTextContainer = styled.ul`
 
 const HamburgerMenuContentText = styled.li`
     margin-bottom: 16px;
-    width: 80%;
-    margin: 0 auto 16px;
+    width: 100%;
+    margin: 0 8% 16px;
     @media screen and (min-width: 768px){
         margin-bottom: 24px;
     }
@@ -253,10 +254,8 @@ const HamburgerMenuLink = styled.a`
 // HamburgerMenuSnsContainer
 
 const HamburgerMenuSnsContainer = styled.div`
-    width: 80%;
-    margin: auto;
-    @media screen and (min-width: 768px){
-    }
+    width: 100%;
+    margin-left: 8%;
 `
 
 // HamburgerMenuSnsTextContainer
@@ -312,8 +311,8 @@ const HamburgerMenuCopyright = styled.p`
     color: #292929;
     font-size: 1.2rem;
     font-weight: 700;
-    width: 80%;
-    margin: auto;
+    width: 100%;
+    margin-left: 8%;
     @media screen and (min-width: 768px){
     }
 `
