@@ -399,7 +399,6 @@ const TabFv = styled.img`
     @media screen and (min-width: 768px){
         display: block;
         width: 100%;
-        background-color: green;
     }
     @media screen and (min-width: 900px){
         display: none;
@@ -413,7 +412,6 @@ const TabTextContainer = styled.div`
     @media screen and (min-width: 768px){
         display: block;
         width: 100%;
-        background-color: green;
         padding-left: 40px;
         padding-bottom: 56px;
     }
@@ -521,7 +519,6 @@ const TabSnsLink = styled.a`
 const SpFv = styled.img`
     display: block;
     width: 100%;
-    background-color: green;
     @media screen and (min-width: 768px){
         display: none;
     }
@@ -532,7 +529,6 @@ const SpFv = styled.img`
 const SpTextContainer = styled.div`
     display: block;
     width: 100%;
-    background-color: green;
     padding-left: 40px;
     padding-bottom: 56px;
     @media screen and (min-width: 768px){

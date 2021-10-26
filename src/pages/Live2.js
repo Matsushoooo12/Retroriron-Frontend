@@ -7,6 +7,8 @@ import Minus from '../images/close-btn.png'
 import { getLive } from '../api';
 import { useForm } from 'react-hook-form';
 import TicketConfirm from '../components/ticket/TicketConfirm';
+import { Link, useHistory } from 'react-router-dom';
+import SpTicketForm from '../components/ticket/SpTicketForm';
 
 const Live = () => {
     // useForm
@@ -31,6 +33,18 @@ const Live = () => {
         description: "",
         open: false
     })
+
+    const [spTicketDateAndTitle, setSpTicketDateAndTitle] = useState("")
+
+    const history = useHistory();
+
+    // handleSpTicketButton
+    const handleSpTicketButtonClick = (dateAndTitle) => {
+        setSpTicketDateAndTitle(dateAndTitle)
+        history.push("/live/sp/ticketform")
+    }
+
+    console.log(spTicketDateAndTitle)
 
     const handleClick = () => {
         setTicketValue({open: false})
@@ -73,6 +87,12 @@ const Live = () => {
     // Active
 
     const isActive = (index) => content === index;
+
+    // ToTicketForm
+
+    const toTicketForm = () => {
+        
+    }
 
     return (
         <>
@@ -185,18 +205,19 @@ const Live = () => {
             {/* TAB */}
             <TabLiveContainer>
                 {lives.map((item) => (
-                    <TabLiveItemContainer>
+                    <TabLiveItemContainer key={item.id}>
                         <TabLiveButton cursorPointer={item.detail} onClick={toggleAccordion(item.id)} src={content === item.id && item.detail ? Minus : Plus} />
                         <TabLiveMainContainer>
                             <TabLiveContentsContainer>
                                 <TabLiveDate cursorPointer={item.detail} onClick={toggleAccordion(item.id)}>{moment(item.date).format("YYYY.MM.DD")}</TabLiveDate>
                                 <TabLiveTitle cursorPointer={item.detail} onClick={toggleAccordion(item.id)}>{item.title}<TabLiveFinishTag finish={now > moment(item.date)}>終了</TabLiveFinishTag></TabLiveTitle><br/>
-                                <TabLiveTicketButton active={now < moment(item.date)}>チケットをご希望の方はこちら</TabLiveTicketButton>
+                                <TabLiveTicketButton onClick={() => handleSpTicketButtonClick(item.date + "    " + item.title)} active={now < moment(item.date)}>チケットをご希望の方はこちら</TabLiveTicketButton>
                                 <TabLiveInfoContainer>
                                     <TabLiveInfoText>開場時間 | {moment(item.openTime).add(15, "H").format("HH:mm")}   開演時間 | {moment(item.startTime).add(15, "H").format("HH:mm")}</TabLiveInfoText>
                                     <TabLiveInfoText>場所 | {item.place}</TabLiveInfoText>
                                     <TabLiveInfoText>料金 | {item.price}</TabLiveInfoText>
                                     <TabLiveInfoText>出演者 | {item.performer}</TabLiveInfoText>
+                                    <TabLiveBottomImage vertical={item.imageVertical} src={process.env.REACT_APP_PRO_API_URL + item.image.url} />
                                 </TabLiveInfoContainer>
                                 <TabLiveDetailText active={isActive(item.id) && item.detail}>
                                     詳細情報 |<br/>
@@ -216,7 +237,8 @@ const Live = () => {
                         <SpLiveMainContainer>
                             <SpLiveDate onClick={toggleAccordion(item.id)}>{moment(item.date).format("YYYY.MM.DD")}</SpLiveDate>
                             <SpLiveTitle onClick={toggleAccordion(item.id)}>{item.title}</SpLiveTitle><br/>
-                            <SpLiveTicketButton active={now < moment(item.date)}>チケットをご希望の方はこちら</SpLiveTicketButton>
+                            <SpLiveTicketButton onClick={() => handleSpTicketButtonClick(item.date + "    " + item.title)} active={now < moment(item.date)}>チケットをご希望の方はこちら</SpLiveTicketButton>
+                            <SpLiveFinishTag finish={now > moment(item.date)}>終了</SpLiveFinishTag>
                             <SpLiveInfoContainer active={isActive(item.id)}>
                                 <SpLiveInfoText>開場時間 | {moment(item.openTime).add(15, "H").format("HH:mm")}   開演時間 | {moment(item.startTime).add(15, "H").format("HH:mm")}</SpLiveInfoText>
                                 <SpLiveInfoText>場所 | {item.place}</SpLiveInfoText>
@@ -242,12 +264,13 @@ export default Live
 
 const PcLiveContainer = styled.ul`
     display: none;
+    @media screen and (min-width: 900px){
+        padding-bottom: 160px;
+    }
     @media screen and (min-width: 1024px){
         display: block;
         width: 100%;
         height: 100%;
-        background-color: yellow;
-        padding-bottom: 160px;
     }
 `
 
@@ -367,10 +390,12 @@ const PcLiveFinishTag = styled.p`
 // ModalContainer
 
 const ModalContainer = styled.div`
-    width: 100%;
     display: none;
-    &.open{
-        display: block;
+    @media screen and (min-width: 900px){
+        width: 100%;
+        &.open{
+            display: block;
+        }
     }
 `
 
@@ -496,7 +521,7 @@ const TicketFormNumber = styled.input`
     border: 1px solid #BEBEBE;
     padding: 8px 16px;
     border-radius: 7px;
-    width: 100px;
+    width: 76px;
     display: block;
     margin-top: 4px;
     margin-bottom: 16px;
@@ -523,12 +548,11 @@ const TicketFormSubmitButton = styled.input`
 
 const TabLiveContainer = styled.ul`
     display: none;
-    @media screen and (min-width: 600px){
+    @media screen and (min-width: 400px){
         display: block;
         width: 100%;
         height: 100%;
-        background-color: yellow;
-        margin-left: 40px;
+        margin-left: 5%;
     }
     @media screen and (min-width: 900px){
         margin-left: 0;
@@ -607,6 +631,9 @@ const TabLiveFinishTag = styled.p`
 `
 
 const TabLiveImage = styled.img`
+    @media screen and (min-width: 400px){
+        display: none;
+    }
     @media screen and (min-width: 600px){
         display: block;
         width: 160px;
@@ -623,6 +650,23 @@ const TabLiveImage = styled.img`
             width: 160px;
             height: 200px;
         `}
+    }
+`
+
+const TabLiveBottomImage = styled.img`
+    display: none;
+    @media screen and (min-width: 400px){
+        display: block;
+        width: 160px;
+        height: 100%;
+        margin-top: 16px;
+        ${props => props.vertical && `
+            width: 128px;
+            height: 160px;
+        `}
+    }
+    @media screen and (min-width: 600px){
+        display: none;
     }
 `
 
@@ -659,9 +703,8 @@ const SpLiveContainer = styled.ul`
     display: block;
     width: 100%;
     height: 100%;
-    background-color: yellow;
-    margin-left: 20px;
-    @media screen and (min-width: 600px){
+    margin-left: 5%;
+    @media screen and (min-width: 400px){
         display: none;
     }
 `
@@ -710,6 +753,18 @@ const SpLiveTicketButton = styled.a`
     cursor: pointer;
     margin-top: 16px;
     ${props => props.active && `display: inline-block;`}
+`
+
+const SpLiveFinishTag = styled.p`
+    display: none;
+    font-size: 1.2rem;
+    font-weight: 900;
+    padding: 4px 8px;
+    color: #fff;
+    background-color: #F42626;
+    border-radius: 3px;
+    margin-top: 16px;
+    ${props => props.finish && `display: inline-block;`}
 `
 
 const SpLiveInfoContainer = styled.div`

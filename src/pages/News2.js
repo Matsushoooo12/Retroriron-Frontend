@@ -111,22 +111,21 @@ const NewsContainer = styled.ul`
     display: block;
     width: 100%;
     height: 100%;
-    margin-left: 20px;
-    background-color: yellow;
+    margin-left: 5%;
     margin-bottom: 96px;
     @media screen and (min-width: 768px){
         display: block;
         width: 100%;
         height: 100%;
-        margin-left: 40px;
-        background-color: yellow;
+        // margin-left: 40px;
+
         margin-bottom: 24px;
     }
     @media screen and (min-width: 900px){
         display: block;
         width: 100%;
         height: 100%;
-        background-color: yellow;
+        padding-bottom: 160px;
         margin-left: 0;
     }
 `
