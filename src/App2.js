@@ -13,6 +13,7 @@ import Discography from './pages/Discography2';
 import Contact from './pages/Contact2';
 import './components/common/reset.css'
 import Footer from './components/common/Footer';
+import SpTicketForm from './components/ticket/SpTicketForm';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
                             <Route exact path="/live" component={Live} />
                             <Route exact path="/discography" component={Discography} />
                             <Route exact path="/contact" component={Contact} />
+                            <Route exact path="/live/sp/ticketform" component={SpTicketForm} />
                         </Switch>
                     </MainItem>
                 </MainItemContainer>
@@ -49,7 +51,6 @@ const MainAllContainer = styled.div`
         padding-top: 0;
         position: absolute;
         right: 0;
-        background-color: blue;
         width: calc(100% - 250px);
         overflow-y: scroll;
     }
@@ -61,7 +62,6 @@ const MainAllContainer = styled.div`
 const MainItemContainer = styled.div`
     width: 80%;
     height: 100%;
-    background-color: red;
     margin: 0 auto;
 `
 
