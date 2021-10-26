@@ -316,7 +316,6 @@ const PcMemberContainer = styled.div`
     @media screen and (min-width: 900px){
         width: 100%;
         height: 100%;
-        background-color: gray;
         display: block;
         margin-bottom: 152px;
     }
