@@ -1,34 +1,40 @@
 import React, { useState } from 'react'
-import Helmet from 'react-helmet';
 import styled from '@emotion/styled';
-import { useForm } from 'react-hook-form';
-import ContactConfirm2 from '../components/contact/ContactConfirm2';
+import { createContact } from '../../api';
+import ContactComplete from './ContactComplete2';
 
-const Contact = () => {
-    // useForm
-    const { register, formState: { errors }, getValues, handleSubmit } = useForm();
+const ContactConfirm2 = (props) => {
+    const {values, hideConfirmation} = props
 
-    // isConfirmationVisibleにstateを持たせて、入力内容確認画面の表示・非表示をコントロール
-    // isConfirmationVisibleの初期値はfalseで入力内容確認画面は非表示に
-    const [isConfirmationVisible, setIsConfirmationVisible] = useState(false)
+    const value = ({
+        name: values.name,
+        email: values.email,
+        phone: values.phone,
+        content: values.contact
+    })
 
-    //入力内容確認画面の閉じるボタンを押した時非表示にする関数を宣言
-    const hideConfirmation = () => setIsConfirmationVisible(false)
+    // isCompleteVisibleにstateを持たせて、入力内容確認画面の表示・非表示をコントロール
+    // isCompleteVisibleの初期値はfalseで入力内容確認画面は非表示に
+    const [isCompleteVisible, setIsCompleteVisible] = useState(false)
 
-    //submitボタンを押した時、入力内容確認画面を表示させる
-    const onSubmitData = () => setIsConfirmationVisible(true)
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try{
+            const res = await createContact(value);
+            console.log(res)
+            setIsCompleteVisible(true)
+        } catch(e){
+            console.log(e)
+        }
+    }
 
-    console.log(isConfirmationVisible)
-
+    console.log(isCompleteVisible)
     return (
         <>
-            <Helmet>
-                <title>Contact page</title>
-                <meta name="the Contact page of a pop band called Retroriron." content="contact page" />
-            </Helmet>
-            {!isConfirmationVisible ? (
+            {!isCompleteVisible ? (
+                // PC
                 <ContactContainer>
-                    <ContactTitle>お問い合わせフォーム</ContactTitle>
+                    <ContactTitle>お問い合わせ内容の確認</ContactTitle>
                     <ContactText>
                         レトロリロンへの出演依頼等、お気軽にお問い合わせください。<br/>
                         担当者から折り返しご連絡いたします。
@@ -36,67 +42,68 @@ const Contact = () => {
                     <ContactText caution>
                         ※取得した個人情報は、お問い合わせへの円滑な対応を目的としその他の目的では使用しませんのでご安心ください。
                     </ContactText>
-                    <ContactFormContainer onSubmit={handleSubmit(onSubmitData)}>
+                    <ContactFormContainer>
                         <ContactFormGroup>
                             <ContactFormLabel htmlFor="name">名前
                                 <ContactFormRequiredSign>*</ContactFormRequiredSign>
-                                {errors.name && <ContactFormRequiredSign>こちらは必須項目です。</ContactFormRequiredSign>}
                             </ContactFormLabel>
                             <ContactFormTextField
+                                disabled
+                                value={values.name}
                                 type="text"
                                 name="name"
-                                {...register('name', {required: true})}
                             />
                         </ContactFormGroup>
                         <ContactFormGroup>
                             <ContactFormLabel htmlFor="email">メールアドレス
                                 <ContactFormRequiredSign>*</ContactFormRequiredSign>
-                                {errors.email && <ContactFormRequiredSign>こちらは必須項目です。</ContactFormRequiredSign>}
                             </ContactFormLabel>
                             <ContactFormTextField
+                                disabled
+                                value={values.email}
                                 type="email"
                                 name="email"
-                                {...register('email', {required: true})}
                             />
                         </ContactFormGroup>
                         <ContactFormGroup>
                             <ContactFormLabel htmlFor="phone">電話番号</ContactFormLabel>
                             <ContactFormTextField
+                                disabled
                                 type="number"
                                 name="phone"
-                                {...register('phone', {required: false})}
+                                value={values.phone}
                             />
                         </ContactFormGroup>
                         <ContactFormGroup>
                             <ContactFormLabel htmlFor="contact">お問い合わせ内容
                                 <ContactFormRequiredSign>*</ContactFormRequiredSign>
-                                {errors.contact && <ContactFormRequiredSign>こちらは必須項目です。</ContactFormRequiredSign>}
                             </ContactFormLabel>
                             <ContactFormTextArea
+                                disabled
+                                value={values.contact}
                                 type="text"
                                 name="contact"
                                 rows="8"
                                 minLength="1"
                                 maxLength="500"
-                                {...register('contact', {required: true})}
                             />
                         </ContactFormGroup>
                         <ContactFormSubmitButtonContainer>
-                            <ContactFormSubmitButton type="submit" value="内容を確認する" />
+                            <ContactFormSubmitButton back type="button" value="戻る" onClick={hideConfirmation} />
+                            <ContactFormSubmitButton type="submit" value="送信する" onClick={(e) => handleSubmit(e)} />
                         </ContactFormSubmitButtonContainer>
                     </ContactFormContainer>
                 </ContactContainer>
             ):(
-                <ContactConfirm2
-                    values={getValues()}
-                    hideConfirmation={hideConfirmation}
+                <ContactComplete
+                    values={values}
                 />
             )}
         </>
     )
 }
 
-export default Contact
+export default ContactConfirm2
 
 // ContactContainer
 
@@ -268,7 +275,7 @@ const ContactFormTextField = styled.input`
     border: 1px solid #BEBEBE;
     border-radius: 7px;
     width: 100%;
-    background-color: #fff;
+    background-color: #F0F0F0;
     margin-top: 8px;
     &:focus{
         outline: none;
@@ -281,7 +288,7 @@ const ContactFormTextField = styled.input`
         border: 1px solid #BEBEBE;
         border-radius: 7px;
         width: 100%;
-        background-color: #fff;
+        background-color: #F0F0F0;
         margin-top: 8px;
         &:focus{
             outline: none;
@@ -295,7 +302,7 @@ const ContactFormTextField = styled.input`
         border: 1px solid #BEBEBE;
         border-radius: 7px;
         width: 100%;
-        background-color: #fff;
+        background-color: #F0F0F0;
         margin-top: 8px;
         &:focus{
             outline: none;
@@ -312,7 +319,7 @@ const ContactFormTextArea = styled.textarea`
     border-radius: 7px;
     width: 100%;
     resize: none;
-    background-color: #fff;
+    background-color: #F0F0F0;
     margin-top: 8px;
     &:focus{
         outline: none;
@@ -325,7 +332,7 @@ const ContactFormTextArea = styled.textarea`
         border: 1px solid #BEBEBE;
         border-radius: 7px;
         width: 100%;
-        background-color: #fff;
+        background-color: #F0F0F0;
         margin-top: 8px;
         &:focus{
             outline: none;
@@ -340,7 +347,7 @@ const ContactFormTextArea = styled.textarea`
         border-radius: 7px;
         width: 100%;
         resize: none;
-        background-color: #fff;
+        background-color: #F0F0F0;
         margin-top: 8px;
         &:focus{
             outline: none;
@@ -371,6 +378,13 @@ const ContactFormSubmitButton = styled.input`
     border-radius: 6px;
     cursor: pointer;
     margin-top: 16px;
+    ${props => props.back && `
+        background-color: #fff;
+        border: 2px solid #F1A11B;
+        color: #F1A11B;
+        padding: 6px 16px;
+        margin-right: 16px;
+    `}
     @media screen and (min-width: 600px){
         background-color: #F1A11B;
         font-size: 1.6rem;
@@ -381,6 +395,10 @@ const ContactFormSubmitButton = styled.input`
         border-radius: 6px;
         cursor: pointer;
         margin-top: 16px;
+        ${props => props.back && `
+            background-color: #BEBEBE;
+            margin-right: 16px;
+        `}
     }
     @media screen and (min-width: 1024px){
         background-color: #F1A11B;
@@ -392,5 +410,9 @@ const ContactFormSubmitButton = styled.input`
         border-radius: 6px;
         cursor: pointer;
         margin-top: 16px;
+        ${props => props.back && `
+            background-color: #BEBEBE;
+            margin-right: 16px;
+        `}
     }
 `
