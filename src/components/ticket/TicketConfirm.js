@@ -188,7 +188,6 @@ const TicketFormRequiredSign = styled.span`
 const TicketFormTextField = styled.input`
     font-size: 1.6rem;
     font-weight: 500;
-    font-family: 'Noto Sans JP', sans-serif;
     color: #292929;
     padding: 8px 16px;
     display: block;
@@ -222,10 +221,11 @@ const TicketFormNumber = styled.input`
     border: 1px solid #BEBEBE;
     padding: 8px 16px;
     border-radius: 7px;
-    width: 50px;
+    width: 80px;
     display: block;
     margin-top: 4px;
     margin-bottom: 16px;
+    background-color: #F0F0F0;
     &:focus{
         outline: none;
     }
