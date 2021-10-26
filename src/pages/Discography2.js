@@ -211,6 +211,7 @@ const SpDiscographyContainer = styled.div`
     width: 100%;
     height: 100%;
     margin-bottom: 42px;
+    margin-left: 5%;
     @media screen and (min-width: 500px){
         display: none;
     }
