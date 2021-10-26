@@ -13,7 +13,6 @@ import Discography from './pages/Discography2';
 import Contact from './pages/Contact2';
 import './components/common/reset.css'
 import Footer from './components/common/Footer';
-import SpTicketForm from './components/ticket/SpTicketForm';
 
 function App() {
   return (
@@ -28,7 +27,6 @@ function App() {
                             <Route exact path="/live" component={Live} />
                             <Route exact path="/discography" component={Discography} />
                             <Route exact path="/contact" component={Contact} />
-                            <Route exact path="/live/sp/ticketform" component={SpTicketForm} />
                         </Switch>
                     </MainItem>
                 </MainItemContainer>
