@@ -24,6 +24,8 @@ const Header2 = () => {
             return "discography"
         } else if(location.pathname === "/contact"){
             return "contact"
+        } else if(location.pathname === "/live/sp/ticketform"){
+            return "live - ticket"
         }
     }
 
@@ -108,17 +110,22 @@ const HeaderContainer = styled.div`
     position:fixed;
     top: 0;
     left: 0;
-    width:100%;
+    right: 0;
+    margin: auto;
+    width: 100%;
     height: 93px;
     background-color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     z-index: 100;
+    padding: 0 8%;
     @media screen and (min-width: 768px){
         height: 100px;
     }
     @media screen and (min-width: 900px){
+        margin: 0;
+        left: 0;
         display: block;
         width: 250px;
         height: 100vh;
@@ -144,11 +151,9 @@ const HamburgerButtonContainer = styled.div`
     position: relative;
     width: 32px;
     height: 18px;
-    margin-left: 24px;
     @media screen and (min-width: 768px){
         width: 48px;
         height: 27px;
-        margin-left: 56px;
     }
 `
 
@@ -227,9 +232,9 @@ const HamburgerMenuContentTextContainer = styled.ul`
 
 const HamburgerMenuContentText = styled.li`
     margin-bottom: 16px;
-    margin-left: 24px;
+    width: 80%;
+    margin: 0 auto 16px;
     @media screen and (min-width: 768px){
-        margin-left: 56px;
         margin-bottom: 24px;
     }
 `
@@ -248,10 +253,9 @@ const HamburgerMenuLink = styled.a`
 // HamburgerMenuSnsContainer
 
 const HamburgerMenuSnsContainer = styled.div`
-    width: 150px;
-    margin: 0 24px 85px;
+    width: 80%;
+    margin: auto;
     @media screen and (min-width: 768px){
-        margin: 0 56px 85px;
     }
 `
 
@@ -259,7 +263,7 @@ const HamburgerMenuSnsContainer = styled.div`
 
 const HamburgerMenuSnsTextContainer = styled.div`
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
     align-items: center;
     margin-bottom: 18px;
 `
@@ -276,13 +280,15 @@ const HamburgerMenuSnsBorder = styled.div`
     height: 1px;
     background-color: #000;
     margin-top: 4px;
+    margin-left: 16px;
 `
 
 // HamburgerMenuSnsIconContainer
 
 const HamburgerMenuSnsIconContainer = styled.div`
     display: flex;
-    justify-content: space-around;
+    justify-content: left;
+    margin-bottom: 85px;
 `
 
 const HamburgerMenuSnsIcon = styled.img`
@@ -292,6 +298,10 @@ const HamburgerMenuSnsIcon = styled.img`
 
 const HamburgerMenuSnsIconLink = styled.a`
     text-decoration: none;
+    margin-right: 24px;
+    &:last-of-type{
+        margin-right: 0;
+    }
 `
 
 // HamburgerMenuCopyright
@@ -302,9 +312,9 @@ const HamburgerMenuCopyright = styled.p`
     color: #292929;
     font-size: 1.2rem;
     font-weight: 700;
-    margin-left: 24px;
+    width: 80%;
+    margin: auto;
     @media screen and (min-width: 768px){
-        margin-left: 56px;
     }
 `
 
@@ -314,11 +324,9 @@ const LogoImage = styled.img`
     cursor: pointer;
     width: 88px;
     height: 37px;
-    margin-right: 24px;
     @media screen and (min-width: 768px){
         width: 150px;
         height: 64px;
-        margin-right: 56px;
     }
     @media screen and (min-width: 900px) {
         margin: 64px auto 0;
@@ -397,18 +405,15 @@ const SnsFixedContainer = styled.div`
     }
     position: fixed;
     z-index: 50;
-    height: 32px;
-    width: 263px;
-    left: -90px;
-    top: 70%;
+    width: 100%;
+    left: -40%;
+    top: 72%;
     transform: rotate(90deg);
     align-items: center;
-    @media screen and (min-width: 768px){
-        left: -50px;
-    }
     @media screen and (min-width: 900px){
         display: none;
     }
+    ${props => props.location && `display: none;`}
 `
 
 const SnsFixedBorder = styled.div`

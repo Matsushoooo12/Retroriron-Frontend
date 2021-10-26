@@ -19,7 +19,7 @@ const PcFooterContainer = styled.div`
         display: block;
         width: calc(100% - 250px);
         height: 88px;
-        background-color: skyblue;
+        background-color: #fff;
         position: fixed;
         bottom: 0;
         right: 0;
