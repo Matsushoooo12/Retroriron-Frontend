@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from '@emotion/styled';
-import Logo from '../../images/logo.PNG'
+import Logo from '../../images/logo.webp'
 import Twitter from '../../images/twitter-logo.png'
 import Instagram from '../../images/insta-logo.png'
 import Youtube from '../../images/youtube-logo.png'
