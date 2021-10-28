@@ -6,7 +6,7 @@ import {
   Route,
   Switch
 } from 'react-router-dom'
-import Home from './pages/Home2';
+import Home from './pages/Home';
 import Live from './pages/Live';
 import News from './pages/News';
 import Discography from './pages/Discography';
