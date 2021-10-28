@@ -20,7 +20,7 @@ const Home = () => {
             </Helmet>
             {/* Head */}
             {/* PC */}
-            <PcFv loading="lazy" src={FvFrame} alt="レトロリロンのアー写" />
+            <PcFv src={FvFrame} alt="レトロリロンのアー写" />
             <PcTextContainer>
                 <PcTextBandname loading="lazy" src={BandTitle} alt="レトロリロン" />
                 <PcTextTitle>ー  "明日"ではなく"今日"を生きよう </PcTextTitle>
@@ -100,7 +100,7 @@ const Home = () => {
             </PcMemberContainer>
             {/* PC */}
             {/* TAB */}
-            <TabFv loading="lazy" src={FvFrame} alt="レトロリロンのアー写" />
+            <TabFv src={FvFrame} alt="レトロリロンのアー写" />
             <TabTextContainer>
                 <TabTextBandname loading="lazy" src={BandTitle} alt="レトロリロン" />
                 <TabTextTitle>ー  "明日"ではなく"今日"を生きよう</TabTextTitle>
@@ -180,7 +180,7 @@ const Home = () => {
             </TabMemberContainer>
             {/* TAB */}
             {/* Sp */}
-            <SpFv loading="lazy" src={FvFrame} alt="レトロリロンのアー写" />
+            <SpFv src={FvFrame} alt="レトロリロンのアー写" />
             <SpTextContainer>
                 <SpTextBandname loading="lazy" src={BandTitle} alt="レトロリロン" />
                 <SpTextTitle>ー  "明日"ではなく<SpTextTitleBr/><SpTextTitleSpace>　 </SpTextTitleSpace>"今日"を生きよう</SpTextTitle>
