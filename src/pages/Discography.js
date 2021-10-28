@@ -225,7 +225,7 @@ const SpDiscographyContainer = styled.div`
 const SpDiscographyItemContainer = styled.div`
     display: block;
     width: 280px;
-    margin: 0 auto 32px;
+    margin: 0 auto 48px;
     &:last-of-type{
         margin-bottom: 0;
     }
