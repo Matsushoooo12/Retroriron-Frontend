@@ -7,6 +7,7 @@ import Minus from '../images/close-btn.png'
 import { getLive } from '../api';
 import { useForm } from 'react-hook-form';
 import TicketConfirm from '../components/ticket/TicketConfirm';
+import SpTicketForm from '../components/ticket/SpTicketForm';
 
 const Live = () => {
     // useForm
@@ -24,13 +25,28 @@ const Live = () => {
 
     // TicketValue
     const [ticketValue, setTicketValue] = useState({
-        dateAndTitle: "",
+        date: "",
+        title: "",
         nameKana: "",
         email: "",
         number: "",
         description: "",
         open: false
     })
+
+    const [spTicketDateAndTitle, setSpTicketDateAndTitle] = useState({
+        date: "",
+        title: ""
+    })
+
+    // handleSpTicketButton
+    const handleSpTicketButtonClick = (date, title) => {
+        setSpTicketDateAndTitle({
+            date: date,
+            title: title
+        })
+        setIsConfirmationVisible(true)
+    }
 
     const handleClick = () => {
         setTicketValue({open: false})
@@ -80,68 +96,34 @@ const Live = () => {
                 <title>Live page</title>
                 <meta name="the Live page of a pop band called Retroriron." content="live page" />
             </Helmet>
-            <LiveContainer>
-                {lives.map((item, i) => (
-                    <LiveItemContainer key={i}>
-                        <LiveInfoContainer>
-                            <LiveDate>{moment(item.date).format("YYYY.MM.DD")}</LiveDate>
-                            <SpLiveTitleContainer>
-                                <SpLiveDate className={content === i ? "active" : ""} onClick={toggleAccordion(i)}>{moment(item.date).format("YYYY.MM.DD")}</SpLiveDate>
-                                <SpLiveTitle className={content === i ? "active" : ""} onClick={toggleAccordion(i)}>{item.title}</SpLiveTitle>
-                                {now < moment(item.date) ? (
-                                    <LiveTicketButton className="sp" onClick={() => setTicketValue({dateAndTitle: item.date + "    " + item.title, open: true})}>チケットをご希望の方はこちら</LiveTicketButton>
-                                ):(
-                                    <LiveFinish className="finish sp">終了</LiveFinish>
-                                )}
-                                <SpLiveContentsContainer active={isActive(i)}>
-                                    <LiveTextContainer className="sp">
-                                        <LiveText>開場時間 | {moment(item.openTime).add(15, "H").format("HH:mm")}   開演時間 | {moment(item.startTime).add(15, "H").format("HH:mm")}</LiveText>
-                                        <LiveText>場所 | {item.place}</LiveText>
-                                        <LiveText>料金 | {item.price}</LiveText>
-                                        <LiveText>出演者 | {item.performer}</LiveText>
-                                    </LiveTextContainer>
-                                    <LiveImage vartical={item.imageVertical} className={item.imageVertical ? "sp" : "sp"} src={process.env.REACT_APP_PRO_API_URL + item.image.url} />
-                                </SpLiveContentsContainer>
-                            </SpLiveTitleContainer>
-                            <SpLiveButton className={content === i ? "active" : ""} src={content === i ? Minus : Plus} onClick={toggleAccordion(i)} />
-                            {item.detail ? (
-                                <LiveButton className={content === i ? "active" : ""} src={content === i ? Minus : Plus} onClick={toggleAccordion(i)} />
-                            ):(
-                                <LiveButton className="cursor-default" src={Plus} />
-                            )}
-                            <LiveContentsContainer>
-                                <LiveDate className="tab">{moment(item.date).format("YYYY.MM.DD")}</LiveDate>
-                                <LiveTitleContainer>
-                                    {item.detail ? (
-                                        <LiveTitle className={content === i ? "active" : ""} onClick={toggleAccordion(i)}>{item.title}</LiveTitle>
-                                    ):(
-                                        <LiveTitle className="cursor-default">{item.title}</LiveTitle>
-                                    )}
-                                    {now < moment(item.date) ? (
-                                        <LiveFinish>終了</LiveFinish>
-                                    ):(
-                                        <LiveFinish className="finish">終了</LiveFinish>
-                                    )}
-                                </LiveTitleContainer>
-                                <LiveTextContainer>
-                                    <LiveText>開場時間 | {moment(item.openTime).add(15, "H").format("HH:mm")}   開演時間 | {moment(item.startTime).add(15, "H").format("HH:mm")}</LiveText>
-                                    <LiveText>場所 | {item.place}</LiveText>
-                                    <LiveText>料金 | {item.price}</LiveText>
-                                    <LiveText>出演者 | {item.performer}</LiveText>
-                                </LiveTextContainer>
-                                {now < moment(item.date) ? (
-                                    <LiveTicketButton className="tab" onClick={() => setTicketValue({dateAndTitle: item.date + "    " + item.title, open: true})}>チケットをご希望の方はこちら</LiveTicketButton>
-                                ):(
-                                    <></>
-                                )}
-                                <LiveDetailText className={content === i ? "active" : ""}>
-                                    詳細情報 |<br/><br/>
-                                    {item.detail}
-                                </LiveDetailText>
-                            </LiveContentsContainer>
-                        </LiveInfoContainer>
-                        <LiveImage vartical={item.imageVertical} src={process.env.REACT_APP_PRO_API_URL + item.image.url} />
-                    </LiveItemContainer>
+            {/* PC */}
+            <PcLiveContainer>
+                {lives.map((item) => (
+                    <PcLiveItemContainer key={item.id}>
+                        <PcLiveMainContainer>
+                            <PcLiveItemOtherContainer>
+                                <PcLiveDate>{moment(item.date).format("YYYY.MM.DD")}</PcLiveDate>
+                                <PcLiveButton cursorPointer={item.detail} onClick={toggleAccordion(item.id)} src={content === item.id && item.detail ? Minus : Plus} />
+                            </PcLiveItemOtherContainer>
+                            <PcLiveContentsContainer>
+                                <PcLiveTextContainer>
+                                    <PcLiveTitle cursorPointer={item.detail} onClick={toggleAccordion(item.id)}>{item.title}<PcLiveFinishTag finish={now > moment(item.date)}>終了</PcLiveFinishTag></PcLiveTitle><br/>
+                                    <PcLiveTicketButton onClick={() => setTicketValue({date: item.date, title: item.title, open: true})} active={now < moment(item.date)}>チケットをご希望の方はこちら</PcLiveTicketButton>
+                                    <PcLiveInfoContainer>
+                                        <PcLiveInfoText>開場時間 | {moment(item.openTime).add(15, "H").format("HH:mm")}   開演時間 | {moment(item.startTime).add(15, "H").format("HH:mm")}</PcLiveInfoText>
+                                        <PcLiveInfoText>場所 | {item.place}</PcLiveInfoText>
+                                        <PcLiveInfoText>料金 | {item.price}</PcLiveInfoText>
+                                        <PcLiveInfoText>出演者 | {item.performer}</PcLiveInfoText>
+                                    </PcLiveInfoContainer>
+                                    <PcLiveDetailText active={isActive(item.id) && item.detail}>
+                                        詳細情報 |<br/><br/>
+                                        {item.detail}
+                                    </PcLiveDetailText>
+                                </PcLiveTextContainer>
+                            </PcLiveContentsContainer>
+                        </PcLiveMainContainer>
+                        <PcLiveImage vertical={item.imageVertical} src={process.env.REACT_APP_PRO_API_URL + item.image.url} />
+                    </PcLiveItemContainer>
                 ))}
                 <ModalContainer
                     className={ticketValue.open ? "open" : ""}
@@ -158,14 +140,24 @@ const Live = () => {
                                 ※下記のライブのお申し込みでお間違いないかご確認ください。
                             </TicketCautionText>
                             <TicketFormContainer onSubmit={handleSubmit(onSubmitData)}>
-                                <TicketFormTextField
-                                    className="date_and_title"
-                                    type="text"
-                                    name="dateAndTitle"
-                                    value={ticketValue.dateAndTitle}
-                                    readOnly
-                                    {...register('dateAndTitle', {required: true})}
-                                />
+                                <TicketDateAndTitleContainer>
+                                    <TicketDateAndTitleTextField
+                                        type="text"
+                                        name="date"
+                                        value={ticketValue.date}
+                                        readOnly
+                                        {...register('date', {required: true})}
+                                        dateAndTitle
+                                    />
+                                    <TicketDateAndTitleTextField
+                                        type="text"
+                                        name="title"
+                                        value={ticketValue.title}
+                                        readOnly
+                                        {...register('title', {required: true})}
+                                        dateAndTitle
+                                    />
+                                </TicketDateAndTitleContainer>
                                 <TicketFormGroup>
                                     <TicketFormLabel htmlFor="nameKana">ナマエ
                                         <TicketFormRequiredSign>*</TicketFormRequiredSign>
@@ -215,324 +207,209 @@ const Live = () => {
                         />
                     )}
                 </ModalContainer>
-            </LiveContainer>
+            </PcLiveContainer>
+            {/* TAB */}
+            {!isConfirmationVisible ? (
+                <>
+                    <TabLiveContainer>
+                        {lives.map((item) => (
+                            <TabLiveItemContainer key={item.id}>
+                                <TabLiveButton cursorPointer={item.detail} onClick={toggleAccordion(item.id)} src={content === item.id && item.detail ? Minus : Plus} />
+                                <TabLiveMainContainer>
+                                    <TabLiveContentsContainer>
+                                        <TabLiveDate cursorPointer={item.detail} onClick={toggleAccordion(item.id)}>{moment(item.date).format("YYYY.MM.DD")}</TabLiveDate>
+                                        <TabLiveTitle cursorPointer={item.detail} onClick={toggleAccordion(item.id)}>{item.title}<TabLiveFinishTag finish={now > moment(item.date)}>終了</TabLiveFinishTag></TabLiveTitle><br/>
+                                        <TabLiveTicketButton onClick={() => handleSpTicketButtonClick(item.date, item.title)} active={now < moment(item.date)}>チケットをご希望の方はこちら</TabLiveTicketButton>
+                                        <TabLiveInfoContainer>
+                                            <TabLiveInfoText>開場時間 | {moment(item.openTime).add(15, "H").format("HH:mm")}   開演時間 | {moment(item.startTime).add(15, "H").format("HH:mm")}</TabLiveInfoText>
+                                            <TabLiveInfoText>場所 | {item.place}</TabLiveInfoText>
+                                            <TabLiveInfoText>料金 | {item.price}</TabLiveInfoText>
+                                            <TabLiveInfoText>出演者 | {item.performer}</TabLiveInfoText>
+                                            <TabLiveBottomImage vertical={item.imageVertical} src={process.env.REACT_APP_PRO_API_URL + item.image.url} />
+                                        </TabLiveInfoContainer>
+                                        <TabLiveDetailText active={isActive(item.id) && item.detail}>
+                                            詳細情報 |<br/>
+                                            {item.detail}
+                                        </TabLiveDetailText>
+                                    </TabLiveContentsContainer>
+                                    <TabLiveImage vertical={item.imageVertical} src={process.env.REACT_APP_PRO_API_URL + item.image.url} />
+                                </TabLiveMainContainer>
+                            </TabLiveItemContainer>
+                        ))}
+                    </TabLiveContainer>
+                    <SpLiveContainer>
+                        {lives.map((item) => (
+                            <SpLiveItemContainer key={item.id}>
+                                <SpLiveButton onClick={toggleAccordion(item.id)} src={Plus} />
+                                <SpLiveMainContainer>
+                                    <SpLiveDate onClick={toggleAccordion(item.id)}>{moment(item.date).format("YYYY.MM.DD")}</SpLiveDate>
+                                    <SpLiveTitle onClick={toggleAccordion(item.id)}>{item.title}</SpLiveTitle><br/>
+                                    <SpLiveTicketButton onClick={() => handleSpTicketButtonClick(item.date, item.title)} active={now < moment(item.date)}>チケットをご希望の方はこちら</SpLiveTicketButton>
+                                    <SpLiveFinishTag finish={now > moment(item.date)}>終了</SpLiveFinishTag>
+                                    <SpLiveInfoContainer active={isActive(item.id)}>
+                                        <SpLiveInfoText>開場時間 | {moment(item.openTime).add(15, "H").format("HH:mm")}   開演時間 | {moment(item.startTime).add(15, "H").format("HH:mm")}</SpLiveInfoText>
+                                        <SpLiveInfoText>場所 | {item.place}</SpLiveInfoText>
+                                        <SpLiveInfoText>料金 | {item.price}</SpLiveInfoText>
+                                        <SpLiveInfoText>出演者 | {item.performer}</SpLiveInfoText>
+                                        <SpLiveImage vertical={item.imageVertical} src={process.env.REACT_APP_PRO_API_URL + item.image.url} />
+                                        <SpLiveDetailText active={item.detail}>
+                                            詳細情報 |<br/>
+                                            {item.detail}
+                                        </SpLiveDetailText>
+                                    </SpLiveInfoContainer>
+                                </SpLiveMainContainer>
+                            </SpLiveItemContainer>
+                        ))}
+                    </SpLiveContainer>
+                </>
+            ):(
+                <SpTicketForm
+                    date={spTicketDateAndTitle.date}
+                    title={spTicketDateAndTitle.title}
+                />
+            )}
         </>
     )
 }
 
 export default Live
 
-//  > 1000 >
+// PC
 
-// LiveContainer
-
-const LiveContainer = styled.ul`
-    width: 100%;
-    height: 100%;
-    margin-top: 100px;
+const PcLiveContainer = styled.ul`
+    display: none;
     @media screen and (min-width: 900px){
-        margin-top: 80px;
+        padding-bottom: 160px;
+    }
+    @media screen and (min-width: 1024px){
+        display: block;
+        width: 100%;
+        height: 100%;
     }
 `
 
-// LiveItemContainer
-
-const LiveItemContainer = styled.li`
-    width: 70vw;
+const PcLiveItemContainer = styled.li`
     border-top: 1px solid #BEBEBE;
-    margin-left: 64px;
     padding: 16px 0;
     display: flex;
     justify-content: space-between;
-    @media screen and (min-width: 768px){
-        margin: 0 auto;
-        width: 64vw;
-    }
-    @media screen and (min-width: 900px){
-        padding: 24px 0;
-        width: 64vw;
-    }
 `
 
-// LiveInfoContainer
-
-const LiveInfoContainer = styled.div`
+const PcLiveMainContainer = styled.div`
     display: flex;
-    flex-direction: row-reverse;
-    @media screen and (min-width: 768px){
-        flex-direction: initial;
-    }
 `
 
-const LiveImage = styled.img`
-    display: none;
-    &.sp{
-        display: block;
-        width: 160px;
-    }
-    ${props => props.vertical && `
-        width: 128px;
-        height: 160px;
-    `}
-    @media screen and (min-width: 768px){
-        display: block;
-        width: 200px;
-        height: 100%;
-        margin-left: 24px;
-        &.vertical{
-            width: 160px;
-            height: 200px;
-        }
-    }
+const PcLiveItemOtherContainer = styled.div`
+    display: flex;
+    align-items: flex-start;
+    margin-top: 8px;
 `
 
-const LiveDate = styled.p`
+const PcLiveDate = styled.p`
+    font-weight: 700;
     font-size: 1.2rem;
-    font-weight: 700;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: #292929;
-    margin-top: 6px;
-    margin-left: 24px;
-    display: none;
-    &.tab{
-        display: block;
-        margin-left: 0;
-        margin-bottom: 4px;
-    }
-    @media screen and (min-width: 900px){
-        &.tab{
-            display: none;
-        }
-        margin-right: 24px;
-        display: block;
-    }
+    margin-right: 32px;
 `
 
-const LiveButton = styled.img`
+const PcLiveButton = styled.img`
     width: 14px;
     height: 14px;
-    cursor: pointer;
-    margin-top: 2px;
-    &.cursor-default{
-        cursor: default;
-    }
-    display: none;
-    @media screen and (min-width: 768px){
-        display: block;
-        margin-right: 14px;
-        margin-top: 8px;
-    }
+    cursor: default;
+    margin-right: 24px;
+    ${props => props.cursorPointer && `cursor: pointer;`}
 `
 
-// SP dateAndTitleContainer
+const PcLiveContentsContainer = styled.div`
+    display: flex;
+    align-items: flex-start;
+`
 
-const SpLiveTitleContainer = styled.div`
+const PcLiveTextContainer = styled.div`
     display: block;
-    margin-left: 24px;
-    @media screen and (min-width: 768px){
-        display: none;
-    }
 `
 
-const SpLiveTitle = styled.a`
-    font-size: 1.4rem;
+const PcLiveTitle = styled.a`
     font-weight: 700;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: #292929;
-    cursor: pointer;
-    &.cursor-default{
-        cursor: default;
-    }
-    @media screen and (min-width: 900px){
-        font-size: 2.0rem;
-    }
+    font-size: 2.0rem;
+    line-height: 3.2rem;
+    cursor: default;
+    ${props => props.cursorPointer && `cursor: pointer;`}
 `
 
-const SpLiveDate = styled.p`
-    font-size: 1.0rem;
-    font-weight: 700;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: #292929;
-    margin-bottom: 4px;
-    cursor: pointer;
-`
-
-const SpLiveButton = styled.img`
-    width: 14px;
-    height: 14px;
-    cursor: pointer;
-    margin-top: 2px;
-    &.cursor-default{
-        cursor: default;
-    }
+const PcLiveInfoContainer = styled.div`
     display: block;
-    @media screen and (min-width: 768px){
-        display: none;
-    }
-`
-
-// SpLiveDetailContainer
-
-const SpLiveContentsContainer = styled.div`
-    height: 100%;
-    display: none;
     margin-top: 16px;
+    margin-bottom: 16px;
+`
+
+const PcLiveInfoText = styled.p`
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    margin-bottom: 8px;
+    &:last-of-type{
+        margin-bottom: 0;
+    }
+`
+
+const PcLiveTicketButton = styled.a`
+    display: none;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #fff;
+    background-color: #F1A01A;
+    padding: 10px 16px;
+    border-radius: 7px;
+    cursor: pointer;
+    margin-top: 16px;
+    ${props => props.active && `display: inline-block;`}
+`
+
+const PcLiveImage = styled.img`
+    display: block;
+    width: 200px;
+    height: 100%;
+    ${props => props.vertical && `
+        width: 160px;
+        height: 200px;
+    `}
+`
+
+const PcLiveDetailText = styled.p`
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 2.4rem;
+    margin-bottom: 4px;
+    white-space: pre-wrap;
+    margin-top: 16px;
+    display: none;
+    word-break: break-all;
     ${props => props.active && `display: block;`}
 `
 
-// LiveContentsContainer
-
-const LiveContentsContainer = styled.div`
+const PcLiveFinishTag = styled.p`
     display: none;
-    @media screen and (min-width: 768px){
-        display: block;
-        width: 240px;
-    }
-    @media screen and (min-width: 900px){
-        display: block;
-        width: 100%;
-    }
+    font-size: 1.2rem;
+    font-weight: 900;
+    padding: 0 8px;
+    color: #fff;
+    background-color: #F42626;
+    border-radius: 3px;
+    margin-left: 16px;
+    ${props => props.finish && `display: inline-block;`}
 `
 
-// LiveTitleContainer
-
-const LiveTitleContainer = styled.div`
-    display: flex;
-`
-
-const LiveTitle = styled.a`
-    font-size: 2.0rem;
-    font-weight: 700;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: #292929;
-    cursor: pointer;
-    word-break: break-all;
-    &.cursor-default{
-        cursor: default;
-    }
-    display: none;
-    @media screen and (min-width: 768px){
-        display: block;
-    }
-`
-
-const LiveTextContainer = styled.div`
-    display: none;
-    margin-bottom: 16px;
-    &.sp{
-        display: block;
-    }
-    @media screen and (min-width: 768px){
-        margin-top: 8px;
-        display: block;
-    }
-`
-
-const LiveText = styled.p`
-    font-size: 1.4rem;
-    font-weight: 500;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: #292929;
-    line-height: 2.4rem;
-    margin-bottom: 4px;
-    white-space: pre-wrap;
-    @media screen and (min-width: 768px){
-        font-size: 1.6rem;
-        font-weight: 700;
-    }
-`
-
-// LiveTicketButton
-
-const LiveTicketButton = styled.a`
-    display: none;
-    &.sp{
-        display: inline-block;
-        font-size: 1.0rem;
-        font-weight: 700;
-        font-family: 'Noto Sans JP', sans-serif;
-        color: #fff;
-        background-color: #F1A01A;
-        padding: 8px 16px;
-        border-radius: 7px;
-        cursor: pointer;
-        margin-top: 16px;
-    }
-    @media screen and (min-width: 321px){
-        font-size: 1.2rem;
-    }
-    @media screen and (min-width: 768px){
-        display: block;
-        display: inline-block;
-        font-size: 1.6rem;
-        font-weight: 700;
-        font-family: 'Noto Sans JP', sans-serif;
-        color: #fff;
-        background-color: #F1A01A;
-        padding: 10px 16px;
-        border-radius: 7px;
-        cursor: pointer;
-        &.tab{
-            display: block;
-            width: 200px;
-            font-size: 1.2rem;
-        }
-    }
-`
-
-// LiveDetailText
-
-const LiveDetailText = styled.p`
-    font-size: 1.6rem;
-    font-weight: 500;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: #292929;
-    line-height: 2.4rem;
-    margin-bottom: 4px;
-    white-space: pre-wrap;
-    margin-top: 16px;
-    display: none;
-    word-break: break-all;
-    &.active{
-        display: block;
-    }
-`
-
-// LiveFinish
-
-const LiveFinish =  styled.div`
-    opacity: 0;
-    &.finish{
-        opacity: 1;
-        color: #fff;
-        font-size: 1.2rem;
-        font-weight: 900;
-        font-family: 'Noto Sans JP', sans-serif;
-        background-color: #F42626;
-        padding: 3px 8px;
-        border-radius: 3px;
-        margin-left: 16px;
-    }
-    &.sp{
-        margin-top: 16px;
-        margin-left: 0;
-        width: 40px;
-        height: 24px;
-    }
-    @media screen and (min-width: 768px){
-        width: 50px;
-        height: 24px;
-        margin-left: 0;
-    }
-`
+// PC-チケット
 
 // ModalContainer
 
 const ModalContainer = styled.div`
-    width: 100%;
     display: none;
-    &.open{
-        display: block;
+    @media screen and (min-width: 900px){
+        width: 100%;
+        &.open{
+            display: block;
+        }
     }
 `
 
@@ -624,6 +501,27 @@ const TicketFormRequiredSign = styled.span`
 
 // input:text
 
+const TicketDateAndTitleContainer = styled.div`
+    background-color: #F0F0F0;
+    width: 90%;
+    margin: 0 auto 24px;
+    height: 60px;
+    display: flex;
+    justify-content: flex-start;
+    border-radius: 6px;
+`
+
+const TicketDateAndTitleTextField = styled.input`
+    border: none;
+    font-size: 1.6rem;
+    font-weight: 500;
+    display: inline-block;
+    &:first-of-type{
+        width: 120px;
+        padding: 0 16px;
+    }
+`
+
 const TicketFormTextField = styled.input`
     font-size: 1.6rem;
     font-weight: 500;
@@ -634,17 +532,11 @@ const TicketFormTextField = styled.input`
     border: 1px solid #BEBEBE;
     border-radius: 7px;
     margin: 0 auto;
-    width: 93.5%;
+    width: 100%;
     margin-top: 4px;
     margin-bottom: 16px;
     &:focus{
         outline: none;
-    }
-    &.date_and_title{
-        background-color: #F0F0F0;
-        margin-bottom: 24px;
-        width: 85%;
-        margin-top: 0;
     }
 `
 
@@ -658,7 +550,7 @@ const TicketFormNumber = styled.input`
     border: 1px solid #BEBEBE;
     padding: 8px 16px;
     border-radius: 7px;
-    width: 50px;
+    width: 76px;
     display: block;
     margin-top: 4px;
     margin-bottom: 16px;
@@ -679,4 +571,267 @@ const TicketFormSubmitButton = styled.input`
     border-radius: 6px;
     cursor: pointer;
     margin-top: 8px;
+`
+
+// TAB
+
+const TabLiveContainer = styled.ul`
+    display: none;
+    @media screen and (min-width: 400px){
+        display: block;
+        width: 100%;
+        height: 100%;
+        margin-left: 5%;
+    }
+    @media screen and (min-width: 900px){
+        margin-left: 0;
+    }
+    @media screen and (min-width: 1024px){
+        display: none;
+    }
+`
+
+const TabLiveItemContainer = styled.li`
+    border-top: 1px solid #BEBEBE;
+    padding: 16px 0;
+    display: flex;
+    align-items: flex-start;
+`
+
+const TabLiveButton = styled.img`
+    width: 14px;
+    height: 14px;
+    cursor: default;
+    margin-right: 24px;
+    ${props => props.cursorPointer && `cursor: pointer;`}
+`
+
+const TabLiveMainContainer = styled.div`
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+`
+
+const TabLiveContentsContainer = styled.div`
+    display: block;
+`
+
+const TabLiveDate = styled.p`
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    cursor: default;
+    ${props => props.cursorPointer && `cursor: pointer;`}
+`
+
+const TabLiveTitle = styled.a`
+    font-weight: 700;
+    font-size: 2.0rem;
+    line-height: 2.4rem;
+    cursor: default;
+    ${props => props.cursorPointer && `cursor: pointer;`}
+`
+
+const TabLiveTicketButton = styled.a`
+    display: none;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #fff;
+    background-color: #F1A01A;
+    padding: 10px 16px;
+    border-radius: 7px;
+    cursor: pointer;
+    margin-top: 16px;
+    ${props => props.active && `display: inline-block;`}
+`
+
+const TabLiveFinishTag = styled.p`
+    display: none;
+    font-size: 1.2rem;
+    font-weight: 900;
+    padding: 4px 8px;
+    color: #fff;
+    background-color: #F42626;
+    border-radius: 3px;
+    margin-top: 16px;
+    margin-left: 16px;
+    ${props => props.finish && `display: inline-block;`}
+`
+
+const TabLiveImage = styled.img`
+    @media screen and (min-width: 400px){
+        display: none;
+    }
+    @media screen and (min-width: 600px){
+        display: block;
+        width: 160px;
+        height: 100%;
+        ${props => props.vertical && `
+            width: 128px;
+            height: 160px;
+        `}
+    }
+    @media screen and (min-width: 680px){
+        display: block;
+        width: 200px;
+        ${props => props.vertical && `
+            width: 160px;
+            height: 200px;
+        `}
+    }
+`
+
+const TabLiveBottomImage = styled.img`
+    display: none;
+    @media screen and (min-width: 400px){
+        display: block;
+        width: 160px;
+        height: 100%;
+        margin-top: 16px;
+        ${props => props.vertical && `
+            width: 128px;
+            height: 160px;
+        `}
+    }
+    @media screen and (min-width: 600px){
+        display: none;
+    }
+`
+
+const TabLiveInfoContainer = styled.div`
+    margin-bottom: 16px;
+    margin-top: 16px;
+`
+
+const TabLiveInfoText = styled.p`
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    margin-bottom: 4px;
+    &:last-of-type{
+        margin-bottom: 0;
+    }
+`
+
+const TabLiveDetailText = styled.p`
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 2.4rem;
+    margin-bottom: 4px;
+    white-space: pre-wrap;
+    margin-top: 16px;
+    display: none;
+    word-break: break-all;
+    ${props => props.active && `display: block;`}
+`
+
+// SP
+
+const SpLiveContainer = styled.ul`
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin-left: 5%;
+    @media screen and (min-width: 400px){
+        display: none;
+    }
+`
+
+const SpLiveItemContainer = styled.li`
+    border-top: 1px solid #BEBEBE;
+    padding: 16px 0;
+    display: flex;
+    align-items: flex-start;
+`
+
+const SpLiveButton = styled.img`
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    margin-right: 24px;
+`
+
+const SpLiveMainContainer = styled.div`
+    display: block;
+`
+
+const SpLiveDate = styled.p`
+    font-weight: 700;
+    font-size: 1.0rem;
+    margin-bottom: 8px;
+    cursor: pointer;
+`
+
+const SpLiveTitle = styled.a`
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    cursor: pointer;
+    margin-bottom: 16px;
+`
+
+const SpLiveTicketButton = styled.a`
+    display: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+    background-color: #F1A01A;
+    padding: 10px 16px;
+    border-radius: 7px;
+    cursor: pointer;
+    margin-top: 16px;
+    ${props => props.active && `display: inline-block;`}
+`
+
+const SpLiveFinishTag = styled.p`
+    display: none;
+    font-size: 1.2rem;
+    font-weight: 900;
+    padding: 4px 8px;
+    color: #fff;
+    background-color: #F42626;
+    border-radius: 3px;
+    margin-top: 16px;
+    ${props => props.finish && `display: inline-block;`}
+`
+
+const SpLiveInfoContainer = styled.div`
+    margin-bottom: 16px;
+    margin-top: 16px;
+    display: none;
+    ${props => props.active && `display: block;`}
+`
+
+const SpLiveInfoText = styled.p`
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    margin-bottom: 4px;
+    &:last-of-type{
+        margin-bottom: 0;
+    }
+`
+
+const SpLiveImage = styled.img`
+    display: block;
+    width: 160px;
+    height: 100%;
+    margin-top: 16px;
+    ${props => props.vertical && `
+        width: 128px;
+        height: 160px;
+    `}
+`
+
+const SpLiveDetailText = styled.p`
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 2.4rem;
+    margin-bottom: 4px;
+    white-space: pre-wrap;
+    margin-top: 16px;
+    display: none;
+    word-break: break-all;
+    ${props => props.active && `display: block;`}
 `

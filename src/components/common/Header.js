@@ -1,16 +1,15 @@
 import React, { useState } from 'react'
 import styled from '@emotion/styled';
 import Logo from '../../images/logo.PNG'
-import Twitter from '../../images/twitter.png'
-import Instagram from '../../images/instagram.png'
-import Youtube from '../../images/youtube.png'
+import Twitter from '../../images/twitter-logo.png'
+import Instagram from '../../images/insta-logo.png'
+import Youtube from '../../images/youtube-logo.png'
 import { Link, useLocation } from 'react-router-dom';
 import TwitterOrange from '../../images/twitter-icon-orange.png'
 import InstagramOrange from '../../images/insta-icon-orange.png'
 import YoutubeOrange from '../../images/youtube-icon-orange.png'
 
-const Header = () => {
-
+const Header2 = () => {
     // URL取得
     const location = useLocation();
 
@@ -25,6 +24,8 @@ const Header = () => {
             return "discography"
         } else if(location.pathname === "/contact"){
             return "contact"
+        } else if(location.pathname === "/live/sp/ticketform"){
+            return "live - ticket"
         }
     }
 
@@ -92,45 +93,43 @@ const Header = () => {
                 <HamburgerMenuContentContainer></HamburgerMenuContentContainer>
             )}
             <SnsFixedContainer className={location.pathname === "/contact" ? "" : "open"}>
-                    <SnsFixedBorder></SnsFixedBorder>
-                    <SnsFixedText>our sns</SnsFixedText>
-                    <SnsFixedIconLink href="#"><SnsFixedIconImage src={TwitterOrange} /></SnsFixedIconLink>
-                    <SnsFixedIconLink href="#"><SnsFixedIconImage src={InstagramOrange} /></SnsFixedIconLink>
-                    <SnsFixedIconLink href="#"><SnsFixedIconImage src={YoutubeOrange} /></SnsFixedIconLink>
-                    <SnsFixedBorder></SnsFixedBorder>
+                <SnsFixedBorder></SnsFixedBorder>
+                <SnsFixedText>our sns</SnsFixedText>
+                <SnsFixedIconLink href="#"><SnsFixedIconImage src={TwitterOrange} /></SnsFixedIconLink>
+                <SnsFixedIconLink href="#"><SnsFixedIconImage src={InstagramOrange} /></SnsFixedIconLink>
+                <SnsFixedIconLink href="#"><SnsFixedIconImage src={YoutubeOrange} /></SnsFixedIconLink>
+                <SnsFixedBorder></SnsFixedBorder>
             </SnsFixedContainer>
         </>
     )
 }
 
-export default Header
-
-// HeaderContainer
+export default Header2
 
 const HeaderContainer = styled.div`
+    position:fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
     width: 100%;
     height: 93px;
     background-color: #fff;
-    position: fixed;
-    left: 0;
-    top: 0;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     z-index: 100;
+    padding: 0 8%;
     @media screen and (min-width: 768px){
         height: 100px;
     }
-    @media screen and (min-width: 900px) {
-        background-color: white;
-        width: 250px;
-        height: 100%;
-        position: fixed;
+    @media screen and (min-width: 900px){
+        margin: 0;
         left: 0;
-        top: 0;
         display: block;
-        text-align: center
-    } 
+        width: 250px;
+        height: 100vh;
+    }
     @media screen and (min-width: 1150px){
         width: 314px;
     }
@@ -152,11 +151,10 @@ const HamburgerButtonContainer = styled.div`
     position: relative;
     width: 32px;
     height: 18px;
-    margin-left: 24px;
+    cursor: pointer;
     @media screen and (min-width: 768px){
         width: 48px;
         height: 27px;
-        margin-left: 56px;
     }
 `
 
@@ -235,9 +233,10 @@ const HamburgerMenuContentTextContainer = styled.ul`
 
 const HamburgerMenuContentText = styled.li`
     margin-bottom: 16px;
-    margin-left: 24px;
+    width: 100%;
+    margin: 0 8% 16px;
     @media screen and (min-width: 768px){
-        margin-left: 56px;
+        margin-bottom: 24px;
     }
 `
 
@@ -247,23 +246,23 @@ const HamburgerMenuLink = styled.a`
     color: #292929;
     font-size: 2.0rem;
     font-weight: 700;
+    @media screen and (min-width: 768px){
+        font-size: 2.4rem;
+    }
 `
 
 // HamburgerMenuSnsContainer
 
 const HamburgerMenuSnsContainer = styled.div`
-    width: 150px;
-    margin: 0 24px 85px;
-    @media screen and (min-width: 768px){
-        margin: 0 56px 85px;
-    }
+    width: 100%;
+    margin-left: 8%;
 `
 
 // HamburgerMenuSnsTextContainer
 
 const HamburgerMenuSnsTextContainer = styled.div`
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
     align-items: center;
     margin-bottom: 18px;
 `
@@ -280,13 +279,15 @@ const HamburgerMenuSnsBorder = styled.div`
     height: 1px;
     background-color: #000;
     margin-top: 4px;
+    margin-left: 16px;
 `
 
 // HamburgerMenuSnsIconContainer
 
 const HamburgerMenuSnsIconContainer = styled.div`
     display: flex;
-    justify-content: space-around;
+    justify-content: left;
+    margin-bottom: 85px;
 `
 
 const HamburgerMenuSnsIcon = styled.img`
@@ -296,6 +297,10 @@ const HamburgerMenuSnsIcon = styled.img`
 
 const HamburgerMenuSnsIconLink = styled.a`
     text-decoration: none;
+    margin-right: 24px;
+    &:last-of-type{
+        margin-right: 0;
+    }
 `
 
 // HamburgerMenuCopyright
@@ -306,9 +311,9 @@ const HamburgerMenuCopyright = styled.p`
     color: #292929;
     font-size: 1.2rem;
     font-weight: 700;
-    margin-left: 24px;
+    width: 100%;
+    margin-left: 8%;
     @media screen and (min-width: 768px){
-        margin-left: 56px;
     }
 `
 
@@ -318,16 +323,15 @@ const LogoImage = styled.img`
     cursor: pointer;
     width: 88px;
     height: 37px;
-    margin-right: 24px;
     @media screen and (min-width: 768px){
         width: 150px;
         height: 64px;
-        margin-right: 56px;
     }
     @media screen and (min-width: 900px) {
-        margin: 64px 0 0;
+        margin: 64px auto 0;
         width: 150px;
         height: 64px;
+        display: block;
     } 
 `
 
@@ -398,25 +402,17 @@ const SnsFixedContainer = styled.div`
     &.open{
         display: flex;
     }
-    // display: flex;
     position: fixed;
     z-index: 50;
-    height: 32px;
-    width: 263px;
-    left: -90px;
-    bottom: 150px;
+    width: 100%;
+    left: -40%;
+    top: 72%;
     transform: rotate(90deg);
     align-items: center;
-    @media screen and (min-width: 361px){
-        top: 480px;
-    }
-    @media screen and (min-width: 768px){
-        top: 700px;
-        left: -60px;
-    }
     @media screen and (min-width: 900px){
         display: none;
     }
+    ${props => props.location && `display: none;`}
 `
 
 const SnsFixedBorder = styled.div`
@@ -432,6 +428,7 @@ const SnsFixedText = styled.p`
     font-weight: 700;
     margin-left: 16px;
     margin-right: 16px;
+    white-space: pre-wrap;
 `
 
 const SnsFixedIconLink = styled.a`

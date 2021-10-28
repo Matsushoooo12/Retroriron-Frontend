@@ -1,22 +1,19 @@
 import React from 'react'
 import styled from '@emotion/styled';
 
-const ContactComplete = ({values}) => {
-
+const ContactComplete2 = ({values}) => {
     const handleClick = () => {
         // eslint-disable-next-line no-restricted-globals
         return location.reload();
     }
     return (
-        <>
-            <ContactTextContainer>
-                <ContactTitle>お問い合わせ完了</ContactTitle>
-                <ContactText>
-                    お問い合わせありがとうございます。<br/>
-                    下記の内容で、お問い合わせを受付しました。<br/>
-                    担当者から3営業日以内に折り返しご連絡いたしますので、しばらくお待ちください。
-                </ContactText>
-            </ContactTextContainer>
+        <ContactContainer>
+            <ContactTitle>お問い合わせ完了</ContactTitle>
+            <ContactText>
+                お問い合わせありがとうございます。<br/>
+                下記の内容で、お問い合わせを受付しました。<br/>
+                担当者から3営業日以内に折り返しご連絡いたしますので、しばらくお待ちください。
+            </ContactText>
             <ContactFormContainer>
                 <ContactFormGroup>
                     <ContactFormLabel htmlFor="name">名前
@@ -63,121 +60,275 @@ const ContactComplete = ({values}) => {
                         maxLength="500"
                     />
                 </ContactFormGroup>
-                <ContactFormGroup className="right">
-                    <ContactFormSubmitButton type="button" className="back" onClick={handleClick} value="お問い合わせに戻る"/>
-                </ContactFormGroup>
+                <ContactFormSubmitButtonContainer>
+                    <ContactFormSubmitButton type="button" onClick={handleClick} value="お問い合わせに戻る" />
+                </ContactFormSubmitButtonContainer>
             </ContactFormContainer>
-        </>
+        </ContactContainer>
     )
 }
 
-export default ContactComplete
+export default ContactComplete2
 
-// ContactTextContainer
+// ContactContainer
 
-const ContactTextContainer = styled.div`
-    border-bottom: 1px solid #BEBEBE;
+const ContactContainer = styled.div`
+    display: block;
     width: 100%;
-    margin-bottom: 72px;
+    margin: 0 auto 72px;
+    height: 100%;
+    @media screen and (min-width: 600px){
+        display: block;
+        width: 80%;
+        margin: 0 auto 72px;
+        height: 100%;
+    }
+    @media screen and (min-width: 900px){
+        padding-bottom: 160px;
+    }
+    @media screen and (min-width: 1024px){
+        display: block;
+        margin: 0 auto;
+        height: 100%;
+        width: 600px;
+        padding-bottom: 160px;
+    }
 `
 
 const ContactTitle = styled.h1`
-    font-size: 2.4rem;
     font-weight: 700;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: #292929;
-    margin-bottom: 16px;
+    font-size: 2.0rem;
+    padding-bottom: 16px;
+    @media screen and (min-width: 600px){
+        font-weight: 700;
+        font-size: 2.0rem;
+        padding-bottom: 16px;
+    }
+    @media screen and (min-width: 1024px){
+        font-weight: 700;
+        font-size: 2.4rem;
+        padding-bottom: 16px;
+    }
 `
 
 const ContactText = styled.p`
-    font-size: 1.6rem;
     font-weight: 500;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: #292929;
+    font-size: 1.4rem;
     line-height: 2.4rem;
-    margin-bottom: 1.6rem;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #BEBEBE;
+    margin-bottom: 28px;
+    @media screen and (min-width: 600px){
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 2.4rem;
+        padding-bottom: 16px;
+        border-bottom: 1px solid #BEBEBE;
+    }
+    @media screen and (min-width: 1024px){
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        padding-bottom: 16px;
+        border-bottom: 1px solid #BEBEBE;
+        margin-bottom: 40px;
+    }
 `
 
-// ContactFormContainer
+// FormContainer
 
 const ContactFormContainer = styled.form`
-    margin-left: 16px;
-`
-
-const ContactFormLabel = styled.label`
-    font-size: 1.6rem;
-    font-weight: 700;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: #292929;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    @media screen and (min-width: 600px){
+        width: 90%;
+        height: 100%;
+        margin: 0 auto;
+    }
+    @media screen and (min-width: 1024px){
+        width: 560px;
+        height: 100%;
+        margin: 0 auto;
+    }
 `
 
 const ContactFormGroup = styled.div`
-    width: 80%;
+    display: block;
     margin-bottom: 16px;
-    &.right{
-        text-align: right;
+    @media screen and (min-width: 600px){
+        display: block;
+        margin-bottom: 16px;
+    }
+    @media screen and (min-width: 1024px){
+        display: block;
+        margin-bottom: 16px;
+    }
+`
+
+const ContactFormLabel = styled.label`
+    font-size: 1.4rem;
+    font-weight: 700;
+    @media screen and (min-width: 600px){
+        font-size: 1.4rem;
+        font-weight: 700;
+    }
+    @media screen and (min-width: 1024px){
+        font-size: 1.6rem;
+        font-weight: 700;
     }
 `
 
 const ContactFormRequiredSign = styled.span`
     font-size: 1.2rem;
     font-weight: 700;
-    font-family: 'Noto Sans JP', sans-serif;
     color: #F42626;
     margin-left: 4px;
     margin-right: 16px;
-`
-
-// input:text
-
-const ContactFormTextField = styled.input`
-    font-size: 1.6rem;
-    font-weight: 500;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: #292929;
-    padding: 8px 16px;
-    display: block;
-    border: 1px solid #BEBEBE;
-    border-radius: 7px;
-    margin-top: 8px;
-    width: 93.5%;
-    background-color: #F0F0F0;
-    &:focus{
-        outline: none;
+    @media screen and (min-width: 600px){
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #F42626;
+        margin-left: 4px;
+        margin-right: 16px;
+    }
+    @media screen and (min-width: 1024px){
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #F42626;
+        margin-left: 4px;
+        margin-right: 16px;
     }
 `
 
-// textarea
-
-const ContactFormTextArea = styled.textarea`
-    font-size: 1.6rem;
+const ContactFormTextField = styled.input`
+    font-size: 1.4rem;
     font-weight: 500;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: #292929;
     padding: 8px 16px;
     display: block;
     border: 1px solid #BEBEBE;
     border-radius: 7px;
-    margin-top: 8px;
-    width: 93.5%;
-    resize: none;
+    width: 100%;
     background-color: #F0F0F0;
+    margin-top: 8px;
     &:focus{
         outline: none;
+    }
+    @media screen and (min-width: 600px){
+        font-size: 1.4rem;
+        font-weight: 500;
+        padding: 8px 16px;
+        display: block;
+        border: 1px solid #BEBEBE;
+        border-radius: 7px;
+        width: 100%;
+        background-color: #F0F0F0;
+        margin-top: 8px;
+        &:focus{
+            outline: none;
+        }
+    }
+    @media screen and (min-width: 1024px){
+        font-size: 1.6rem;
+        font-weight: 500;
+        padding: 8px 16px;
+        display: block;
+        border: 1px solid #BEBEBE;
+        border-radius: 7px;
+        width: 100%;
+        background-color: #F0F0F0;
+        margin-top: 8px;
+        &:focus{
+            outline: none;
+        }
+    }
+`
+
+const ContactFormTextArea = styled.textarea`
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding: 8px 16px;
+    display: block;
+    border: 1px solid #BEBEBE;
+    border-radius: 7px;
+    width: 100%;
+    resize: none;
+    background-color: #F0F0F0;
+    margin-top: 8px;
+    &:focus{
+        outline: none;
+    }
+    @media screen and (min-width: 600px){
+        font-size: 1.4rem;
+        font-weight: 500;
+        padding: 8px 16px;
+        display: block;
+        border: 1px solid #BEBEBE;
+        border-radius: 7px;
+        width: 100%;
+        background-color: #F0F0F0;
+        margin-top: 8px;
+        &:focus{
+            outline: none;
+        }
+    }
+    @media screen and (min-width: 1024px){
+        font-size: 1.6rem;
+        font-weight: 500;
+        padding: 8px 16px;
+        display: block;
+        border: 1px solid #BEBEBE;
+        border-radius: 7px;
+        width: 100%;
+        resize: none;
+        background-color: #F0F0F0;
+        margin-top: 8px;
+        &:focus{
+            outline: none;
+        }
+    }
+`
+
+const ContactFormSubmitButtonContainer = styled.div`
+    display: block;
+    text-align: center;
+    @media screen and (min-width: 600px){
+        display: block;
+        text-align: right;
+    }
+    @media screen and (min-width: 1024px){
+        display: block;
+        text-align: right;
     }
 `
 
 const ContactFormSubmitButton = styled.input`
+    background-color: #fff;
     font-size: 1.6rem;
     font-weight: 700;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: #292929;
-    padding: 8px 16px;
+    padding: 7px 16px;
     border: 1px solid #BEBEBE;
     border-radius: 6px;
-    margin-top: 16px;
-    margin-bottom: 24px;
-    margin-left: 24px;
     cursor: pointer;
-    background-color: #fff;
+    margin-top: 16px;
+    @media screen and (min-width: 600px){
+        background-color: #fff;
+        font-size: 1.6rem;
+        font-weight: 700;
+        padding: 8px 16px;
+        border: 1px solid #BEBEBE;
+        border-radius: 6px;
+        cursor: pointer;
+        margin-top: 16px;
+    }
+    @media screen and (min-width: 1024px){
+        background-color: #fff;
+        font-size: 1.6rem;
+        font-weight: 700;
+        padding: 8px 16px;
+        border: 1px solid #BEBEBE;
+        border-radius: 6px;
+        cursor: pointer;
+        margin-top: 16px;
+    }
 `

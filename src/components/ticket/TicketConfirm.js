@@ -7,7 +7,8 @@ const TicketConfirm = (props) => {
     const {values, hideConfirmation} = props
 
     const value = ({
-        dateAndTitle: values.dateAndTitle,
+        date: values.date,
+        title: values.title,
         nameKana: values.nameKana,
         email: values.email,
         number: values.number,
@@ -44,12 +45,18 @@ const TicketConfirm = (props) => {
                         ※下記のライブのお申し込みでお間違いないかご確認ください。
                     </TicketCautionText>
                     <TicketFormContainer>
-                        <TicketFormTextField
-                            className="date_and_title"
-                            type="text"
-                            value={value.dateAndTitle}
-                            disabled
-                        />
+                        <TicketDateAndTitleContainer>
+                            <TicketDateAndTitleTextField
+                                type="text"
+                                value={value.date}
+                                disabled
+                            />
+                            <TicketDateAndTitleTextField
+                                type="text"
+                                value={value.title}
+                                disabled
+                            />
+                        </TicketDateAndTitleContainer>
                         <TicketFormGroup>
                             <TicketFormLabel htmlFor="nameKana">ナマエ
                                 <TicketFormRequiredSign>*</TicketFormRequiredSign>
@@ -185,6 +192,27 @@ const TicketFormRequiredSign = styled.span`
 
 // input:text
 
+const TicketDateAndTitleContainer = styled.div`
+    background-color: #F0F0F0;
+    width: 90%;
+    margin: 0 auto 24px;
+    height: 60px;
+    display: flex;
+    justify-content: flex-start;
+    border-radius: 6px;
+`
+
+const TicketDateAndTitleTextField = styled.input`
+    border: none;
+    font-size: 1.6rem;
+    font-weight: 500;
+    display: inline-block;
+    &:first-of-type{
+        width: 120px;
+        padding: 0 16px;
+    }
+`
+
 const TicketFormTextField = styled.input`
     font-size: 1.6rem;
     font-weight: 500;
@@ -197,17 +225,14 @@ const TicketFormTextField = styled.input`
     width: 100%;
     margin-top: 4px;
     margin-bottom: 16px;
+    background-color: #F0F0F0;
     &:focus{
         outline: none;
     }
     &.date_and_title{
-        background-color: #F0F0F0;
         margin-bottom: 24px;
         width: 90%;
         margin-top: 0;
-    }
-    &.disabled{
-        background-color: #F0F0F0;
     }
 `
 

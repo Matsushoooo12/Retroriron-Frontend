@@ -17,7 +17,7 @@ const TicketComplete = ({values}) => {
                 当日は会場受付で担当者にお名前をお伝えの上、お支払いをお願いいたします。
             </TicketText>
             <TicketCompleteBlock>
-                <TicketCompleteTitle>{values.dateAndTitle}</TicketCompleteTitle>
+                <TicketCompleteTitle>{values.date}<TicketCompleteTitleLeft>{values.title}</TicketCompleteTitleLeft></TicketCompleteTitle>
                 <TicketCompleteText>
                     ナマエ｜{values.nameKana}
                 </TicketCompleteText>
@@ -105,6 +105,10 @@ const TicketCompleteTitle = styled.h1`
     line-height: 2.4rem;
     margin: 0 16px 24px;
     padding-top: 16px;
+`
+
+const TicketCompleteTitleLeft = styled.span`
+    margin-left: 24px;
 `
 
 const TicketCompleteText = styled.p`

@@ -1,40 +1,27 @@
 import React, { useState } from 'react'
-import Helmet from 'react-helmet';
 import styled from '@emotion/styled';
 import { useForm } from 'react-hook-form';
 import SpTicketConfirm from './SpTicketConfirm';
-import { useHistory } from 'react-router-dom';
 
-const SpTicketForm = ({values}) => {
-    
+const SpTicketForm = (props) => {
+    const {date, title} = props
+
     // useForm
     const { register, formState: { errors }, getValues, handleSubmit } = useForm();
 
     // isCompleteVisibleにstateを持たせて、入力内容確認画面の表示・非表示をコントロール
     // isCompleteVisibleの初期値はfalseで入力内容確認画面は非表示に
-    const [isCompleteVisible, setIsCompleteVisible] = useState(false)
+    const [isConfirmVisible, setisConfirmVisible] = useState(false)
 
     //入力内容確認画面の閉じるボタンを押した時非表示にする関数を宣言
-    const hideComplete = () => setIsCompleteVisible(false)
+    const hideConfirmation = () => setisConfirmVisible(false)
 
     //submitボタンを押した時、入力内容確認画面を表示させる
-    const onSubmitData = () => setIsCompleteVisible(true)
-
-    // useHistory
-
-    const history = useHistory();
-
-    const backLivePage = () => {
-        history.push("/live")
-    }
+    const onSubmitData = () => setisConfirmVisible(true)
 
     return (
         <>
-            <Helmet>
-                <title>Live Ticket page</title>
-                <meta name="the Live ticket page of a pop band called Retroriron." content="live ticket page" />
-            </Helmet>
-            {!isCompleteVisible ? (
+            {!isConfirmVisible ? (
                 <TicketItemContainer>
                     <TicketTitle>チケット予約フォーム</TicketTitle>
                     <TicketText>
@@ -45,14 +32,22 @@ const SpTicketForm = ({values}) => {
                         ※下記のライブのお申し込みでお間違いないかご確認ください。
                     </TicketCautionText>
                     <TicketFormContainer onSubmit={handleSubmit(onSubmitData)}>
-                        <TicketFormTextField
-                            className="date_and_title"
-                            type="text"
-                            name="dateAndTitle"
-                            value={values}
-                            readOnly
-                            {...register('dateAndTitle', {required: true})}
-                        />
+                        <TicketDateAndTitleContainer>
+                            <TicketDateAndTitleTextField
+                                type="text"
+                                name="date"
+                                value={date}
+                                readOnly
+                                {...register('date', {required: true})}
+                            />
+                            <TicketDateAndTitleTextField
+                                type="text"
+                                name="title"
+                                value={title}
+                                readOnly
+                                {...register('title', {required: true})}
+                            />
+                        </TicketDateAndTitleContainer>
                         <TicketFormGroup>
                             <TicketFormLabel htmlFor="nameKana">ナマエ
                                 <TicketFormRequiredSign>*</TicketFormRequiredSign>
@@ -99,7 +94,7 @@ const SpTicketForm = ({values}) => {
             ):(
                 <SpTicketConfirm
                     values={getValues()}
-                    hideComplete={hideComplete}
+                    hideConfirmation={hideConfirmation}
                 />
             )}
         </>
@@ -112,6 +107,11 @@ export default SpTicketForm
 
 const TicketItemContainer = styled.div`
     background-color: #fff;
+    display: block;
+    padding-bottom: 116px;
+    @media screen and (min-width: 1024px){
+        display: none;
+    }
 `
 
 const TicketTitle = styled.h1`
@@ -179,6 +179,23 @@ const TicketFormRequiredSign = styled.span`
 `
 
 // input:text
+
+const TicketDateAndTitleContainer = styled.div`
+    background-color: #F0F0F0;
+    width: 100%;
+    margin: 0 auto 24px;
+    height: 100%;
+    display: block;
+    border-radius: 6px;
+    padding: 16px;
+`
+
+const TicketDateAndTitleTextField = styled.input`
+    border: none;
+    font-size: 1.6rem;
+    font-weight: 700;
+    display: block;
+`
 
 const TicketFormTextField = styled.input`
     font-size: 1.6rem;

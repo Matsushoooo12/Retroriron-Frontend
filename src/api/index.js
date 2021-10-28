@@ -21,5 +21,5 @@ export const createContact = (params) => {
 }
 
 export const createTicket = (params) => {
-    return client.post('/chickets', params);
+    return client.post('/tickets', params);
 }

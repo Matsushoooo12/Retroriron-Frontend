@@ -32,147 +32,115 @@ const Discography = () => {
                 <title>Discography page</title>
                 <meta name="the Discography page of a pop band called Retroriron." content="discography page" />
             </Helmet>
-            <DiscographyContainer>
-                <DiscographyItemContainer>
-                    {discographies.map((item, i) => (
-                        <DiscographyInfoContainer key={i}>
-                            <DiscographyDate>{moment(item.date).format("YYYY.MM.DD.")} Release</DiscographyDate>
-                            <DiscographyTitleContainer className="sp">
-                                <DiscographyTitle className={item.title.length > 18 ? "long" : ""}>{item.title}</DiscographyTitle>
-                            </DiscographyTitleContainer>
-                            {/* Sp */}
-                            <DiscographySpFlex>
-                                <DiscographyImageContainer className="sp">
-                                    <DiscographyImage src={process.env.REACT_APP_PRO_API_URL + item.image.url} />
-                                    <DiscographyImageTag>{item.tag}</DiscographyImageTag>
-                                </DiscographyImageContainer>
-                                <DiscographyLinkContainer className="sp">
-                                    <DiscographyLinkItemContainer className={item.mvLink ? "" : "hidden"} target="_blank" href={item.mvLink}>
-                                        <DiscographyLinkIcon src={MvIcon} />
-                                        <DiscographyLinkText>MVを見る</DiscographyLinkText>
-                                    </DiscographyLinkItemContainer>
-                                    <DiscographyLinkItemContainer className={item.subscriptionLink ? "" : "hidden"} target="_blank" href={item.subscriptionLink}>
-                                        <DiscographyLinkIcon src={SubscriptionIcon} />
-                                        <DiscographyLinkText>音楽を聴く</DiscographyLinkText>
-                                    </DiscographyLinkItemContainer>
-                                </DiscographyLinkContainer>
-                            </DiscographySpFlex>
-                            {/* Sp */}
-                            <DiscographyImageContainer>
-                                <DiscographyImage src={process.env.REACT_APP_PRO_API_URL + item.image.url} />
-                                <DiscographyImageTag>{item.tag}</DiscographyImageTag>
-                            </DiscographyImageContainer>
-                            <DiscographyTitleContainer>
-                                <DiscographyTitle className={item.title.length > 18 ? "long" : ""}>{item.title}</DiscographyTitle>
-                            </DiscographyTitleContainer>
-                            <DiscographyLinkContainer>
-                                <DiscographyLinkItemContainer className={item.mvLink ? "" : "hidden"} target="_blank" href={item.mvLink}>
-                                    <DiscographyLinkIcon src={MvIcon} />
-                                    <DiscographyLinkText>MVを見る</DiscographyLinkText>
-                                </DiscographyLinkItemContainer>
-                                <DiscographyLinkItemContainer className={item.subscriptionLink ? "" : "hidden"} target="_blank" href={item.subscriptionLink}>
-                                    <DiscographyLinkIcon src={SubscriptionIcon} />
-                                    <DiscographyLinkText>音楽を聴く</DiscographyLinkText>
-                                </DiscographyLinkItemContainer>
-                            </DiscographyLinkContainer>
-                        </DiscographyInfoContainer>
-                    ))}
-                </DiscographyItemContainer>
-            </DiscographyContainer>
+            {/* PC */}
+            <PcDiscographyContainer>
+                {discographies.map((item) => (
+                    <PcDiscographyItemContainer key={item.id}>
+                        <PcDiscographyDate>{moment(item.date).format("YYYY.MM.DD.")} Release</PcDiscographyDate>
+                        <PcDiscographyImageContainer>
+                            <PcDiscographyImage src={process.env.REACT_APP_PRO_API_URL + item.image.url} />
+                            <PcDiscographyTag>{item.tag}</PcDiscographyTag>
+                        </PcDiscographyImageContainer>
+                        <PcDiscographyTitleContainer>
+                            <PcDiscographyTitle long={item.title.length > 18}>{item.title}</PcDiscographyTitle>
+                        </PcDiscographyTitleContainer>
+                        <PcDiscographyLinkContainer>
+                            <PcDiscographyLinkItemContainer target="_blank" href={item.mvLink}>
+                                <PcDiscographyLinkIcon src={MvIcon} />
+                                <PcDiscographyLinkText>MVを見る</PcDiscographyLinkText>
+                            </PcDiscographyLinkItemContainer>
+                            <PcDiscographyLinkItemContainer target="_blank" href={item.subscriptionLink}>
+                                <PcDiscographyLinkIcon src={SubscriptionIcon} />
+                                <PcDiscographyLinkText>音楽を聴く</PcDiscographyLinkText>
+                            </PcDiscographyLinkItemContainer>
+                        </PcDiscographyLinkContainer>
+                    </PcDiscographyItemContainer>
+                ))}
+            </PcDiscographyContainer>
+            {/* SP */}
+            <SpDiscographyContainer>
+                {discographies.map((item) => (
+                    <SpDiscographyItemContainer key={item.id}>
+                        <SpDiscographyDate>{moment(item.date).format("YYYY.MM.DD.")} Release</SpDiscographyDate>
+                        <SpDiscographyTitleContainer>
+                            <SpDiscographyTitle long={item.title.length > 26}>{item.title}</SpDiscographyTitle>
+                        </SpDiscographyTitleContainer>
+                        <SpDiscographyItemContentContainer>
+                            <SpDiscographyImageContainer>
+                                <SpDiscographyImage src={process.env.REACT_APP_PRO_API_URL + item.image.url} />
+                                <SpDiscographyTag>{item.tag}</SpDiscographyTag>
+                            </SpDiscographyImageContainer>
+                            <SpDiscographyLinkContainer>
+                                <SpDiscographyLinkItemContainer target="_blank" href={item.mvLink}>
+                                    <SpDiscographyLinkIcon src={MvIcon} />
+                                    <SpDiscographyLinkText>MVを見る</SpDiscographyLinkText>
+                                </SpDiscographyLinkItemContainer>
+                                <SpDiscographyLinkItemContainer target="_blank" href={item.subscriptionLink}>
+                                    <SpDiscographyLinkIcon src={SubscriptionIcon} />
+                                    <SpDiscographyLinkText>音楽を聴く</SpDiscographyLinkText>
+                                </SpDiscographyLinkItemContainer>
+                            </SpDiscographyLinkContainer>
+                        </SpDiscographyItemContentContainer>
+                    </SpDiscographyItemContainer>
+                ))}
+            </SpDiscographyContainer>
         </>
     )
 }
 
 export default Discography
 
-// DiscographyContainer
+// PC
 
-const DiscographyContainer = styled.div`
-    margin-top: 100px;
-    @media screen and (min-width: 768px){
-        margin-top: 110px;
-    }
-    @media screen and (min-width: 900px){
-        margin-top: 80px;
-    }
-`
-
-// DiscographyItemContainer
-
-const DiscographyItemContainer = styled.div`
-    width: 80%;
-    margin-left: 60px;
-    @media screen and (min-width: 768px){
-        width: 100vw;
+const PcDiscographyContainer = styled.div`
+    display: none;
+    @media screen and (min-width: 500px){
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        margin-left: 0;
+        align-items: flex-start;
+        width: 100%;
+        height: 100%;
+        padding-bottom: 120px;
     }
-    @media screen and (min-width: 1024px){
-        width: 74vw;
-    }
-    @media screen and (min-width: 1150px){
-        width: 72vw;
-    }
-    @media screen and (min-width: 1515px){
-        width: 65vw;
+    @media screen and (min-width: 900px){
+        padding-bottom: 160px;
     }
 `
 
-// DiscographyInfoContainer
-
-const DiscographyInfoContainer = styled.div`
-    width: 100%;
-    height: 100%;
-    margin-bottom: 32px;
-    @media screen and (min-width: 768px){
-        width: 200px;
-        margin-right: 23px;
-        margin-left: 23px;
-        margin-bottom: 48px;
-    }
+const PcDiscographyItemContainer = styled.div`
+    display: block;
+    // background-color: green;
+    margin-left: 28px;
+    margin-right: 28px;
+    margin-top: 0;
+    margin-bottom: 64px;
 `
 
-const DiscographyDate = styled.p`
+const PcDiscographyDate = styled.p`
     font-size: 1.2rem;
     font-weight: 700;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: #292929;
     margin-bottom: 4px;
 `
 
-// DiscographyImageContainer
-
-const DiscographyImageContainer = styled.div`
-    display: none;
-    &.sp{
-        display: block;
-        width: 120px;
-        height: 120px;
-        position: relative;
-    }
-    @media screen and (min-width: 768px){
-        display: block;
-        position: relative;
-        width: 200px;
-        height: 200px;
-        &.sp{
-            display: none;
-        }
-    }
+const PcDiscographyImageContainer = styled.div`
+    display: block;
+    position: relative;
+    margin-bottom: 8px;
 `
 
-const DiscographyImage = styled.img`
-    width: 100%;
-    height: 100%;
+const PcDiscographyImage = styled.img`
+    width: 200px;
+    height: 200px;
+    display: block;
+    position: relative;
+    left: 0;
+    top: 0;
 `
 
-const DiscographyImageTag = styled.p`
+const PcDiscographyTag = styled.p`
     font-size: 1.2rem;
     font-weight: 900;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: #292929;
     padding: 2px 8px;
     background-color: #fff;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
@@ -180,116 +148,168 @@ const DiscographyImageTag = styled.p`
     position: absolute;
     left: 4px;
     bottom: 4px;
+    display: inline-block;
 `
 
-// DiscographyTitleContainer
-
-const DiscographyTitleContainer = styled.div`
-    display: none;
-    &.sp{
-        display: block;
-        width: 100%;
-        margin: 0 auto;
-        height: 48px;
-    }
-    @media screen and (min-width: 768px){
-        height: 48px;
-        width: 100%;
-        margin-bottom: 8px;
-        display: block;
-        &.sp{
-            display: none;
-        }
-    }
+const PcDiscographyTitleContainer = styled.div`
+    width: 200px;
+    height: 48px;
+    margin-bottom: 8px;
 `
 
-const DiscographyTitle = styled.h1`
-    font-size: 2.0rem;
+const PcDiscographyTitle = styled.h1`
     font-weight: 700;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: #292929;
+    font-size: 2.0rem;
+    line-height: 4.8rem;
     overflow-wrap:  break-word;
     word-break: break-all;
-    height: 100%;
-    line-height: 48px;
-    padding-top: 7px;
-    &.long{
+    ${props => props.long && `
         font-size: 1.6rem;
-        padding-top: 0;
         line-height: 2.0rem;
-        padding-top: 7px;
-    }
-    @media screen and (min-width: 768px){
-        line-height: 4.0rem;
-    }
+    `}
 `
 
-// DiscographyLinkContainer
-
-const DiscographyLinkContainer = styled.div`
-    width: 60%;
-    display: none;
-    &.sp{
-        display: block;
-    }
-    @media screen and (min-width: 768px){
-        display: block;
-        width: 100%;
-        &.sp{
-            display: none;
-        }
-    }
+const PcDiscographyLinkContainer = styled.div`
+    display: block;
+    width: 200px;
 `
 
-const DiscographyLinkItemContainer = styled.a`
+const PcDiscographyLinkItemContainer = styled.a`
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-decoration: none;
+    justify-content: space-between;
     background-color: #fff;
     border: 1px solid #FFFFFF;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
-    width: 153px;
-    height: 40px;
     cursor: pointer;
-    margin-left: 8px;
-    &.hidden{
-        opacity: 0.6;
-        cursor: default;
-    }
+    height: 40px;
+    margin-bottom: 16px;
     &:last-of-type{
-        margin-top: 10px;
-    }
-    @media screen and (min-width: 768px){
-        margin-bottom: 16px;
-        margin-left: 0;
-        width: 100%;
+        margin-bottom: 0;
     }
 `
 
-const DiscographyLinkIcon = styled.img`
+const PcDiscographyLinkIcon = styled.img`
     display: block;
     width: 24px;
     height: 24px;
-    margin-right: 8px;
+    margin-left: 42px;
 `
 
-const DiscographyLinkText = styled.p`
+const PcDiscographyLinkText = styled.p`
     font-size: 1.6rem;
     font-weight: 700;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: #292929;
-    margin-left: 8px;
+    margin-right: 42px;
 `
 
-// DiscographyTabFlex
+// SP
 
-const DiscographySpFlex = styled.div`
+const SpDiscographyContainer = styled.div`
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 42px;
+    margin-left: 5%;
+    @media screen and (min-width: 500px){
+        display: none;
+    }
+`
+
+const SpDiscographyItemContainer = styled.div`
+    display: block;
+    width: 280px;
+    margin: 0 auto 32px;
+    &:last-of-type{
+        margin-bottom: 0;
+    }
+`
+
+const SpDiscographyDate = styled.p`
+    font-weight: 700;
+    font-size: 1.0rem;
+`
+
+const SpDiscographyTitleContainer = styled.div`
+    display: block;
+    height: 48px;
+`
+
+const SpDiscographyTitle = styled.h1`
+    font-weight: 700;
+    font-size: 2.0rem;
+    line-height: 4.8rem;
+    ${props => props.long && `
+        font-size: 1.6rem;
+        line-height: 2.0rem;
+    `}
+`
+
+const SpDiscographyItemContentContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    @media screen and (min-width: 768px){
-        display: none;
+`
+
+const SpDiscographyImageContainer = styled.div`
+    display: block;
+    position: relative;
+`
+
+const SpDiscographyImage = styled.img`
+    width: 120px;
+    height: 120px;
+    display: block;
+    position: relative;
+    left: 0;
+    top: 0;
+`
+
+const SpDiscographyTag = styled.p`
+    font-size: 1.0rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    position: absolute;
+    left: 2px;
+    bottom: 2px;
+    display: inline-block;
+`
+
+const SpDiscographyLinkContainer = styled.div`
+    display: block;
+    width: 153px;
+`
+
+const SpDiscographyLinkItemContainer = styled.a`
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    border: 1px solid #FFFFFF;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    cursor: pointer;
+    height: 40px;
+    margin-bottom: 16px;
+    &:last-of-type{
+        margin-bottom: 0;
     }
+`
+
+const SpDiscographyLinkIcon = styled.img`
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin-left: 24px;
+`
+
+const SpDiscographyLinkText = styled.p`
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-right: 24px;
 `
