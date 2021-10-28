@@ -56,6 +56,7 @@ const SpTicketForm = (props) => {
                             <TicketFormTextField
                                 name="nameKana"
                                 type="text"
+                                id="nameKana"
                                 {...register('nameKana', {required: true})}
                             />
                             <TicketFormLabel htmlFor="email">メールアドレス
@@ -65,6 +66,7 @@ const SpTicketForm = (props) => {
                             <TicketFormTextField
                                 name="email"
                                 type="email"
+                                id="email"
                                 {...register('email', {required: true})}
                             />
                             <TicketFormLabel htmlFor="number">枚数
@@ -74,6 +76,7 @@ const SpTicketForm = (props) => {
                             <TicketFormNumber
                                 name="number"
                                 type="number"
+                                id="number"
                                 onChange={(e) => e.target.value}
                                 defaultValue="1"
                                 {...register('number', {required: true})}
@@ -82,6 +85,7 @@ const SpTicketForm = (props) => {
                             <TicketFormTextField
                                 name="description"
                                 type="text"
+                                id="description"
                                 {...register('description', {required: false})}
                             />
                         </TicketFormGroup>

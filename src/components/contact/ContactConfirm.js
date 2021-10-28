@@ -49,6 +49,7 @@ const ContactConfirm2 = (props) => {
                             </ContactFormLabel>
                             <ContactFormTextField
                                 disabled
+                                id="name"
                                 value={values.name}
                                 type="text"
                                 name="name"
@@ -63,6 +64,7 @@ const ContactConfirm2 = (props) => {
                                 value={values.email}
                                 type="email"
                                 name="email"
+                                id="email"
                             />
                         </ContactFormGroup>
                         <ContactFormGroup>
@@ -72,6 +74,7 @@ const ContactConfirm2 = (props) => {
                                 type="number"
                                 name="phone"
                                 value={values.phone}
+                                id="phone"
                             />
                         </ContactFormGroup>
                         <ContactFormGroup>
@@ -83,6 +86,7 @@ const ContactConfirm2 = (props) => {
                                 value={values.contact}
                                 type="text"
                                 name="contact"
+                                id="contact"
                                 rows="8"
                                 minLength="1"
                                 maxLength="500"

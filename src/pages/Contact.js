@@ -44,6 +44,7 @@ const Contact = () => {
                             </ContactFormLabel>
                             <ContactFormTextField
                                 type="text"
+                                id="name"
                                 name="name"
                                 {...register('name', {required: true})}
                             />
@@ -56,6 +57,7 @@ const Contact = () => {
                             <ContactFormTextField
                                 type="email"
                                 name="email"
+                                id="email"
                                 {...register('email', {required: true})}
                             />
                         </ContactFormGroup>
@@ -64,6 +66,7 @@ const Contact = () => {
                             <ContactFormTextField
                                 type="number"
                                 name="phone"
+                                id="phone"
                                 {...register('phone', {required: false})}
                             />
                         </ContactFormGroup>
@@ -75,6 +78,7 @@ const Contact = () => {
                             <ContactFormTextArea
                                 type="text"
                                 name="contact"
+                                id="contact"
                                 rows="8"
                                 minLength="1"
                                 maxLength="500"

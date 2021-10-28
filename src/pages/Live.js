@@ -168,6 +168,7 @@ const Live = () => {
                                     </TicketFormLabel>
                                     <TicketFormTextField
                                         name="nameKana"
+                                        id="nameKane"
                                         type="text"
                                         {...register('nameKana', {required: true})}
                                     />
@@ -178,6 +179,7 @@ const Live = () => {
                                     <TicketFormTextField
                                         name="email"
                                         type="email"
+                                        id="email"
                                         {...register('email', {required: true})}
                                     />
                                     <TicketFormLabel htmlFor="number">枚数
@@ -187,6 +189,7 @@ const Live = () => {
                                     <TicketFormNumber
                                         name="number"
                                         type="number"
+                                        id="number"
                                         onChange={(e) => e.target.value}
                                         defaultValue="1"
                                         {...register('number', {required: true})}
@@ -195,6 +198,7 @@ const Live = () => {
                                     <TicketFormTextField
                                         name="description"
                                         type="text"
+                                        id="description"
                                         {...register('description', {required: false})}
                                     />
                                 </TicketFormGroup>

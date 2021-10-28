@@ -62,6 +62,7 @@ const SpTicketConfirm = (props) => {
                             <TicketFormTextField
                                 name="nameKana"
                                 type="text"
+                                id="nameKana"
                                 value={value.nameKana}
                                 disabled
                                 className="disabled"
@@ -72,6 +73,7 @@ const SpTicketConfirm = (props) => {
                             <TicketFormTextField
                                 name="email"
                                 type="email"
+                                id="email"
                                 value={value.email}
                                 disabled
                                 className="disabled"
@@ -82,6 +84,7 @@ const SpTicketConfirm = (props) => {
                             <TicketFormNumber
                                 name="number"
                                 type="number"
+                                id="number"
                                 value={value.number}
                                 disabled
                                 className="disabled"
@@ -90,6 +93,7 @@ const SpTicketConfirm = (props) => {
                             <TicketFormTextField
                                 name="description"
                                 type="text"
+                                id="description"
                                 value={value.description}
                                 disabled
                                 className="disabled"
