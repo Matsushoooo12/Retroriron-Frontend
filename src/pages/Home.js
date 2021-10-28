@@ -48,7 +48,7 @@ const Home = () => {
                         </PcMemberText>
                         <PcMemberSnsContainer>
                             <PcSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/suzune_ssw"><PcSnsIcon loading="lazy" src={Twitter} alt="涼音のTwitter" /></PcSnsLink>
-                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="#"><PcSnsIcon loading="lazy" src={Instagram} alt="涼音のInstagram" /></PcSnsLink>
+                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/suzune_ssw/?hl=ja"><PcSnsIcon loading="lazy" src={Instagram} alt="涼音のInstagram" /></PcSnsLink>
                         </PcMemberSnsContainer>
                     </PcMemberTextContainer>
                 </PcMemberItemContainer>
@@ -128,7 +128,7 @@ const Home = () => {
                     <TabMemberSnsContainer>
                         <TabMemberSnsContainer>
                             <TabSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/suzune_ssw"><TabSnsIcon loading="lazy" src={Twitter} alt="涼音のTwitter" /></TabSnsLink>
-                            <TabSnsLink rel="noopener noreferrer" target="_blank" href="#"><TabSnsIcon loading="lazy" src={Instagram} alt="涼音のInstagram" /></TabSnsLink>
+                            <TabSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/suzune_ssw/?hl=ja"><TabSnsIcon loading="lazy" src={Instagram} alt="涼音のInstagram" /></TabSnsLink>
                         </TabMemberSnsContainer>
                     </TabMemberSnsContainer>
                 </TabMemberItemContainer>
@@ -208,7 +208,7 @@ const Home = () => {
                     <SpMemberSnsContainer>
                         <SpMemberSnsContainer>
                             <SpSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/suzune_ssw"><SpSnsIcon loading="lazy" src={Twitter} alt="涼音のTwitter" /></SpSnsLink>
-                            <SpSnsLink rel="noopener noreferrer" target="_blank" href="#"><SpSnsIcon loading="lazy" src={Instagram} alt="涼音のInstagram" /></SpSnsLink>
+                            <SpSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/suzune_ssw/?hl=ja"><SpSnsIcon loading="lazy" src={Instagram} alt="涼音のInstagram" /></SpSnsLink>
                         </SpMemberSnsContainer>
                     </SpMemberSnsContainer>
                 </SpMemberItemContainer>
