@@ -322,15 +322,15 @@ const HamburgerMenuCopyright = styled.p`
 const LogoImage = styled.img`
     cursor: pointer;
     width: 88px;
-    height: 37px;
+    height: 40px;
     @media screen and (min-width: 768px){
         width: 150px;
-        height: 64px;
+        height: 69px;
     }
     @media screen and (min-width: 900px) {
         margin: 64px auto 0;
         width: 150px;
-        height: 64px;
+        height: 69px;
         display: block;
     } 
 `
