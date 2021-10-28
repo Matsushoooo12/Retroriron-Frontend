@@ -398,10 +398,7 @@ const SnsLink = styled.a`
 // SP SNS固定
 
 const SnsFixedContainer = styled.div`
-    display: none;
-    &.open{
-        display: flex;
-    }
+    display: flex;
     position: fixed;
     z-index: 50;
     width: 100%;
