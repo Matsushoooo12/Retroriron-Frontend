@@ -64,7 +64,7 @@ const Header2 = () => {
                 <SnsContainer>
                     <SnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/retroriron"><SnsIcon loading="lazy" src={Twitter} alt="レトロリロンのTwitterアイコン" /></SnsLink>
                     <SnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/retroriron/?hl=ja"><SnsIcon loading="lazy" src={Instagram} alt="レトロリロンのInstagramアイコン" /></SnsLink>
-                    <SnsLink rel="noopener noreferrer" target="_blank" href="#"><SnsIcon loading="lazy" src={Youtube} alt="レトロリロンのYouTubeアイコン" /></SnsLink>
+                    <SnsLink rel="noopener noreferrer" target="_blank" href="https://www.youtube.com/channel/UCkE8tVIvmdos9b1OqEhePlg"><SnsIcon loading="lazy" src={Youtube} alt="レトロリロンのYouTubeアイコン" /></SnsLink>
                 </SnsContainer>
             </HeaderContainer>
             {hamburger ? (
@@ -84,7 +84,7 @@ const Header2 = () => {
                         <HamburgerMenuSnsIconContainer>
                             <HamburgerMenuSnsIconLink rel="noopener noreferrer" target="_blank"  href="https://twitter.com/retroriron"><HamburgerMenuSnsIcon loading="lazy" src={TwitterOrange} /></HamburgerMenuSnsIconLink>
                             <HamburgerMenuSnsIconLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/retroriron/?hl=ja"><HamburgerMenuSnsIcon loading="lazy" src={InstagramOrange} /></HamburgerMenuSnsIconLink>
-                            <HamburgerMenuSnsIconLink rel="noopener noreferrer" target="_blank" href="#"><HamburgerMenuSnsIcon loading="lazy" src={YoutubeOrange} /></HamburgerMenuSnsIconLink>
+                            <HamburgerMenuSnsIconLink rel="noopener noreferrer" target="_blank" href="https://www.youtube.com/channel/UCkE8tVIvmdos9b1OqEhePlg"><HamburgerMenuSnsIcon loading="lazy" src={YoutubeOrange} /></HamburgerMenuSnsIconLink>
                         </HamburgerMenuSnsIconContainer>
                     </HamburgerMenuSnsContainer>
                     <HamburgerMenuCopyright>© 2021 retririon.</HamburgerMenuCopyright>
@@ -92,12 +92,12 @@ const Header2 = () => {
             ):(
                 <HamburgerMenuContentContainer></HamburgerMenuContentContainer>
             )}
-            <SnsFixedContainer location={location.pathname === "/contact" && location.pathname === "/live"}>
+            <SnsFixedContainer location={location.pathname === "/contact" || location.pathname === "/live"}>
                 <SnsFixedBorder></SnsFixedBorder>
                 <SnsFixedText>our sns</SnsFixedText>
                 <SnsFixedIconLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/retroriron"><SnsFixedIconImage loading="lazy" src={TwitterOrange} alt="レトロリロンのTwitterアイコン" /></SnsFixedIconLink>
                 <SnsFixedIconLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/retroriron/?hl=ja"><SnsFixedIconImage loading="lazy" src={InstagramOrange} alt="レトロリロンのInstagramアイコン" /></SnsFixedIconLink>
-                <SnsFixedIconLink rel="noopener noreferrer" target="_blank" href="#"><SnsFixedIconImage loading="lazy" src={YoutubeOrange} alt="レトロリロンのYouTubeアイコン" /></SnsFixedIconLink>
+                <SnsFixedIconLink rel="noopener noreferrer" target="_blank" href="https://www.youtube.com/channel/UCkE8tVIvmdos9b1OqEhePlg"><SnsFixedIconImage loading="lazy" src={YoutubeOrange} alt="レトロリロンのYouTubeアイコン" /></SnsFixedIconLink>
                 <SnsFixedBorder></SnsFixedBorder>
             </SnsFixedContainer>
         </>

@@ -264,12 +264,12 @@ const Live = () => {
                             </SpLiveItemContainer>
                         ))}
                     </SpLiveContainer>
-                    <SnsFixedContainer>
+                    <SnsFixedContainer hidden={isConfirmationVisible}>
                         <SnsFixedBorder></SnsFixedBorder>
                         <SnsFixedText>our sns</SnsFixedText>
                         <SnsFixedIconLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/retroriron"><SnsFixedIconImage loading="lazy" src={TwitterOrange} /></SnsFixedIconLink>
                         <SnsFixedIconLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/retroriron/?hl=ja"><SnsFixedIconImage loading="lazy" src={InstagramOrange} /></SnsFixedIconLink>
-                        <SnsFixedIconLink rel="noopener noreferrer" target="_blank" href="#"><SnsFixedIconImage loading="lazy" src={YoutubeOrange} /></SnsFixedIconLink>
+                        <SnsFixedIconLink rel="noopener noreferrer" target="_blank" href="https://www.youtube.com/channel/UCkE8tVIvmdos9b1OqEhePlg"><SnsFixedIconImage loading="lazy" src={YoutubeOrange} /></SnsFixedIconLink>
                         <SnsFixedBorder></SnsFixedBorder>
                     </SnsFixedContainer>
                 </>
@@ -592,7 +592,7 @@ const TabLiveContainer = styled.ul`
         display: block;
         width: 100%;
         height: 100%;
-        margin-left: 5%;
+
     }
     @media screen and (min-width: 900px){
         margin-left: 0;
@@ -743,7 +743,6 @@ const SpLiveContainer = styled.ul`
     display: block;
     width: 240px;
     height: 100%;
-    margin-left: 5%;
     @media screen and (min-width: 300px){
         width: 100%;
     }
@@ -864,6 +863,7 @@ const SnsFixedContainer = styled.div`
     @media screen and (min-width: 900px){
         display: none;
     }
+    ${props => props.hidden && `display: none;`}
 `
 
 const SnsFixedBorder = styled.div`
