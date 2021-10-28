@@ -38,7 +38,7 @@ const Discography = () => {
                     <PcDiscographyItemContainer key={item.id}>
                         <PcDiscographyDate>{moment(item.date).format("YYYY.MM.DD.")} Release</PcDiscographyDate>
                         <PcDiscographyImageContainer>
-                            <PcDiscographyImage loading="lazy" src={process.env.REACT_APP_PRO_API_URL + item.image.url} />
+                            <PcDiscographyImage loading="lazy" src={process.env.REACT_APP_PRO_API_URL + item.image.url} alt={item.title} />
                             <PcDiscographyTag>{item.tag}</PcDiscographyTag>
                         </PcDiscographyImageContainer>
                         <PcDiscographyTitleContainer>
@@ -46,11 +46,11 @@ const Discography = () => {
                         </PcDiscographyTitleContainer>
                         <PcDiscographyLinkContainer>
                             <PcDiscographyLinkItemContainer noLink={!item.mvLink} rel="noopener noreferrer" target="_blank" href={item.mvLink}>
-                                <PcDiscographyLinkIcon loading="lazy" src={MvIcon} />
+                                <PcDiscographyLinkIcon loading="lazy" src={MvIcon} alt="MVアイコン" />
                                 <PcDiscographyLinkText>MVを見る</PcDiscographyLinkText>
                             </PcDiscographyLinkItemContainer>
                             <PcDiscographyLinkItemContainer noLink={!item.subscriptionLink} rel="noopener noreferrer" target="_blank" href={item.subscriptionLink}>
-                                <PcDiscographyLinkIcon loading="lazy" src={SubscriptionIcon} />
+                                <PcDiscographyLinkIcon loading="lazy" src={SubscriptionIcon} alt="サブスクアイコン" />
                                 <PcDiscographyLinkText>音楽を聴く</PcDiscographyLinkText>
                             </PcDiscographyLinkItemContainer>
                         </PcDiscographyLinkContainer>
@@ -67,16 +67,16 @@ const Discography = () => {
                         </SpDiscographyTitleContainer>
                         <SpDiscographyItemContentContainer>
                             <SpDiscographyImageContainer>
-                                <SpDiscographyImage loading="lazy" src={process.env.REACT_APP_PRO_API_URL + item.image.url} />
+                                <SpDiscographyImage loading="lazy" src={process.env.REACT_APP_PRO_API_URL + item.image.url} alt={item.title} />
                                 <SpDiscographyTag>{item.tag}</SpDiscographyTag>
                             </SpDiscographyImageContainer>
                             <SpDiscographyLinkContainer>
                                 <SpDiscographyLinkItemContainer noLink={!item.mvLink} rel="noopener noreferrer" target="_blank" href={item.mvLink}>
-                                    <SpDiscographyLinkIcon loading="lazy" src={MvIcon} />
+                                    <SpDiscographyLinkIcon loading="lazy" src={MvIcon} alt="MVアイコン" />
                                     <SpDiscographyLinkText>MVを見る</SpDiscographyLinkText>
                                 </SpDiscographyLinkItemContainer>
                                 <SpDiscographyLinkItemContainer noLink={!item.subscriptionLink} rel="noopener noreferrer" target="_blank" href={item.subscriptionLink}>
-                                    <SpDiscographyLinkIcon loading="lazy" src={SubscriptionIcon} />
+                                    <SpDiscographyLinkIcon loading="lazy" src={SubscriptionIcon} alt="サブスクアイコン" />
                                     <SpDiscographyLinkText>音楽を聴く</SpDiscographyLinkText>
                                 </SpDiscographyLinkItemContainer>
                             </SpDiscographyLinkContainer>

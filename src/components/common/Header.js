@@ -53,7 +53,7 @@ const Header2 = () => {
                         <HamburgerButtonText>close</HamburgerButtonText>
                     )}
                 </HamburgerMenuContainer>
-                <Link to="/"><LogoImage loading="lazy" src={Logo} /></Link>
+                <Link to="/"><LogoImage loading="lazy" src={Logo} alt="レトロリロンのロゴ" /></Link>
                 <MenuUl>
                     <MenuLi><MenuLink to="/">Home</MenuLink></MenuLi>
                     <MenuLi><MenuLink to="/news">News</MenuLink></MenuLi>
@@ -62,9 +62,9 @@ const Header2 = () => {
                     <MenuLi><MenuLink to="/contact">Contact</MenuLink></MenuLi>
                 </MenuUl>
                 <SnsContainer>
-                    <SnsLink href="#"><SnsIcon loading="lazy" src={Twitter} /></SnsLink>
-                    <SnsLink href="#"><SnsIcon loading="lazy" src={Instagram} /></SnsLink>
-                    <SnsLink href="#"><SnsIcon loading="lazy" src={Youtube} /></SnsLink>
+                    <SnsLink href="#"><SnsIcon loading="lazy" src={Twitter} alt="レトロリロンのTwitterアイコン" /></SnsLink>
+                    <SnsLink href="#"><SnsIcon loading="lazy" src={Instagram} alt="レトロリロンのInstagramアイコン" /></SnsLink>
+                    <SnsLink href="#"><SnsIcon loading="lazy" src={Youtube} alt="レトロリロンのYouTubeアイコン" /></SnsLink>
                 </SnsContainer>
             </HeaderContainer>
             {hamburger ? (
@@ -95,9 +95,9 @@ const Header2 = () => {
             <SnsFixedContainer location={location.pathname === "/contact" && location.pathname === "/live"}>
                 <SnsFixedBorder></SnsFixedBorder>
                 <SnsFixedText>our sns</SnsFixedText>
-                <SnsFixedIconLink rel="noopener noreferrer" target="_blank" href="#"><SnsFixedIconImage loading="lazy" src={TwitterOrange} /></SnsFixedIconLink>
-                <SnsFixedIconLink rel="noopener noreferrer" target="_blank" href="#"><SnsFixedIconImage loading="lazy" src={InstagramOrange} /></SnsFixedIconLink>
-                <SnsFixedIconLink rel="noopener noreferrer" target="_blank" href="#"><SnsFixedIconImage loading="lazy" src={YoutubeOrange} /></SnsFixedIconLink>
+                <SnsFixedIconLink rel="noopener noreferrer" target="_blank" href="#"><SnsFixedIconImage loading="lazy" src={TwitterOrange} alt="レトロリロンのTwitterアイコン" /></SnsFixedIconLink>
+                <SnsFixedIconLink rel="noopener noreferrer" target="_blank" href="#"><SnsFixedIconImage loading="lazy" src={InstagramOrange} alt="レトロリロンのInstagramアイコン" /></SnsFixedIconLink>
+                <SnsFixedIconLink rel="noopener noreferrer" target="_blank" href="#"><SnsFixedIconImage loading="lazy" src={YoutubeOrange} alt="レトロリロンのYouTubeアイコン" /></SnsFixedIconLink>
                 <SnsFixedBorder></SnsFixedBorder>
             </SnsFixedContainer>
         </>
