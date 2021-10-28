@@ -20,9 +20,9 @@ const Home = () => {
             </Helmet>
             {/* Head */}
             {/* PC */}
-            <PcFv width="100%" height="100%" src={FvFrame} alt="レトロリロンのアー写" />
+            <PcFv src={FvFrame} alt="レトロリロンのアー写" />
             <PcTextContainer>
-                <PcTextBandname width="80%" height="80%" loading="lazy" src={BandTitle} alt="レトロリロン" />
+                <PcTextBandname loading="lazy" src={BandTitle} alt="レトロリロン" />
                 <PcTextTitle>ー  "明日"ではなく"今日"を生きよう </PcTextTitle>
                 <PcTextItem>
                     2020年6月1日に結成。<br/>
@@ -38,7 +38,7 @@ const Home = () => {
             </PcTextContainer>
             <PcMemberContainer>
                 <PcMemberItemContainer>
-                    <PcMemberImage width="360px" height="250px" loading="lazy" src={SuzuneImage} alt="涼音" />
+                    <PcMemberImage loading="lazy" src={SuzuneImage} alt="涼音" />
                     <PcMemberTextContainer>
                         <PcMemberInstrument>Ag. Vo.</PcMemberInstrument>
                         <PcMemberName>涼音 <PcMemberNameRomaji>/ Suzune</PcMemberNameRomaji></PcMemberName>
@@ -53,7 +53,7 @@ const Home = () => {
                     </PcMemberTextContainer>
                 </PcMemberItemContainer>
                 <PcMemberItemContainer>
-                    <PcMemberImage width="360px" height="250px" loading="lazy" src={NagayamaImage} alt="永山タイキ" />
+                    <PcMemberImage loading="lazy" src={NagayamaImage} alt="永山タイキ" />
                     <PcMemberTextContainer>
                         <PcMemberInstrument>Dr.</PcMemberInstrument>
                         <PcMemberName>永山タイキ <PcMemberNameRomaji>/ Nagayama Taiki</PcMemberNameRomaji></PcMemberName>
@@ -68,7 +68,7 @@ const Home = () => {
                     </PcMemberTextContainer>
                 </PcMemberItemContainer>
                 <PcMemberItemContainer>
-                    <PcMemberImage width="360px" height="250px" loading="lazy" src={MiriImage} alt="友野美里" />
+                    <PcMemberImage loading="lazy" src={MiriImage} alt="友野美里" />
                     <PcMemberTextContainer>
                         <PcMemberInstrument>Key.</PcMemberInstrument>
                         <PcMemberName>友野美里 <PcMemberNameRomaji>/ Tomono Miri</PcMemberNameRomaji></PcMemberName>
@@ -83,7 +83,7 @@ const Home = () => {
                     </PcMemberTextContainer>
                 </PcMemberItemContainer>
                 <PcMemberItemContainer>
-                    <PcMemberImage width="360px" height="250px" loading="lazy" src={NumaImage} alt="飯沼一暁" />
+                    <PcMemberImage loading="lazy" src={NumaImage} alt="飯沼一暁" />
                     <PcMemberTextContainer>
                         <PcMemberInstrument>Ba.</PcMemberInstrument>
                         <PcMemberName>飯沼一暁 <PcMemberNameRomaji>/ Inuma Kazuaki</PcMemberNameRomaji></PcMemberName>
@@ -100,9 +100,9 @@ const Home = () => {
             </PcMemberContainer>
             {/* PC */}
             {/* TAB */}
-            <TabFv width="100%" height="100%" src={FvFrame} alt="レトロリロンのアー写" />
+            <TabFv src={FvFrame} alt="レトロリロンのアー写" />
             <TabTextContainer>
-                <TabTextBandname width="80%" height="80%" loading="lazy" src={BandTitle} alt="レトロリロン" />
+                <TabTextBandname loading="lazy" src={BandTitle} alt="レトロリロン" />
                 <TabTextTitle>ー  "明日"ではなく"今日"を生きよう</TabTextTitle>
                 <TabTextItem>
                     2020年6月1日に結成。<br/>
@@ -118,7 +118,7 @@ const Home = () => {
             </TabTextContainer>
             <TabMemberContainer>
                 <TabMemberItemContainer>
-                    <TabMemberImage width="100%" height="100%" loading="lazy" src={SuzuneImage} alt="涼音" />
+                    <TabMemberImage loading="lazy" src={SuzuneImage} alt="涼音" />
                     <TabMemberInstrument>Ag. Vo.</TabMemberInstrument>
                     <TabMemberName>涼音 <TabMemberNameRomaji>/ Suzune</TabMemberNameRomaji></TabMemberName>
                     <TabMemberText>
@@ -133,7 +133,7 @@ const Home = () => {
                     </TabMemberSnsContainer>
                 </TabMemberItemContainer>
                 <TabMemberItemContainer>
-                    <TabMemberImage width="100%" height="100%" loading="lazy" src={NagayamaImage} alt="永山タイキ" />
+                    <TabMemberImage loading="lazy" src={NagayamaImage} alt="永山タイキ" />
                     <TabMemberInstrument>Dr.</TabMemberInstrument>
                     <TabMemberName>永山タイキ <TabMemberNameRomaji>/ Nagayama Taiki</TabMemberNameRomaji></TabMemberName>
                     <TabMemberText>
@@ -148,7 +148,7 @@ const Home = () => {
                     </TabMemberSnsContainer>
                 </TabMemberItemContainer>
                 <TabMemberItemContainer>
-                    <TabMemberImage width="100%" height="100%" loading="lazy" src={MiriImage} alt="友野美里" />
+                    <TabMemberImage loading="lazy" src={MiriImage} alt="友野美里" />
                     <TabMemberInstrument>Key.</TabMemberInstrument>
                     <TabMemberName>友野美里 <TabMemberNameRomaji>/ Tomono Miri</TabMemberNameRomaji></TabMemberName>
                     <TabMemberText>
@@ -163,7 +163,7 @@ const Home = () => {
                     </TabMemberSnsContainer>
                 </TabMemberItemContainer>
                 <TabMemberItemContainer>
-                    <TabMemberImage width="100%" height="100%" loading="lazy" src={NumaImage} alt="飯沼一暁" />
+                    <TabMemberImage loading="lazy" src={NumaImage} alt="飯沼一暁" />
                     <TabMemberInstrument>Ag. Vo.</TabMemberInstrument>
                     <TabMemberName>飯沼一暁 <TabMemberNameRomaji>/ Inuma Kazuaki</TabMemberNameRomaji></TabMemberName>
                     <TabMemberText>
@@ -180,9 +180,9 @@ const Home = () => {
             </TabMemberContainer>
             {/* TAB */}
             {/* Sp */}
-            <SpFv width="100%" height="100%" src={FvFrame} alt="レトロリロンのアー写" />
+            <SpFv src={FvFrame} alt="レトロリロンのアー写" />
             <SpTextContainer>
-                <SpTextBandname width="80%" height="80%" loading="lazy" src={BandTitle} alt="レトロリロン" />
+                <SpTextBandname loading="lazy" src={BandTitle} alt="レトロリロン" />
                 <SpTextTitle>ー  "明日"ではなく<SpTextTitleBr/><SpTextTitleSpace>　 </SpTextTitleSpace>"今日"を生きよう</SpTextTitle>
                 <SpTextItem>
                     2020年6月1日に結成。<br/>
@@ -198,7 +198,7 @@ const Home = () => {
             </SpTextContainer>
             <SpMemberContainer>
                 <SpMemberItemContainer>
-                    <SpMemberImage width="100%" height="100%" loading="lazy" src={SuzuneImage} alt="涼音" />
+                    <SpMemberImage loading="lazy" src={SuzuneImage} alt="涼音" />
                     <SpMemberInstrument>Ag. Vo.</SpMemberInstrument>
                     <SpMemberName>涼音 <SpMemberNameRomaji>/ Suzune</SpMemberNameRomaji></SpMemberName>
                     <SpMemberText>
@@ -213,7 +213,7 @@ const Home = () => {
                     </SpMemberSnsContainer>
                 </SpMemberItemContainer>
                 <SpMemberItemContainer>
-                    <SpMemberImage width="100%" height="100%" loading="lazy" src={NagayamaImage} alt="永山タイキ" />
+                    <SpMemberImage loading="lazy" src={NagayamaImage} alt="永山タイキ" />
                     <SpMemberInstrument>Dr.</SpMemberInstrument>
                     <SpMemberName>永山タイキ <SpMemberNameRomaji>/ Nagayama Taiki</SpMemberNameRomaji></SpMemberName>
                     <SpMemberText>
@@ -228,7 +228,7 @@ const Home = () => {
                     </SpMemberSnsContainer>
                 </SpMemberItemContainer>
                 <SpMemberItemContainer>
-                    <SpMemberImage width="100%" height="100%" loading="lazy" src={MiriImage} alt="友野美里" />
+                    <SpMemberImage loading="lazy" src={MiriImage} alt="友野美里" />
                     <SpMemberInstrument>Key.</SpMemberInstrument>
                     <SpMemberName>友野美里 <SpMemberNameRomaji>/ Tomono Miri</SpMemberNameRomaji></SpMemberName>
                     <SpMemberText>
@@ -243,7 +243,7 @@ const Home = () => {
                     </SpMemberSnsContainer>
                 </SpMemberItemContainer>
                 <SpMemberItemContainer>
-                    <SpMemberImage width="100%" height="100%" loading="lazy" src={NumaImage} alt="飯沼一暁" />
+                    <SpMemberImage loading="lazy" src={NumaImage} alt="飯沼一暁" />
                     <SpMemberInstrument>Ba.</SpMemberInstrument>
                     <SpMemberName>飯沼一暁 <SpMemberNameRomaji>/ Inuma Kazuaki</SpMemberNameRomaji></SpMemberName>
                     <SpMemberText>
@@ -272,6 +272,7 @@ export default Home
 const PcFv = styled.img`
     display: none;
     @media screen and (min-width: 900px){
+        width: 100%;
         display: block;
         margin-bottom: 64px;
     }
@@ -289,6 +290,7 @@ const PcTextContainer = styled.div`
 `
 
 const PcTextBandname = styled.img`
+    width: 80%;
 `
 
 const PcTextTitle = styled.h1`
@@ -395,6 +397,7 @@ const TabFv = styled.img`
     display: none;
     @media screen and (min-width: 768px){
         display: block;
+        width: 100%;
     }
     @media screen and (min-width: 900px){
         display: none;
@@ -417,6 +420,7 @@ const TabTextContainer = styled.div`
 `
 
 const TabTextBandname = styled.img`
+    width: 80%;
 `
 
 const TabTextTitle = styled.h1`
@@ -459,6 +463,7 @@ const TabMemberItemContainer = styled.div`
 `
 
 const TabMemberImage = styled.img`
+    width: 100%;
     margin-bottom: 16px;
 `
 
@@ -512,6 +517,7 @@ const TabSnsLink = styled.a`
 
 const SpFv = styled.img`
     display: block;
+    width: 100%;
     @media screen and (min-width: 768px){
         display: none;
     }
@@ -530,6 +536,7 @@ const SpTextContainer = styled.div`
 `
 
 const SpTextBandname = styled.img`
+    width: 80%;
 `
 
 const SpTextTitle = styled.h1`
@@ -582,6 +589,7 @@ const SpMemberItemContainer = styled.div`
 `
 
 const SpMemberImage = styled.img`
+    width: 100%;
     margin-bottom: 16px;
 `
 
