@@ -163,7 +163,7 @@ const Home = () => {
                     </TabMemberSnsContainer>
                 </TabMemberItemContainer>
                 <TabMemberItemContainer>
-                    <TabMemberImage loading="lazy" src={NumaImage} />
+                    <TabMemberImage loading="lazy" src={NumaImage} alt="飯沼一暁" />
                     <TabMemberInstrument>Ag. Vo.</TabMemberInstrument>
                     <TabMemberName>飯沼一暁 <TabMemberNameRomaji>/ Inuma Kazuaki</TabMemberNameRomaji></TabMemberName>
                     <TabMemberText>
@@ -243,7 +243,7 @@ const Home = () => {
                     </SpMemberSnsContainer>
                 </SpMemberItemContainer>
                 <SpMemberItemContainer>
-                    <SpMemberImage loading="lazy" src={NumaImage} />
+                    <SpMemberImage loading="lazy" src={NumaImage} alt="飯沼一暁" />
                     <SpMemberInstrument>Ba.</SpMemberInstrument>
                     <SpMemberName>飯沼一暁 <SpMemberNameRomaji>/ Inuma Kazuaki</SpMemberNameRomaji></SpMemberName>
                     <SpMemberText>
