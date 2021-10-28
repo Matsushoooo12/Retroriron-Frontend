@@ -66,7 +66,7 @@ const News = () => {
                                 <PcNewsTitle onClick={toggleAccordion(item.id)}>{item.title}</PcNewsTitle>
                                 <PcNewsText active={isActive(item.id)}>
                                     {item.content}
-                                    <PcNewsImage vertical={item.imageVertical} src={process.env.REACT_APP_PRO_API_URL + item.image.url} />
+                                    <PcNewsImage loading="lazy" vertical={item.imageVertical} src={process.env.REACT_APP_PRO_API_URL + item.image.url} />
                                 </PcNewsText>
                             </PcNewsTextContainer>
                         </PcNewsMainContainer>
@@ -81,7 +81,7 @@ const News = () => {
                                 <TabNewsTitle onClick={toggleAccordion(item.id)}>{item.title}</TabNewsTitle>
                                 <TabNewsText active={isActive(item.id)}>
                                     {item.content}
-                                    <TabNewsImage vertical={item.imageVertical} src={process.env.REACT_APP_PRO_API_URL + item.image.url} />
+                                    <TabNewsImage loading="lazy" vertical={item.imageVertical} src={process.env.REACT_APP_PRO_API_URL + item.image.url} />
                                 </TabNewsText>
                             </TabNewsTextContainer>
                         </TabNewsMainContainer>
@@ -95,7 +95,7 @@ const News = () => {
                             <SpNewsTitle onClick={toggleAccordion(item.id)}>{item.title}</SpNewsTitle>
                             <SpNewsText active={isActive(item.id)}>
                                 {item.content}
-                                <SpNewsImage vertical={item.imageVertical} src={process.env.REACT_APP_PRO_API_URL + item.image.url} />
+                                <SpNewsImage loading="lazy" vertical={item.imageVertical} src={process.env.REACT_APP_PRO_API_URL + item.image.url} />
                             </SpNewsText>
                         </SpNewsMainContainer>
                     </NewsItemContainer>
@@ -109,16 +109,17 @@ export default News
 
 const NewsContainer = styled.ul`
     display: block;
-    width: 100%;
+    width: 240px;
     height: 100%;
     margin-left: 5%;
     margin-bottom: 96px;
+    @media screen and (min-width: 300px){
+        width: 100%;
+    }
     @media screen and (min-width: 768px){
         display: block;
         width: 100%;
         height: 100%;
-        // margin-left: 40px;
-
         margin-bottom: 24px;
     }
     @media screen and (min-width: 900px){

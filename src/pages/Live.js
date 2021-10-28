@@ -125,7 +125,7 @@ const Live = () => {
                                 </PcLiveTextContainer>
                             </PcLiveContentsContainer>
                         </PcLiveMainContainer>
-                        <PcLiveImage vertical={item.imageVertical} src={process.env.REACT_APP_PRO_API_URL + item.image.url} />
+                        <PcLiveImage loading="lazy" vertical={item.imageVertical} src={process.env.REACT_APP_PRO_API_URL + item.image.url} />
                     </PcLiveItemContainer>
                 ))}
                 <ModalContainer
@@ -228,14 +228,14 @@ const Live = () => {
                                             <TabLiveInfoText>場所 | {item.place}</TabLiveInfoText>
                                             <TabLiveInfoText>料金 | {item.price}</TabLiveInfoText>
                                             <TabLiveInfoText>出演者 | {item.performer}</TabLiveInfoText>
-                                            <TabLiveBottomImage vertical={item.imageVertical} src={process.env.REACT_APP_PRO_API_URL + item.image.url} />
+                                            <TabLiveBottomImage loading="lazy" vertical={item.imageVertical} src={process.env.REACT_APP_PRO_API_URL + item.image.url} />
                                         </TabLiveInfoContainer>
                                         <TabLiveDetailText active={isActive(item.id) && item.detail}>
                                             詳細情報 |<br/>
                                             {item.detail}
                                         </TabLiveDetailText>
                                     </TabLiveContentsContainer>
-                                    <TabLiveImage vertical={item.imageVertical} src={process.env.REACT_APP_PRO_API_URL + item.image.url} />
+                                    <TabLiveImage loading="lazy" vertical={item.imageVertical} src={process.env.REACT_APP_PRO_API_URL + item.image.url} />
                                 </TabLiveMainContainer>
                             </TabLiveItemContainer>
                         ))}
@@ -254,7 +254,7 @@ const Live = () => {
                                         <SpLiveInfoText>場所 | {item.place}</SpLiveInfoText>
                                         <SpLiveInfoText>料金 | {item.price}</SpLiveInfoText>
                                         <SpLiveInfoText>出演者 | {item.performer}</SpLiveInfoText>
-                                        <SpLiveImage vertical={item.imageVertical} src={process.env.REACT_APP_PRO_API_URL + item.image.url} />
+                                        <SpLiveImage loading="lazy" vertical={item.imageVertical} src={process.env.REACT_APP_PRO_API_URL + item.image.url} />
                                         <SpLiveDetailText active={item.detail}>
                                             詳細情報 |<br/>
                                             {item.detail}
@@ -267,9 +267,9 @@ const Live = () => {
                     <SnsFixedContainer>
                         <SnsFixedBorder></SnsFixedBorder>
                         <SnsFixedText>our sns</SnsFixedText>
-                        <SnsFixedIconLink href="#"><SnsFixedIconImage src={TwitterOrange} /></SnsFixedIconLink>
-                        <SnsFixedIconLink href="#"><SnsFixedIconImage src={InstagramOrange} /></SnsFixedIconLink>
-                        <SnsFixedIconLink href="#"><SnsFixedIconImage src={YoutubeOrange} /></SnsFixedIconLink>
+                        <SnsFixedIconLink href="#"><SnsFixedIconImage loading="lazy" src={TwitterOrange} /></SnsFixedIconLink>
+                        <SnsFixedIconLink href="#"><SnsFixedIconImage loading="lazy" src={InstagramOrange} /></SnsFixedIconLink>
+                        <SnsFixedIconLink href="#"><SnsFixedIconImage loading="lazy" src={YoutubeOrange} /></SnsFixedIconLink>
                         <SnsFixedBorder></SnsFixedBorder>
                     </SnsFixedContainer>
                 </>
@@ -741,9 +741,12 @@ const TabLiveDetailText = styled.p`
 
 const SpLiveContainer = styled.ul`
     display: block;
-    width: 100%;
+    width: 240px;
     height: 100%;
     margin-left: 5%;
+    @media screen and (min-width: 300px){
+        width: 100%;
+    }
     @media screen and (min-width: 400px){
         display: none;
     }

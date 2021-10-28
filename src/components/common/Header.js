@@ -53,7 +53,7 @@ const Header2 = () => {
                         <HamburgerButtonText>close</HamburgerButtonText>
                     )}
                 </HamburgerMenuContainer>
-                <Link to="/"><LogoImage src={Logo} /></Link>
+                <Link to="/"><LogoImage loading="lazy" src={Logo} /></Link>
                 <MenuUl>
                     <MenuLi><MenuLink to="/">Home</MenuLink></MenuLi>
                     <MenuLi><MenuLink to="/news">News</MenuLink></MenuLi>
@@ -62,9 +62,9 @@ const Header2 = () => {
                     <MenuLi><MenuLink to="/contact">Contact</MenuLink></MenuLi>
                 </MenuUl>
                 <SnsContainer>
-                    <SnsLink href="#"><SnsIcon src={Twitter} /></SnsLink>
-                    <SnsLink href="#"><SnsIcon src={Instagram} /></SnsLink>
-                    <SnsLink href="#"><SnsIcon src={Youtube} /></SnsLink>
+                    <SnsLink href="#"><SnsIcon loading="lazy" src={Twitter} /></SnsLink>
+                    <SnsLink href="#"><SnsIcon loading="lazy" src={Instagram} /></SnsLink>
+                    <SnsLink href="#"><SnsIcon loading="lazy" src={Youtube} /></SnsLink>
                 </SnsContainer>
             </HeaderContainer>
             {hamburger ? (
@@ -82,9 +82,9 @@ const Header2 = () => {
                             <HamburgerMenuSnsBorder></HamburgerMenuSnsBorder>
                         </HamburgerMenuSnsTextContainer>
                         <HamburgerMenuSnsIconContainer>
-                            <HamburgerMenuSnsIconLink href="#"><HamburgerMenuSnsIcon src={TwitterOrange} /></HamburgerMenuSnsIconLink>
-                            <HamburgerMenuSnsIconLink href="#"><HamburgerMenuSnsIcon src={InstagramOrange} /></HamburgerMenuSnsIconLink>
-                            <HamburgerMenuSnsIconLink href="#"><HamburgerMenuSnsIcon src={YoutubeOrange} /></HamburgerMenuSnsIconLink>
+                            <HamburgerMenuSnsIconLink href="#"><HamburgerMenuSnsIcon loading="lazy" src={TwitterOrange} /></HamburgerMenuSnsIconLink>
+                            <HamburgerMenuSnsIconLink href="#"><HamburgerMenuSnsIcon loading="lazy" src={InstagramOrange} /></HamburgerMenuSnsIconLink>
+                            <HamburgerMenuSnsIconLink href="#"><HamburgerMenuSnsIcon loading="lazy" src={YoutubeOrange} /></HamburgerMenuSnsIconLink>
                         </HamburgerMenuSnsIconContainer>
                     </HamburgerMenuSnsContainer>
                     <HamburgerMenuCopyright>© 2021 retririon.</HamburgerMenuCopyright>
@@ -95,9 +95,9 @@ const Header2 = () => {
             <SnsFixedContainer location={location.pathname === "/contact" && location.pathname === "/live"}>
                 <SnsFixedBorder></SnsFixedBorder>
                 <SnsFixedText>our sns</SnsFixedText>
-                <SnsFixedIconLink href="#"><SnsFixedIconImage src={TwitterOrange} /></SnsFixedIconLink>
-                <SnsFixedIconLink href="#"><SnsFixedIconImage src={InstagramOrange} /></SnsFixedIconLink>
-                <SnsFixedIconLink href="#"><SnsFixedIconImage src={YoutubeOrange} /></SnsFixedIconLink>
+                <SnsFixedIconLink href="#"><SnsFixedIconImage loading="lazy" src={TwitterOrange} /></SnsFixedIconLink>
+                <SnsFixedIconLink href="#"><SnsFixedIconImage loading="lazy" src={InstagramOrange} /></SnsFixedIconLink>
+                <SnsFixedIconLink href="#"><SnsFixedIconImage loading="lazy" src={YoutubeOrange} /></SnsFixedIconLink>
                 <SnsFixedBorder></SnsFixedBorder>
             </SnsFixedContainer>
         </>

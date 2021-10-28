@@ -74,9 +74,12 @@ export default ContactComplete2
 
 const ContactContainer = styled.div`
     display: block;
-    width: 100%;
+    width: 240px;
     margin: 0 auto 72px;
     height: 100%;
+    @media screen and (min-width: 300px){
+        width: 100%;
+    }
     @media screen and (min-width: 600px){
         display: block;
         width: 80%;

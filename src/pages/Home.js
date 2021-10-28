@@ -20,9 +20,9 @@ const Home = () => {
             </Helmet>
             {/* Head */}
             {/* PC */}
-            <PcFv src={FvFrame} />
+            <PcFv loading="lazy" src={FvFrame} />
             <PcTextContainer>
-                <PcTextBandname src={BandTitle} />
+                <PcTextBandname loading="lazy" src={BandTitle} />
                 <PcTextTitle>ー  "明日"ではなく"今日"を生きよう </PcTextTitle>
                 <PcTextItem>
                     2020年6月1日に結成。<br/>
@@ -38,7 +38,7 @@ const Home = () => {
             </PcTextContainer>
             <PcMemberContainer>
                 <PcMemberItemContainer>
-                    <PcMemberImage src={SuzuneImage} />
+                    <PcMemberImage loading="lazy" src={SuzuneImage} />
                     <PcMemberTextContainer>
                         <PcMemberInstrument>Ag. Vo.</PcMemberInstrument>
                         <PcMemberName>涼音 <PcMemberNameRomaji>/ Suzune</PcMemberNameRomaji></PcMemberName>
@@ -47,13 +47,13 @@ const Home = () => {
                             千葉県出身。
                         </PcMemberText>
                         <PcMemberSnsContainer>
-                            <PcSnsLink href="#"><PcSnsIcon src={Twitter} /></PcSnsLink>
-                            <PcSnsLink href="#"><PcSnsIcon src={Instagram} /></PcSnsLink>
+                            <PcSnsLink href="#"><PcSnsIcon loading="lazy" src={Twitter} /></PcSnsLink>
+                            <PcSnsLink href="#"><PcSnsIcon loading="lazy" src={Instagram} /></PcSnsLink>
                         </PcMemberSnsContainer>
                     </PcMemberTextContainer>
                 </PcMemberItemContainer>
                 <PcMemberItemContainer>
-                    <PcMemberImage src={NagayamaImage} />
+                    <PcMemberImage loading="lazy" src={NagayamaImage} />
                     <PcMemberTextContainer>
                         <PcMemberInstrument>Dr.</PcMemberInstrument>
                         <PcMemberName>永山タイキ <PcMemberNameRomaji>/ Nagayama Taiki</PcMemberNameRomaji></PcMemberName>
@@ -62,13 +62,13 @@ const Home = () => {
                             大分県出身。
                         </PcMemberText>
                         <PcMemberSnsContainer>
-                            <PcSnsLink href="#"><PcSnsIcon src={Twitter} /></PcSnsLink>
-                            <PcSnsLink href="#"><PcSnsIcon src={Instagram} /></PcSnsLink>
+                            <PcSnsLink href="#"><PcSnsIcon loading="lazy" src={Twitter} /></PcSnsLink>
+                            <PcSnsLink href="#"><PcSnsIcon loading="lazy" src={Instagram} /></PcSnsLink>
                         </PcMemberSnsContainer>
                     </PcMemberTextContainer>
                 </PcMemberItemContainer>
                 <PcMemberItemContainer>
-                    <PcMemberImage src={MiriImage} />
+                    <PcMemberImage loading="lazy" src={MiriImage} />
                     <PcMemberTextContainer>
                         <PcMemberInstrument>Key.</PcMemberInstrument>
                         <PcMemberName>友野美里 <PcMemberNameRomaji>/ Tomono Miri</PcMemberNameRomaji></PcMemberName>
@@ -77,13 +77,13 @@ const Home = () => {
                             大分県出身。
                         </PcMemberText>
                         <PcMemberSnsContainer>
-                            <PcSnsLink href="#"><PcSnsIcon src={Twitter} /></PcSnsLink>
-                            <PcSnsLink href="#"><PcSnsIcon src={Instagram} /></PcSnsLink>
+                            <PcSnsLink href="#"><PcSnsIcon loading="lazy" src={Twitter} /></PcSnsLink>
+                            <PcSnsLink href="#"><PcSnsIcon loading="lazy" src={Instagram} /></PcSnsLink>
                         </PcMemberSnsContainer>
                     </PcMemberTextContainer>
                 </PcMemberItemContainer>
                 <PcMemberItemContainer>
-                    <PcMemberImage src={NumaImage} />
+                    <PcMemberImage loading="lazy" src={NumaImage} />
                     <PcMemberTextContainer>
                         <PcMemberInstrument>Ba.</PcMemberInstrument>
                         <PcMemberName>飯沼一暁 <PcMemberNameRomaji>/ Inuma Kazuaki</PcMemberNameRomaji></PcMemberName>
@@ -92,17 +92,17 @@ const Home = () => {
                             広島県出身。
                         </PcMemberText>
                         <PcMemberSnsContainer>
-                            <PcSnsLink href="#"><PcSnsIcon src={Twitter} /></PcSnsLink>
-                            <PcSnsLink href="#"><PcSnsIcon src={Instagram} /></PcSnsLink>
+                            <PcSnsLink href="#"><PcSnsIcon loading="lazy" src={Twitter} /></PcSnsLink>
+                            <PcSnsLink href="#"><PcSnsIcon loading="lazy" src={Instagram} /></PcSnsLink>
                         </PcMemberSnsContainer>
                     </PcMemberTextContainer>
                 </PcMemberItemContainer>
             </PcMemberContainer>
             {/* PC */}
             {/* TAB */}
-            <TabFv src={FvFrame} />
+            <TabFv loading="lazy" src={FvFrame} />
             <TabTextContainer>
-                <TabTextBandname src={BandTitle} />
+                <TabTextBandname loading="lazy" src={BandTitle} />
                 <TabTextTitle>ー  "明日"ではなく"今日"を生きよう</TabTextTitle>
                 <TabTextItem>
                     2020年6月1日に結成。<br/>
@@ -118,7 +118,7 @@ const Home = () => {
             </TabTextContainer>
             <TabMemberContainer>
                 <TabMemberItemContainer>
-                    <TabMemberImage src={SuzuneImage} />
+                    <TabMemberImage loading="lazy" src={SuzuneImage} />
                     <TabMemberInstrument>Ag. Vo.</TabMemberInstrument>
                     <TabMemberName>涼音 <TabMemberNameRomaji>/ Suzune</TabMemberNameRomaji></TabMemberName>
                     <TabMemberText>
@@ -127,13 +127,13 @@ const Home = () => {
                     </TabMemberText>
                     <TabMemberSnsContainer>
                         <TabMemberSnsContainer>
-                            <TabSnsLink href="#"><TabSnsIcon src={Twitter} /></TabSnsLink>
-                            <TabSnsLink href="#"><TabSnsIcon src={Instagram} /></TabSnsLink>
+                            <TabSnsLink href="#"><TabSnsIcon loading="lazy" src={Twitter} /></TabSnsLink>
+                            <TabSnsLink href="#"><TabSnsIcon loading="lazy" src={Instagram} /></TabSnsLink>
                         </TabMemberSnsContainer>
                     </TabMemberSnsContainer>
                 </TabMemberItemContainer>
                 <TabMemberItemContainer>
-                    <TabMemberImage src={NagayamaImage} />
+                    <TabMemberImage loading="lazy" src={NagayamaImage} />
                     <TabMemberInstrument>Dr.</TabMemberInstrument>
                     <TabMemberName>永山タイキ <TabMemberNameRomaji>/ Nagayama Taiki</TabMemberNameRomaji></TabMemberName>
                     <TabMemberText>
@@ -142,13 +142,13 @@ const Home = () => {
                     </TabMemberText>
                     <TabMemberSnsContainer>
                         <TabMemberSnsContainer>
-                            <TabSnsLink href="#"><TabSnsIcon src={Twitter} /></TabSnsLink>
-                            <TabSnsLink href="#"><TabSnsIcon src={Instagram} /></TabSnsLink>
+                            <TabSnsLink href="#"><TabSnsIcon loading="lazy" src={Twitter} /></TabSnsLink>
+                            <TabSnsLink href="#"><TabSnsIcon loading="lazy" src={Instagram} /></TabSnsLink>
                         </TabMemberSnsContainer>
                     </TabMemberSnsContainer>
                 </TabMemberItemContainer>
                 <TabMemberItemContainer>
-                    <TabMemberImage src={MiriImage} />
+                    <TabMemberImage loading="lazy" src={MiriImage} />
                     <TabMemberInstrument>Key.</TabMemberInstrument>
                     <TabMemberName>友野美里 <TabMemberNameRomaji>/ Tomono Miri</TabMemberNameRomaji></TabMemberName>
                     <TabMemberText>
@@ -157,13 +157,13 @@ const Home = () => {
                     </TabMemberText>
                     <TabMemberSnsContainer>
                         <TabMemberSnsContainer>
-                            <TabSnsLink href="#"><TabSnsIcon src={Twitter} /></TabSnsLink>
-                            <TabSnsLink href="#"><TabSnsIcon src={Instagram} /></TabSnsLink>
+                            <TabSnsLink href="#"><TabSnsIcon loading="lazy" src={Twitter} /></TabSnsLink>
+                            <TabSnsLink href="#"><TabSnsIcon loading="lazy" src={Instagram} /></TabSnsLink>
                         </TabMemberSnsContainer>
                     </TabMemberSnsContainer>
                 </TabMemberItemContainer>
                 <TabMemberItemContainer>
-                    <TabMemberImage src={NumaImage} />
+                    <TabMemberImage loading="lazy" src={NumaImage} />
                     <TabMemberInstrument>Ag. Vo.</TabMemberInstrument>
                     <TabMemberName>飯沼一暁 <TabMemberNameRomaji>/ Inuma Kazuaki</TabMemberNameRomaji></TabMemberName>
                     <TabMemberText>
@@ -172,17 +172,17 @@ const Home = () => {
                     </TabMemberText>
                     <TabMemberSnsContainer>
                         <TabMemberSnsContainer>
-                            <TabSnsLink href="#"><TabSnsIcon src={Twitter} /></TabSnsLink>
-                            <TabSnsLink href="#"><TabSnsIcon src={Instagram} /></TabSnsLink>
+                            <TabSnsLink href="#"><TabSnsIcon loading="lazy" src={Twitter} /></TabSnsLink>
+                            <TabSnsLink href="#"><TabSnsIcon loading="lazy" src={Instagram} /></TabSnsLink>
                         </TabMemberSnsContainer>
                     </TabMemberSnsContainer>
                 </TabMemberItemContainer>
             </TabMemberContainer>
             {/* TAB */}
             {/* Sp */}
-            <SpFv src={FvFrame} />
+            <SpFv loading="lazy" src={FvFrame} />
             <SpTextContainer>
-                <SpTextBandname src={BandTitle} />
+                <SpTextBandname loading="lazy" src={BandTitle} />
                 <SpTextTitle>ー  "明日"ではなく<SpTextTitleBr/><SpTextTitleSpace>　 </SpTextTitleSpace>"今日"を生きよう</SpTextTitle>
                 <SpTextItem>
                     2020年6月1日に結成。<br/>
@@ -198,7 +198,7 @@ const Home = () => {
             </SpTextContainer>
             <SpMemberContainer>
                 <SpMemberItemContainer>
-                    <SpMemberImage src={SuzuneImage} />
+                    <SpMemberImage loading="lazy" src={SuzuneImage} />
                     <SpMemberInstrument>Ag. Vo.</SpMemberInstrument>
                     <SpMemberName>涼音 <SpMemberNameRomaji>/ Suzune</SpMemberNameRomaji></SpMemberName>
                     <SpMemberText>
@@ -207,13 +207,13 @@ const Home = () => {
                     </SpMemberText>
                     <SpMemberSnsContainer>
                         <SpMemberSnsContainer>
-                            <SpSnsLink href="#"><SpSnsIcon src={Twitter} /></SpSnsLink>
-                            <SpSnsLink href="#"><SpSnsIcon src={Instagram} /></SpSnsLink>
+                            <SpSnsLink href="#"><SpSnsIcon loading="lazy" src={Twitter} /></SpSnsLink>
+                            <SpSnsLink href="#"><SpSnsIcon loading="lazy" src={Instagram} /></SpSnsLink>
                         </SpMemberSnsContainer>
                     </SpMemberSnsContainer>
                 </SpMemberItemContainer>
                 <SpMemberItemContainer>
-                    <SpMemberImage src={NagayamaImage} />
+                    <SpMemberImage loading="lazy" src={NagayamaImage} />
                     <SpMemberInstrument>Dr.</SpMemberInstrument>
                     <SpMemberName>永山タイキ <SpMemberNameRomaji>/ Nagayama Taiki</SpMemberNameRomaji></SpMemberName>
                     <SpMemberText>
@@ -222,13 +222,13 @@ const Home = () => {
                     </SpMemberText>
                     <SpMemberSnsContainer>
                         <SpMemberSnsContainer>
-                            <SpSnsLink href="#"><SpSnsIcon src={Twitter} /></SpSnsLink>
-                            <SpSnsLink href="#"><SpSnsIcon src={Instagram} /></SpSnsLink>
+                            <SpSnsLink href="#"><SpSnsIcon loading="lazy" src={Twitter} /></SpSnsLink>
+                            <SpSnsLink href="#"><SpSnsIcon loading="lazy" src={Instagram} /></SpSnsLink>
                         </SpMemberSnsContainer>
                     </SpMemberSnsContainer>
                 </SpMemberItemContainer>
                 <SpMemberItemContainer>
-                    <SpMemberImage src={MiriImage} />
+                    <SpMemberImage loading="lazy" src={MiriImage} />
                     <SpMemberInstrument>Key.</SpMemberInstrument>
                     <SpMemberName>友野美里 <SpMemberNameRomaji>/ Tomono Miri</SpMemberNameRomaji></SpMemberName>
                     <SpMemberText>
@@ -237,13 +237,13 @@ const Home = () => {
                     </SpMemberText>
                     <SpMemberSnsContainer>
                         <SpMemberSnsContainer>
-                            <SpSnsLink href="#"><SpSnsIcon src={Twitter} /></SpSnsLink>
-                            <SpSnsLink href="#"><SpSnsIcon src={Instagram} /></SpSnsLink>
+                            <SpSnsLink href="#"><SpSnsIcon loading="lazy" src={Twitter} /></SpSnsLink>
+                            <SpSnsLink href="#"><SpSnsIcon loading="lazy" src={Instagram} /></SpSnsLink>
                         </SpMemberSnsContainer>
                     </SpMemberSnsContainer>
                 </SpMemberItemContainer>
                 <SpMemberItemContainer>
-                    <SpMemberImage src={NumaImage} />
+                    <SpMemberImage loading="lazy" src={NumaImage} />
                     <SpMemberInstrument>Ba.</SpMemberInstrument>
                     <SpMemberName>飯沼一暁 <SpMemberNameRomaji>/ Inuma Kazuaki</SpMemberNameRomaji></SpMemberName>
                     <SpMemberText>
@@ -252,8 +252,8 @@ const Home = () => {
                     </SpMemberText>
                     <SpMemberSnsContainer>
                         <SpMemberSnsContainer>
-                            <SpSnsLink href="#"><SpSnsIcon src={Twitter} /></SpSnsLink>
-                            <SpSnsLink href="#"><SpSnsIcon src={Instagram} /></SpSnsLink>
+                            <SpSnsLink href="#"><SpSnsIcon loading="lazy" src={Twitter} /></SpSnsLink>
+                            <SpSnsLink href="#"><SpSnsIcon loading="lazy" src={Instagram} /></SpSnsLink>
                         </SpMemberSnsContainer>
                     </SpMemberSnsContainer>
                 </SpMemberItemContainer>
