@@ -382,6 +382,7 @@ const PcLiveImage = styled.img`
     height: 100%;
     ${props => props.vertical && `
         width: 160px;
+        height: 200px;
     `}
 `
 
@@ -701,6 +702,7 @@ const TabLiveBottomImage = styled.img`
         margin-top: 16px;
         ${props => props.vertical && `
             width: 128px;
+            height: 160px;
         `}
     }
     @media screen and (min-width: 600px){
@@ -829,6 +831,7 @@ const SpLiveImage = styled.img`
     margin-top: 16px;
     ${props => props.vertical && `
         width: 128px;
+        height: 200px;
     `}
 `
 
