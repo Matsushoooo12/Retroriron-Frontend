@@ -8,6 +8,9 @@ import { getLive } from '../api';
 import { useForm } from 'react-hook-form';
 import TicketConfirm from '../components/ticket/TicketConfirm';
 import SpTicketForm from '../components/ticket/SpTicketForm';
+import TwitterOrange from '../images/twitter-icon-orange.png'
+import InstagramOrange from '../images/insta-icon-orange.png'
+import YoutubeOrange from '../images/youtube-icon-orange.png'
 
 const Live = () => {
     // useForm
@@ -261,6 +264,14 @@ const Live = () => {
                             </SpLiveItemContainer>
                         ))}
                     </SpLiveContainer>
+                    <SnsFixedContainer>
+                        <SnsFixedBorder></SnsFixedBorder>
+                        <SnsFixedText>our sns</SnsFixedText>
+                        <SnsFixedIconLink href="#"><SnsFixedIconImage src={TwitterOrange} /></SnsFixedIconLink>
+                        <SnsFixedIconLink href="#"><SnsFixedIconImage src={InstagramOrange} /></SnsFixedIconLink>
+                        <SnsFixedIconLink href="#"><SnsFixedIconImage src={YoutubeOrange} /></SnsFixedIconLink>
+                        <SnsFixedBorder></SnsFixedBorder>
+                    </SnsFixedContainer>
                 </>
             ):(
                 <SpTicketForm
@@ -834,4 +845,47 @@ const SpLiveDetailText = styled.p`
     display: none;
     word-break: break-all;
     ${props => props.active && `display: block;`}
+`
+
+// SP SNS固定
+
+const SnsFixedContainer = styled.div`
+    display: flex;
+    position: fixed;
+    z-index: 50;
+    width: 100%;
+    left: -40%;
+    top: 72%;
+    transform: rotate(90deg);
+    align-items: center;
+    @media screen and (min-width: 900px){
+        display: none;
+    }
+`
+
+const SnsFixedBorder = styled.div`
+    height: 1px;
+    width: 24px;
+    background-color: #000000;
+`
+
+const SnsFixedText = styled.p`
+    color: #292929;
+    font-size: 1.0rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 700;
+    margin-left: 16px;
+    margin-right: 16px;
+    white-space: pre-wrap;
+`
+
+const SnsFixedIconLink = styled.a`
+    text-decoration: none;
+    margin-right: 16px;
+`
+
+const SnsFixedIconImage = styled.img`
+    width: 32px;
+    height: 30px;
+    transform: rotate(-90deg);
 `

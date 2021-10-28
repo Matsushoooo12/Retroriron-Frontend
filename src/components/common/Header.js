@@ -92,7 +92,7 @@ const Header2 = () => {
             ):(
                 <HamburgerMenuContentContainer></HamburgerMenuContentContainer>
             )}
-            <SnsFixedContainer className={location.pathname === "/contact" ? "" : "open"}>
+            <SnsFixedContainer location={location.pathname === "/contact" && location.pathname === "/live"}>
                 <SnsFixedBorder></SnsFixedBorder>
                 <SnsFixedText>our sns</SnsFixedText>
                 <SnsFixedIconLink href="#"><SnsFixedIconImage src={TwitterOrange} /></SnsFixedIconLink>
