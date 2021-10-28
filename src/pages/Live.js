@@ -592,7 +592,7 @@ const TabLiveContainer = styled.ul`
         display: block;
         width: 100%;
         height: 100%;
-
+        margin-left: 5%;
     }
     @media screen and (min-width: 900px){
         margin-left: 0;
@@ -743,6 +743,7 @@ const SpLiveContainer = styled.ul`
     display: block;
     width: 240px;
     height: 100%;
+    margin-left: 5%;
     @media screen and (min-width: 300px){
         width: 100%;
     }
