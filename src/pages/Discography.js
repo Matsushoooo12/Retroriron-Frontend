@@ -45,11 +45,11 @@ const Discography = () => {
                             <PcDiscographyTitle long={item.title.length > 18}>{item.title}</PcDiscographyTitle>
                         </PcDiscographyTitleContainer>
                         <PcDiscographyLinkContainer>
-                            <PcDiscographyLinkItemContainer rel="noopener noreferrer" target="_blank" href={item.mvLink}>
+                            <PcDiscographyLinkItemContainer noLink={!item.mvLink} rel="noopener noreferrer" target="_blank" href={item.mvLink}>
                                 <PcDiscographyLinkIcon loading="lazy" src={MvIcon} />
                                 <PcDiscographyLinkText>MVを見る</PcDiscographyLinkText>
                             </PcDiscographyLinkItemContainer>
-                            <PcDiscographyLinkItemContainer rel="noopener noreferrer" target="_blank" href={item.subscriptionLink}>
+                            <PcDiscographyLinkItemContainer noLink={!item.subscriptionLink} rel="noopener noreferrer" target="_blank" href={item.subscriptionLink}>
                                 <PcDiscographyLinkIcon loading="lazy" src={SubscriptionIcon} />
                                 <PcDiscographyLinkText>音楽を聴く</PcDiscographyLinkText>
                             </PcDiscographyLinkItemContainer>
@@ -71,11 +71,11 @@ const Discography = () => {
                                 <SpDiscographyTag>{item.tag}</SpDiscographyTag>
                             </SpDiscographyImageContainer>
                             <SpDiscographyLinkContainer>
-                                <SpDiscographyLinkItemContainer rel="noopener noreferrer" target="_blank" href={item.mvLink}>
+                                <SpDiscographyLinkItemContainer noLink={!item.mvLink} rel="noopener noreferrer" target="_blank" href={item.mvLink}>
                                     <SpDiscographyLinkIcon loading="lazy" src={MvIcon} />
                                     <SpDiscographyLinkText>MVを見る</SpDiscographyLinkText>
                                 </SpDiscographyLinkItemContainer>
-                                <SpDiscographyLinkItemContainer rel="noopener noreferrer" target="_blank" href={item.subscriptionLink}>
+                                <SpDiscographyLinkItemContainer noLink={!item.subscriptionLink} rel="noopener noreferrer" target="_blank" href={item.subscriptionLink}>
                                     <SpDiscographyLinkIcon loading="lazy" src={SubscriptionIcon} />
                                     <SpDiscographyLinkText>音楽を聴く</SpDiscographyLinkText>
                                 </SpDiscographyLinkItemContainer>
@@ -189,6 +189,11 @@ const PcDiscographyLinkItemContainer = styled.a`
     &:last-of-type{
         margin-bottom: 0;
     }
+    ${props => props.noLink && `
+        opacity: 0.7;
+        background-color: #F0F0F0;
+        cursor: default;
+    `}
 `
 
 const PcDiscographyLinkIcon = styled.img`
@@ -299,6 +304,11 @@ const SpDiscographyLinkItemContainer = styled.a`
     &:last-of-type{
         margin-bottom: 0;
     }
+    ${props => props.noLink && `
+        opacity: 0.7;
+        background-color: #F0F0F0;
+        cursor: default;
+    `}
 `
 
 const SpDiscographyLinkIcon = styled.img`
