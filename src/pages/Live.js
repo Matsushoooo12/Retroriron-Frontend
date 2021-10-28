@@ -831,7 +831,7 @@ const SpLiveImage = styled.img`
     margin-top: 16px;
     ${props => props.vertical && `
         width: 128px;
-        height: 160px;
+        height: 100%;
     `}
 `
 
