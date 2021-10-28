@@ -62,9 +62,9 @@ const Header2 = () => {
                     <MenuLi><MenuLink to="/contact">Contact</MenuLink></MenuLi>
                 </MenuUl>
                 <SnsContainer>
-                    <SnsLink href="#"><SnsIcon loading="lazy" src={Twitter} alt="レトロリロンのTwitterアイコン" /></SnsLink>
-                    <SnsLink href="#"><SnsIcon loading="lazy" src={Instagram} alt="レトロリロンのInstagramアイコン" /></SnsLink>
-                    <SnsLink href="#"><SnsIcon loading="lazy" src={Youtube} alt="レトロリロンのYouTubeアイコン" /></SnsLink>
+                    <SnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/retroriron"><SnsIcon loading="lazy" src={Twitter} alt="レトロリロンのTwitterアイコン" /></SnsLink>
+                    <SnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/retroriron/?hl=ja"><SnsIcon loading="lazy" src={Instagram} alt="レトロリロンのInstagramアイコン" /></SnsLink>
+                    <SnsLink rel="noopener noreferrer" target="_blank" href="#"><SnsIcon loading="lazy" src={Youtube} alt="レトロリロンのYouTubeアイコン" /></SnsLink>
                 </SnsContainer>
             </HeaderContainer>
             {hamburger ? (
@@ -82,8 +82,8 @@ const Header2 = () => {
                             <HamburgerMenuSnsBorder></HamburgerMenuSnsBorder>
                         </HamburgerMenuSnsTextContainer>
                         <HamburgerMenuSnsIconContainer>
-                            <HamburgerMenuSnsIconLink rel="noopener noreferrer" target="_blank"  href="#"><HamburgerMenuSnsIcon loading="lazy" src={TwitterOrange} /></HamburgerMenuSnsIconLink>
-                            <HamburgerMenuSnsIconLink rel="noopener noreferrer" target="_blank" href="#"><HamburgerMenuSnsIcon loading="lazy" src={InstagramOrange} /></HamburgerMenuSnsIconLink>
+                            <HamburgerMenuSnsIconLink rel="noopener noreferrer" target="_blank"  href="https://twitter.com/retroriron"><HamburgerMenuSnsIcon loading="lazy" src={TwitterOrange} /></HamburgerMenuSnsIconLink>
+                            <HamburgerMenuSnsIconLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/retroriron/?hl=ja"><HamburgerMenuSnsIcon loading="lazy" src={InstagramOrange} /></HamburgerMenuSnsIconLink>
                             <HamburgerMenuSnsIconLink rel="noopener noreferrer" target="_blank" href="#"><HamburgerMenuSnsIcon loading="lazy" src={YoutubeOrange} /></HamburgerMenuSnsIconLink>
                         </HamburgerMenuSnsIconContainer>
                     </HamburgerMenuSnsContainer>
@@ -95,8 +95,8 @@ const Header2 = () => {
             <SnsFixedContainer location={location.pathname === "/contact" && location.pathname === "/live"}>
                 <SnsFixedBorder></SnsFixedBorder>
                 <SnsFixedText>our sns</SnsFixedText>
-                <SnsFixedIconLink rel="noopener noreferrer" target="_blank" href="#"><SnsFixedIconImage loading="lazy" src={TwitterOrange} alt="レトロリロンのTwitterアイコン" /></SnsFixedIconLink>
-                <SnsFixedIconLink rel="noopener noreferrer" target="_blank" href="#"><SnsFixedIconImage loading="lazy" src={InstagramOrange} alt="レトロリロンのInstagramアイコン" /></SnsFixedIconLink>
+                <SnsFixedIconLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/retroriron"><SnsFixedIconImage loading="lazy" src={TwitterOrange} alt="レトロリロンのTwitterアイコン" /></SnsFixedIconLink>
+                <SnsFixedIconLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/retroriron/?hl=ja"><SnsFixedIconImage loading="lazy" src={InstagramOrange} alt="レトロリロンのInstagramアイコン" /></SnsFixedIconLink>
                 <SnsFixedIconLink rel="noopener noreferrer" target="_blank" href="#"><SnsFixedIconImage loading="lazy" src={YoutubeOrange} alt="レトロリロンのYouTubeアイコン" /></SnsFixedIconLink>
                 <SnsFixedBorder></SnsFixedBorder>
             </SnsFixedContainer>

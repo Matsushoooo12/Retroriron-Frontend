@@ -47,7 +47,7 @@ const Home = () => {
                             千葉県出身。
                         </PcMemberText>
                         <PcMemberSnsContainer>
-                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="#"><PcSnsIcon loading="lazy" src={Twitter} alt="涼音のTwitter" /></PcSnsLink>
+                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/suzune_ssw"><PcSnsIcon loading="lazy" src={Twitter} alt="涼音のTwitter" /></PcSnsLink>
                             <PcSnsLink rel="noopener noreferrer" target="_blank" href="#"><PcSnsIcon loading="lazy" src={Instagram} alt="涼音のInstagram" /></PcSnsLink>
                         </PcMemberSnsContainer>
                     </PcMemberTextContainer>
@@ -62,8 +62,8 @@ const Home = () => {
                             大分県出身。
                         </PcMemberText>
                         <PcMemberSnsContainer>
-                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="#"><PcSnsIcon loading="lazy" src={Twitter} alt="永山タイキのTwitter" /></PcSnsLink>
-                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="#"><PcSnsIcon loading="lazy" src={Instagram} alt="永山タイキのInstagram" /></PcSnsLink>
+                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/drums_taiki"><PcSnsIcon loading="lazy" src={Twitter} alt="永山タイキのTwitter" /></PcSnsLink>
+                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/taikidrummer/?hl=ja"><PcSnsIcon loading="lazy" src={Instagram} alt="永山タイキのInstagram" /></PcSnsLink>
                         </PcMemberSnsContainer>
                     </PcMemberTextContainer>
                 </PcMemberItemContainer>
@@ -73,12 +73,12 @@ const Home = () => {
                         <PcMemberInstrument>Key.</PcMemberInstrument>
                         <PcMemberName>友野美里 <PcMemberNameRomaji>/ Tomono Miri</PcMemberNameRomaji></PcMemberName>
                         <PcMemberText>
-                            1997年８月31日生まれ。<br/>
-                            大分県出身。
+                            1997年8月31日生まれ。<br/>
+                            東京都出身。
                         </PcMemberText>
                         <PcMemberSnsContainer>
-                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="#"><PcSnsIcon loading="lazy" src={Twitter} alt="友野美里のTwitter" /></PcSnsLink>
-                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="#"><PcSnsIcon loading="lazy" src={Instagram} alt="友野美里のInstagram" /></PcSnsLink>
+                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/mirinomoto"><PcSnsIcon loading="lazy" src={Twitter} alt="友野美里のTwitter" /></PcSnsLink>
+                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/miri_tomono/?hl=ja"><PcSnsIcon loading="lazy" src={Instagram} alt="友野美里のInstagram" /></PcSnsLink>
                         </PcMemberSnsContainer>
                     </PcMemberTextContainer>
                 </PcMemberItemContainer>
@@ -92,8 +92,8 @@ const Home = () => {
                             広島県出身。
                         </PcMemberText>
                         <PcMemberSnsContainer>
-                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="#"><PcSnsIcon loading="lazy" src={Twitter} alt="飯沼一暁のTwitter" /></PcSnsLink>
-                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="#"><PcSnsIcon loading="lazy" src={Instagram} alt="飯沼一暁のInstagram" /></PcSnsLink>
+                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/numw69"><PcSnsIcon loading="lazy" src={Twitter} alt="飯沼一暁のTwitter" /></PcSnsLink>
+                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/numw69/?hl=ja"><PcSnsIcon loading="lazy" src={Instagram} alt="飯沼一暁のInstagram" /></PcSnsLink>
                         </PcMemberSnsContainer>
                     </PcMemberTextContainer>
                 </PcMemberItemContainer>
@@ -127,7 +127,7 @@ const Home = () => {
                     </TabMemberText>
                     <TabMemberSnsContainer>
                         <TabMemberSnsContainer>
-                            <TabSnsLink rel="noopener noreferrer" target="_blank" href="#"><TabSnsIcon loading="lazy" src={Twitter} alt="涼音のTwitter" /></TabSnsLink>
+                            <TabSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/suzune_ssw"><TabSnsIcon loading="lazy" src={Twitter} alt="涼音のTwitter" /></TabSnsLink>
                             <TabSnsLink rel="noopener noreferrer" target="_blank" href="#"><TabSnsIcon loading="lazy" src={Instagram} alt="涼音のInstagram" /></TabSnsLink>
                         </TabMemberSnsContainer>
                     </TabMemberSnsContainer>
@@ -142,8 +142,8 @@ const Home = () => {
                     </TabMemberText>
                     <TabMemberSnsContainer>
                         <TabMemberSnsContainer>
-                            <TabSnsLink rel="noopener noreferrer" target="_blank" href="#"><TabSnsIcon loading="lazy" src={Twitter} alt="永山タイキのTwitter" /></TabSnsLink>
-                            <TabSnsLink rel="noopener noreferrer" target="_blank" href="#"><TabSnsIcon loading="lazy" src={Instagram} alt="永山タイキのInstagram" /></TabSnsLink>
+                            <TabSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/drums_taiki"><TabSnsIcon loading="lazy" src={Twitter} alt="永山タイキのTwitter" /></TabSnsLink>
+                            <TabSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/taikidrummer/?hl=ja"><TabSnsIcon loading="lazy" src={Instagram} alt="永山タイキのInstagram" /></TabSnsLink>
                         </TabMemberSnsContainer>
                     </TabMemberSnsContainer>
                 </TabMemberItemContainer>
@@ -152,13 +152,13 @@ const Home = () => {
                     <TabMemberInstrument>Key.</TabMemberInstrument>
                     <TabMemberName>友野美里 <TabMemberNameRomaji>/ Tomono Miri</TabMemberNameRomaji></TabMemberName>
                     <TabMemberText>
-                        1997年10月31日生まれ。<br/>
-                        千葉県出身。
+                        1997年8月31日生まれ。<br/>
+                        東京都出身。
                     </TabMemberText>
                     <TabMemberSnsContainer>
                         <TabMemberSnsContainer>
-                            <TabSnsLink rel="noopener noreferrer" target="_blank" href="#"><TabSnsIcon loading="lazy" src={Twitter} alt="友野美里のTwitter" /></TabSnsLink>
-                            <TabSnsLink rel="noopener noreferrer" target="_blank" href="#"><TabSnsIcon loading="lazy" src={Instagram} alt="友野美里のInstagram" /></TabSnsLink>
+                            <TabSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/mirinomoto"><TabSnsIcon loading="lazy" src={Twitter} alt="友野美里のTwitter" /></TabSnsLink>
+                            <TabSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/miri_tomono/?hl=ja"><TabSnsIcon loading="lazy" src={Instagram} alt="友野美里のInstagram" /></TabSnsLink>
                         </TabMemberSnsContainer>
                     </TabMemberSnsContainer>
                 </TabMemberItemContainer>
@@ -172,8 +172,8 @@ const Home = () => {
                     </TabMemberText>
                     <TabMemberSnsContainer>
                         <TabMemberSnsContainer>
-                            <TabSnsLink rel="noopener noreferrer" target="_blank" href="#"><TabSnsIcon loading="lazy" src={Twitter} alt="飯沼一暁のTwitter" /></TabSnsLink>
-                            <TabSnsLink rel="noopener noreferrer" target="_blank" href="#"><TabSnsIcon loading="lazy" src={Instagram} alt="飯沼一暁のInstagram" /></TabSnsLink>
+                            <TabSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/numw69"><TabSnsIcon loading="lazy" src={Twitter} alt="飯沼一暁のTwitter" /></TabSnsLink>
+                            <TabSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/numw69/?hl=ja"><TabSnsIcon loading="lazy" src={Instagram} alt="飯沼一暁のInstagram" /></TabSnsLink>
                         </TabMemberSnsContainer>
                     </TabMemberSnsContainer>
                 </TabMemberItemContainer>
@@ -207,7 +207,7 @@ const Home = () => {
                     </SpMemberText>
                     <SpMemberSnsContainer>
                         <SpMemberSnsContainer>
-                            <SpSnsLink rel="noopener noreferrer" target="_blank" href="#"><SpSnsIcon loading="lazy" src={Twitter} alt="涼音のTwitter" /></SpSnsLink>
+                            <SpSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/suzune_ssw"><SpSnsIcon loading="lazy" src={Twitter} alt="涼音のTwitter" /></SpSnsLink>
                             <SpSnsLink rel="noopener noreferrer" target="_blank" href="#"><SpSnsIcon loading="lazy" src={Instagram} alt="涼音のInstagram" /></SpSnsLink>
                         </SpMemberSnsContainer>
                     </SpMemberSnsContainer>
@@ -222,8 +222,8 @@ const Home = () => {
                     </SpMemberText>
                     <SpMemberSnsContainer>
                         <SpMemberSnsContainer>
-                            <SpSnsLink rel="noopener noreferrer" target="_blank" href="#"><SpSnsIcon loading="lazy" src={Twitter} alt="永山タイキのTwitter" /></SpSnsLink>
-                            <SpSnsLink rel="noopener noreferrer" target="_blank" href="#"><SpSnsIcon loading="lazy" src={Instagram} alt="永山タイキのInstagram" /></SpSnsLink>
+                            <SpSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/drums_taiki"><SpSnsIcon loading="lazy" src={Twitter} alt="永山タイキのTwitter" /></SpSnsLink>
+                            <SpSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/taikidrummer/?hl=ja"><SpSnsIcon loading="lazy" src={Instagram} alt="永山タイキのInstagram" /></SpSnsLink>
                         </SpMemberSnsContainer>
                     </SpMemberSnsContainer>
                 </SpMemberItemContainer>
@@ -232,13 +232,13 @@ const Home = () => {
                     <SpMemberInstrument>Key.</SpMemberInstrument>
                     <SpMemberName>友野美里 <SpMemberNameRomaji>/ Tomono Miri</SpMemberNameRomaji></SpMemberName>
                     <SpMemberText>
-                        1997年10月31日生まれ。<br/>
-                        千葉県出身。
+                        1997年8月31日生まれ。<br/>
+                        東京都出身。
                     </SpMemberText>
                     <SpMemberSnsContainer>
                         <SpMemberSnsContainer>
-                            <SpSnsLink rel="noopener noreferrer" target="_blank" href="#"><SpSnsIcon loading="lazy" src={Twitter} alt="友野美里のTwitter" /></SpSnsLink>
-                            <SpSnsLink rel="noopener noreferrer" target="_blank" href="#"><SpSnsIcon loading="lazy" src={Instagram} alt="友野美里のInstagram" /></SpSnsLink>
+                            <SpSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/mirinomoto"><SpSnsIcon loading="lazy" src={Twitter} alt="友野美里のTwitter" /></SpSnsLink>
+                            <SpSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/miri_tomono/?hl=ja"><SpSnsIcon loading="lazy" src={Instagram} alt="友野美里のInstagram" /></SpSnsLink>
                         </SpMemberSnsContainer>
                     </SpMemberSnsContainer>
                 </SpMemberItemContainer>
@@ -252,8 +252,8 @@ const Home = () => {
                     </SpMemberText>
                     <SpMemberSnsContainer>
                         <SpMemberSnsContainer>
-                            <SpSnsLink rel="noopener noreferrer" target="_blank" href="#"><SpSnsIcon loading="lazy" src={Twitter} alt="飯沼一暁のTwitter" /></SpSnsLink>
-                            <SpSnsLink rel="noopener noreferrer" target="_blank" href="#"><SpSnsIcon loading="lazy" src={Instagram} alt="飯沼一暁のInstagram" /></SpSnsLink>
+                            <SpSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/numw69"><SpSnsIcon loading="lazy" src={Twitter} alt="飯沼一暁のTwitter" /></SpSnsLink>
+                            <SpSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/numw69/?hl=ja"><SpSnsIcon loading="lazy" src={Instagram} alt="飯沼一暁のInstagram" /></SpSnsLink>
                         </SpMemberSnsContainer>
                     </SpMemberSnsContainer>
                 </SpMemberItemContainer>

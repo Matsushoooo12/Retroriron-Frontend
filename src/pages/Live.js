@@ -267,8 +267,8 @@ const Live = () => {
                     <SnsFixedContainer>
                         <SnsFixedBorder></SnsFixedBorder>
                         <SnsFixedText>our sns</SnsFixedText>
-                        <SnsFixedIconLink rel="noopener noreferrer" target="_blank" href="#"><SnsFixedIconImage loading="lazy" src={TwitterOrange} /></SnsFixedIconLink>
-                        <SnsFixedIconLink rel="noopener noreferrer" target="_blank" href="#"><SnsFixedIconImage loading="lazy" src={InstagramOrange} /></SnsFixedIconLink>
+                        <SnsFixedIconLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/retroriron"><SnsFixedIconImage loading="lazy" src={TwitterOrange} /></SnsFixedIconLink>
+                        <SnsFixedIconLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/retroriron/?hl=ja"><SnsFixedIconImage loading="lazy" src={InstagramOrange} /></SnsFixedIconLink>
                         <SnsFixedIconLink rel="noopener noreferrer" target="_blank" href="#"><SnsFixedIconImage loading="lazy" src={YoutubeOrange} /></SnsFixedIconLink>
                         <SnsFixedBorder></SnsFixedBorder>
                     </SnsFixedContainer>
