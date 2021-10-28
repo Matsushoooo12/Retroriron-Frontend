@@ -47,8 +47,8 @@ const Home = () => {
                             千葉県出身。
                         </PcMemberText>
                         <PcMemberSnsContainer>
-                            <PcSnsLink href="#"><PcSnsIcon loading="lazy" src={Twitter} /></PcSnsLink>
-                            <PcSnsLink href="#"><PcSnsIcon loading="lazy" src={Instagram} /></PcSnsLink>
+                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="#"><PcSnsIcon loading="lazy" src={Twitter} /></PcSnsLink>
+                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="#"><PcSnsIcon loading="lazy" src={Instagram} /></PcSnsLink>
                         </PcMemberSnsContainer>
                     </PcMemberTextContainer>
                 </PcMemberItemContainer>
@@ -62,8 +62,8 @@ const Home = () => {
                             大分県出身。
                         </PcMemberText>
                         <PcMemberSnsContainer>
-                            <PcSnsLink href="#"><PcSnsIcon loading="lazy" src={Twitter} /></PcSnsLink>
-                            <PcSnsLink href="#"><PcSnsIcon loading="lazy" src={Instagram} /></PcSnsLink>
+                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="#"><PcSnsIcon loading="lazy" src={Twitter} /></PcSnsLink>
+                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="#"><PcSnsIcon loading="lazy" src={Instagram} /></PcSnsLink>
                         </PcMemberSnsContainer>
                     </PcMemberTextContainer>
                 </PcMemberItemContainer>
@@ -77,8 +77,8 @@ const Home = () => {
                             大分県出身。
                         </PcMemberText>
                         <PcMemberSnsContainer>
-                            <PcSnsLink href="#"><PcSnsIcon loading="lazy" src={Twitter} /></PcSnsLink>
-                            <PcSnsLink href="#"><PcSnsIcon loading="lazy" src={Instagram} /></PcSnsLink>
+                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="#"><PcSnsIcon loading="lazy" src={Twitter} /></PcSnsLink>
+                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="#"><PcSnsIcon loading="lazy" src={Instagram} /></PcSnsLink>
                         </PcMemberSnsContainer>
                     </PcMemberTextContainer>
                 </PcMemberItemContainer>
@@ -92,8 +92,8 @@ const Home = () => {
                             広島県出身。
                         </PcMemberText>
                         <PcMemberSnsContainer>
-                            <PcSnsLink href="#"><PcSnsIcon loading="lazy" src={Twitter} /></PcSnsLink>
-                            <PcSnsLink href="#"><PcSnsIcon loading="lazy" src={Instagram} /></PcSnsLink>
+                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="#"><PcSnsIcon loading="lazy" src={Twitter} /></PcSnsLink>
+                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="#"><PcSnsIcon loading="lazy" src={Instagram} /></PcSnsLink>
                         </PcMemberSnsContainer>
                     </PcMemberTextContainer>
                 </PcMemberItemContainer>
@@ -127,8 +127,8 @@ const Home = () => {
                     </TabMemberText>
                     <TabMemberSnsContainer>
                         <TabMemberSnsContainer>
-                            <TabSnsLink href="#"><TabSnsIcon loading="lazy" src={Twitter} /></TabSnsLink>
-                            <TabSnsLink href="#"><TabSnsIcon loading="lazy" src={Instagram} /></TabSnsLink>
+                            <TabSnsLink rel="noopener noreferrer" target="_blank" href="#"><TabSnsIcon loading="lazy" src={Twitter} /></TabSnsLink>
+                            <TabSnsLink rel="noopener noreferrer" target="_blank" href="#"><TabSnsIcon loading="lazy" src={Instagram} /></TabSnsLink>
                         </TabMemberSnsContainer>
                     </TabMemberSnsContainer>
                 </TabMemberItemContainer>
@@ -142,8 +142,8 @@ const Home = () => {
                     </TabMemberText>
                     <TabMemberSnsContainer>
                         <TabMemberSnsContainer>
-                            <TabSnsLink href="#"><TabSnsIcon loading="lazy" src={Twitter} /></TabSnsLink>
-                            <TabSnsLink href="#"><TabSnsIcon loading="lazy" src={Instagram} /></TabSnsLink>
+                            <TabSnsLink rel="noopener noreferrer" target="_blank" href="#"><TabSnsIcon loading="lazy" src={Twitter} /></TabSnsLink>
+                            <TabSnsLink rel="noopener noreferrer" target="_blank" href="#"><TabSnsIcon loading="lazy" src={Instagram} /></TabSnsLink>
                         </TabMemberSnsContainer>
                     </TabMemberSnsContainer>
                 </TabMemberItemContainer>
@@ -157,8 +157,8 @@ const Home = () => {
                     </TabMemberText>
                     <TabMemberSnsContainer>
                         <TabMemberSnsContainer>
-                            <TabSnsLink href="#"><TabSnsIcon loading="lazy" src={Twitter} /></TabSnsLink>
-                            <TabSnsLink href="#"><TabSnsIcon loading="lazy" src={Instagram} /></TabSnsLink>
+                            <TabSnsLink rel="noopener noreferrer" target="_blank" href="#"><TabSnsIcon loading="lazy" src={Twitter} /></TabSnsLink>
+                            <TabSnsLink rel="noopener noreferrer" target="_blank" href="#"><TabSnsIcon loading="lazy" src={Instagram} /></TabSnsLink>
                         </TabMemberSnsContainer>
                     </TabMemberSnsContainer>
                 </TabMemberItemContainer>
@@ -172,8 +172,8 @@ const Home = () => {
                     </TabMemberText>
                     <TabMemberSnsContainer>
                         <TabMemberSnsContainer>
-                            <TabSnsLink href="#"><TabSnsIcon loading="lazy" src={Twitter} /></TabSnsLink>
-                            <TabSnsLink href="#"><TabSnsIcon loading="lazy" src={Instagram} /></TabSnsLink>
+                            <TabSnsLink rel="noopener noreferrer" target="_blank" href="#"><TabSnsIcon loading="lazy" src={Twitter} /></TabSnsLink>
+                            <TabSnsLink rel="noopener noreferrer" target="_blank" href="#"><TabSnsIcon loading="lazy" src={Instagram} /></TabSnsLink>
                         </TabMemberSnsContainer>
                     </TabMemberSnsContainer>
                 </TabMemberItemContainer>
@@ -207,8 +207,8 @@ const Home = () => {
                     </SpMemberText>
                     <SpMemberSnsContainer>
                         <SpMemberSnsContainer>
-                            <SpSnsLink href="#"><SpSnsIcon loading="lazy" src={Twitter} /></SpSnsLink>
-                            <SpSnsLink href="#"><SpSnsIcon loading="lazy" src={Instagram} /></SpSnsLink>
+                            <SpSnsLink rel="noopener noreferrer" target="_blank" href="#"><SpSnsIcon loading="lazy" src={Twitter} /></SpSnsLink>
+                            <SpSnsLink rel="noopener noreferrer" target="_blank" href="#"><SpSnsIcon loading="lazy" src={Instagram} /></SpSnsLink>
                         </SpMemberSnsContainer>
                     </SpMemberSnsContainer>
                 </SpMemberItemContainer>
@@ -222,8 +222,8 @@ const Home = () => {
                     </SpMemberText>
                     <SpMemberSnsContainer>
                         <SpMemberSnsContainer>
-                            <SpSnsLink href="#"><SpSnsIcon loading="lazy" src={Twitter} /></SpSnsLink>
-                            <SpSnsLink href="#"><SpSnsIcon loading="lazy" src={Instagram} /></SpSnsLink>
+                            <SpSnsLink rel="noopener noreferrer" target="_blank" href="#"><SpSnsIcon loading="lazy" src={Twitter} /></SpSnsLink>
+                            <SpSnsLink rel="noopener noreferrer" target="_blank" href="#"><SpSnsIcon loading="lazy" src={Instagram} /></SpSnsLink>
                         </SpMemberSnsContainer>
                     </SpMemberSnsContainer>
                 </SpMemberItemContainer>
@@ -237,8 +237,8 @@ const Home = () => {
                     </SpMemberText>
                     <SpMemberSnsContainer>
                         <SpMemberSnsContainer>
-                            <SpSnsLink href="#"><SpSnsIcon loading="lazy" src={Twitter} /></SpSnsLink>
-                            <SpSnsLink href="#"><SpSnsIcon loading="lazy" src={Instagram} /></SpSnsLink>
+                            <SpSnsLink rel="noopener noreferrer" target="_blank" href="#"><SpSnsIcon loading="lazy" src={Twitter} /></SpSnsLink>
+                            <SpSnsLink rel="noopener noreferrer" target="_blank" href="#"><SpSnsIcon loading="lazy" src={Instagram} /></SpSnsLink>
                         </SpMemberSnsContainer>
                     </SpMemberSnsContainer>
                 </SpMemberItemContainer>
@@ -252,8 +252,8 @@ const Home = () => {
                     </SpMemberText>
                     <SpMemberSnsContainer>
                         <SpMemberSnsContainer>
-                            <SpSnsLink href="#"><SpSnsIcon loading="lazy" src={Twitter} /></SpSnsLink>
-                            <SpSnsLink href="#"><SpSnsIcon loading="lazy" src={Instagram} /></SpSnsLink>
+                            <SpSnsLink rel="noopener noreferrer" target="_blank" href="#"><SpSnsIcon loading="lazy" src={Twitter} /></SpSnsLink>
+                            <SpSnsLink rel="noopener noreferrer" target="_blank" href="#"><SpSnsIcon loading="lazy" src={Instagram} /></SpSnsLink>
                         </SpMemberSnsContainer>
                     </SpMemberSnsContainer>
                 </SpMemberItemContainer>

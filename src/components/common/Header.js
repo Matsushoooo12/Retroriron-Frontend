@@ -82,9 +82,9 @@ const Header2 = () => {
                             <HamburgerMenuSnsBorder></HamburgerMenuSnsBorder>
                         </HamburgerMenuSnsTextContainer>
                         <HamburgerMenuSnsIconContainer>
-                            <HamburgerMenuSnsIconLink href="#"><HamburgerMenuSnsIcon loading="lazy" src={TwitterOrange} /></HamburgerMenuSnsIconLink>
-                            <HamburgerMenuSnsIconLink href="#"><HamburgerMenuSnsIcon loading="lazy" src={InstagramOrange} /></HamburgerMenuSnsIconLink>
-                            <HamburgerMenuSnsIconLink href="#"><HamburgerMenuSnsIcon loading="lazy" src={YoutubeOrange} /></HamburgerMenuSnsIconLink>
+                            <HamburgerMenuSnsIconLink rel="noopener noreferrer" target="_blank"  href="#"><HamburgerMenuSnsIcon loading="lazy" src={TwitterOrange} /></HamburgerMenuSnsIconLink>
+                            <HamburgerMenuSnsIconLink rel="noopener noreferrer" target="_blank" href="#"><HamburgerMenuSnsIcon loading="lazy" src={InstagramOrange} /></HamburgerMenuSnsIconLink>
+                            <HamburgerMenuSnsIconLink rel="noopener noreferrer" target="_blank" href="#"><HamburgerMenuSnsIcon loading="lazy" src={YoutubeOrange} /></HamburgerMenuSnsIconLink>
                         </HamburgerMenuSnsIconContainer>
                     </HamburgerMenuSnsContainer>
                     <HamburgerMenuCopyright>© 2021 retririon.</HamburgerMenuCopyright>
@@ -95,9 +95,9 @@ const Header2 = () => {
             <SnsFixedContainer location={location.pathname === "/contact" && location.pathname === "/live"}>
                 <SnsFixedBorder></SnsFixedBorder>
                 <SnsFixedText>our sns</SnsFixedText>
-                <SnsFixedIconLink href="#"><SnsFixedIconImage loading="lazy" src={TwitterOrange} /></SnsFixedIconLink>
-                <SnsFixedIconLink href="#"><SnsFixedIconImage loading="lazy" src={InstagramOrange} /></SnsFixedIconLink>
-                <SnsFixedIconLink href="#"><SnsFixedIconImage loading="lazy" src={YoutubeOrange} /></SnsFixedIconLink>
+                <SnsFixedIconLink rel="noopener noreferrer" target="_blank" href="#"><SnsFixedIconImage loading="lazy" src={TwitterOrange} /></SnsFixedIconLink>
+                <SnsFixedIconLink rel="noopener noreferrer" target="_blank" href="#"><SnsFixedIconImage loading="lazy" src={InstagramOrange} /></SnsFixedIconLink>
+                <SnsFixedIconLink rel="noopener noreferrer" target="_blank" href="#"><SnsFixedIconImage loading="lazy" src={YoutubeOrange} /></SnsFixedIconLink>
                 <SnsFixedBorder></SnsFixedBorder>
             </SnsFixedContainer>
         </>
