@@ -247,7 +247,7 @@ const Live = () => {
                     <SpLiveContainer>
                         {lives.map((item) => (
                             <SpLiveItemContainer key={item.id}>
-                                <SpLiveButton onClick={toggleAccordion(item.id)} src={Plus} />
+                                <SpLiveButton onClick={toggleAccordion(item.id)} src={content === item.id ? Minus : Plus} alt="accordion button" />
                                 <SpLiveMainContainer>
                                     <SpLiveDate onClick={toggleAccordion(item.id)}>{moment(item.date).format("YYYY.MM.DD")}</SpLiveDate>
                                     <SpLiveTitle onClick={toggleAccordion(item.id)}>{item.title}</SpLiveTitle><br/>
