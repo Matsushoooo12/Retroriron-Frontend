@@ -26,6 +26,16 @@ const Discography = () => {
         handleGetDiscography();
     }, [])
 
+    // dateフォーマット
+    const dateFormat = (date) => {
+        return moment(date).format("YYYY.MM.DD")
+    }
+
+    // 画像URL
+    const imageUrl = (url) => {
+        return process.env.REACT_APP_PRO_API_URL + url;
+    }
+
     return (
         <>
             <Helmet>
@@ -36,9 +46,9 @@ const Discography = () => {
             <PcDiscographyContainer>
                 {discographies.map((item) => (
                     <PcDiscographyItemContainer key={item.id}>
-                        <PcDiscographyDate>{moment(item.date).format("YYYY.MM.DD.")} Release</PcDiscographyDate>
+                        <PcDiscographyDate>{dateFormat(item.date)} Release</PcDiscographyDate>
                         <PcDiscographyImageContainer>
-                            <PcDiscographyImage loading="lazy" src={process.env.REACT_APP_PRO_API_URL + item.image.url} alt={item.title} />
+                            <PcDiscographyImage loading="lazy" src={imageUrl(item.image.url)} alt={item.title} />
                             <PcDiscographyTag>{item.tag}</PcDiscographyTag>
                         </PcDiscographyImageContainer>
                         <PcDiscographyTitleContainer>
@@ -61,13 +71,13 @@ const Discography = () => {
             <SpDiscographyContainer>
                 {discographies.map((item) => (
                     <SpDiscographyItemContainer key={item.id}>
-                        <SpDiscographyDate>{moment(item.date).format("YYYY.MM.DD.")} Release</SpDiscographyDate>
+                        <SpDiscographyDate>{dateFormat(item.date)} Release</SpDiscographyDate>
                         <SpDiscographyTitleContainer>
                             <SpDiscographyTitle long={item.title.length > 26}>{item.title}</SpDiscographyTitle>
                         </SpDiscographyTitleContainer>
                         <SpDiscographyItemContentContainer>
                             <SpDiscographyImageContainer>
-                                <SpDiscographyImage loading="lazy" src={process.env.REACT_APP_PRO_API_URL + item.image.url} alt={item.title} />
+                                <SpDiscographyImage loading="lazy" src={imageUrl(item.image.url)} alt={item.title} />
                                 <SpDiscographyTag>{item.tag}</SpDiscographyTag>
                             </SpDiscographyImageContainer>
                             <SpDiscographyLinkContainer>

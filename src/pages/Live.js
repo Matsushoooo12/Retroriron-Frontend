@@ -83,6 +83,15 @@ const Live = () => {
         return () => setContent(content === i ? null : i)
     };
 
+    // アコーディオンのtoggleボタン
+    const toggleAccordionButton = (index, detail) => {
+        if(index && detail){
+            return content === index && detail ? Minus : Plus;
+        } else{
+            return content === index ? Minus : Plus;
+        }
+    }
+
     // Date
 
     const now = moment();
@@ -92,6 +101,30 @@ const Live = () => {
     // Active
 
     const isActive = (index) => content === index;
+
+    // dateフォーマット
+    const dateFormat = (date) => {
+        return moment(date).format("YYYY.MM.DD")
+    }
+
+    // 開場・開演時間
+    const openAndStartTime = (time) => {
+        return moment(time).add(15, "H").format("HH:mm")
+    }
+
+    // FutureTime
+    const futureTime = (date) => {
+        return now < moment(date);
+    }
+
+    const pastTime = (date) => {
+        return now > moment(date);
+    }
+
+    // 画像URL
+    const imageUrl = (url) => {
+        return process.env.REACT_APP_PRO_API_URL + url;
+    }
 
     return (
         <>
@@ -105,15 +138,15 @@ const Live = () => {
                     <PcLiveItemContainer key={item.id}>
                         <PcLiveMainContainer>
                             <PcLiveItemOtherContainer>
-                                <PcLiveDate>{moment(item.date).format("YYYY.MM.DD")}</PcLiveDate>
-                                <PcLiveButton cursorPointer={item.detail} onClick={toggleAccordion(item.id)} src={content === item.id && item.detail ? Minus : Plus} alt="accordion button" />
+                                <PcLiveDate>{dateFormat(item.date)}</PcLiveDate>
+                                <PcLiveButton cursorPointer={item.detail} onClick={toggleAccordion(item.id)} src={toggleAccordionButton(item.id, item.detail)} alt="accordion button" />
                             </PcLiveItemOtherContainer>
                             <PcLiveContentsContainer>
                                 <PcLiveTextContainer>
-                                    <PcLiveTitle cursorPointer={item.detail} onClick={toggleAccordion(item.id)}>{item.title}<PcLiveFinishTag finish={now > moment(item.date)}>終了</PcLiveFinishTag></PcLiveTitle><br/>
-                                    <PcLiveTicketButton onClick={() => setTicketValue({date: item.date, title: item.title, open: true})} active={now < moment(item.date)}>チケットをご希望の方はこちら</PcLiveTicketButton>
+                                    <PcLiveTitle cursorPointer={item.detail} onClick={toggleAccordion(item.id)}>{item.title}<PcLiveFinishTag finish={pastTime(item.date)}>終了</PcLiveFinishTag></PcLiveTitle><br/>
+                                    <PcLiveTicketButton onClick={() => setTicketValue({date: item.date, title: item.title, open: true})} active={futureTime(item.date)}>チケットをご希望の方はこちら</PcLiveTicketButton>
                                     <PcLiveInfoContainer>
-                                        <PcLiveInfoText>開場時間 | {moment(item.openTime).add(15, "H").format("HH:mm")}   開演時間 | {moment(item.startTime).add(15, "H").format("HH:mm")}</PcLiveInfoText>
+                                        <PcLiveInfoText>開場時間 | {openAndStartTime(item.openTime)}   開演時間 | {openAndStartTime(item.startTime)}</PcLiveInfoText>
                                         <PcLiveInfoText>場所 | {item.place}</PcLiveInfoText>
                                         <PcLiveInfoText>料金 | {item.price}</PcLiveInfoText>
                                         <PcLiveInfoText>出演者 | {item.performer}</PcLiveInfoText>
@@ -125,7 +158,7 @@ const Live = () => {
                                 </PcLiveTextContainer>
                             </PcLiveContentsContainer>
                         </PcLiveMainContainer>
-                        <PcLiveImage loading="lazy" vertical={item.imageVertical} src={process.env.REACT_APP_PRO_API_URL + item.image.url} alt={item.title} />
+                        <PcLiveImage loading="lazy" vertical={item.imageVertical} src={imageUrl(item.image.url)} alt={item.title} />
                     </PcLiveItemContainer>
                 ))}
                 <ModalContainer
@@ -221,14 +254,14 @@ const Live = () => {
                     <TabLiveContainer>
                         {lives.map((item) => (
                             <TabLiveItemContainer key={item.id}>
-                                <TabLiveButton cursorPointer={item.detail} onClick={toggleAccordion(item.id)} src={content === item.id && item.detail ? Minus : Plus} alt="accordion button" />
+                                <TabLiveButton cursorPointer={item.detail} onClick={toggleAccordion(item.id)} src={toggleAccordionButton(item.id, item.detail)} alt="accordion button" />
                                 <TabLiveMainContainer>
                                     <TabLiveContentsContainer>
-                                        <TabLiveDate cursorPointer={item.detail} onClick={toggleAccordion(item.id)}>{moment(item.date).format("YYYY.MM.DD")}</TabLiveDate>
-                                        <TabLiveTitle cursorPointer={item.detail} onClick={toggleAccordion(item.id)}>{item.title}<TabLiveFinishTag finish={now > moment(item.date)}>終了</TabLiveFinishTag></TabLiveTitle><br/>
-                                        <TabLiveTicketButton onClick={() => handleSpTicketButtonClick(item.date, item.title)} active={now < moment(item.date)}>チケットをご希望の方はこちら</TabLiveTicketButton>
+                                        <TabLiveDate cursorPointer={item.detail} onClick={toggleAccordion(item.id)}>{dateFormat(item.date)}</TabLiveDate>
+                                        <TabLiveTitle cursorPointer={item.detail} onClick={toggleAccordion(item.id)}>{item.title}<TabLiveFinishTag finish={pastTime(item.date)}>終了</TabLiveFinishTag></TabLiveTitle><br/>
+                                        <TabLiveTicketButton onClick={() => handleSpTicketButtonClick(item.date, item.title)} active={futureTime(item.date)}>チケットをご希望の方はこちら</TabLiveTicketButton>
                                         <TabLiveInfoContainer>
-                                            <TabLiveInfoText>開場時間 | {moment(item.openTime).add(15, "H").format("HH:mm")}   開演時間 | {moment(item.startTime).add(15, "H").format("HH:mm")}</TabLiveInfoText>
+                                            <TabLiveInfoText>開場時間 | {openAndStartTime(item.openTime)}   開演時間 | {openAndStartTime(item.startTime)}</TabLiveInfoText>
                                             <TabLiveInfoText>場所 | {item.place}</TabLiveInfoText>
                                             <TabLiveInfoText>料金 | {item.price}</TabLiveInfoText>
                                             <TabLiveInfoText>出演者 | {item.performer}</TabLiveInfoText>
@@ -239,7 +272,7 @@ const Live = () => {
                                             {item.detail}
                                         </TabLiveDetailText>
                                     </TabLiveContentsContainer>
-                                    <TabLiveImage loading="lazy" vertical={item.imageVertical} src={process.env.REACT_APP_PRO_API_URL + item.image.url} alt={item.title} />
+                                    <TabLiveImage loading="lazy" vertical={item.imageVertical} src={imageUrl(item.image.url)} alt={item.title} />
                                 </TabLiveMainContainer>
                             </TabLiveItemContainer>
                         ))}
@@ -247,18 +280,18 @@ const Live = () => {
                     <SpLiveContainer>
                         {lives.map((item) => (
                             <SpLiveItemContainer key={item.id}>
-                                <SpLiveButton onClick={toggleAccordion(item.id)} src={content === item.id ? Minus : Plus} alt="accordion button" />
+                                <SpLiveButton onClick={toggleAccordion(item.id)} src={toggleAccordionButton(item.id)} alt="accordion button" />
                                 <SpLiveMainContainer>
-                                    <SpLiveDate onClick={toggleAccordion(item.id)}>{moment(item.date).format("YYYY.MM.DD")}</SpLiveDate>
+                                    <SpLiveDate onClick={toggleAccordion(item.id)}>{dateFormat(item.date)}</SpLiveDate>
                                     <SpLiveTitle onClick={toggleAccordion(item.id)}>{item.title}</SpLiveTitle><br/>
-                                    <SpLiveTicketButton onClick={() => handleSpTicketButtonClick(item.date, item.title)} active={now < moment(item.date)}>チケットをご希望の方はこちら</SpLiveTicketButton>
-                                    <SpLiveFinishTag finish={now > moment(item.date)}>終了</SpLiveFinishTag>
+                                    <SpLiveTicketButton onClick={() => handleSpTicketButtonClick(item.date, item.title)} active={futureTime(item.date)}>チケットをご希望の方はこちら</SpLiveTicketButton>
+                                    <SpLiveFinishTag finish={pastTime(item.date)}>終了</SpLiveFinishTag>
                                     <SpLiveInfoContainer active={isActive(item.id)}>
-                                        <SpLiveInfoText>開場時間 | {moment(item.openTime).add(15, "H").format("HH:mm")}   開演時間 | {moment(item.startTime).add(15, "H").format("HH:mm")}</SpLiveInfoText>
+                                        <SpLiveInfoText>開場時間 | {openAndStartTime(item.openTime)}   開演時間 | {openAndStartTime(item.startTime)}</SpLiveInfoText>
                                         <SpLiveInfoText>場所 | {item.place}</SpLiveInfoText>
                                         <SpLiveInfoText>料金 | {item.price}</SpLiveInfoText>
                                         <SpLiveInfoText>出演者 | {item.performer}</SpLiveInfoText>
-                                        <SpLiveImage loading="lazy" vertical={item.imageVertical} src={process.env.REACT_APP_PRO_API_URL + item.image.url} alt={item.title} />
+                                        <SpLiveImage loading="lazy" vertical={item.imageVertical} src={imageUrl(item.image.url)} alt={item.title} />
                                         <SpLiveDetailText active={item.detail}>
                                             詳細情報 |<br/>
                                             {item.detail}

@@ -39,6 +39,11 @@ const Header2 = () => {
             setHamburger(false)
         }
     }
+
+    // fixedSNSを隠すlocation指定
+    const hiddenFixedSns = () => {
+        return location.pathname === "/contact" || location.pathname === "/live";
+    }
     return (
         <>
             <HeaderContainer>
@@ -92,7 +97,7 @@ const Header2 = () => {
             ):(
                 <HamburgerMenuContentContainer></HamburgerMenuContentContainer>
             )}
-            <SnsFixedContainer location={location.pathname === "/contact" || location.pathname === "/live"}>
+            <SnsFixedContainer location={hiddenFixedSns()}>
                 <SnsFixedBorder></SnsFixedBorder>
                 <SnsFixedText>our sns</SnsFixedText>
                 <SnsFixedIconLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/retroriron"><SnsFixedIconImage loading="lazy" src={TwitterOrange} alt="レトロリロンのTwitterアイコン" /></SnsFixedIconLink>
@@ -268,8 +273,6 @@ const HamburgerMenuSnsTextContainer = styled.div`
 `
 
 const HamburgerMenuSnsText = styled.p`
-    font-family: 'Noto Sans JP', sans-serif;
-    color: #292929;
     font-size: 1.0rem;
     font-weight: 700;
 `
@@ -313,8 +316,6 @@ const HamburgerMenuCopyright = styled.p`
     font-weight: 700;
     width: 100%;
     margin-left: 8%;
-    @media screen and (min-width: 768px){
-    }
 `
 
 // ロゴ

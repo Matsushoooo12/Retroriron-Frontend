@@ -31,6 +31,11 @@ const News = () => {
         return () => setContent(content === i ? null : i)
     };
 
+    // アコーディオンのtoggleボタン
+    const toggleAccordionButton = (index) => {
+        return content === (index) ? Minus : Plus;
+    }
+
     // Date
 
     const now = moment();
@@ -42,6 +47,21 @@ const News = () => {
     const isActive = (index) => content === index;
 
     console.log(now.subtract(2, 'weeks'))
+
+    // 日にちが２週間前より古いか
+    const newTagHidden = (date) => {
+        return now.subtract(2, 'weeks') > moment(date)
+    }
+
+    // dateフォーマット
+    const dateFormat = (date) => {
+        return moment(date).format("YYYY.MM.DD")
+    }
+
+    // 画像URL
+    const imageUrl = (url) => {
+        return process.env.REACT_APP_PRO_API_URL + url;
+    }
 
     return (
         <>
@@ -57,45 +77,45 @@ const News = () => {
                     <NewsItemContainer key={item.id}>
                         {/* PC */}
                         <PcNewsItemOtherContainer>
-                            <PcNewsTagText IsHidden={now.subtract(2, 'weeks') > moment(item.date)}>New</PcNewsTagText>
-                            <PcNewsDate>{moment(item.date).format("YYYY.MM.DD")}</PcNewsDate>
+                            <PcNewsTagText IsHidden={newTagHidden(item.date)}>New</PcNewsTagText>
+                            <PcNewsDate>{dateFormat(item.date)}</PcNewsDate>
                         </PcNewsItemOtherContainer>
                         <PcNewsMainContainer>
-                            <PcNewsButton onClick={toggleAccordion(item.id)} src={content === item.id ? Minus : Plus} />
+                            <PcNewsButton onClick={toggleAccordion(item.id)} src={toggleAccordionButton(item.id)} />
                             <PcNewsTextContainer>
                                 <PcNewsTitle onClick={toggleAccordion(item.id)}>{item.title}</PcNewsTitle>
                                 <PcNewsText active={isActive(item.id)}>
                                     {item.content}
-                                    <PcNewsImage loading="lazy" vertical={item.imageVertical} src={process.env.REACT_APP_PRO_API_URL + item.image.url} alt={item.title} />
+                                    <PcNewsImage loading="lazy" vertical={item.imageVertical} src={imageUrl(item.image.url)} alt={item.title} />
                                 </PcNewsText>
                             </PcNewsTextContainer>
                         </PcNewsMainContainer>
                         {/* TAB */}
                         <TabNewsItemOtherContainer>
                             <TabNewsTagText IsHidden={now.subtract(2, 'weeks') > moment(item.date)}>New</TabNewsTagText>
-                            <TabNewsDate>{moment(item.date).format("YYYY.MM.DD")}</TabNewsDate>
+                            <TabNewsDate>{dateFormat(item.date)}</TabNewsDate>
                         </TabNewsItemOtherContainer>
                         <TabNewsMainContainer>
-                            <TabNewsButton onClick={toggleAccordion(item.id)} src={content === item.id ? Minus : Plus} />
+                            <TabNewsButton onClick={toggleAccordion(item.id)} src={toggleAccordionButton(item.id)} />
                             <TabNewsTextContainer>
                                 <TabNewsTitle onClick={toggleAccordion(item.id)}>{item.title}</TabNewsTitle>
                                 <TabNewsText active={isActive(item.id)}>
                                     {item.content}
-                                    <TabNewsImage loading="lazy" vertical={item.imageVertical} src={process.env.REACT_APP_PRO_API_URL + item.image.url} alt={item.title} />
+                                    <TabNewsImage loading="lazy" vertical={item.imageVertical} src={imageUrl(item.image.url)} alt={item.title} />
                                 </TabNewsText>
                             </TabNewsTextContainer>
                         </TabNewsMainContainer>
                         {/* SP */}
-                        <SpNewsButton onClick={toggleAccordion(item.id)} src={content === item.id ? Minus : Plus} />
+                        <SpNewsButton onClick={toggleAccordion(item.id)} src={toggleAccordionButton(item.id)} />
                         <SpNewsMainContainer>
                             <SpNewsItemOtherContainer onClick={toggleAccordion(item.id)}>
-                                <SpNewsDate>{moment(item.date).format("YYYY.MM.DD")}</SpNewsDate>
+                                <SpNewsDate>{dateFormat(item.date)}</SpNewsDate>
                                 <SpNewsTag IsHidden={now.subtract(2, 'weeks') > moment(item.date)}>New</SpNewsTag>
                             </SpNewsItemOtherContainer>
                             <SpNewsTitle onClick={toggleAccordion(item.id)}>{item.title}</SpNewsTitle>
                             <SpNewsText active={isActive(item.id)}>
                                 {item.content}
-                                <SpNewsImage loading="lazy" vertical={item.imageVertical} src={process.env.REACT_APP_PRO_API_URL + item.image.url} alt={item.title} />
+                                <SpNewsImage loading="lazy" vertical={item.imageVertical} src={imageUrl(item.image.url)} alt={item.title} />
                             </SpNewsText>
                         </SpNewsMainContainer>
                     </NewsItemContainer>
