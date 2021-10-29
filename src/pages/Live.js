@@ -106,7 +106,7 @@ const Live = () => {
                         <PcLiveMainContainer>
                             <PcLiveItemOtherContainer>
                                 <PcLiveDate>{moment(item.date).format("YYYY.MM.DD")}</PcLiveDate>
-                                <PcLiveButton cursorPointer={item.detail} onClick={toggleAccordion(item.id)} src={content === item.id && item.detail ? Minus : Plus} />
+                                <PcLiveButton cursorPointer={item.detail} onClick={toggleAccordion(item.id)} src={content === item.id && item.detail ? Minus : Plus} alt="accordion button" />
                             </PcLiveItemOtherContainer>
                             <PcLiveContentsContainer>
                                 <PcLiveTextContainer>
@@ -221,7 +221,7 @@ const Live = () => {
                     <TabLiveContainer>
                         {lives.map((item) => (
                             <TabLiveItemContainer key={item.id}>
-                                <TabLiveButton cursorPointer={item.detail} onClick={toggleAccordion(item.id)} src={content === item.id && item.detail ? Minus : Plus} />
+                                <TabLiveButton cursorPointer={item.detail} onClick={toggleAccordion(item.id)} src={content === item.id && item.detail ? Minus : Plus} alt="accordion button" />
                                 <TabLiveMainContainer>
                                     <TabLiveContentsContainer>
                                         <TabLiveDate cursorPointer={item.detail} onClick={toggleAccordion(item.id)}>{moment(item.date).format("YYYY.MM.DD")}</TabLiveDate>
@@ -271,9 +271,9 @@ const Live = () => {
                     <SnsFixedContainer hidden={isConfirmationVisible}>
                         <SnsFixedBorder></SnsFixedBorder>
                         <SnsFixedText>our sns</SnsFixedText>
-                        <SnsFixedIconLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/retroriron"><SnsFixedIconImage loading="lazy" src={TwitterOrange} /></SnsFixedIconLink>
-                        <SnsFixedIconLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/retroriron/?hl=ja"><SnsFixedIconImage loading="lazy" src={InstagramOrange} /></SnsFixedIconLink>
-                        <SnsFixedIconLink rel="noopener noreferrer" target="_blank" href="https://www.youtube.com/channel/UCkE8tVIvmdos9b1OqEhePlg"><SnsFixedIconImage loading="lazy" src={YoutubeOrange} /></SnsFixedIconLink>
+                        <SnsFixedIconLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/retroriron"><SnsFixedIconImage loading="lazy" src={TwitterOrange} alt="レトロリロンのTwitter" /></SnsFixedIconLink>
+                        <SnsFixedIconLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/retroriron/?hl=ja"><SnsFixedIconImage loading="lazy" src={InstagramOrange} alt="レトロリロンのInstagram" /></SnsFixedIconLink>
+                        <SnsFixedIconLink rel="noopener noreferrer" target="_blank" href="https://www.youtube.com/channel/UCkE8tVIvmdos9b1OqEhePlg"><SnsFixedIconImage loading="lazy" src={YoutubeOrange} alt="レトロリロンのYouTube" /></SnsFixedIconLink>
                         <SnsFixedBorder></SnsFixedBorder>
                     </SnsFixedContainer>
                 </>
