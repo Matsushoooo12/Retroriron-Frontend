@@ -53,7 +53,7 @@ const Header2 = () => {
                         <HamburgerButtonText>close</HamburgerButtonText>
                     )}
                 </HamburgerMenuContainer>
-                <Link to="/"><LogoImage loading="lazy" src={Logo} alt="レトロリロンのロゴ" /></Link>
+                <Link to="/"><LogoImage src={Logo} alt="レトロリロンのロゴ" /></Link>
                 <MenuUl>
                     <MenuLi><MenuLink to="/">Home</MenuLink></MenuLi>
                     <MenuLi><MenuLink to="/news">News</MenuLink></MenuLi>
