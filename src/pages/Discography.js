@@ -31,11 +31,6 @@ const Discography = () => {
         return moment(date).format("YYYY.MM.DD")
     }
 
-    // 画像URL
-    const imageUrl = (url) => {
-        return process.env.REACT_APP_PRO_API_URL + url;
-    }
-
     return (
         <>
             <Helmet>
