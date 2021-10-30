@@ -128,7 +128,7 @@ const ContactContainer = styled.div`
         display: block;
         margin: 0 auto;
         height: 100%;
-        width: 600px;
+        width: 100%;
         padding-bottom: 160px;
     }
 `
@@ -216,7 +216,7 @@ const ContactFormContainer = styled.form`
         margin: 0 auto;
     }
     @media screen and (min-width: 1024px){
-        width: 560px;
+        width: 90%;
         height: 100%;
         margin: 0 auto;
     }
