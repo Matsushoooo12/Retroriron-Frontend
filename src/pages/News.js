@@ -58,6 +58,16 @@ const News = () => {
         return moment(date).format("YYYY.MM.DD")
     }
 
+    // 文字列中のリンクをaタグにする
+    const AutoLink = (str) => {
+        var regexp_url = /((h?)(ttps?:\/\/[a-zA-Z0-9.\-_@:/~?%&;=+#',()*!]+))/g; // ']))/;
+        var regexp_makeLink = function(all, url, h, href) {
+        return '<a href="h' + href + '">' + url + '</a>';
+        }
+    
+        return str.replace(regexp_url, regexp_makeLink);
+    }
+
     return (
         <>
             {/* HEAD */}
@@ -80,7 +90,7 @@ const News = () => {
                             <PcNewsTextContainer>
                                 <PcNewsTitle onClick={toggleAccordion(item.id)}>{item.title}</PcNewsTitle>
                                 <PcNewsText active={isActive(item.id)}>
-                                    {item.content}
+                                    {AutoLink(item.content)}
                                     <PcNewsImage loading="lazy" vertical={item.imageVertical} src={item.image.url} alt={item.title} />
                                 </PcNewsText>
                             </PcNewsTextContainer>
@@ -95,7 +105,7 @@ const News = () => {
                             <TabNewsTextContainer>
                                 <TabNewsTitle onClick={toggleAccordion(item.id)}>{item.title}</TabNewsTitle>
                                 <TabNewsText active={isActive(item.id)}>
-                                    {item.content}
+                                    {AutoLink(item.content)}
                                     <TabNewsImage loading="lazy" vertical={item.imageVertical} src={item.image.url} alt={item.title} />
                                 </TabNewsText>
                             </TabNewsTextContainer>
@@ -109,7 +119,7 @@ const News = () => {
                             </SpNewsItemOtherContainer>
                             <SpNewsTitle onClick={toggleAccordion(item.id)}>{item.title}</SpNewsTitle>
                             <SpNewsText active={isActive(item.id)}>
-                                {item.content}
+                                {AutoLink(item.content)}
                                 <SpNewsImage loading="lazy" vertical={item.imageVertical} src={item.image.url} alt={item.title} />
                             </SpNewsText>
                         </SpNewsMainContainer>
