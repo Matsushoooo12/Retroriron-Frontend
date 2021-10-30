@@ -251,6 +251,9 @@ const HamburgerMenuLink = styled.a`
     color: #292929;
     font-size: 2.0rem;
     font-weight: 700;
+    ${props => props.active && `
+        color: #F1A11B;
+    `}
     @media screen and (min-width: 768px){
         font-size: 2.4rem;
     }
