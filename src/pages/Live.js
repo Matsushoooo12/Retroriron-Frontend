@@ -121,11 +121,6 @@ const Live = () => {
         return now > moment(date);
     }
 
-    // 画像URL
-    const imageUrl = (url) => {
-        return process.env.REACT_APP_PRO_API_URL + url;
-    }
-
     return (
         <>
             <Helmet>
@@ -158,7 +153,7 @@ const Live = () => {
                                 </PcLiveTextContainer>
                             </PcLiveContentsContainer>
                         </PcLiveMainContainer>
-                        <PcLiveImage loading="lazy" vertical={item.imageVertical} src={imageUrl(item.image.url)} alt={item.title} />
+                        <PcLiveImage loading="lazy" vertical={item.imageVertical} src={item.image.url} alt={item.title} />
                     </PcLiveItemContainer>
                 ))}
                 <ModalContainer
@@ -265,14 +260,14 @@ const Live = () => {
                                             <TabLiveInfoText>場所 | {item.place}</TabLiveInfoText>
                                             <TabLiveInfoText>料金 | {item.price}</TabLiveInfoText>
                                             <TabLiveInfoText>出演者 | {item.performer}</TabLiveInfoText>
-                                            <TabLiveBottomImage loading="lazy" vertical={item.imageVertical} src={process.env.REACT_APP_PRO_API_URL + item.image.url} alt={item.title} />
+                                            <TabLiveBottomImage loading="lazy" vertical={item.imageVertical} src={item.image.url} alt={item.title} />
                                         </TabLiveInfoContainer>
                                         <TabLiveDetailText active={isActive(item.id) && item.detail}>
                                             詳細情報 |<br/>
                                             {item.detail}
                                         </TabLiveDetailText>
                                     </TabLiveContentsContainer>
-                                    <TabLiveImage loading="lazy" vertical={item.imageVertical} src={imageUrl(item.image.url)} alt={item.title} />
+                                    <TabLiveImage loading="lazy" vertical={item.imageVertical} src={item.image.url} alt={item.title} />
                                 </TabLiveMainContainer>
                             </TabLiveItemContainer>
                         ))}
@@ -291,7 +286,7 @@ const Live = () => {
                                         <SpLiveInfoText>場所 | {item.place}</SpLiveInfoText>
                                         <SpLiveInfoText>料金 | {item.price}</SpLiveInfoText>
                                         <SpLiveInfoText>出演者 | {item.performer}</SpLiveInfoText>
-                                        <SpLiveImage loading="lazy" vertical={item.imageVertical} src={imageUrl(item.image.url)} alt={item.title} />
+                                        <SpLiveImage loading="lazy" vertical={item.imageVertical} src={item.image.url} alt={item.title} />
                                         <SpLiveDetailText active={item.detail}>
                                             詳細情報 |<br/>
                                             {item.detail}

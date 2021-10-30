@@ -58,11 +58,6 @@ const News = () => {
         return moment(date).format("YYYY.MM.DD")
     }
 
-    // 画像URL
-    const imageUrl = (url) => {
-        return process.env.REACT_APP_PRO_API_URL + url;
-    }
-
     return (
         <>
             {/* HEAD */}
@@ -86,7 +81,7 @@ const News = () => {
                                 <PcNewsTitle onClick={toggleAccordion(item.id)}>{item.title}</PcNewsTitle>
                                 <PcNewsText active={isActive(item.id)}>
                                     {item.content}
-                                    <PcNewsImage loading="lazy" vertical={item.imageVertical} src={imageUrl(item.image.url)} alt={item.title} />
+                                    <PcNewsImage loading="lazy" vertical={item.imageVertical} src={item.image.url} alt={item.title} />
                                 </PcNewsText>
                             </PcNewsTextContainer>
                         </PcNewsMainContainer>
@@ -101,7 +96,7 @@ const News = () => {
                                 <TabNewsTitle onClick={toggleAccordion(item.id)}>{item.title}</TabNewsTitle>
                                 <TabNewsText active={isActive(item.id)}>
                                     {item.content}
-                                    <TabNewsImage loading="lazy" vertical={item.imageVertical} src={imageUrl(item.image.url)} alt={item.title} />
+                                    <TabNewsImage loading="lazy" vertical={item.imageVertical} src={item.image.url} alt={item.title} />
                                 </TabNewsText>
                             </TabNewsTextContainer>
                         </TabNewsMainContainer>
@@ -115,7 +110,7 @@ const News = () => {
                             <SpNewsTitle onClick={toggleAccordion(item.id)}>{item.title}</SpNewsTitle>
                             <SpNewsText active={isActive(item.id)}>
                                 {item.content}
-                                <SpNewsImage loading="lazy" vertical={item.imageVertical} src={imageUrl(item.image.url)} alt={item.title} />
+                                <SpNewsImage loading="lazy" vertical={item.imageVertical} src={item.image.url} alt={item.title} />
                             </SpNewsText>
                         </SpNewsMainContainer>
                     </NewsItemContainer>
