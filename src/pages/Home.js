@@ -15,7 +15,7 @@ const Home = () => {
         <>
             {/* Head */}
             <Helmet>
-                <title>Home page</title>
+                <title>レトロリロン - Home page</title>
                 <meta name="the Home page of a pop band called Retroriron." content="home page" />
             </Helmet>
             {/* Head */}

@@ -62,7 +62,7 @@ const News = () => {
         <>
             {/* HEAD */}
             <Helmet>
-                <title>News page</title>
+                <title>レトロリロン - News page</title>
                 <meta name="the News page of a pop band called Retroriron." content="news page" />
             </Helmet>
             {/* HEAD */}

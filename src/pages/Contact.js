@@ -26,7 +26,7 @@ const Contact = () => {
     return (
         <>
             <Helmet>
-                <title>Contact page</title>
+                <title>レトロリロン - Contact page</title>
                 <meta name="the Contact page of a pop band called Retroriron." content="contact page" />
             </Helmet>
             {!isConfirmationVisible ? (

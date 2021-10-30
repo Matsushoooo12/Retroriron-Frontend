@@ -139,7 +139,7 @@ const Live = () => {
     return (
         <>
             <Helmet>
-                <title>Live page</title>
+                <title>レトロリロン - Live page</title>
                 <meta name="the Live page of a pop band called Retroriron." content="live page" />
             </Helmet>
             {/* PC */}
