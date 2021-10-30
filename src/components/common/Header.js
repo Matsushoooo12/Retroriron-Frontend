@@ -60,11 +60,11 @@ const Header2 = () => {
                 </HamburgerMenuContainer>
                 <Link to="/"><LogoImage src={Logo} alt="レトロリロンのロゴ" /></Link>
                 <MenuUl>
-                    <MenuLi><MenuLink to="/">Home</MenuLink></MenuLi>
-                    <MenuLi><MenuLink to="/news">News</MenuLink></MenuLi>
-                    <MenuLi><MenuLink to="/live">Live</MenuLink></MenuLi>
-                    <MenuLi><MenuLink to="/discography">Discography</MenuLink></MenuLi>
-                    <MenuLi><MenuLink to="/contact">Contact</MenuLink></MenuLi>
+                    <MenuLi><MenuLink active={location.pathname === "/"} to="/">Home</MenuLink></MenuLi>
+                    <MenuLi><MenuLink active={location.pathname === "/news"} to="/news">News</MenuLink></MenuLi>
+                    <MenuLi><MenuLink active={location.pathname === "/live"} to="/live">Live</MenuLink></MenuLi>
+                    <MenuLi><MenuLink active={location.pathname === "/discography"} to="/discography">Discography</MenuLink></MenuLi>
+                    <MenuLi><MenuLink active={location.pathname === "/contact"} to="/contact">Contact</MenuLink></MenuLi>
                 </MenuUl>
                 <SnsContainer>
                     <SnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/retroriron"><SnsIcon loading="lazy" src={Twitter} alt="レトロリロンのTwitterアイコン" /></SnsLink>
@@ -75,11 +75,11 @@ const Header2 = () => {
             {hamburger ? (
                 <HamburgerMenuContentContainer className="hidden">
                     <HamburgerMenuContentTextContainer>
-                        <HamburgerMenuContentText><HamburgerMenuLink href="/">Home</HamburgerMenuLink></HamburgerMenuContentText>
-                        <HamburgerMenuContentText><HamburgerMenuLink href="/news">News</HamburgerMenuLink></HamburgerMenuContentText>
-                        <HamburgerMenuContentText><HamburgerMenuLink href="/live">Live</HamburgerMenuLink></HamburgerMenuContentText>
-                        <HamburgerMenuContentText><HamburgerMenuLink href="/discography">Discography</HamburgerMenuLink></HamburgerMenuContentText>
-                        <HamburgerMenuContentText><HamburgerMenuLink href="/contact">Contact</HamburgerMenuLink></HamburgerMenuContentText>
+                        <HamburgerMenuContentText><HamburgerMenuLink active={location.pathname === "/"} href="/">Home</HamburgerMenuLink></HamburgerMenuContentText>
+                        <HamburgerMenuContentText><HamburgerMenuLink active={location.pathname === "/news"} href="/news">News</HamburgerMenuLink></HamburgerMenuContentText>
+                        <HamburgerMenuContentText><HamburgerMenuLink active={location.pathname === "/live"} href="/live">Live</HamburgerMenuLink></HamburgerMenuContentText>
+                        <HamburgerMenuContentText><HamburgerMenuLink active={location.pathname === "/discography"} href="/discography">Discography</HamburgerMenuLink></HamburgerMenuContentText>
+                        <HamburgerMenuContentText><HamburgerMenuLink active={location.pathname === "/contact"} href="/contact">Contact</HamburgerMenuLink></HamburgerMenuContentText>
                     </HamburgerMenuContentTextContainer>
                     <HamburgerMenuSnsContainer>
                         <HamburgerMenuSnsTextContainer>
@@ -368,6 +368,9 @@ const MenuLink = styled(Link)`
         &:hover{
             color: #F1A11B;
         }
+        ${props => props.active && `
+            color: #F1A11B;
+        `}
     }
 `
 
