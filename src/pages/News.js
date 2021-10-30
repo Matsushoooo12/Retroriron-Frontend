@@ -58,12 +58,6 @@ const News = () => {
         return moment(date).format("YYYY.MM.DD")
     }
 
-    // 文字列中のリンクをaタグにする
-    const AutoLink = (str) => {
-        var reg=new RegExp("((https?|ftp)(:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+))");
-        console.log(str.replace(reg,"<a href='$1' target='_blank'>$1</a>"));
-    }
-
     return (
         <>
             {/* HEAD */}
@@ -86,7 +80,7 @@ const News = () => {
                             <PcNewsTextContainer>
                                 <PcNewsTitle onClick={toggleAccordion(item.id)}>{item.title}</PcNewsTitle>
                                 <PcNewsText active={isActive(item.id)}>
-                                    {AutoLink(item.content)}
+                                    {item.content}
                                     <PcNewsImage loading="lazy" vertical={item.imageVertical} src={item.image.url} alt={item.title} />
                                 </PcNewsText>
                             </PcNewsTextContainer>
@@ -101,7 +95,7 @@ const News = () => {
                             <TabNewsTextContainer>
                                 <TabNewsTitle onClick={toggleAccordion(item.id)}>{item.title}</TabNewsTitle>
                                 <TabNewsText active={isActive(item.id)}>
-                                    {AutoLink(item.content)}
+                                    {item.content}
                                     <TabNewsImage loading="lazy" vertical={item.imageVertical} src={item.image.url} alt={item.title} />
                                 </TabNewsText>
                             </TabNewsTextContainer>
@@ -115,7 +109,7 @@ const News = () => {
                             </SpNewsItemOtherContainer>
                             <SpNewsTitle onClick={toggleAccordion(item.id)}>{item.title}</SpNewsTitle>
                             <SpNewsText active={isActive(item.id)}>
-                                {AutoLink(item.content)}
+                                {item.content}
                                 <SpNewsImage loading="lazy" vertical={item.imageVertical} src={item.image.url} alt={item.title} />
                             </SpNewsText>
                         </SpNewsMainContainer>
