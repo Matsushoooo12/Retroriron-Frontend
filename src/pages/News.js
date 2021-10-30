@@ -76,7 +76,7 @@ const News = () => {
                             <PcNewsDate>{dateFormat(item.date)}</PcNewsDate>
                         </PcNewsItemOtherContainer>
                         <PcNewsMainContainer>
-                            <PcNewsButton onClick={toggleAccordion(item.id)} src={toggleAccordionButton(item.id)} />
+                            <PcNewsButton onClick={toggleAccordion(item.id)} src={toggleAccordionButton(item.id)} alt="Toggle button" />
                             <PcNewsTextContainer>
                                 <PcNewsTitle onClick={toggleAccordion(item.id)}>{item.title}</PcNewsTitle>
                                 <PcNewsText active={isActive(item.id)}>
@@ -91,7 +91,7 @@ const News = () => {
                             <TabNewsDate>{dateFormat(item.date)}</TabNewsDate>
                         </TabNewsItemOtherContainer>
                         <TabNewsMainContainer>
-                            <TabNewsButton onClick={toggleAccordion(item.id)} src={toggleAccordionButton(item.id)} />
+                            <TabNewsButton onClick={toggleAccordion(item.id)} src={toggleAccordionButton(item.id)} alt="Toggle button" />
                             <TabNewsTextContainer>
                                 <TabNewsTitle onClick={toggleAccordion(item.id)}>{item.title}</TabNewsTitle>
                                 <TabNewsText active={isActive(item.id)}>
@@ -101,7 +101,7 @@ const News = () => {
                             </TabNewsTextContainer>
                         </TabNewsMainContainer>
                         {/* SP */}
-                        <SpNewsButton onClick={toggleAccordion(item.id)} src={toggleAccordionButton(item.id)} />
+                        <SpNewsButton onClick={toggleAccordion(item.id)} src={toggleAccordionButton(item.id)} alt="Toggle button" />
                         <SpNewsMainContainer>
                             <SpNewsItemOtherContainer onClick={toggleAccordion(item.id)}>
                                 <SpNewsDate>{dateFormat(item.date)}</SpNewsDate>
