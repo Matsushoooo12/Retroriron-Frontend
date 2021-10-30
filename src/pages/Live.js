@@ -129,7 +129,11 @@ const Live = () => {
 
     // 開場・開演時間があるかどうか
     const notExistTime = (time) => {
-        return time ? time : "未定";
+        if(time){
+            return time;
+        } else {
+            return "未定"
+        }
     }
 
     return (
