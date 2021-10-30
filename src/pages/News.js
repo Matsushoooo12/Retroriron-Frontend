@@ -60,12 +60,8 @@ const News = () => {
 
     // 文字列中のリンクをaタグにする
     const AutoLink = (str) => {
-        var regexp_url = /((h?)(ttps?:\/\/[a-zA-Z0-9.\-_@:/~?%&;=+#',()*!]+))/g; // ']))/;
-        var regexp_makeLink = function(all, url, h, href) {
-        return '<a href="h' + href + '">' + url + '</a>';
-        }
-    
-        return str.replace(regexp_url, regexp_makeLink);
+        var reg=new RegExp("((https?|ftp)(:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+))");
+        console.log(str.replace(reg,"<a href='$1' target='_blank'>$1</a>"));
     }
 
     return (
