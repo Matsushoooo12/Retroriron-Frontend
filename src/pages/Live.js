@@ -127,11 +127,6 @@ const Live = () => {
         return url ? url : NilImageUrl;
     }
 
-    // 開場・開演時間があるかどうか
-    const notExistTime = (time) => {
-        return time ? time : "未定";
-    }
-
     return (
         <>
             <Helmet>
@@ -152,7 +147,7 @@ const Live = () => {
                                     <PcLiveTitle cursorPointer={item.detail} onClick={toggleAccordion(item.id)}>{item.title}<PcLiveFinishTag finish={pastTime(item.date)}>終了</PcLiveFinishTag></PcLiveTitle><br/>
                                     <PcLiveTicketButton onClick={() => setTicketValue({date: item.date, title: item.title, open: true})} active={futureTime(item.date)}>チケットをご希望の方はこちら</PcLiveTicketButton>
                                     <PcLiveInfoContainer>
-                                        <PcLiveInfoText>開場時間 | {notExistTime(openAndStartTime(item.openTime))}   開演時間 | {notExistTime(openAndStartTime(item.startTime))}</PcLiveInfoText>
+                                        <PcLiveInfoText>開場時間 | {openAndStartTime(item.openTime)}   開演時間 | {openAndStartTime(item.startTime)}</PcLiveInfoText>
                                         <PcLiveInfoText>場所 | {item.place}</PcLiveInfoText>
                                         <PcLiveInfoText>料金 | {item.price}</PcLiveInfoText>
                                         <PcLiveInfoText>出演者 | {item.performer}</PcLiveInfoText>
@@ -267,7 +262,7 @@ const Live = () => {
                                         <TabLiveTitle cursorPointer={item.detail} onClick={toggleAccordion(item.id)}>{item.title}<TabLiveFinishTag finish={pastTime(item.date)}>終了</TabLiveFinishTag></TabLiveTitle><br/>
                                         <TabLiveTicketButton onClick={() => handleSpTicketButtonClick(item.date, item.title)} active={futureTime(item.date)}>チケットをご希望の方はこちら</TabLiveTicketButton>
                                         <TabLiveInfoContainer>
-                                            <TabLiveInfoText>開場時間 | {notExistTime(openAndStartTime(item.openTime))}   開演時間 | {notExistTime(openAndStartTime(item.startTime))}</TabLiveInfoText>
+                                            <TabLiveInfoText>開場時間 | {openAndStartTime(item.openTime)}   開演時間 | {openAndStartTime(item.startTime)}</TabLiveInfoText>
                                             <TabLiveInfoText>場所 | {item.place}</TabLiveInfoText>
                                             <TabLiveInfoText>料金 | {item.price}</TabLiveInfoText>
                                             <TabLiveInfoText>出演者 | {item.performer}</TabLiveInfoText>
@@ -293,7 +288,7 @@ const Live = () => {
                                     <SpLiveTicketButton onClick={() => handleSpTicketButtonClick(item.date, item.title)} active={futureTime(item.date)}>チケットをご希望の方はこちら</SpLiveTicketButton>
                                     <SpLiveFinishTag finish={pastTime(item.date)}>終了</SpLiveFinishTag>
                                     <SpLiveInfoContainer active={isActive(item.id)}>
-                                        <SpLiveInfoText>開場時間 | {notExistTime(openAndStartTime(item.openTime))}   開演時間 | {notExistTime(openAndStartTime(item.startTime))}</SpLiveInfoText>
+                                        <SpLiveInfoText>開場時間 | {openAndStartTime(item.openTime)}   開演時間 | {openAndStartTime(item.startTime)}</SpLiveInfoText>
                                         <SpLiveInfoText>場所 | {item.place}</SpLiveInfoText>
                                         <SpLiveInfoText>料金 | {item.price}</SpLiveInfoText>
                                         <SpLiveInfoText>出演者 | {item.performer}</SpLiveInfoText>
