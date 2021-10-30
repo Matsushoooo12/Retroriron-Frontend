@@ -230,6 +230,9 @@ const HamburgerMenuContentContainer = styled.div`
     &.hidden{
         right: 0;
     }
+    @media screen and (min-width: 900px){
+        display: none;
+    }
 `
 
 const HamburgerMenuContentTextContainer = styled.ul`
