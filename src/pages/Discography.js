@@ -48,7 +48,7 @@ const Discography = () => {
                     <PcDiscographyItemContainer key={item.id}>
                         <PcDiscographyDate>{dateFormat(item.date)} Release</PcDiscographyDate>
                         <PcDiscographyImageContainer>
-                            <PcDiscographyImage loading="lazy" src={imageUrl(item.image.url)} alt={item.title} />
+                            <PcDiscographyImage loading="lazy" src={item.image.url} alt={item.title} />
                             <PcDiscographyTag>{item.tag}</PcDiscographyTag>
                         </PcDiscographyImageContainer>
                         <PcDiscographyTitleContainer>
@@ -77,7 +77,7 @@ const Discography = () => {
                         </SpDiscographyTitleContainer>
                         <SpDiscographyItemContentContainer>
                             <SpDiscographyImageContainer>
-                                <SpDiscographyImage loading="lazy" src={imageUrl(item.image.url)} alt={item.title} />
+                                <SpDiscographyImage loading="lazy" src={item.image.url} alt={item.title} />
                                 <SpDiscographyTag>{item.tag}</SpDiscographyTag>
                             </SpDiscographyImageContainer>
                             <SpDiscographyLinkContainer>
