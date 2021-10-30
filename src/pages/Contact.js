@@ -16,7 +16,10 @@ const Contact = () => {
     const hideConfirmation = () => setIsConfirmationVisible(false)
 
     //submitボタンを押した時、入力内容確認画面を表示させる
-    const onSubmitData = () => setIsConfirmationVisible(true)
+    const onSubmitData = () => {
+        setIsConfirmationVisible(true)
+        window.scroll({top: 0, behavior: 'smooth'});
+    }
 
     console.log(isConfirmationVisible)
 

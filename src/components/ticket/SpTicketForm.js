@@ -17,7 +17,10 @@ const SpTicketForm = (props) => {
     const hideConfirmation = () => setisConfirmVisible(false)
 
     //submitボタンを押した時、入力内容確認画面を表示させる
-    const onSubmitData = () => setisConfirmVisible(true)
+    const onSubmitData = () => {
+        setisConfirmVisible(true)
+        window.scroll({top: 0, behavior: 'smooth'});
+    }
 
     return (
         <>

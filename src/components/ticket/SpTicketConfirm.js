@@ -25,6 +25,7 @@ const SpTicketConfirm = (props) => {
             const res = await createTicket(value);
             console.log(res)
             setIsCompleteVisible(true)
+            window.scroll({top: 0, behavior: 'smooth'});
         } catch(e){
             console.log(e)
         }

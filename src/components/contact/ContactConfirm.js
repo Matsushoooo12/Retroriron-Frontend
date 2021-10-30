@@ -23,6 +23,7 @@ const ContactConfirm2 = (props) => {
             const res = await createContact(value);
             console.log(res)
             setIsCompleteVisible(true)
+            window.scroll({top: 0, behavior: 'smooth'});
         } catch(e){
             console.log(e)
         }
