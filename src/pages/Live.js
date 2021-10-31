@@ -136,20 +136,6 @@ const Live = () => {
         }
     }
 
-    // 文字列内リンク
-    
-    const stringLink = (str) => {
-        const regexp_url = /https?:\/\/[a-zA-Z0-9.\-_@:/~?%&;=+#',()*!]+/g;
-        const regexp_makeLink = (url)　=> {
-          return `<a href=${url} style="color: #F1A11B;" target="_blank" rel="noopener noreferrer">${url}</a>`;
-        }
-        const replacedString = str.replace(regexp_url, regexp_makeLink);
-    
-        return (
-          <p dangerouslySetInnerHTML={{__html: replacedString}}></p>
-        )
-    };
-
     return (
         <>
             <Helmet>
@@ -177,7 +163,7 @@ const Live = () => {
                                     </PcLiveInfoContainer>
                                     <PcLiveDetailText active={isActive(item.id) && item.detail}>
                                         詳細情報 |<br/><br/>
-                                        {stringLink(item.detail)}
+                                        {item.detail}
                                     </PcLiveDetailText>
                                 </PcLiveTextContainer>
                             </PcLiveContentsContainer>
@@ -293,7 +279,7 @@ const Live = () => {
                                         </TabLiveInfoContainer>
                                         <TabLiveDetailText active={isActive(item.id) && item.detail}>
                                             詳細情報 |<br/>
-                                            {stringLink(item.detail)}
+                                            {item.detail}
                                         </TabLiveDetailText>
                                     </TabLiveContentsContainer>
                                     <TabLiveImage loading="lazy" vertical={item.imageVertical} src={notExistImage(item.image.url)} alt={item.title} />
@@ -318,7 +304,7 @@ const Live = () => {
                                         <SpLiveImage loading="lazy" vertical={item.imageVertical} src={notExistImage(item.image.url)} alt={item.title} />
                                         <SpLiveDetailText active={item.detail}>
                                             詳細情報 |<br/>
-                                            {stringLink(item.detail)}
+                                            {item.detail}
                                         </SpLiveDetailText>
                                     </SpLiveInfoContainer>
                                 </SpLiveMainContainer>
