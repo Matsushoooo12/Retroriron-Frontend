@@ -249,7 +249,7 @@ const SpDiscographyItemContainer = styled.div`
 
 const SpDiscographyDate = styled.p`
     font-weight: 700;
-    font-size: 1.0rem;
+    font-size: 1.2rem;
 `
 
 const SpDiscographyTitleContainer = styled.div`
@@ -287,7 +287,7 @@ const SpDiscographyImage = styled.img`
 `
 
 const SpDiscographyTag = styled.p`
-    font-size: 1.0rem;
+    font-size: 1.2rem;
     font-weight: 700;
     padding: 2px 8px;
     background-color: #fff;
