@@ -169,7 +169,6 @@ const PcDiscographyTitle = styled.h1`
     overflow-wrap:  break-word;
     word-break: break-all;
     ${props => props.long && `
-        font-size: 1.6rem;
         line-height: 2.0rem;
     `}
 `
