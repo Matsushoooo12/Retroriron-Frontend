@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import Helmet from 'react-helmet';
 import moment from 'moment'
 import styled from '@emotion/styled';
@@ -59,14 +59,17 @@ const News = () => {
     }
 
     
-    // const autoLink = (str) => {
-    //     var regexp_url = /((h?)(ttps?:\/\/[a-zA-Z0-9.\-_@:/~?%&;=+#',()*!]+))/g; // ']))/;
-    //     var regexp_makeLink = function(all, url, h, href) {
-    //         return '<a target="_blank" rel="noopener noreferrer" href="h' + href + '">' + url + '</a>';
-    //     }
-     
-    //     return str.replace(regexp_url, regexp_makeLink);
-    // }
+    const link = (str) => {
+        const regexp_url = /https?:\/\/[a-zA-Z0-9.\-_@:/~?%&;=+#',()*!]+/g;
+        const regexp_makeLink = (url)　=> {
+          return `<a href=${url} style="color: blue;" target="_blank" rel="noopener noreferrer">${url}</a>`;
+        }
+        const replacedString = str.replace(regexp_url, regexp_makeLink);
+    
+        return (
+          <p dangerouslySetInnerHTML={{__html: replacedString}}></p>
+        )
+    };
 
     return (
         <>
@@ -90,7 +93,7 @@ const News = () => {
                             <PcNewsTextContainer>
                                 <PcNewsTitle onClick={toggleAccordion(item.id)}>{item.title}</PcNewsTitle>
                                 <PcNewsText active={isActive(item.id)}>
-                                    {item.content}
+                                    {link(item.content)}
                                     <PcNewsImage loading="lazy" vertical={item.imageVertical} src={item.image.url} alt={item.title} />
                                 </PcNewsText>
                             </PcNewsTextContainer>
@@ -105,7 +108,7 @@ const News = () => {
                             <TabNewsTextContainer>
                                 <TabNewsTitle onClick={toggleAccordion(item.id)}>{item.title}</TabNewsTitle>
                                 <TabNewsText active={isActive(item.id)}>
-                                    {item.content}
+                                    {link(item.content)}
                                     <TabNewsImage loading="lazy" vertical={item.imageVertical} src={item.image.url} alt={item.title} />
                                 </TabNewsText>
                             </TabNewsTextContainer>
@@ -119,7 +122,7 @@ const News = () => {
                             </SpNewsItemOtherContainer>
                             <SpNewsTitle onClick={toggleAccordion(item.id)}>{item.title}</SpNewsTitle>
                             <SpNewsText active={isActive(item.id)}>
-                                {item.content}
+                                {link(item.content)}
                                 <SpNewsImage loading="lazy" vertical={item.imageVertical} src={item.image.url} alt={item.title} />
                             </SpNewsText>
                         </SpNewsMainContainer>
