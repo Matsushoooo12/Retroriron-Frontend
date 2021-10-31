@@ -31,6 +31,18 @@ const Discography = () => {
         return moment(date).format("YYYY.MM.DD")
     }
 
+    // 全角２文字・半角１文字
+    const count = (str) => {
+    
+        let len = 0;
+        
+        for (let i = 0; i < str.length; i++) {
+            (str[i].match(/[ -~]/)) ? len += 1 : len += 2;
+        }
+        
+        return len;
+    }
+
     return (
         <>
             <Helmet>
@@ -47,7 +59,7 @@ const Discography = () => {
                             <PcDiscographyTag>{item.tag}</PcDiscographyTag>
                         </PcDiscographyImageContainer>
                         <PcDiscographyTitleContainer>
-                            <PcDiscographyTitle long={item.title.length > 10}>{item.title}</PcDiscographyTitle>
+                            <PcDiscographyTitle long={count(item.title) > 20}>{item.title}</PcDiscographyTitle>
                         </PcDiscographyTitleContainer>
                         <PcDiscographyLinkContainer>
                             <PcDiscographyLinkItemContainer noLink={!item.mvLink} rel="noopener noreferrer" target="_blank" href={item.mvLink}>
@@ -68,7 +80,7 @@ const Discography = () => {
                     <SpDiscographyItemContainer key={item.id}>
                         <SpDiscographyDate>{dateFormat(item.date)} Release</SpDiscographyDate>
                         <SpDiscographyTitleContainer>
-                            <SpDiscographyTitle long={item.title.length > 13}>{item.title}</SpDiscographyTitle>
+                            <SpDiscographyTitle long={count(item.title) > 26}>{item.title}</SpDiscographyTitle>
                         </SpDiscographyTitleContainer>
                         <SpDiscographyItemContentContainer>
                             <SpDiscographyImageContainer>
