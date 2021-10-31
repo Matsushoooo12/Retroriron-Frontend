@@ -173,7 +173,7 @@ const Live = () => {
                                 <PcLiveTextContainer>
                                     <PcLiveTitle cursorPointer={item.detail} onClick={toggleAccordion(item.id)}>{item.title}<PcLiveFinishTag finish={pastTime(item.date)}>終了</PcLiveFinishTag></PcLiveTitle><br/>
                                     {item.ticketLink ? (
-                                        <PcLiveTicketButton href={item.ticketLink} active={futureTime(item.date)}>チケットをご希望の方はこちら</PcLiveTicketButton>
+                                        <PcLiveTicketButton rel="noopener noreferrer" target="_blank" href={item.ticketLink} active={futureTime(item.date)}>チケットをご希望の方はこちら</PcLiveTicketButton>
                                     ):(
                                         <PcLiveTicketButton onClick={() => setTicketValue({date: item.date, title: item.title, open: true})} active={futureTime(item.date)}>チケットをご希望の方はこちら</PcLiveTicketButton>
                                     )}
@@ -292,7 +292,7 @@ const Live = () => {
                                         <TabLiveDate cursorPointer={item.detail} onClick={toggleAccordion(item.id)}>{dateFormat(item.date)}</TabLiveDate>
                                         <TabLiveTitle cursorPointer={item.detail} onClick={toggleAccordion(item.id)}>{item.title}<TabLiveFinishTag finish={pastTime(item.date)}>終了</TabLiveFinishTag></TabLiveTitle><br/>
                                         {item.ticketLink ? (
-                                            <TabLiveTicketButton href={item.ticketLink} active={futureTime(item.date)}>チケットをご希望の方はこちら</TabLiveTicketButton>
+                                            <TabLiveTicketButton rel="noopener noreferrer" target="_blank" href={item.ticketLink} active={futureTime(item.date)}>チケットをご希望の方はこちら</TabLiveTicketButton>
                                         ):(
                                             <TabLiveTicketButton onClick={() => handleSpTicketButtonClick(item.date, item.title)} active={futureTime(item.date)}>チケットをご希望の方はこちら</TabLiveTicketButton>
                                         )}
@@ -321,7 +321,7 @@ const Live = () => {
                                     <SpLiveDate onClick={toggleAccordion(item.id)}>{dateFormat(item.date)}</SpLiveDate>
                                     <SpLiveTitle onClick={toggleAccordion(item.id)}>{item.title}</SpLiveTitle><br/>
                                     {item.ticketLink ? (
-                                        <SpLiveTicketButton href={item.ticketLink} active={futureTime(item.date)}>チケットをご希望の方はこちら</SpLiveTicketButton>
+                                        <SpLiveTicketButton rel="noopener noreferrer" target="_blank" href={item.ticketLink} active={futureTime(item.date)}>チケットをご希望の方はこちら</SpLiveTicketButton>
                                     ):(
                                         <SpLiveTicketButton onClick={() => handleSpTicketButtonClick(item.date, item.title)} active={futureTime(item.date)}>チケットをご希望の方はこちら</SpLiveTicketButton>
                                     )}
