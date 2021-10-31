@@ -58,6 +58,7 @@ const News = () => {
         return moment(date).format("YYYY.MM.DD")
     }
 
+    // 文字列内リンク
     
     const link = (str) => {
         const regexp_url = /https?:\/\/[a-zA-Z0-9.\-_@:/~?%&;=+#',()*!]+/g;
