@@ -40,8 +40,6 @@ const News = () => {
 
     const now = moment();
 
-    console.log(news.map((item) => process.env.REACT_APP_PRO_API_URL + item.image.url))
-
     // Active
 
     const isActive = (index) => content === index;
