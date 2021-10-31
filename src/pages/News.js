@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react'
+import React, { useState, useEffect } from 'react'
 import Helmet from 'react-helmet';
 import moment from 'moment'
 import styled from '@emotion/styled';
