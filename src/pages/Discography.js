@@ -68,7 +68,7 @@ const Discography = () => {
                     <SpDiscographyItemContainer key={item.id}>
                         <SpDiscographyDate>{dateFormat(item.date)} Release</SpDiscographyDate>
                         <SpDiscographyTitleContainer>
-                            <SpDiscographyTitle long={item.title.length > 26}>{item.title}</SpDiscographyTitle>
+                            <SpDiscographyTitle long={item.title.length > 13}>{item.title}</SpDiscographyTitle>
                         </SpDiscographyTitleContainer>
                         <SpDiscographyItemContentContainer>
                             <SpDiscographyImageContainer>
