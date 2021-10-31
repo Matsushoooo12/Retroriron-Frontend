@@ -156,7 +156,7 @@ const ContactText = styled.p`
     padding-bottom: 16px;
     ${props => props.caution && `
         font-weight: 700;
-        font-size: 1.0rem;
+        font-size: 1.2rem;
         line-height: 1.6rem;
     `}
     border-bottom: 1px solid #BEBEBE;
@@ -173,7 +173,7 @@ const ContactText = styled.p`
         padding-bottom: 16px;
         ${props => props.caution && `
             font-weight: 700;
-            font-size: 1.0rem;
+            font-size: 1.2rem;
             line-height: 1.6rem;
         `}
         border-bottom: 1px solid #BEBEBE;
@@ -191,7 +191,7 @@ const ContactText = styled.p`
         padding-bottom: 16px;
         ${props => props.caution && `
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             line-height: 2.4rem;
         `}
         border-bottom: 1px solid #BEBEBE;
