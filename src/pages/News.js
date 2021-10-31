@@ -60,7 +60,7 @@ const News = () => {
 
     // 文字列内リンク
     
-    const link = (str) => {
+    const stringLink = (str) => {
         const regexp_url = /https?:\/\/[a-zA-Z0-9.\-_@:/~?%&;=+#',()*!]+/g;
         const regexp_makeLink = (url)　=> {
           return `<a href=${url} style="color: #F1A11B;" target="_blank" rel="noopener noreferrer">${url}</a>`;
@@ -94,7 +94,7 @@ const News = () => {
                             <PcNewsTextContainer>
                                 <PcNewsTitle onClick={toggleAccordion(item.id)}>{item.title}</PcNewsTitle>
                                 <PcNewsText active={isActive(item.id)}>
-                                    {link(item.content)}
+                                    {stringLink(item.content)}
                                     <PcNewsImage loading="lazy" vertical={item.imageVertical} src={item.image.url} alt={item.title} />
                                 </PcNewsText>
                             </PcNewsTextContainer>
@@ -109,7 +109,7 @@ const News = () => {
                             <TabNewsTextContainer>
                                 <TabNewsTitle onClick={toggleAccordion(item.id)}>{item.title}</TabNewsTitle>
                                 <TabNewsText active={isActive(item.id)}>
-                                    {link(item.content)}
+                                    {stringLink(item.content)}
                                     <TabNewsImage loading="lazy" vertical={item.imageVertical} src={item.image.url} alt={item.title} />
                                 </TabNewsText>
                             </TabNewsTextContainer>
@@ -123,7 +123,7 @@ const News = () => {
                             </SpNewsItemOtherContainer>
                             <SpNewsTitle onClick={toggleAccordion(item.id)}>{item.title}</SpNewsTitle>
                             <SpNewsText active={isActive(item.id)}>
-                                {link(item.content)}
+                                {stringLink(item.content)}
                                 <SpNewsImage loading="lazy" vertical={item.imageVertical} src={item.image.url} alt={item.title} />
                             </SpNewsText>
                         </SpNewsMainContainer>
