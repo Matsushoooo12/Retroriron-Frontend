@@ -5,7 +5,6 @@ import styled from '@emotion/styled';
 import { getNews } from '../api';
 import Plus from '../images/open-btn.png'
 import Minus from '../images/close-btn.png'
-import Anchorify from 'anchorify'
 
 const News = () => {
     // API
@@ -59,6 +58,16 @@ const News = () => {
         return moment(date).format("YYYY.MM.DD")
     }
 
+    
+    // const autoLink = (str) => {
+    //     var regexp_url = /((h?)(ttps?:\/\/[a-zA-Z0-9.\-_@:/~?%&;=+#',()*!]+))/g; // ']))/;
+    //     var regexp_makeLink = function(all, url, h, href) {
+    //         return '<a target="_blank" rel="noopener noreferrer" href="h' + href + '">' + url + '</a>';
+    //     }
+     
+    //     return str.replace(regexp_url, regexp_makeLink);
+    // }
+
     return (
         <>
             {/* HEAD */}
@@ -81,7 +90,7 @@ const News = () => {
                             <PcNewsTextContainer>
                                 <PcNewsTitle onClick={toggleAccordion(item.id)}>{item.title}</PcNewsTitle>
                                 <PcNewsText active={isActive(item.id)}>
-                                    {Anchorify(item.content, {target: "_blank"})}
+                                    {item.content}
                                     <PcNewsImage loading="lazy" vertical={item.imageVertical} src={item.image.url} alt={item.title} />
                                 </PcNewsText>
                             </PcNewsTextContainer>
@@ -96,7 +105,7 @@ const News = () => {
                             <TabNewsTextContainer>
                                 <TabNewsTitle onClick={toggleAccordion(item.id)}>{item.title}</TabNewsTitle>
                                 <TabNewsText active={isActive(item.id)}>
-                                    {Anchorify(item.content, {target: "_blank"})}
+                                    {item.content}
                                     <TabNewsImage loading="lazy" vertical={item.imageVertical} src={item.image.url} alt={item.title} />
                                 </TabNewsText>
                             </TabNewsTextContainer>
@@ -110,7 +119,7 @@ const News = () => {
                             </SpNewsItemOtherContainer>
                             <SpNewsTitle onClick={toggleAccordion(item.id)}>{item.title}</SpNewsTitle>
                             <SpNewsText active={isActive(item.id)}>
-                                {Anchorify(item.content, {target: "_blank"})}
+                                {item.content}
                                 <SpNewsImage loading="lazy" vertical={item.imageVertical} src={item.image.url} alt={item.title} />
                             </SpNewsText>
                         </SpNewsMainContainer>
