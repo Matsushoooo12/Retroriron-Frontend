@@ -47,7 +47,7 @@ const Discography = () => {
                             <PcDiscographyTag>{item.tag}</PcDiscographyTag>
                         </PcDiscographyImageContainer>
                         <PcDiscographyTitleContainer>
-                            <PcDiscographyTitle long={item.title.length > 18}>{item.title}</PcDiscographyTitle>
+                            <PcDiscographyTitle long={item.title.length > 10}>{item.title}</PcDiscographyTitle>
                         </PcDiscographyTitleContainer>
                         <PcDiscographyLinkContainer>
                             <PcDiscographyLinkItemContainer noLink={!item.mvLink} rel="noopener noreferrer" target="_blank" href={item.mvLink}>
