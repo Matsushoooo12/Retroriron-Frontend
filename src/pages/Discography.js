@@ -262,7 +262,6 @@ const SpDiscographyTitle = styled.h1`
     font-size: 2.0rem;
     line-height: 4.8rem;
     ${props => props.long && `
-        font-size: 1.6rem;
         line-height: 2.0rem;
     `}
 `
