@@ -3,10 +3,10 @@ import Helmet from 'react-helmet';
 import styled from '@emotion/styled';
 import FvFrame from '../images/main_visual.webp'
 import BandTitle from '../images/title.webp'
-import NumaImage from '../images/numa2.jpeg'
-import NagayamaImage from '../images/taiki.jpeg'
-import SuzuneImage from '../images/suzune2.jpeg'
-import MiriImage from '../images/miri2.jpeg'
+import NumaImage from '../images/numa.webp'
+import NagayamaImage from '../images/taiki.webp'
+import SuzuneImage from '../images/suzune.webp'
+import MiriImage from '../images/miri.webp'
 import Twitter from '../images/twitter-logo.png'
 import Instagram from '../images/insta-logo.png'
 
