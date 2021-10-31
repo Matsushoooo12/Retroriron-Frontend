@@ -172,7 +172,11 @@ const Live = () => {
                             <PcLiveContentsContainer>
                                 <PcLiveTextContainer>
                                     <PcLiveTitle cursorPointer={item.detail} onClick={toggleAccordion(item.id)}>{item.title}<PcLiveFinishTag finish={pastTime(item.date)}>終了</PcLiveFinishTag></PcLiveTitle><br/>
-                                    <PcLiveTicketButton onClick={() => setTicketValue({date: item.date, title: item.title, open: true})} active={futureTime(item.date)}>チケットをご希望の方はこちら</PcLiveTicketButton>
+                                    {item.ticketLink ? (
+                                        <PcLiveTicketButton href={item.ticketLink} active={futureTime(item.date)}>チケットをご希望の方はこちら</PcLiveTicketButton>
+                                    ):(
+                                        <PcLiveTicketButton onClick={() => setTicketValue({date: item.date, title: item.title, open: true})} active={futureTime(item.date)}>チケットをご希望の方はこちら</PcLiveTicketButton>
+                                    )}
                                     <PcLiveInfoContainer>
                                         <PcLiveInfoText>開場時間 | {notExistTime(openAndStartTime(item.openTime))}   開演時間 | {notExistTime(openAndStartTime(item.startTime))}</PcLiveInfoText>
                                         <PcLiveInfoText>場所 | {item.venue}</PcLiveInfoText>
@@ -287,7 +291,11 @@ const Live = () => {
                                     <TabLiveContentsContainer>
                                         <TabLiveDate cursorPointer={item.detail} onClick={toggleAccordion(item.id)}>{dateFormat(item.date)}</TabLiveDate>
                                         <TabLiveTitle cursorPointer={item.detail} onClick={toggleAccordion(item.id)}>{item.title}<TabLiveFinishTag finish={pastTime(item.date)}>終了</TabLiveFinishTag></TabLiveTitle><br/>
-                                        <TabLiveTicketButton onClick={() => handleSpTicketButtonClick(item.date, item.title)} active={futureTime(item.date)}>チケットをご希望の方はこちら</TabLiveTicketButton>
+                                        {item.ticketLink ? (
+                                            <TabLiveTicketButton href={item.ticketLink} active={futureTime(item.date)}>チケットをご希望の方はこちら</TabLiveTicketButton>
+                                        ):(
+                                            <TabLiveTicketButton onClick={() => handleSpTicketButtonClick(item.date, item.title)} active={futureTime(item.date)}>チケットをご希望の方はこちら</TabLiveTicketButton>
+                                        )}
                                         <TabLiveInfoContainer>
                                             <TabLiveInfoText>開場時間 | {notExistTime(openAndStartTime(item.openTime))}   開演時間 | {notExistTime(openAndStartTime(item.startTime))}</TabLiveInfoText>
                                             <TabLiveInfoText>場所 | {item.venue}</TabLiveInfoText>
@@ -312,7 +320,11 @@ const Live = () => {
                                 <SpLiveMainContainer>
                                     <SpLiveDate onClick={toggleAccordion(item.id)}>{dateFormat(item.date)}</SpLiveDate>
                                     <SpLiveTitle onClick={toggleAccordion(item.id)}>{item.title}</SpLiveTitle><br/>
-                                    <SpLiveTicketButton onClick={() => handleSpTicketButtonClick(item.date, item.title)} active={futureTime(item.date)}>チケットをご希望の方はこちら</SpLiveTicketButton>
+                                    {item.ticketLink ? (
+                                        <SpLiveTicketButton href={item.ticketLink} active={futureTime(item.date)}>チケットをご希望の方はこちら</SpLiveTicketButton>
+                                    ):(
+                                        <SpLiveTicketButton onClick={() => handleSpTicketButtonClick(item.date, item.title)} active={futureTime(item.date)}>チケットをご希望の方はこちら</SpLiveTicketButton>
+                                    )}
                                     <SpLiveFinishTag finish={pastTime(item.date)}>終了</SpLiveFinishTag>
                                     <SpLiveInfoContainer active={isActive(item.id)}>
                                         <SpLiveInfoText>開場時間 | {notExistTime(openAndStartTime(item.openTime))}   開演時間 | {notExistTime(openAndStartTime(item.startTime))}</SpLiveInfoText>
