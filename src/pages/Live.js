@@ -530,23 +530,18 @@ const TicketItemContainer = styled.div`
 const TicketTitle = styled.h1`
     font-size: 2.4rem;
     font-weight: 700;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: #292929;
     margin: 24px 24px 8px;
 `
 
 const TicketText = styled.p`
     font-size: 1.6rem;
     font-weight: 500;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: #292929;
     margin: 0 24px 4px;
 `
 
 const TicketCautionText = styled.p`
     font-size: 1.6rem;
     font-weight: 500;
-    font-family: 'Noto Sans JP', sans-serif;
     color: #F42626;
     margin: 0 24px 24px;
 `
@@ -561,8 +556,6 @@ const TicketFormContainer = styled.form`
 const TicketFormLabel = styled.label`
     font-size: 1.6rem;
     font-weight: 700;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: #292929;
 `
 
 const TicketFormGroup = styled.div`
@@ -581,7 +574,6 @@ const TicketFormGroup = styled.div`
 const TicketFormRequiredSign = styled.span`
     font-size: 1.2rem;
     font-weight: 700;
-    font-family: 'Noto Sans JP', sans-serif;
     color: #F42626;
     margin-left: 4px;
     margin-right: 16px;
@@ -613,8 +605,6 @@ const TicketDateAndTitleTextField = styled.input`
 const TicketFormTextField = styled.input`
     font-size: 1.6rem;
     font-weight: 500;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: #292929;
     padding: 8px 16px;
     display: block;
     border: 1px solid #BEBEBE;
@@ -633,8 +623,6 @@ const TicketFormTextField = styled.input`
 const TicketFormNumber = styled.input`
     font-size: 1.6rem;
     font-weight: 500;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: #292929;
     border: 1px solid #BEBEBE;
     padding: 8px 16px;
     border-radius: 7px;
@@ -651,8 +639,6 @@ const TicketFormSubmitButton = styled.input`
     background-color: #F1A11B;
     font-size: 1.6rem;
     font-weight: 700;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: #292929;
     padding: 8px 16px;
     color: #fff;
     border: none;
@@ -951,9 +937,7 @@ const SnsFixedBorder = styled.div`
 `
 
 const SnsFixedText = styled.p`
-    color: #292929;
     font-size: 1.0rem;
-    font-family: 'Noto Sans JP', sans-serif;
     font-weight: 700;
     margin-left: 16px;
     margin-right: 16px;

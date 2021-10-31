@@ -231,8 +231,6 @@ const PcNewsTextContainer = styled.div`
 const PcNewsTitle = styled.a`
     font-size: 1.6rem;
     font-weight: 700;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: #292929;
     cursor: pointer;
     line-height: 2.4rem;
 `
@@ -323,8 +321,6 @@ const TabNewsTextContainer = styled.div`
 const TabNewsTitle = styled.a`
     font-size: 1.6rem;
     font-weight: 700;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: #292929;
     cursor: pointer;
     line-height: 2.4rem;
 `
@@ -398,8 +394,6 @@ const SpNewsTag = styled.p`
 const SpNewsTitle = styled.a`
     font-size: 1.4rem;
     font-weight: 700;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: #292929;
     cursor: pointer;
     line-height: 2.4rem;
 `

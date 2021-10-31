@@ -76,16 +76,12 @@ const TicketBackButton = styled.a`
 const TicketTitle = styled.h1`
     font-size: 2.4rem;
     font-weight: 700;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: #292929;
     margin: 24px 24px 8px;
 `
 
 const TicketText = styled.p`
     font-size: 1.6rem;
     font-weight: 500;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: #292929;
     margin: 0 24px 24px;
 `
 
@@ -100,8 +96,6 @@ const TicketCompleteBlock = styled.div`
 const TicketCompleteTitle = styled.h1`
     font-size: 1.6rem;
     font-weight: 700;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: #292929;
     line-height: 2.4rem;
     margin: 0 16px 24px;
     padding-top: 16px;
@@ -114,8 +108,6 @@ const TicketCompleteTitleLeft = styled.span`
 const TicketCompleteText = styled.p`
     font-size: 1.6rem;
     font-weight: 500;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: #292929;
     line-height: 2.4rem;
     margin: 0 16px 6px;
     &:last-of-type{

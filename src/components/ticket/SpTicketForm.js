@@ -124,8 +124,6 @@ const TicketItemContainer = styled.div`
 const TicketTitle = styled.h1`
     font-size: 2.4rem;
     font-weight: 700;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: #292929;
     margin-bottom: 8px;
 `
 
@@ -133,8 +131,6 @@ const TicketText = styled.p`
     font-size: 1.6rem;
     font-weight: 500;
     line-height: 2.4rem;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: #292929;
     margin-bottom: 8px;
 `
 
@@ -142,7 +138,6 @@ const TicketCautionText = styled.p`
     font-size: 1.6rem;
     font-weight: 500;
     line-height: 2.4rem;
-    font-family: 'Noto Sans JP', sans-serif;
     color: #F42626;
     margin-bottom: 24px;
 `
@@ -157,8 +152,6 @@ const TicketFormContainer = styled.form`
 const TicketFormLabel = styled.label`
     font-size: 1.6rem;
     font-weight: 700;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: #292929;
 `
 
 const TicketFormGroup = styled.div`
@@ -179,7 +172,6 @@ const TicketFormGroup = styled.div`
 const TicketFormRequiredSign = styled.span`
     font-size: 1.2rem;
     font-weight: 700;
-    font-family: 'Noto Sans JP', sans-serif;
     color: #F42626;
     margin-left: 4px;
     margin-right: 16px;
@@ -207,8 +199,6 @@ const TicketDateAndTitleTextField = styled.input`
 const TicketFormTextField = styled.input`
     font-size: 1.6rem;
     font-weight: 500;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: #292929;
     padding: 8px 16px;
     display: block;
     border: 1px solid #BEBEBE;
@@ -233,8 +223,6 @@ const TicketFormTextField = styled.input`
 const TicketFormNumber = styled.input`
     font-size: 1.6rem;
     font-weight: 500;
-    font-family: 'Noto Sans JP', sans-serif;
-    color: #292929;
     border: 1px solid #BEBEBE;
     padding: 8px 16px;
     border-radius: 7px;
