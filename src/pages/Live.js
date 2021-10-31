@@ -157,7 +157,7 @@ const Live = () => {
                                     <PcLiveTicketButton onClick={() => setTicketValue({date: item.date, title: item.title, open: true})} active={futureTime(item.date)}>チケットをご希望の方はこちら</PcLiveTicketButton>
                                     <PcLiveInfoContainer>
                                         <PcLiveInfoText>開場時間 | {notExistTime(openAndStartTime(item.openTime))}   開演時間 | {notExistTime(openAndStartTime(item.startTime))}</PcLiveInfoText>
-                                        <PcLiveInfoText>場所 | {item.place}</PcLiveInfoText>
+                                        <PcLiveInfoText>場所 | {item.venue}</PcLiveInfoText>
                                         <PcLiveInfoText>料金 | {item.price}</PcLiveInfoText>
                                         <PcLiveInfoText>出演者 | {item.performer}</PcLiveInfoText>
                                     </PcLiveInfoContainer>
@@ -272,7 +272,7 @@ const Live = () => {
                                         <TabLiveTicketButton onClick={() => handleSpTicketButtonClick(item.date, item.title)} active={futureTime(item.date)}>チケットをご希望の方はこちら</TabLiveTicketButton>
                                         <TabLiveInfoContainer>
                                             <TabLiveInfoText>開場時間 | {notExistTime(openAndStartTime(item.openTime))}   開演時間 | {notExistTime(openAndStartTime(item.startTime))}</TabLiveInfoText>
-                                            <TabLiveInfoText>場所 | {item.place}</TabLiveInfoText>
+                                            <TabLiveInfoText>場所 | {item.venue}</TabLiveInfoText>
                                             <TabLiveInfoText>料金 | {item.price}</TabLiveInfoText>
                                             <TabLiveInfoText>出演者 | {item.performer}</TabLiveInfoText>
                                             <TabLiveBottomImage loading="lazy" vertical={item.imageVertical} src={notExistImage(item.image.url)} alt={item.title} />
@@ -298,7 +298,7 @@ const Live = () => {
                                     <SpLiveFinishTag finish={pastTime(item.date)}>終了</SpLiveFinishTag>
                                     <SpLiveInfoContainer active={isActive(item.id)}>
                                         <SpLiveInfoText>開場時間 | {notExistTime(openAndStartTime(item.openTime))}   開演時間 | {notExistTime(openAndStartTime(item.startTime))}</SpLiveInfoText>
-                                        <SpLiveInfoText>場所 | {item.place}</SpLiveInfoText>
+                                        <SpLiveInfoText>場所 | {item.venue}</SpLiveInfoText>
                                         <SpLiveInfoText>料金 | {item.price}</SpLiveInfoText>
                                         <SpLiveInfoText>出演者 | {item.performer}</SpLiveInfoText>
                                         <SpLiveImage loading="lazy" vertical={item.imageVertical} src={notExistImage(item.image.url)} alt={item.title} />
