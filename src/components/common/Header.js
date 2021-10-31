@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import styled from '@emotion/styled';
 import Logo from '../../images/logo.webp'
-import Twitter from '../../images/twitter-logo.png'
-import Instagram from '../../images/insta-logo.png'
-import Youtube from '../../images/youtube-logo.png'
+// import Twitter from '../../images/twitter-logo.png'
+// import Instagram from '../../images/insta-logo.png'
+// import Youtube from '../../images/youtube-logo.png'
 import { Link, useLocation } from 'react-router-dom';
 import TwitterOrange from '../../images/twitter-icon-orange.png'
 import InstagramOrange from '../../images/insta-icon-orange.png'
@@ -67,9 +67,9 @@ const Header2 = () => {
                     <MenuLi><MenuLink active={location.pathname === "/contact"} to="/contact">Contact</MenuLink></MenuLi>
                 </MenuUl>
                 <SnsContainer>
-                    <SnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/retroriron"><SnsIcon loading="lazy" src={Twitter} alt="レトロリロンのTwitterアイコン" /></SnsLink>
-                    <SnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/retroriron/?hl=ja"><SnsIcon loading="lazy" src={Instagram} alt="レトロリロンのInstagramアイコン" /></SnsLink>
-                    <SnsLink rel="noopener noreferrer" target="_blank" href="https://www.youtube.com/channel/UCkE8tVIvmdos9b1OqEhePlg"><SnsIcon loading="lazy" src={Youtube} alt="レトロリロンのYouTubeアイコン" /></SnsLink>
+                    <SnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/retroriron"><SnsIcon loading="lazy" src={TwitterOrange} alt="レトロリロンのTwitterアイコン" /></SnsLink>
+                    <SnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/retroriron/?hl=ja"><SnsIcon loading="lazy" src={InstagramOrange} alt="レトロリロンのInstagramアイコン" /></SnsLink>
+                    <SnsLink rel="noopener noreferrer" target="_blank" href="https://www.youtube.com/channel/UCkE8tVIvmdos9b1OqEhePlg"><SnsIcon loading="lazy" src={YoutubeOrange} alt="レトロリロンのYouTubeアイコン" /></SnsLink>
                 </SnsContainer>
             </HeaderContainer>
             {hamburger ? (

@@ -9,6 +9,8 @@ import SuzuneImage from '../images/suzune.webp'
 import MiriImage from '../images/miri.webp'
 import Twitter from '../images/twitter-logo.png'
 import Instagram from '../images/insta-logo.png'
+import TwitterOrange from '../images/twitter-icon-orange.png'
+import InstagramOrange from '../images/insta-icon-orange.png'
 
 const Home = () => {
     return (
@@ -47,8 +49,8 @@ const Home = () => {
                             千葉県出身。
                         </PcMemberText>
                         <PcMemberSnsContainer>
-                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/suzune_ssw"><PcSnsIcon loading="lazy" src={Twitter} alt="涼音のTwitter" /></PcSnsLink>
-                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/suzune_ssw/?hl=ja"><PcSnsIcon loading="lazy" src={Instagram} alt="涼音のInstagram" /></PcSnsLink>
+                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/suzune_ssw"><PcSnsIcon loading="lazy" src={TwitterOrange} alt="涼音のTwitter" /></PcSnsLink>
+                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/suzune_ssw/?hl=ja"><PcSnsIcon loading="lazy" src={InstagramOrange} alt="涼音のInstagram" /></PcSnsLink>
                         </PcMemberSnsContainer>
                     </PcMemberTextContainer>
                 </PcMemberItemContainer>
@@ -62,8 +64,8 @@ const Home = () => {
                             大分県出身。
                         </PcMemberText>
                         <PcMemberSnsContainer>
-                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/drums_taiki"><PcSnsIcon loading="lazy" src={Twitter} alt="永山タイキのTwitter" /></PcSnsLink>
-                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/taikidrummer/?hl=ja"><PcSnsIcon loading="lazy" src={Instagram} alt="永山タイキのInstagram" /></PcSnsLink>
+                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/drums_taiki"><PcSnsIcon loading="lazy" src={TwitterOrange} alt="永山タイキのTwitter" /></PcSnsLink>
+                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/taikidrummer/?hl=ja"><PcSnsIcon loading="lazy" src={InstagramOrange} alt="永山タイキのInstagram" /></PcSnsLink>
                         </PcMemberSnsContainer>
                     </PcMemberTextContainer>
                 </PcMemberItemContainer>
@@ -77,8 +79,8 @@ const Home = () => {
                             東京都出身。
                         </PcMemberText>
                         <PcMemberSnsContainer>
-                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/mirinomoto"><PcSnsIcon loading="lazy" src={Twitter} alt="友野美里のTwitter" /></PcSnsLink>
-                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/miri_tomono/?hl=ja"><PcSnsIcon loading="lazy" src={Instagram} alt="友野美里のInstagram" /></PcSnsLink>
+                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/mirinomoto"><PcSnsIcon loading="lazy" src={TwitterOrange} alt="友野美里のTwitter" /></PcSnsLink>
+                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/miri_tomono/?hl=ja"><PcSnsIcon loading="lazy" src={InstagramOrange} alt="友野美里のInstagram" /></PcSnsLink>
                         </PcMemberSnsContainer>
                     </PcMemberTextContainer>
                 </PcMemberItemContainer>
@@ -92,8 +94,8 @@ const Home = () => {
                             広島県出身。
                         </PcMemberText>
                         <PcMemberSnsContainer>
-                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/numw69"><PcSnsIcon loading="lazy" src={Twitter} alt="飯沼一暁のTwitter" /></PcSnsLink>
-                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/numw69/?hl=ja"><PcSnsIcon loading="lazy" src={Instagram} alt="飯沼一暁のInstagram" /></PcSnsLink>
+                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/numw69"><PcSnsIcon loading="lazy" src={TwitterOrange} alt="飯沼一暁のTwitter" /></PcSnsLink>
+                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/numw69/?hl=ja"><PcSnsIcon loading="lazy" src={InstagramOrange} alt="飯沼一暁のInstagram" /></PcSnsLink>
                         </PcMemberSnsContainer>
                     </PcMemberTextContainer>
                 </PcMemberItemContainer>
