@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 
 const ContactComplete2 = ({values}) => {
     const handleClick = () => {
+        window.scroll({top: 0, behavior: 'smooth'});
         // eslint-disable-next-line no-restricted-globals
         return location.reload();
     }
