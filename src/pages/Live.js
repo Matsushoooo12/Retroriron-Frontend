@@ -15,7 +15,7 @@ import NilImageUrl from '../images/nil_image.JPG'
 
 const Live = () => {
     // useForm
-    const { register, formState: { errors }, getValues, handleSubmit } = useForm();
+    const { register, formState: { errors }, getValues, handleSubmit, reset } = useForm();
 
     // isConfirmationVisibleにstateを持たせて、入力内容確認画面の表示・非表示をコントロール
     // isConfirmationVisibleの初期値はfalseで入力内容確認画面は非表示に
@@ -53,9 +53,11 @@ const Live = () => {
     }
 
     const handleClick = () => {
-        setTicketValue({open: false})
-        // eslint-disable-next-line no-restricted-globals
-        location.reload()
+        setIsConfirmationVisible(false)
+        setTicketValue({
+            open: false
+        })
+        reset();
     }
 
     // API
@@ -96,8 +98,6 @@ const Live = () => {
     // Date
 
     const now = moment();
-
-    console.log(ticketValue.open)
 
     // Active
 
@@ -215,7 +215,6 @@ const Live = () => {
                                         value={ticketValue.date}
                                         readOnly
                                         {...register('date', {required: true})}
-                                        dateAndTitle
                                     />
                                     <TicketDateAndTitleTextField
                                         type="text"
@@ -223,7 +222,6 @@ const Live = () => {
                                         value={ticketValue.title}
                                         readOnly
                                         {...register('title', {required: true})}
-                                        dateAndTitle
                                     />
                                 </TicketDateAndTitleContainer>
                                 <TicketFormGroup>
