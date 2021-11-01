@@ -74,7 +74,7 @@ const Live = () => {
 
     useEffect(() => {
         handleGetLive();
-    }, [])
+    }, [setLives])
 
     // アコーディオン
 

@@ -24,7 +24,7 @@ const Discography = () => {
 
     useEffect(() => {
         handleGetDiscography();
-    }, [])
+    }, [setDiscographies])
 
     // dateフォーマット
     const dateFormat = (date) => {

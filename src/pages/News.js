@@ -22,7 +22,7 @@ const News = () => {
 
     useEffect(() => {
         handleGetNews();
-    }, [])
+    }, [setNews])
 
     // アコーディオン
 
@@ -43,8 +43,6 @@ const News = () => {
     // Active
 
     const isActive = (index) => content === index;
-
-    console.log(now.subtract(2, 'weeks'))
 
     // 日にちが２週間前より古いか
     const newTagHidden = (date) => {
