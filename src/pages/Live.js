@@ -157,6 +157,17 @@ const Live = () => {
         }
     };
 
+    // ライブ画像モーダル
+    const [liveImageModal, setLiveImageModal] = useState({
+        image: "",
+        imageVertical: false,
+        open: false
+    })
+
+    const handleLiveImageModalClick = () => {
+        setLiveImageModal(false)
+    }
+
     return (
         <>
             <Helmet>
@@ -193,11 +204,11 @@ const Live = () => {
                                 </PcLiveTextContainer>
                             </PcLiveContentsContainer>
                         </PcLiveMainContainer>
-                        <PcLiveImage loading="lazy" vertical={item.imageVertical} src={notExistImage(item.image.url)} alt={item.title} />
+                        <PcLiveImage onClick={() => setLiveImageModal({image: item.image.url, open: true, imageVertical: item.imageVertical})} loading="lazy" vertical={item.imageVertical} src={notExistImage(item.image.url)} alt={item.title} />
                     </PcLiveItemContainer>
                 ))}
                 <ModalContainer
-                    className={ticketValue.open ? "open" : ""}
+                    open={ticketValue.open}
                 >
                     <ModalBack onClick={handleClick}></ModalBack>
                     {!isConfirmationVisible ? (
@@ -310,7 +321,7 @@ const Live = () => {
                                             {stringLink(item.detail)}
                                         </TabLiveDetailText>
                                     </TabLiveContentsContainer>
-                                    <TabLiveImage loading="lazy" vertical={item.imageVertical} src={notExistImage(item.image.url)} alt={item.title} />
+                                    <TabLiveImage onClick={() => setLiveImageModal({image: item.image.url, open: true, imageVertical: item.imageVertical})} loading="lazy" vertical={item.imageVertical} src={notExistImage(item.image.url)} alt={item.title} />
                                 </TabLiveMainContainer>
                             </TabLiveItemContainer>
                         ))}
@@ -333,7 +344,7 @@ const Live = () => {
                                         <SpLiveInfoText>場所 | {item.venue}</SpLiveInfoText>
                                         <SpLiveInfoText>料金 | {item.price}</SpLiveInfoText>
                                         <SpLiveInfoText>出演者 | {item.performer}</SpLiveInfoText>
-                                        <SpLiveImage loading="lazy" vertical={item.imageVertical} src={notExistImage(item.image.url)} alt={item.title} />
+                                        <SpLiveImage onClick={() => setLiveImageModal({image: item.image.url, open: true, imageVertical: item.imageVertical})} loading="lazy" vertical={item.imageVertical} src={notExistImage(item.image.url)} alt={item.title} />
                                         <SpLiveDetailText active={item.detail}>
                                             詳細情報 |<br/>
                                             {stringLink(item.detail)}
@@ -358,6 +369,11 @@ const Live = () => {
                     title={spTicketDateAndTitle.title}
                 />
             )}
+            <LiveImageModalContainer open={liveImageModal}>
+                <LiveImageModalBack onClick={handleLiveImageModalClick}>
+                    <LiveImageModalItem vertical={liveImageModal.imageVertical} src={liveImageModal.image} />
+                </LiveImageModalBack>
+            </LiveImageModalContainer>
         </>
     )
 }
@@ -497,9 +513,7 @@ const ModalContainer = styled.div`
     display: none;
     @media screen and (min-width: 900px){
         width: 100%;
-        &.open{
-            display: block;
-        }
+        ${props => props.open && `display: block;`}
     }
 `
 
@@ -956,4 +970,41 @@ const SnsFixedIconImage = styled.img`
     width: 32px;
     height: 30px;
     transform: rotate(-90deg);
+`
+
+// ライブ画像モーダル
+
+const LiveImageModalContainer = styled.div`
+    display: none;
+    ${props => props.open && `
+        display: block;
+        width: 100%;
+    `}
+`
+
+const LiveImageModalBack = styled.div`
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    background-color: rgba(0, 0, 0, 0.7);
+`
+
+const LiveImageModalItem = styled.img`
+    width: 200px;
+    height: 160px;
+    background-color: #fff;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: fixed;
+    display: block;
+    ${props => props.vertical && `
+        width: 160px;
+        height: 200px;
+    `}
 `
