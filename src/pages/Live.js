@@ -91,11 +91,11 @@ const Live = () => {
 
     // アコーディオンのtoggleボタン
     const toggleAccordionButton = (index, detail) => {
-        if(index && detail){
-            return content === index && detail ? Minus : Plus;
-        } else{
-            return content === index ? Minus : Plus;
-        }
+        return content === index && detail ? Minus : Plus;
+    }
+
+    const spToggleAccordionButton = (index) => {
+        return content === index ? Minus : Plus;
     }
 
     // Date
@@ -318,7 +318,7 @@ const Live = () => {
                     <SpLiveContainer>
                         {lives.map((item) => (
                             <SpLiveItemContainer key={item.id}>
-                                <SpLiveButton onClick={toggleAccordion(item.id)} src={toggleAccordionButton(item.id)} alt="accordion button" />
+                                <SpLiveButton onClick={toggleAccordion(item.id)} src={spToggleAccordionButton(item.id)} alt="accordion button" />
                                 <SpLiveMainContainer>
                                     <SpLiveDate onClick={toggleAccordion(item.id)}>{dateFormat(item.date)}</SpLiveDate>
                                     <SpLiveTitle onClick={toggleAccordion(item.id)}>{item.title}</SpLiveTitle><br/>
