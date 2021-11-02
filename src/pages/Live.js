@@ -999,8 +999,7 @@ const LiveImageModalBack = styled.div`
 `
 
 const LiveImageModalItem = styled.img`
-    width: 200px;
-    height: 160px;
+    width: 60%;
     background-color: #fff;
     margin: auto;
     left: 0;
@@ -1010,7 +1009,6 @@ const LiveImageModalItem = styled.img`
     position: fixed;
     display: block;
     ${props => props.vertical && `
-        width: 160px;
-        height: 200px;
+        width: 40%;
     `}
 `
