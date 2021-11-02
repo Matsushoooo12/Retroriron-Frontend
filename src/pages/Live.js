@@ -174,6 +174,15 @@ const Live = () => {
         })
     }
 
+    const noImageModal = (image) => {
+        if(image){
+            return liveImageModal.open;
+        } else {
+            setLiveImageModal({image: NilImageUrl})
+            return liveImageModal.open;
+        }
+    }
+
     return (
         <>
             <Helmet>
@@ -375,7 +384,7 @@ const Live = () => {
                     title={spTicketDateAndTitle.title}
                 />
             )}
-            <LiveImageModalContainer open={liveImageModal.open}>
+            <LiveImageModalContainer open={noImageModal(liveImageModal.image)}>
                 <LiveImageModalBack onClick={handleLiveImageModalClick}>
                     <LiveImageModalItem vertical={liveImageModal.imageVertical} src={liveImageModal.image} alt={liveImageModal.title} />
                 </LiveImageModalBack>
