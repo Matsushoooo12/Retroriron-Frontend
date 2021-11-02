@@ -1006,7 +1006,7 @@ const LiveImageModalBack = styled.div`
 `
 
 const LiveImageModalItem = styled.img`
-    width: 60%;
+    width: 50%;
     background-color: #fff;
     margin: auto;
     left: 0;
@@ -1016,6 +1016,6 @@ const LiveImageModalItem = styled.img`
     position: fixed;
     display: block;
     ${props => props.vertical && `
-        width: 40%;
+        width: 30%;
     `}
 `
