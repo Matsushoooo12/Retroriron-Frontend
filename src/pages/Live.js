@@ -142,7 +142,7 @@ const Live = () => {
         if(str){
             const regexp_url = /https?:\/\/[a-zA-Z0-9.\-_@:/~?%&;=+#',()*!]+/g;
             const regexp_makeLink = (url)　=> {
-              return `<a href=${url} style="color: #F1A11B;" target="_blank" rel="noopener noreferrer">${url}</a>`;
+              return `<a href=${url} style="color: #F1A11B; text-decoration: underline;" target="_blank" rel="noopener noreferrer">${url}</a>`;
             }
             const replacedString = str.replace(regexp_url, regexp_makeLink);
         
