@@ -55,6 +55,7 @@ const TicketConfirm = (props) => {
                                 type="text"
                                 value={value.title}
                                 disabled
+                                title
                             />
                         </TicketDateAndTitleContainer>
                         <TicketFormGroup>
@@ -207,6 +208,7 @@ const TicketDateAndTitleTextField = styled.input`
         width: 120px;
         padding: 0 16px;
     }
+    ${props => props.title && `width: 100%;`}
 `
 
 const TicketFormTextField = styled.input`

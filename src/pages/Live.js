@@ -222,6 +222,7 @@ const Live = () => {
                                         value={ticketValue.title}
                                         readOnly
                                         {...register('title', {required: true})}
+                                        title
                                     />
                                 </TicketDateAndTitleContainer>
                                 <TicketFormGroup>
@@ -598,6 +599,7 @@ const TicketDateAndTitleTextField = styled.input`
         width: 120px;
         padding: 0 16px;
     }
+    ${props => props.title && `width: 100%`}
 `
 
 const TicketFormTextField = styled.input`
