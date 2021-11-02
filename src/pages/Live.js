@@ -369,7 +369,7 @@ const Live = () => {
                     title={spTicketDateAndTitle.title}
                 />
             )}
-            <LiveImageModalContainer open={liveImageModal}>
+            <LiveImageModalContainer open={!liveImageModal}>
                 <LiveImageModalBack onClick={handleLiveImageModalClick}>
                     <LiveImageModalItem vertical={liveImageModal.imageVertical} src={liveImageModal.image} />
                 </LiveImageModalBack>
