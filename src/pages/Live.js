@@ -175,12 +175,10 @@ const Live = () => {
     }
 
     const noImageModal = (image) => {
-        if(image){
-            return liveImageModal.open;
-        } else {
+        if(!image){
             setLiveImageModal({image: NilImageUrl})
-            return liveImageModal.open;
         }
+        return liveImageModal.open
     }
 
     return (
