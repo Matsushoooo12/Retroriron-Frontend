@@ -23,6 +23,7 @@ const Discography = () => {
         } catch(e){
             console.log(e)
         }
+        setIsLoading(true)
     }
 
     useEffect(() => {
