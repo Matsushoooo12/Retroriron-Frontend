@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Helmet from 'react-helmet';
 import styled from '@emotion/styled';
 import FvFrame from '../images/main_visual.webp'
@@ -9,6 +9,21 @@ import SuzuneImage from '../images/suzune.webp'
 import MiriImage from '../images/miri.webp'
 import Twitter from '../images/twitter-logo.png'
 import Instagram from '../images/insta-logo.png'
+import ContentLoader from 'react-content-loader'
+
+
+function useImageLoad(path) {
+    const [isLoading, setIsLoading] = useState(true)
+
+    const img = new Image();
+    img.src = path;
+    img.onload = () => {
+        setIsLoading(false)
+    }
+
+    return isLoading
+}
+
 
 const Home = () => {
     return (
@@ -16,11 +31,17 @@ const Home = () => {
             {/* Head */}
             <Helmet>
                 <title>レトロリロン - Home page</title>
-                <meta name="the Home page of a pop band called Retroriron." content="home page" />
+                <meta name="the Home page of a pop band called Retroriron." content="home page"/>
             </Helmet>
             {/* Head */}
             {/* PC */}
-            <PcFv src={FvFrame} alt="レトロリロンのアー写" />
+            {useImageLoad(FvFrame) ? (
+                    <ContentLoader viewBox="0 0 400 400">
+                        <rect x="0" y="0" rx="0" ry="0" width="400" height="400"/>
+                    </ContentLoader>
+                ):
+                <PcFv src={FvFrame} alt="レトロリロンのアー写"/>
+            }
             <PcTextContainer>
                 <PcTextBandname loading="lazy" src={BandTitle} alt="レトロリロン" />
                 <PcTextTitle>ー  "明日"ではなく"今日"を生きよう </PcTextTitle>
