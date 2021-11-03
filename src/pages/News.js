@@ -164,7 +164,7 @@ const NewsContainer = styled.ul`
         height: 100%;
         padding-bottom: 160px;
         margin-left: 0;
-        max-width: 800px;
+        max-width: 1200px;
     }
 `
 
