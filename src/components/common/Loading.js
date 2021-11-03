@@ -170,8 +170,8 @@ const PathItem = styled.path`
         }
         20%{
             fill: transparent;
-            stroke-dasharray: 1200px;
-            stroke-dashoffset: 1200px;
+            stroke-dasharray: 2000px;
+            stroke-dashoffset: 2000px;
         }
         30%{
             stroke-dashoffset: 0;
@@ -196,8 +196,8 @@ const OrangePathItem = styled.path`
         }
         20%{
             fill: transparent;
-            stroke-dasharray: 1200px;
-            stroke-dashoffset: 1200px;
+            stroke-dasharray: 2000px;
+            stroke-dashoffset: 2000px;
         }
         30%{
           stroke-dashoffset: 0;
