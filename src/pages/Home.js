@@ -307,6 +307,7 @@ const PcTextContainer = styled.div`
 
 const PcTextBandname = styled.img`
     width: 80%;
+    max-width: 700px;
 `
 
 const PcTextTitle = styled.h1`
