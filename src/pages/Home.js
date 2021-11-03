@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Helmet from 'react-helmet';
 import styled from '@emotion/styled';
 import FvFrame from '../images/main_visual.webp'
@@ -9,8 +9,19 @@ import SuzuneImage from '../images/suzune.webp'
 import MiriImage from '../images/miri.webp'
 import Twitter from '../images/twitter-logo.png'
 import Instagram from '../images/insta-logo.png'
+import Loading from '../components/common/Loading';
 
 const Home = () => {
+    const [isLoading, setIsLoading] = useState(false)
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsLoading(!isLoading)
+        }, 3000)
+        return () => clearTimeout(timer)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+
     return (
         <>
             {/* Head */}
@@ -18,247 +29,253 @@ const Home = () => {
                 <title>レトロリロン - Home page</title>
                 <meta name="the Home page of a pop band called Retroriron." content="home page" />
             </Helmet>
-            {/* Head */}
-            {/* PC */}
-            <PcFv src={FvFrame} alt="レトロリロンのアー写" />
-            <PcTextContainer>
-                <PcTextBandname loading="lazy" src={BandTitle} alt="レトロリロン" />
-                <PcTextTitle>ー  "明日"ではなく"今日"を生きよう </PcTextTitle>
-                <PcTextItem>
-                    2020年6月1日に結成。<br/>
-                    音楽大学出身の個性豊かな4人組バンド。
-                </PcTextItem>
-                <PcTextItem>
-                    4人の多彩な音楽性によって紡がれるジャンルレスなサウンドは人々の心を震わせ、<br/>
-                    ”明日”ではなく”今日”を生きようという力強い歌詞は生きる希望を与える。
-                </PcTextItem>
-                <PcTextItem>
-                    2021年にはオフィスオーガスタが新人発掘・開発のために立ち上げたプロジェクト"CANVAS vol.1"にも出演した、今注目のポップスバンド。
-                </PcTextItem>
-            </PcTextContainer>
-            <PcMemberContainer>
-                <PcMemberItemContainer>
-                    <PcMemberImage loading="lazy" src={SuzuneImage} alt="涼音" />
-                    <PcMemberTextContainer>
-                        <PcMemberInstrument>Ag. Vo.</PcMemberInstrument>
-                        <PcMemberName>涼音 <PcMemberNameRomaji>/ Suzune</PcMemberNameRomaji></PcMemberName>
-                        <PcMemberText>
-                            1997年10月31日生まれ。<br/>
-                            千葉県出身。
-                        </PcMemberText>
-                        <PcMemberSnsContainer>
-                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/suzune_ssw"><PcSnsIcon loading="lazy" src={Twitter} alt="涼音のTwitter" /></PcSnsLink>
-                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/suzune_ssw/?hl=ja"><PcSnsIcon loading="lazy" src={Instagram} alt="涼音のInstagram" /></PcSnsLink>
-                        </PcMemberSnsContainer>
-                    </PcMemberTextContainer>
-                </PcMemberItemContainer>
-                <PcMemberItemContainer>
-                    <PcMemberImage loading="lazy" src={NagayamaImage} alt="永山タイキ" />
-                    <PcMemberTextContainer>
-                        <PcMemberInstrument>Dr.</PcMemberInstrument>
-                        <PcMemberName>永山タイキ <PcMemberNameRomaji>/ Nagayama Taiki</PcMemberNameRomaji></PcMemberName>
-                        <PcMemberText>
-                            1997年5月20日生まれ。<br/>
-                            大分県出身。
-                        </PcMemberText>
-                        <PcMemberSnsContainer>
-                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/drums_taiki"><PcSnsIcon loading="lazy" src={Twitter} alt="永山タイキのTwitter" /></PcSnsLink>
-                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/taikidrummer/?hl=ja"><PcSnsIcon loading="lazy" src={Instagram} alt="永山タイキのInstagram" /></PcSnsLink>
-                        </PcMemberSnsContainer>
-                    </PcMemberTextContainer>
-                </PcMemberItemContainer>
-                <PcMemberItemContainer>
-                    <PcMemberImage loading="lazy" src={MiriImage} alt="友野美里" />
-                    <PcMemberTextContainer>
-                        <PcMemberInstrument>Key.</PcMemberInstrument>
-                        <PcMemberName>友野美里 <PcMemberNameRomaji>/ Tomono Miri</PcMemberNameRomaji></PcMemberName>
-                        <PcMemberText>
-                            1997年8月31日生まれ。<br/>
-                            東京都出身。
-                        </PcMemberText>
-                        <PcMemberSnsContainer>
-                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/mirinomoto"><PcSnsIcon loading="lazy" src={Twitter} alt="友野美里のTwitter" /></PcSnsLink>
-                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/miri_tomono/?hl=ja"><PcSnsIcon loading="lazy" src={Instagram} alt="友野美里のInstagram" /></PcSnsLink>
-                        </PcMemberSnsContainer>
-                    </PcMemberTextContainer>
-                </PcMemberItemContainer>
-                <PcMemberItemContainer>
-                    <PcMemberImage loading="lazy" src={NumaImage} alt="飯沼一暁" />
-                    <PcMemberTextContainer>
-                        <PcMemberInstrument>Ba.</PcMemberInstrument>
-                        <PcMemberName>飯沼一暁 <PcMemberNameRomaji>/ Inuma Kazuaki</PcMemberNameRomaji></PcMemberName>
-                        <PcMemberText>
-                            1997年8月8日生まれ。<br/>
-                            広島県出身。
-                        </PcMemberText>
-                        <PcMemberSnsContainer>
-                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/numw69"><PcSnsIcon loading="lazy" src={Twitter} alt="飯沼一暁のTwitter" /></PcSnsLink>
-                            <PcSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/numw69/?hl=ja"><PcSnsIcon loading="lazy" src={Instagram} alt="飯沼一暁のInstagram" /></PcSnsLink>
-                        </PcMemberSnsContainer>
-                    </PcMemberTextContainer>
-                </PcMemberItemContainer>
-            </PcMemberContainer>
-            {/* PC */}
-            {/* TAB */}
-            <TabFv src={FvFrame} alt="レトロリロンのアー写" />
-            <TabTextContainer>
-                <TabTextBandname loading="lazy" src={BandTitle} alt="レトロリロン" />
-                <TabTextTitle>ー  "明日"ではなく"今日"を生きよう</TabTextTitle>
-                <TabTextItem>
-                    2020年6月1日に結成。<br/>
-                    音楽大学出身の個性豊かな4人組バンド。
-                </TabTextItem>
-                <TabTextItem>
-                    4人の多彩な音楽性によって紡がれるジャンルレスなサウンドは人々の心を震わせ、<br/>
-                    ”明日”ではなく”今日”を生きようという力強い歌詞は生きる希望を与える。
-                </TabTextItem>
-                <TabTextItem>
-                    2021年にはオフィスオーガスタが新人発掘・開発のために立ち上げたプロジェクト"CANVAS vol.1"にも出演した、今注目のポップスバンド。
-                </TabTextItem>
-            </TabTextContainer>
-            <TabMemberContainer>
-                <TabMemberItemContainer>
-                    <TabMemberImage loading="lazy" src={SuzuneImage} alt="涼音" />
-                    <TabMemberInstrument>Ag. Vo.</TabMemberInstrument>
-                    <TabMemberName>涼音 <TabMemberNameRomaji>/ Suzune</TabMemberNameRomaji></TabMemberName>
-                    <TabMemberText>
-                        1997年10月31日生まれ。<br/>
-                        千葉県出身。
-                    </TabMemberText>
-                    <TabMemberSnsContainer>
-                        <TabMemberSnsContainer>
-                            <TabSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/suzune_ssw"><TabSnsIcon loading="lazy" src={Twitter} alt="涼音のTwitter" /></TabSnsLink>
-                            <TabSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/suzune_ssw/?hl=ja"><TabSnsIcon loading="lazy" src={Instagram} alt="涼音のInstagram" /></TabSnsLink>
-                        </TabMemberSnsContainer>
-                    </TabMemberSnsContainer>
-                </TabMemberItemContainer>
-                <TabMemberItemContainer>
-                    <TabMemberImage loading="lazy" src={NagayamaImage} alt="永山タイキ" />
-                    <TabMemberInstrument>Dr.</TabMemberInstrument>
-                    <TabMemberName>永山タイキ <TabMemberNameRomaji>/ Nagayama Taiki</TabMemberNameRomaji></TabMemberName>
-                    <TabMemberText>
-                        1997年5月20日生まれ。<br/>
-                        大分県出身。
-                    </TabMemberText>
-                    <TabMemberSnsContainer>
-                        <TabMemberSnsContainer>
-                            <TabSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/drums_taiki"><TabSnsIcon loading="lazy" src={Twitter} alt="永山タイキのTwitter" /></TabSnsLink>
-                            <TabSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/taikidrummer/?hl=ja"><TabSnsIcon loading="lazy" src={Instagram} alt="永山タイキのInstagram" /></TabSnsLink>
-                        </TabMemberSnsContainer>
-                    </TabMemberSnsContainer>
-                </TabMemberItemContainer>
-                <TabMemberItemContainer>
-                    <TabMemberImage loading="lazy" src={MiriImage} alt="友野美里" />
-                    <TabMemberInstrument>Key.</TabMemberInstrument>
-                    <TabMemberName>友野美里 <TabMemberNameRomaji>/ Tomono Miri</TabMemberNameRomaji></TabMemberName>
-                    <TabMemberText>
-                        1997年8月31日生まれ。<br/>
-                        東京都出身。
-                    </TabMemberText>
-                    <TabMemberSnsContainer>
-                        <TabMemberSnsContainer>
-                            <TabSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/mirinomoto"><TabSnsIcon loading="lazy" src={Twitter} alt="友野美里のTwitter" /></TabSnsLink>
-                            <TabSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/miri_tomono/?hl=ja"><TabSnsIcon loading="lazy" src={Instagram} alt="友野美里のInstagram" /></TabSnsLink>
-                        </TabMemberSnsContainer>
-                    </TabMemberSnsContainer>
-                </TabMemberItemContainer>
-                <TabMemberItemContainer>
-                    <TabMemberImage loading="lazy" src={NumaImage} alt="飯沼一暁" />
-                    <TabMemberInstrument>Ag. Vo.</TabMemberInstrument>
-                    <TabMemberName>飯沼一暁 <TabMemberNameRomaji>/ Inuma Kazuaki</TabMemberNameRomaji></TabMemberName>
-                    <TabMemberText>
-                        1997年8月8日生まれ。<br/>
-                        広島県出身。
-                    </TabMemberText>
-                    <TabMemberSnsContainer>
-                        <TabMemberSnsContainer>
-                            <TabSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/numw69"><TabSnsIcon loading="lazy" src={Twitter} alt="飯沼一暁のTwitter" /></TabSnsLink>
-                            <TabSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/numw69/?hl=ja"><TabSnsIcon loading="lazy" src={Instagram} alt="飯沼一暁のInstagram" /></TabSnsLink>
-                        </TabMemberSnsContainer>
-                    </TabMemberSnsContainer>
-                </TabMemberItemContainer>
-            </TabMemberContainer>
-            {/* TAB */}
-            {/* Sp */}
-            <SpFv src={FvFrame} alt="レトロリロンのアー写" />
-            <SpTextContainer>
-                <SpTextBandname loading="lazy" src={BandTitle} alt="レトロリロン" />
-                <SpTextTitle>ー  "明日"ではなく<SpTextTitleBr/><SpTextTitleSpace>　 </SpTextTitleSpace>"今日"を生きよう</SpTextTitle>
-                <SpTextItem>
-                    2020年6月1日に結成。<br/>
-                    音楽大学出身の個性豊かな4人組バンド。
-                </SpTextItem>
-                <SpTextItem>
-                    4人の多彩な音楽性によって紡がれるジャンルレスなサウンドは人々の心を震わせ、<br/>
-                    ”明日”ではなく”今日”を生きようという力強い歌詞は生きる希望を与える。
-                </SpTextItem>
-                <SpTextItem>
-                    2021年にはオフィスオーガスタが新人発掘・開発のために立ち上げたプロジェクト"CANVAS vol.1"にも出演した、今注目のポップスバンド。
-                </SpTextItem>
-            </SpTextContainer>
-            <SpMemberContainer>
-                <SpMemberItemContainer>
-                    <SpMemberImage loading="lazy" src={SuzuneImage} alt="涼音" />
-                    <SpMemberInstrument>Ag. Vo.</SpMemberInstrument>
-                    <SpMemberName>涼音 <SpMemberNameRomaji>/ Suzune</SpMemberNameRomaji></SpMemberName>
-                    <SpMemberText>
-                        1997年10月31日生まれ。<br/>
-                        千葉県出身。
-                    </SpMemberText>
-                    <SpMemberSnsContainer>
-                        <SpMemberSnsContainer>
-                            <SpSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/suzune_ssw"><SpSnsIcon loading="lazy" src={Twitter} alt="涼音のTwitter" /></SpSnsLink>
-                            <SpSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/suzune_ssw/?hl=ja"><SpSnsIcon loading="lazy" src={Instagram} alt="涼音のInstagram" /></SpSnsLink>
-                        </SpMemberSnsContainer>
-                    </SpMemberSnsContainer>
-                </SpMemberItemContainer>
-                <SpMemberItemContainer>
-                    <SpMemberImage loading="lazy" src={NagayamaImage} alt="永山タイキ" />
-                    <SpMemberInstrument>Dr.</SpMemberInstrument>
-                    <SpMemberName>永山タイキ <SpMemberNameRomaji>/ Nagayama Taiki</SpMemberNameRomaji></SpMemberName>
-                    <SpMemberText>
-                        1997年5月20日生まれ。<br/>
-                        大分県出身。
-                    </SpMemberText>
-                    <SpMemberSnsContainer>
-                        <SpMemberSnsContainer>
-                            <SpSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/drums_taiki"><SpSnsIcon loading="lazy" src={Twitter} alt="永山タイキのTwitter" /></SpSnsLink>
-                            <SpSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/taikidrummer/?hl=ja"><SpSnsIcon loading="lazy" src={Instagram} alt="永山タイキのInstagram" /></SpSnsLink>
-                        </SpMemberSnsContainer>
-                    </SpMemberSnsContainer>
-                </SpMemberItemContainer>
-                <SpMemberItemContainer>
-                    <SpMemberImage loading="lazy" src={MiriImage} alt="友野美里" />
-                    <SpMemberInstrument>Key.</SpMemberInstrument>
-                    <SpMemberName>友野美里 <SpMemberNameRomaji>/ Tomono Miri</SpMemberNameRomaji></SpMemberName>
-                    <SpMemberText>
-                        1997年8月31日生まれ。<br/>
-                        東京都出身。
-                    </SpMemberText>
-                    <SpMemberSnsContainer>
-                        <SpMemberSnsContainer>
-                            <SpSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/mirinomoto"><SpSnsIcon loading="lazy" src={Twitter} alt="友野美里のTwitter" /></SpSnsLink>
-                            <SpSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/miri_tomono/?hl=ja"><SpSnsIcon loading="lazy" src={Instagram} alt="友野美里のInstagram" /></SpSnsLink>
-                        </SpMemberSnsContainer>
-                    </SpMemberSnsContainer>
-                </SpMemberItemContainer>
-                <SpMemberItemContainer>
-                    <SpMemberImage loading="lazy" src={NumaImage} alt="飯沼一暁" />
-                    <SpMemberInstrument>Ba.</SpMemberInstrument>
-                    <SpMemberName>飯沼一暁 <SpMemberNameRomaji>/ Inuma Kazuaki</SpMemberNameRomaji></SpMemberName>
-                    <SpMemberText>
-                        1997年8月8日生まれ。<br/>
-                        広島県出身。
-                    </SpMemberText>
-                    <SpMemberSnsContainer>
-                        <SpMemberSnsContainer>
-                            <SpSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/numw69"><SpSnsIcon loading="lazy" src={Twitter} alt="飯沼一暁のTwitter" /></SpSnsLink>
-                            <SpSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/numw69/?hl=ja"><SpSnsIcon loading="lazy" src={Instagram} alt="飯沼一暁のInstagram" /></SpSnsLink>
-                        </SpMemberSnsContainer>
-                    </SpMemberSnsContainer>
-                </SpMemberItemContainer>
-            </SpMemberContainer>
-            {/* Sp */}
+            {!isLoading ? (
+                <Loading />
+            ):(
+                <>
+                    {/* Head */}
+                    {/* PC */}
+                    <PcFv src={FvFrame} alt="レトロリロンのアー写" />
+                    <PcTextContainer>
+                        <PcTextBandname loading="lazy" src={BandTitle} alt="レトロリロン" />
+                        <PcTextTitle>ー  "明日"ではなく"今日"を生きよう </PcTextTitle>
+                        <PcTextItem>
+                            2020年6月1日に結成。<br/>
+                            音楽大学出身の個性豊かな4人組バンド。
+                        </PcTextItem>
+                        <PcTextItem>
+                            4人の多彩な音楽性によって紡がれるジャンルレスなサウンドは人々の心を震わせ、<br/>
+                            ”明日”ではなく”今日”を生きようという力強い歌詞は生きる希望を与える。
+                        </PcTextItem>
+                        <PcTextItem>
+                            2021年にはオフィスオーガスタが新人発掘・開発のために立ち上げたプロジェクト"CANVAS vol.1"にも出演した、今注目のポップスバンド。
+                        </PcTextItem>
+                    </PcTextContainer>
+                    <PcMemberContainer>
+                        <PcMemberItemContainer>
+                            <PcMemberImage loading="lazy" src={SuzuneImage} alt="涼音" />
+                            <PcMemberTextContainer>
+                                <PcMemberInstrument>Ag. Vo.</PcMemberInstrument>
+                                <PcMemberName>涼音 <PcMemberNameRomaji>/ Suzune</PcMemberNameRomaji></PcMemberName>
+                                <PcMemberText>
+                                    1997年10月31日生まれ。<br/>
+                                    千葉県出身。
+                                </PcMemberText>
+                                <PcMemberSnsContainer>
+                                    <PcSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/suzune_ssw"><PcSnsIcon loading="lazy" src={Twitter} alt="涼音のTwitter" /></PcSnsLink>
+                                    <PcSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/suzune_ssw/?hl=ja"><PcSnsIcon loading="lazy" src={Instagram} alt="涼音のInstagram" /></PcSnsLink>
+                                </PcMemberSnsContainer>
+                            </PcMemberTextContainer>
+                        </PcMemberItemContainer>
+                        <PcMemberItemContainer>
+                            <PcMemberImage loading="lazy" src={NagayamaImage} alt="永山タイキ" />
+                            <PcMemberTextContainer>
+                                <PcMemberInstrument>Dr.</PcMemberInstrument>
+                                <PcMemberName>永山タイキ <PcMemberNameRomaji>/ Nagayama Taiki</PcMemberNameRomaji></PcMemberName>
+                                <PcMemberText>
+                                    1997年5月20日生まれ。<br/>
+                                    大分県出身。
+                                </PcMemberText>
+                                <PcMemberSnsContainer>
+                                    <PcSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/drums_taiki"><PcSnsIcon loading="lazy" src={Twitter} alt="永山タイキのTwitter" /></PcSnsLink>
+                                    <PcSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/taikidrummer/?hl=ja"><PcSnsIcon loading="lazy" src={Instagram} alt="永山タイキのInstagram" /></PcSnsLink>
+                                </PcMemberSnsContainer>
+                            </PcMemberTextContainer>
+                        </PcMemberItemContainer>
+                        <PcMemberItemContainer>
+                            <PcMemberImage loading="lazy" src={MiriImage} alt="友野美里" />
+                            <PcMemberTextContainer>
+                                <PcMemberInstrument>Key.</PcMemberInstrument>
+                                <PcMemberName>友野美里 <PcMemberNameRomaji>/ Tomono Miri</PcMemberNameRomaji></PcMemberName>
+                                <PcMemberText>
+                                    1997年8月31日生まれ。<br/>
+                                    東京都出身。
+                                </PcMemberText>
+                                <PcMemberSnsContainer>
+                                    <PcSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/mirinomoto"><PcSnsIcon loading="lazy" src={Twitter} alt="友野美里のTwitter" /></PcSnsLink>
+                                    <PcSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/miri_tomono/?hl=ja"><PcSnsIcon loading="lazy" src={Instagram} alt="友野美里のInstagram" /></PcSnsLink>
+                                </PcMemberSnsContainer>
+                            </PcMemberTextContainer>
+                        </PcMemberItemContainer>
+                        <PcMemberItemContainer>
+                            <PcMemberImage loading="lazy" src={NumaImage} alt="飯沼一暁" />
+                            <PcMemberTextContainer>
+                                <PcMemberInstrument>Ba.</PcMemberInstrument>
+                                <PcMemberName>飯沼一暁 <PcMemberNameRomaji>/ Inuma Kazuaki</PcMemberNameRomaji></PcMemberName>
+                                <PcMemberText>
+                                    1997年8月8日生まれ。<br/>
+                                    広島県出身。
+                                </PcMemberText>
+                                <PcMemberSnsContainer>
+                                    <PcSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/numw69"><PcSnsIcon loading="lazy" src={Twitter} alt="飯沼一暁のTwitter" /></PcSnsLink>
+                                    <PcSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/numw69/?hl=ja"><PcSnsIcon loading="lazy" src={Instagram} alt="飯沼一暁のInstagram" /></PcSnsLink>
+                                </PcMemberSnsContainer>
+                            </PcMemberTextContainer>
+                        </PcMemberItemContainer>
+                    </PcMemberContainer>
+                    {/* PC */}
+                    {/* TAB */}
+                    <TabFv src={FvFrame} alt="レトロリロンのアー写" />
+                    <TabTextContainer>
+                        <TabTextBandname loading="lazy" src={BandTitle} alt="レトロリロン" />
+                        <TabTextTitle>ー  "明日"ではなく"今日"を生きよう</TabTextTitle>
+                        <TabTextItem>
+                            2020年6月1日に結成。<br/>
+                            音楽大学出身の個性豊かな4人組バンド。
+                        </TabTextItem>
+                        <TabTextItem>
+                            4人の多彩な音楽性によって紡がれるジャンルレスなサウンドは人々の心を震わせ、<br/>
+                            ”明日”ではなく”今日”を生きようという力強い歌詞は生きる希望を与える。
+                        </TabTextItem>
+                        <TabTextItem>
+                            2021年にはオフィスオーガスタが新人発掘・開発のために立ち上げたプロジェクト"CANVAS vol.1"にも出演した、今注目のポップスバンド。
+                        </TabTextItem>
+                    </TabTextContainer>
+                    <TabMemberContainer>
+                        <TabMemberItemContainer>
+                            <TabMemberImage loading="lazy" src={SuzuneImage} alt="涼音" />
+                            <TabMemberInstrument>Ag. Vo.</TabMemberInstrument>
+                            <TabMemberName>涼音 <TabMemberNameRomaji>/ Suzune</TabMemberNameRomaji></TabMemberName>
+                            <TabMemberText>
+                                1997年10月31日生まれ。<br/>
+                                千葉県出身。
+                            </TabMemberText>
+                            <TabMemberSnsContainer>
+                                <TabMemberSnsContainer>
+                                    <TabSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/suzune_ssw"><TabSnsIcon loading="lazy" src={Twitter} alt="涼音のTwitter" /></TabSnsLink>
+                                    <TabSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/suzune_ssw/?hl=ja"><TabSnsIcon loading="lazy" src={Instagram} alt="涼音のInstagram" /></TabSnsLink>
+                                </TabMemberSnsContainer>
+                            </TabMemberSnsContainer>
+                        </TabMemberItemContainer>
+                        <TabMemberItemContainer>
+                            <TabMemberImage loading="lazy" src={NagayamaImage} alt="永山タイキ" />
+                            <TabMemberInstrument>Dr.</TabMemberInstrument>
+                            <TabMemberName>永山タイキ <TabMemberNameRomaji>/ Nagayama Taiki</TabMemberNameRomaji></TabMemberName>
+                            <TabMemberText>
+                                1997年5月20日生まれ。<br/>
+                                大分県出身。
+                            </TabMemberText>
+                            <TabMemberSnsContainer>
+                                <TabMemberSnsContainer>
+                                    <TabSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/drums_taiki"><TabSnsIcon loading="lazy" src={Twitter} alt="永山タイキのTwitter" /></TabSnsLink>
+                                    <TabSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/taikidrummer/?hl=ja"><TabSnsIcon loading="lazy" src={Instagram} alt="永山タイキのInstagram" /></TabSnsLink>
+                                </TabMemberSnsContainer>
+                            </TabMemberSnsContainer>
+                        </TabMemberItemContainer>
+                        <TabMemberItemContainer>
+                            <TabMemberImage loading="lazy" src={MiriImage} alt="友野美里" />
+                            <TabMemberInstrument>Key.</TabMemberInstrument>
+                            <TabMemberName>友野美里 <TabMemberNameRomaji>/ Tomono Miri</TabMemberNameRomaji></TabMemberName>
+                            <TabMemberText>
+                                1997年8月31日生まれ。<br/>
+                                東京都出身。
+                            </TabMemberText>
+                            <TabMemberSnsContainer>
+                                <TabMemberSnsContainer>
+                                    <TabSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/mirinomoto"><TabSnsIcon loading="lazy" src={Twitter} alt="友野美里のTwitter" /></TabSnsLink>
+                                    <TabSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/miri_tomono/?hl=ja"><TabSnsIcon loading="lazy" src={Instagram} alt="友野美里のInstagram" /></TabSnsLink>
+                                </TabMemberSnsContainer>
+                            </TabMemberSnsContainer>
+                        </TabMemberItemContainer>
+                        <TabMemberItemContainer>
+                            <TabMemberImage loading="lazy" src={NumaImage} alt="飯沼一暁" />
+                            <TabMemberInstrument>Ag. Vo.</TabMemberInstrument>
+                            <TabMemberName>飯沼一暁 <TabMemberNameRomaji>/ Inuma Kazuaki</TabMemberNameRomaji></TabMemberName>
+                            <TabMemberText>
+                                1997年8月8日生まれ。<br/>
+                                広島県出身。
+                            </TabMemberText>
+                            <TabMemberSnsContainer>
+                                <TabMemberSnsContainer>
+                                    <TabSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/numw69"><TabSnsIcon loading="lazy" src={Twitter} alt="飯沼一暁のTwitter" /></TabSnsLink>
+                                    <TabSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/numw69/?hl=ja"><TabSnsIcon loading="lazy" src={Instagram} alt="飯沼一暁のInstagram" /></TabSnsLink>
+                                </TabMemberSnsContainer>
+                            </TabMemberSnsContainer>
+                        </TabMemberItemContainer>
+                    </TabMemberContainer>
+                    {/* TAB */}
+                    {/* Sp */}
+                    <SpFv src={FvFrame} alt="レトロリロンのアー写" />
+                    <SpTextContainer>
+                        <SpTextBandname loading="lazy" src={BandTitle} alt="レトロリロン" />
+                        <SpTextTitle>ー  "明日"ではなく<SpTextTitleBr/><SpTextTitleSpace>　 </SpTextTitleSpace>"今日"を生きよう</SpTextTitle>
+                        <SpTextItem>
+                            2020年6月1日に結成。<br/>
+                            音楽大学出身の個性豊かな4人組バンド。
+                        </SpTextItem>
+                        <SpTextItem>
+                            4人の多彩な音楽性によって紡がれるジャンルレスなサウンドは人々の心を震わせ、<br/>
+                            ”明日”ではなく”今日”を生きようという力強い歌詞は生きる希望を与える。
+                        </SpTextItem>
+                        <SpTextItem>
+                            2021年にはオフィスオーガスタが新人発掘・開発のために立ち上げたプロジェクト"CANVAS vol.1"にも出演した、今注目のポップスバンド。
+                        </SpTextItem>
+                    </SpTextContainer>
+                    <SpMemberContainer>
+                        <SpMemberItemContainer>
+                            <SpMemberImage loading="lazy" src={SuzuneImage} alt="涼音" />
+                            <SpMemberInstrument>Ag. Vo.</SpMemberInstrument>
+                            <SpMemberName>涼音 <SpMemberNameRomaji>/ Suzune</SpMemberNameRomaji></SpMemberName>
+                            <SpMemberText>
+                                1997年10月31日生まれ。<br/>
+                                千葉県出身。
+                            </SpMemberText>
+                            <SpMemberSnsContainer>
+                                <SpMemberSnsContainer>
+                                    <SpSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/suzune_ssw"><SpSnsIcon loading="lazy" src={Twitter} alt="涼音のTwitter" /></SpSnsLink>
+                                    <SpSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/suzune_ssw/?hl=ja"><SpSnsIcon loading="lazy" src={Instagram} alt="涼音のInstagram" /></SpSnsLink>
+                                </SpMemberSnsContainer>
+                            </SpMemberSnsContainer>
+                        </SpMemberItemContainer>
+                        <SpMemberItemContainer>
+                            <SpMemberImage loading="lazy" src={NagayamaImage} alt="永山タイキ" />
+                            <SpMemberInstrument>Dr.</SpMemberInstrument>
+                            <SpMemberName>永山タイキ <SpMemberNameRomaji>/ Nagayama Taiki</SpMemberNameRomaji></SpMemberName>
+                            <SpMemberText>
+                                1997年5月20日生まれ。<br/>
+                                大分県出身。
+                            </SpMemberText>
+                            <SpMemberSnsContainer>
+                                <SpMemberSnsContainer>
+                                    <SpSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/drums_taiki"><SpSnsIcon loading="lazy" src={Twitter} alt="永山タイキのTwitter" /></SpSnsLink>
+                                    <SpSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/taikidrummer/?hl=ja"><SpSnsIcon loading="lazy" src={Instagram} alt="永山タイキのInstagram" /></SpSnsLink>
+                                </SpMemberSnsContainer>
+                            </SpMemberSnsContainer>
+                        </SpMemberItemContainer>
+                        <SpMemberItemContainer>
+                            <SpMemberImage loading="lazy" src={MiriImage} alt="友野美里" />
+                            <SpMemberInstrument>Key.</SpMemberInstrument>
+                            <SpMemberName>友野美里 <SpMemberNameRomaji>/ Tomono Miri</SpMemberNameRomaji></SpMemberName>
+                            <SpMemberText>
+                                1997年8月31日生まれ。<br/>
+                                東京都出身。
+                            </SpMemberText>
+                            <SpMemberSnsContainer>
+                                <SpMemberSnsContainer>
+                                    <SpSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/mirinomoto"><SpSnsIcon loading="lazy" src={Twitter} alt="友野美里のTwitter" /></SpSnsLink>
+                                    <SpSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/miri_tomono/?hl=ja"><SpSnsIcon loading="lazy" src={Instagram} alt="友野美里のInstagram" /></SpSnsLink>
+                                </SpMemberSnsContainer>
+                            </SpMemberSnsContainer>
+                        </SpMemberItemContainer>
+                        <SpMemberItemContainer>
+                            <SpMemberImage loading="lazy" src={NumaImage} alt="飯沼一暁" />
+                            <SpMemberInstrument>Ba.</SpMemberInstrument>
+                            <SpMemberName>飯沼一暁 <SpMemberNameRomaji>/ Inuma Kazuaki</SpMemberNameRomaji></SpMemberName>
+                            <SpMemberText>
+                                1997年8月8日生まれ。<br/>
+                                広島県出身。
+                            </SpMemberText>
+                            <SpMemberSnsContainer>
+                                <SpMemberSnsContainer>
+                                    <SpSnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/numw69"><SpSnsIcon loading="lazy" src={Twitter} alt="飯沼一暁のTwitter" /></SpSnsLink>
+                                    <SpSnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/numw69/?hl=ja"><SpSnsIcon loading="lazy" src={Instagram} alt="飯沼一暁のInstagram" /></SpSnsLink>
+                                </SpMemberSnsContainer>
+                            </SpMemberSnsContainer>
+                        </SpMemberItemContainer>
+                    </SpMemberContainer>
+                    {/* Sp */}
+                </>
+            )}
         </>
     )
 }

@@ -5,8 +5,12 @@ import styled from '@emotion/styled';
 import { getNews } from '../api';
 import Plus from '../images/open-btn.png'
 import Minus from '../images/close-btn.png'
+import Loading from '../components/common/Loading';
 
 const News = () => {
+    // ローディング
+    const [isLoading, setIsLoading] = useState(false)
+
     // API
 
     const [news, setNews] = useState([])
@@ -18,6 +22,7 @@ const News = () => {
         } catch(e){
             console.log(e)
         }
+        setIsLoading(true)
     }
 
     useEffect(() => {
@@ -77,55 +82,59 @@ const News = () => {
             </Helmet>
             {/* HEAD */}
             {/* PC */}
-            <NewsContainer>
-                {news.map((item) => (
-                    <NewsItemContainer key={item.id}>
-                        {/* PC */}
-                        <PcNewsItemOtherContainer>
-                            <PcNewsTagText IsHidden={newTagHidden(item.date)}>New</PcNewsTagText>
-                            <PcNewsDate>{dateFormat(item.date)}</PcNewsDate>
-                        </PcNewsItemOtherContainer>
-                        <PcNewsMainContainer>
-                            <PcNewsButton onClick={toggleAccordion(item.id)} src={toggleAccordionButton(item.id)} alt="Toggle button" />
-                            <PcNewsTextContainer>
-                                <PcNewsTitle onClick={toggleAccordion(item.id)}>{item.title}</PcNewsTitle>
-                                <PcNewsText active={isActive(item.id)}>
+            {!isLoading ? (
+                <Loading />
+            ):(
+                <NewsContainer>
+                    {news.map((item) => (
+                        <NewsItemContainer key={item.id}>
+                            {/* PC */}
+                            <PcNewsItemOtherContainer>
+                                <PcNewsTagText IsHidden={newTagHidden(item.date)}>New</PcNewsTagText>
+                                <PcNewsDate>{dateFormat(item.date)}</PcNewsDate>
+                            </PcNewsItemOtherContainer>
+                            <PcNewsMainContainer>
+                                <PcNewsButton onClick={toggleAccordion(item.id)} src={toggleAccordionButton(item.id)} alt="Toggle button" />
+                                <PcNewsTextContainer>
+                                    <PcNewsTitle onClick={toggleAccordion(item.id)}>{item.title}</PcNewsTitle>
+                                    <PcNewsText active={isActive(item.id)}>
+                                        {stringLink(item.content)}
+                                        <PcNewsImage loading="lazy" vertical={item.imageVertical} src={item.image.url} alt={item.title} />
+                                    </PcNewsText>
+                                </PcNewsTextContainer>
+                            </PcNewsMainContainer>
+                            {/* TAB */}
+                            <TabNewsItemOtherContainer>
+                                <TabNewsTagText IsHidden={now.subtract(2, 'weeks') > moment(item.date)}>New</TabNewsTagText>
+                                <TabNewsDate>{dateFormat(item.date)}</TabNewsDate>
+                            </TabNewsItemOtherContainer>
+                            <TabNewsMainContainer>
+                                <TabNewsButton onClick={toggleAccordion(item.id)} src={toggleAccordionButton(item.id)} alt="Toggle button" />
+                                <TabNewsTextContainer>
+                                    <TabNewsTitle onClick={toggleAccordion(item.id)}>{item.title}</TabNewsTitle>
+                                    <TabNewsText active={isActive(item.id)}>
+                                        {stringLink(item.content)}
+                                        <TabNewsImage loading="lazy" vertical={item.imageVertical} src={item.image.url} alt={item.title} />
+                                    </TabNewsText>
+                                </TabNewsTextContainer>
+                            </TabNewsMainContainer>
+                            {/* SP */}
+                            <SpNewsButton onClick={toggleAccordion(item.id)} src={toggleAccordionButton(item.id)} alt="Toggle button" />
+                            <SpNewsMainContainer>
+                                <SpNewsItemOtherContainer onClick={toggleAccordion(item.id)}>
+                                    <SpNewsDate>{dateFormat(item.date)}</SpNewsDate>
+                                    <SpNewsTag IsHidden={now.subtract(2, 'weeks') > moment(item.date)}>New</SpNewsTag>
+                                </SpNewsItemOtherContainer>
+                                <SpNewsTitle onClick={toggleAccordion(item.id)}>{item.title}</SpNewsTitle>
+                                <SpNewsText active={isActive(item.id)}>
                                     {stringLink(item.content)}
-                                    <PcNewsImage loading="lazy" vertical={item.imageVertical} src={item.image.url} alt={item.title} />
-                                </PcNewsText>
-                            </PcNewsTextContainer>
-                        </PcNewsMainContainer>
-                        {/* TAB */}
-                        <TabNewsItemOtherContainer>
-                            <TabNewsTagText IsHidden={now.subtract(2, 'weeks') > moment(item.date)}>New</TabNewsTagText>
-                            <TabNewsDate>{dateFormat(item.date)}</TabNewsDate>
-                        </TabNewsItemOtherContainer>
-                        <TabNewsMainContainer>
-                            <TabNewsButton onClick={toggleAccordion(item.id)} src={toggleAccordionButton(item.id)} alt="Toggle button" />
-                            <TabNewsTextContainer>
-                                <TabNewsTitle onClick={toggleAccordion(item.id)}>{item.title}</TabNewsTitle>
-                                <TabNewsText active={isActive(item.id)}>
-                                    {stringLink(item.content)}
-                                    <TabNewsImage loading="lazy" vertical={item.imageVertical} src={item.image.url} alt={item.title} />
-                                </TabNewsText>
-                            </TabNewsTextContainer>
-                        </TabNewsMainContainer>
-                        {/* SP */}
-                        <SpNewsButton onClick={toggleAccordion(item.id)} src={toggleAccordionButton(item.id)} alt="Toggle button" />
-                        <SpNewsMainContainer>
-                            <SpNewsItemOtherContainer onClick={toggleAccordion(item.id)}>
-                                <SpNewsDate>{dateFormat(item.date)}</SpNewsDate>
-                                <SpNewsTag IsHidden={now.subtract(2, 'weeks') > moment(item.date)}>New</SpNewsTag>
-                            </SpNewsItemOtherContainer>
-                            <SpNewsTitle onClick={toggleAccordion(item.id)}>{item.title}</SpNewsTitle>
-                            <SpNewsText active={isActive(item.id)}>
-                                {stringLink(item.content)}
-                                <SpNewsImage loading="lazy" vertical={item.imageVertical} src={item.image.url} alt={item.title} />
-                            </SpNewsText>
-                        </SpNewsMainContainer>
-                    </NewsItemContainer>
-                ))}
-            </NewsContainer>
+                                    <SpNewsImage loading="lazy" vertical={item.imageVertical} src={item.image.url} alt={item.title} />
+                                </SpNewsText>
+                            </SpNewsMainContainer>
+                        </NewsItemContainer>
+                    ))}
+                </NewsContainer>
+            )}
         </>
     )
 }

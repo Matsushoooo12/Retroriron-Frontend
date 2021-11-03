@@ -5,8 +5,11 @@ import styled from '@emotion/styled';
 import MvIcon from '../images/vector-mv.png'
 import SubscriptionIcon from '../images/vector-musuic.png'
 import { getDiscography } from '../api';
+import Loading from '../components/common/Loading';
 
 const Discography = () => {
+    // ローディング
+    const [isLoading, setIsLoading] = useState(false)
 
     // API
 
@@ -49,58 +52,64 @@ const Discography = () => {
                 <title>レトロリロン - Discography page</title>
                 <meta name="the Discography page of a pop band called Retroriron." content="discography page" />
             </Helmet>
-            {/* PC */}
-            <PcDiscographyContainer>
-                {discographies.map((item) => (
-                    <PcDiscographyItemContainer key={item.id}>
-                        <PcDiscographyDate>{dateFormat(item.date)} Release</PcDiscographyDate>
-                        <PcDiscographyImageContainer>
-                            <PcDiscographyImage loading="lazy" src={item.image.url} alt={item.title} />
-                            <PcDiscographyTag>{item.tag}</PcDiscographyTag>
-                        </PcDiscographyImageContainer>
-                        <PcDiscographyTitleContainer>
-                            <PcDiscographyTitle long={count(item.title) > 20}>{item.title}</PcDiscographyTitle>
-                        </PcDiscographyTitleContainer>
-                        <PcDiscographyLinkContainer>
-                            <PcDiscographyLinkItemContainer noLink={!item.mvLink} rel="noopener noreferrer" target="_blank" href={item.mvLink}>
-                                <PcDiscographyLinkIcon loading="lazy" src={MvIcon} alt="MVアイコン" />
-                                <PcDiscographyLinkText>MVを見る</PcDiscographyLinkText>
-                            </PcDiscographyLinkItemContainer>
-                            <PcDiscographyLinkItemContainer noLink={!item.subscriptionLink} rel="noopener noreferrer" target="_blank" href={item.subscriptionLink}>
-                                <PcDiscographyLinkIcon loading="lazy" src={SubscriptionIcon} alt="サブスクアイコン" />
-                                <PcDiscographyLinkText>音楽を聴く</PcDiscographyLinkText>
-                            </PcDiscographyLinkItemContainer>
-                        </PcDiscographyLinkContainer>
-                    </PcDiscographyItemContainer>
-                ))}
-            </PcDiscographyContainer>
-            {/* SP */}
-            <SpDiscographyContainer>
-                {discographies.map((item) => (
-                    <SpDiscographyItemContainer key={item.id}>
-                        <SpDiscographyDate>{dateFormat(item.date)} Release</SpDiscographyDate>
-                        <SpDiscographyTitleContainer>
-                            <SpDiscographyTitle long={count(item.title) > 26}>{item.title}</SpDiscographyTitle>
-                        </SpDiscographyTitleContainer>
-                        <SpDiscographyItemContentContainer>
-                            <SpDiscographyImageContainer>
-                                <SpDiscographyImage loading="lazy" src={item.image.url} alt={item.title} />
-                                <SpDiscographyTag>{item.tag}</SpDiscographyTag>
-                            </SpDiscographyImageContainer>
-                            <SpDiscographyLinkContainer>
-                                <SpDiscographyLinkItemContainer noLink={!item.mvLink} rel="noopener noreferrer" target="_blank" href={item.mvLink}>
-                                    <SpDiscographyLinkIcon loading="lazy" src={MvIcon} alt="MVアイコン" />
-                                    <SpDiscographyLinkText>MVを見る</SpDiscographyLinkText>
-                                </SpDiscographyLinkItemContainer>
-                                <SpDiscographyLinkItemContainer noLink={!item.subscriptionLink} rel="noopener noreferrer" target="_blank" href={item.subscriptionLink}>
-                                    <SpDiscographyLinkIcon loading="lazy" src={SubscriptionIcon} alt="サブスクアイコン" />
-                                    <SpDiscographyLinkText>音楽を聴く</SpDiscographyLinkText>
-                                </SpDiscographyLinkItemContainer>
-                            </SpDiscographyLinkContainer>
-                        </SpDiscographyItemContentContainer>
-                    </SpDiscographyItemContainer>
-                ))}
-            </SpDiscographyContainer>
+            {!isLoading ? (
+                <Loading />
+            ):(
+                <>
+                    {/* PC */}
+                    <PcDiscographyContainer>
+                        {discographies.map((item) => (
+                            <PcDiscographyItemContainer key={item.id}>
+                                <PcDiscographyDate>{dateFormat(item.date)} Release</PcDiscographyDate>
+                                <PcDiscographyImageContainer>
+                                    <PcDiscographyImage loading="lazy" src={item.image.url} alt={item.title} />
+                                    <PcDiscographyTag>{item.tag}</PcDiscographyTag>
+                                </PcDiscographyImageContainer>
+                                <PcDiscographyTitleContainer>
+                                    <PcDiscographyTitle long={count(item.title) > 20}>{item.title}</PcDiscographyTitle>
+                                </PcDiscographyTitleContainer>
+                                <PcDiscographyLinkContainer>
+                                    <PcDiscographyLinkItemContainer noLink={!item.mvLink} rel="noopener noreferrer" target="_blank" href={item.mvLink}>
+                                        <PcDiscographyLinkIcon loading="lazy" src={MvIcon} alt="MVアイコン" />
+                                        <PcDiscographyLinkText>MVを見る</PcDiscographyLinkText>
+                                    </PcDiscographyLinkItemContainer>
+                                    <PcDiscographyLinkItemContainer noLink={!item.subscriptionLink} rel="noopener noreferrer" target="_blank" href={item.subscriptionLink}>
+                                        <PcDiscographyLinkIcon loading="lazy" src={SubscriptionIcon} alt="サブスクアイコン" />
+                                        <PcDiscographyLinkText>音楽を聴く</PcDiscographyLinkText>
+                                    </PcDiscographyLinkItemContainer>
+                                </PcDiscographyLinkContainer>
+                            </PcDiscographyItemContainer>
+                        ))}
+                    </PcDiscographyContainer>
+                    {/* SP */}
+                    <SpDiscographyContainer>
+                        {discographies.map((item) => (
+                            <SpDiscographyItemContainer key={item.id}>
+                                <SpDiscographyDate>{dateFormat(item.date)} Release</SpDiscographyDate>
+                                <SpDiscographyTitleContainer>
+                                    <SpDiscographyTitle long={count(item.title) > 26}>{item.title}</SpDiscographyTitle>
+                                </SpDiscographyTitleContainer>
+                                <SpDiscographyItemContentContainer>
+                                    <SpDiscographyImageContainer>
+                                        <SpDiscographyImage loading="lazy" src={item.image.url} alt={item.title} />
+                                        <SpDiscographyTag>{item.tag}</SpDiscographyTag>
+                                    </SpDiscographyImageContainer>
+                                    <SpDiscographyLinkContainer>
+                                        <SpDiscographyLinkItemContainer noLink={!item.mvLink} rel="noopener noreferrer" target="_blank" href={item.mvLink}>
+                                            <SpDiscographyLinkIcon loading="lazy" src={MvIcon} alt="MVアイコン" />
+                                            <SpDiscographyLinkText>MVを見る</SpDiscographyLinkText>
+                                        </SpDiscographyLinkItemContainer>
+                                        <SpDiscographyLinkItemContainer noLink={!item.subscriptionLink} rel="noopener noreferrer" target="_blank" href={item.subscriptionLink}>
+                                            <SpDiscographyLinkIcon loading="lazy" src={SubscriptionIcon} alt="サブスクアイコン" />
+                                            <SpDiscographyLinkText>音楽を聴く</SpDiscographyLinkText>
+                                        </SpDiscographyLinkItemContainer>
+                                    </SpDiscographyLinkContainer>
+                                </SpDiscographyItemContentContainer>
+                            </SpDiscographyItemContainer>
+                        ))}
+                    </SpDiscographyContainer>
+                </>
+            )}
         </>
     )
 }
