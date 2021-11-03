@@ -1016,6 +1016,7 @@ const LiveImageModalItem = styled.img`
     bottom: 0;
     position: fixed;
     display: block;
+    cursor: pointer;
     ${props => props.vertical && `
         width: 30%;
     `}
