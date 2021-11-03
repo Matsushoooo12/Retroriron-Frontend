@@ -175,10 +175,11 @@ const Live = () => {
     }
 
     const noImageModal = (image) => {
-        if(!image){
-            setLiveImageModal({image: NilImageUrl})
+        if(image){
+            return liveImageModal.open;
+        } else {
+            return;
         }
-        return liveImageModal.open
     }
 
     return (
@@ -997,7 +998,7 @@ const LiveImageModalContainer = styled.div`
 
 const LiveImageModalBack = styled.div`
     width: 100%;
-    height: 100vh;
+    height: 100%;
     position: fixed;
     top: 0;
     left: 0;
