@@ -157,6 +157,9 @@ const SvgContents = styled.svg`
     top: 0;
     bottom: 0;
     position: fixed;
+    @media screen and (min-width: 900px){
+        width: 500px;
+    }
 `
 
 const PathItem = styled.path`
