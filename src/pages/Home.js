@@ -11,21 +11,10 @@ import Twitter from '../images/twitter-logo.png'
 import Instagram from '../images/insta-logo.png'
 import ContentLoader from 'react-content-loader'
 
-
-function useImageLoad(path) {
-    const [isLoading, setIsLoading] = useState(true)
-
-    const img = new Image();
-    img.src = path;
-    img.onload = () => {
-        setIsLoading(false)
-    }
-
-    return isLoading
-}
-
-
 const Home = () => {
+    const [isLoading, setIsLoading] = useState(true)
+    const imageStyle = isLoading ? {display: "none"} : {};
+
     return (
         <>
             {/* Head */}
@@ -35,13 +24,14 @@ const Home = () => {
             </Helmet>
             {/* Head */}
             {/* PC */}
-            {useImageLoad(FvFrame) ? (
-                    <ContentLoader viewBox="0 0 400 400">
-                        <rect x="0" y="0" rx="0" ry="0" width="400" height="400"/>
-                    </ContentLoader>
-                ):
-                <PcFv src={FvFrame} alt="レトロリロンのアー写"/>
-            }
+
+            {isLoading && (
+                <ContentLoader viewBox="0 0 100 50" style={{width: '100%'}}>
+                    <rect x="0" y="0" rx="0" ry="0" width="100" height="50"/>
+                </ContentLoader>
+            )}
+            <PcFv src={FvFrame} alt="レトロリロンのアー写" onLoad={() => setIsLoading(false)} style={imageStyle}/>
+
             <PcTextContainer>
                 <PcTextBandname loading="lazy" src={BandTitle} alt="レトロリロン" />
                 <PcTextTitle>ー  "明日"ではなく"今日"を生きよう </PcTextTitle>
