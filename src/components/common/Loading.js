@@ -166,18 +166,21 @@ const PathItem = styled.path`
     animation: svg 1.2s ease-in both infinite;
     @keyframes svg {
         0% {
-          fill: transparent;
-          stroke-dasharray: 2000px;
-          stroke-dashoffset: 2000px;
+            fill: #000;
         }
         20%{
-          stroke-dashoffset: 0;
+            fill: transparent;
+            stroke-dasharray: 1200px;
+            stroke-dashoffset: 1200px;
         }
-        50%{
-          fill: transparent;
+        30%{
+            stroke-dashoffset: 0;
         }
-        70%{
-          fill: #000;
+        60%{
+            fill: transparent;
+        }
+        80%{
+            fill: #000;
         }
     }
 `
@@ -189,17 +192,20 @@ const OrangePathItem = styled.path`
     animation: orangeSvg 1.2s ease-in both infinite;
     @keyframes orangeSvg {
         0% {
-          fill: transparent;
-          stroke-dasharray: 2000px;
-          stroke-dashoffset: 2000px;
+            fill: #F1A11B;
         }
         20%{
+            fill: transparent;
+            stroke-dasharray: 1200px;
+            stroke-dashoffset: 1200px;
+        }
+        30%{
           stroke-dashoffset: 0;
         }
-        50%{
+        60%{
           fill: transparent;
         }
-        70%{
+        80%{
           fill: #F1A11B;
         }
     }
