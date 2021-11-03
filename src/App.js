@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import styled from '@emotion/styled';
 import Header from './components/common/Header';
 import {
@@ -15,8 +15,6 @@ import './components/common/reset.css'
 import Footer from './components/common/Footer';
 
 function App() {
-    // ローディング
-    const [isLoading, setIsLoading] = useState(false)
     return (
         <BrowserRouter>
             <Header />
