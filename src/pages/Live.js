@@ -489,6 +489,7 @@ const PcLiveImage = styled.img`
     display: block;
     width: 200px;
     height: 100%;
+    cursor: pointer;
     ${props => props.vertical && `
         width: 160px;
         height: 200px;
@@ -769,6 +770,7 @@ const TabLiveImage = styled.img`
         display: none;
     }
     @media screen and (min-width: 600px){
+        cursor: pointer;
         display: block;
         width: 160px;
         height: 100%;
@@ -926,6 +928,7 @@ const SpLiveImage = styled.img`
     width: 160px;
     height: 100%;
     margin-top: 16px;
+    cursor: pointer;
     ${props => props.vertical && `
         width: 128px;
         height: 200px;
@@ -1016,7 +1019,6 @@ const LiveImageModalItem = styled.img`
     bottom: 0;
     position: fixed;
     display: block;
-    cursor: pointer;
     ${props => props.vertical && `
         width: 30%;
     `}
