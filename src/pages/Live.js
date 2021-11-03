@@ -414,6 +414,7 @@ const PcLiveContainer = styled.ul`
         display: block;
         width: 100%;
         height: 100%;
+        max-width: 1200px;
     }
 `
 

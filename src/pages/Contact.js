@@ -132,6 +132,7 @@ const ContactContainer = styled.div`
         height: 100%;
         width: 100%;
         padding-bottom: 160px;
+        max-width: 1200px;
     }
 `
 

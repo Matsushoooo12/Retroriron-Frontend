@@ -287,6 +287,7 @@ export default Home
 const PcFv = styled.img`
     display: none;
     @media screen and (min-width: 900px){
+        max-width: 900px;
         width: 100%;
         display: block;
         margin-bottom: 64px;

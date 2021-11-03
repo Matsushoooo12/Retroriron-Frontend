@@ -16,7 +16,6 @@ import Footer from './components/common/Footer';
 function App() {
     return (
         <BrowserRouter>
-            {/* <Header /> */}
             <MainAllContainer>
                 <MainItemContainer>
                     <MainItem>

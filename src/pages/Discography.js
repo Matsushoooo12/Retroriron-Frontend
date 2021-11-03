@@ -128,6 +128,7 @@ const PcDiscographyContainer = styled.div`
         width: 100%;
         height: 100%;
         padding-bottom: 120px;
+        max-width: 1200px;
     }
     @media screen and (min-width: 900px){
         padding-bottom: 160px;
