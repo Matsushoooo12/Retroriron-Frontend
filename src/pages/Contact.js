@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 import { useForm } from 'react-hook-form';
 import ContactConfirm2 from '../components/contact/ContactConfirm';
 import Header from '../components/common/Header';
+import Footer from '../components/common/Footer';
 
 const Contact = () => {
     // useForm
