@@ -3,6 +3,7 @@ import Helmet from 'react-helmet';
 import styled from '@emotion/styled';
 import { useForm } from 'react-hook-form';
 import ContactConfirm2 from '../components/contact/ContactConfirm';
+import Header from '../components/common/Header';
 
 const Contact = () => {
     // useForm
@@ -29,6 +30,7 @@ const Contact = () => {
                 <title>レトロリロン - Contact page</title>
                 <meta name="the Contact page of a pop band called Retroriron." content="contact page" />
             </Helmet>
+            <Header />
             {!isConfirmationVisible ? (
                 <ContactContainer>
                     <ContactTitle>お問い合わせフォーム</ContactTitle>

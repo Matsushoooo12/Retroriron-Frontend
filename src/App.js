@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from '@emotion/styled';
-import Header from './components/common/Header';
 import {
   BrowserRouter,
   Route,
@@ -17,7 +16,7 @@ import Footer from './components/common/Footer';
 function App() {
     return (
         <BrowserRouter>
-            <Header />
+            {/* <Header /> */}
             <MainAllContainer>
                 <MainItemContainer>
                     <MainItem>

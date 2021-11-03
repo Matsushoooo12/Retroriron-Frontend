@@ -13,10 +13,11 @@ import InstagramOrange from '../images/insta-icon-orange.png'
 import YoutubeOrange from '../images/youtube-icon-orange.png'
 import NilImageUrl from '../images/nil_image.JPG'
 import Loading from '../components/common/Loading';
+import Header from '../components/common/Header';
 
 const Live = () => {
     // ローディング
-    const [isLoading, setIsLoading] = useState(false)
+    const [isLoading, setIsLoading] = useState(true)
 
     // useForm
     const { register, formState: { errors }, getValues, handleSubmit, reset } = useForm();
@@ -75,11 +76,10 @@ const Live = () => {
         try{
             const res = await getLive();
             setLives(res.data)
-            console.log(res.data)
         } catch(e){
-            console.log(e)
+            alert(e)
         }
-        setIsLoading(true)
+        setIsLoading(false)
     }
 
     useEffect(() => {
@@ -193,212 +193,210 @@ const Live = () => {
                 <title>レトロリロン - Live page</title>
                 <meta name="the Live page of a pop band called Retroriron." content="live page" />
             </Helmet>
-            {/* PC */}
-            {!isLoading ? (
-                <Loading />
-            ):(
-                <>
-                    <PcLiveContainer>
-                        {lives.map((item) => (
-                            <PcLiveItemContainer key={item.id}>
-                                <PcLiveMainContainer>
-                                    <PcLiveItemOtherContainer>
-                                        <PcLiveDate>{dateFormat(item.date)}</PcLiveDate>
-                                        <PcLiveButton cursorPointer={item.detail} onClick={toggleAccordion(item.id)} src={toggleAccordionButton(item.id, item.detail)} alt="accordion button" />
-                                    </PcLiveItemOtherContainer>
-                                    <PcLiveContentsContainer>
-                                        <PcLiveTextContainer>
-                                            <PcLiveTitle cursorPointer={item.detail} onClick={toggleAccordion(item.id)}>{item.title}<PcLiveFinishTag finish={pastTime(item.date)}>終了</PcLiveFinishTag></PcLiveTitle><br/>
+            <Loading isLoading={isLoading} />
+            <LoadingContainer isLoading={isLoading}>
+                <Header />
+                {/* PC */}
+                <PcLiveContainer>
+                    {lives.map((item) => (
+                        <PcLiveItemContainer key={item.id}>
+                            <PcLiveMainContainer>
+                                <PcLiveItemOtherContainer>
+                                    <PcLiveDate>{dateFormat(item.date)}</PcLiveDate>
+                                    <PcLiveButton cursorPointer={item.detail} onClick={toggleAccordion(item.id)} src={toggleAccordionButton(item.id, item.detail)} alt="accordion button" />
+                                </PcLiveItemOtherContainer>
+                                <PcLiveContentsContainer>
+                                    <PcLiveTextContainer>
+                                        <PcLiveTitle cursorPointer={item.detail} onClick={toggleAccordion(item.id)}>{item.title}<PcLiveFinishTag finish={pastTime(item.date)}>終了</PcLiveFinishTag></PcLiveTitle><br/>
+                                        {item.ticketLink ? (
+                                            <PcLiveTicketButton rel="noopener noreferrer" target="_blank" href={item.ticketLink} active={futureTime(item.date)}>チケットをご希望の方はこちら</PcLiveTicketButton>
+                                        ):(
+                                            <PcLiveTicketButton onClick={() => setTicketValue({date: item.date, title: item.title, open: true})} active={futureTime(item.date)}>チケットをご希望の方はこちら</PcLiveTicketButton>
+                                        )}
+                                        <PcLiveInfoContainer>
+                                            <PcLiveInfoText>開場時間 | {notExistTime(openAndStartTime(item.openTime))}   開演時間 | {notExistTime(openAndStartTime(item.startTime))}</PcLiveInfoText>
+                                            <PcLiveInfoText>場所 | {item.venue}</PcLiveInfoText>
+                                            <PcLiveInfoText>料金 | {item.price}</PcLiveInfoText>
+                                            <PcLiveInfoText>出演者 | {item.performer}</PcLiveInfoText>
+                                        </PcLiveInfoContainer>
+                                        <PcLiveDetailText active={isActive(item.id) && item.detail}>
+                                            詳細情報 |<br/><br/>
+                                            {stringLink(item.detail)}
+                                        </PcLiveDetailText>
+                                    </PcLiveTextContainer>
+                                </PcLiveContentsContainer>
+                            </PcLiveMainContainer>
+                            <PcLiveImage onClick={() => setLiveImageModal({title: item.title, image: item.image.url, open: true, imageVertical: item.imageVertical})} loading="lazy" vertical={item.imageVertical} src={notExistImage(item.image.url)} alt={item.title} />
+                        </PcLiveItemContainer>
+                    ))}
+                    <ModalContainer
+                        open={ticketValue.open}
+                    >
+                        <ModalBack onClick={handleClick}></ModalBack>
+                        {!isConfirmationVisible ? (
+                            <TicketItemContainer>
+                                <TicketTitle>チケット予約フォーム</TicketTitle>
+                                <TicketText>
+                                    ※こちらはチケットのお取り置きをするためのフォームです。<br/>
+                                    当日は会場受付で担当者にお名前をお伝えの上、お支払いをお願いいたします。
+                                </TicketText>
+                                <TicketCautionText>
+                                    ※下記のライブのお申し込みでお間違いないかご確認ください。
+                                </TicketCautionText>
+                                <TicketFormContainer onSubmit={handleSubmit(onSubmitData)}>
+                                    <TicketDateAndTitleContainer>
+                                        <TicketDateAndTitleTextField
+                                            type="text"
+                                            name="date"
+                                            value={ticketValue.date}
+                                            readOnly
+                                            {...register('date', {required: true})}
+                                        />
+                                        <TicketDateAndTitleTextField
+                                            type="text"
+                                            name="title"
+                                            value={ticketValue.title}
+                                            readOnly
+                                            {...register('title', {required: true})}
+                                            title
+                                        />
+                                    </TicketDateAndTitleContainer>
+                                    <TicketFormGroup>
+                                        <TicketFormLabel htmlFor="nameKana">ナマエ
+                                            <TicketFormRequiredSign>*</TicketFormRequiredSign>
+                                            {errors.nameKana && <TicketFormRequiredSign>こちらは必須項目です。</TicketFormRequiredSign>}
+                                        </TicketFormLabel>
+                                        <TicketFormTextField
+                                            name="nameKana"
+                                            id="nameKane"
+                                            type="text"
+                                            {...register('nameKana', {required: true})}
+                                        />
+                                        <TicketFormLabel htmlFor="email">メールアドレス
+                                            <TicketFormRequiredSign>*</TicketFormRequiredSign>
+                                            {errors.email && <TicketFormRequiredSign>こちらは必須項目です。</TicketFormRequiredSign>}
+                                        </TicketFormLabel>
+                                        <TicketFormTextField
+                                            name="email"
+                                            type="email"
+                                            id="email"
+                                            {...register('email', {required: true})}
+                                        />
+                                        <TicketFormLabel htmlFor="number">枚数
+                                            <TicketFormRequiredSign>*</TicketFormRequiredSign>
+                                            {errors.number && <TicketFormRequiredSign>こちらは必須項目です。</TicketFormRequiredSign>}
+                                        </TicketFormLabel>
+                                        <TicketFormNumber
+                                            name="number"
+                                            type="number"
+                                            id="number"
+                                            onChange={(e) => e.target.value}
+                                            defaultValue="1"
+                                            {...register('number', {required: true})}
+                                        />
+                                        <TicketFormLabel htmlFor="description">備考</TicketFormLabel>
+                                        <TicketFormTextField
+                                            name="description"
+                                            type="text"
+                                            id="description"
+                                            {...register('description', {required: false})}
+                                        />
+                                    </TicketFormGroup>
+                                    <TicketFormGroup className="right">
+                                        <TicketFormSubmitButton type="submit" value="確認する" />
+                                    </TicketFormGroup>
+                                </TicketFormContainer>
+                            </TicketItemContainer>
+                        ):(
+                            <TicketConfirm
+                                values={getValues()}
+                                hideConfirmation={hideConfirmation}
+                            />
+                        )}
+                    </ModalContainer>
+                </PcLiveContainer>
+                {/* TAB */}
+                {!isConfirmationVisible ? (
+                    <>
+                        <TabLiveContainer>
+                            {lives.map((item) => (
+                                <TabLiveItemContainer key={item.id}>
+                                    <TabLiveButton cursorPointer={item.detail} onClick={toggleAccordion(item.id)} src={toggleAccordionButton(item.id, item.detail)} alt="accordion button" />
+                                    <TabLiveMainContainer>
+                                        <TabLiveContentsContainer>
+                                            <TabLiveDate cursorPointer={item.detail} onClick={toggleAccordion(item.id)}>{dateFormat(item.date)}</TabLiveDate>
+                                            <TabLiveTitle cursorPointer={item.detail} onClick={toggleAccordion(item.id)}>{item.title}<TabLiveFinishTag finish={pastTime(item.date)}>終了</TabLiveFinishTag></TabLiveTitle><br/>
                                             {item.ticketLink ? (
-                                                <PcLiveTicketButton rel="noopener noreferrer" target="_blank" href={item.ticketLink} active={futureTime(item.date)}>チケットをご希望の方はこちら</PcLiveTicketButton>
+                                                <TabLiveTicketButton rel="noopener noreferrer" target="_blank" href={item.ticketLink} active={futureTime(item.date)}>チケットをご希望の方はこちら</TabLiveTicketButton>
                                             ):(
-                                                <PcLiveTicketButton onClick={() => setTicketValue({date: item.date, title: item.title, open: true})} active={futureTime(item.date)}>チケットをご希望の方はこちら</PcLiveTicketButton>
+                                                <TabLiveTicketButton onClick={() => handleSpTicketButtonClick(item.date, item.title)} active={futureTime(item.date)}>チケットをご希望の方はこちら</TabLiveTicketButton>
                                             )}
-                                            <PcLiveInfoContainer>
-                                                <PcLiveInfoText>開場時間 | {notExistTime(openAndStartTime(item.openTime))}   開演時間 | {notExistTime(openAndStartTime(item.startTime))}</PcLiveInfoText>
-                                                <PcLiveInfoText>場所 | {item.venue}</PcLiveInfoText>
-                                                <PcLiveInfoText>料金 | {item.price}</PcLiveInfoText>
-                                                <PcLiveInfoText>出演者 | {item.performer}</PcLiveInfoText>
-                                            </PcLiveInfoContainer>
-                                            <PcLiveDetailText active={isActive(item.id) && item.detail}>
-                                                詳細情報 |<br/><br/>
+                                            <TabLiveInfoContainer>
+                                                <TabLiveInfoText>開場時間 | {notExistTime(openAndStartTime(item.openTime))}   開演時間 | {notExistTime(openAndStartTime(item.startTime))}</TabLiveInfoText>
+                                                <TabLiveInfoText>場所 | {item.venue}</TabLiveInfoText>
+                                                <TabLiveInfoText>料金 | {item.price}</TabLiveInfoText>
+                                                <TabLiveInfoText>出演者 | {item.performer}</TabLiveInfoText>
+                                                <TabLiveBottomImage loading="lazy" vertical={item.imageVertical} src={notExistImage(item.image.url)} alt={item.title} />
+                                            </TabLiveInfoContainer>
+                                            <TabLiveDetailText active={isActive(item.id) && item.detail}>
+                                                詳細情報 |<br/>
                                                 {stringLink(item.detail)}
-                                            </PcLiveDetailText>
-                                        </PcLiveTextContainer>
-                                    </PcLiveContentsContainer>
-                                </PcLiveMainContainer>
-                                <PcLiveImage onClick={() => setLiveImageModal({title: item.title, image: item.image.url, open: true, imageVertical: item.imageVertical})} loading="lazy" vertical={item.imageVertical} src={notExistImage(item.image.url)} alt={item.title} />
-                            </PcLiveItemContainer>
-                        ))}
-                        <ModalContainer
-                            open={ticketValue.open}
-                        >
-                            <ModalBack onClick={handleClick}></ModalBack>
-                            {!isConfirmationVisible ? (
-                                <TicketItemContainer>
-                                    <TicketTitle>チケット予約フォーム</TicketTitle>
-                                    <TicketText>
-                                        ※こちらはチケットのお取り置きをするためのフォームです。<br/>
-                                        当日は会場受付で担当者にお名前をお伝えの上、お支払いをお願いいたします。
-                                    </TicketText>
-                                    <TicketCautionText>
-                                        ※下記のライブのお申し込みでお間違いないかご確認ください。
-                                    </TicketCautionText>
-                                    <TicketFormContainer onSubmit={handleSubmit(onSubmitData)}>
-                                        <TicketDateAndTitleContainer>
-                                            <TicketDateAndTitleTextField
-                                                type="text"
-                                                name="date"
-                                                value={ticketValue.date}
-                                                readOnly
-                                                {...register('date', {required: true})}
-                                            />
-                                            <TicketDateAndTitleTextField
-                                                type="text"
-                                                name="title"
-                                                value={ticketValue.title}
-                                                readOnly
-                                                {...register('title', {required: true})}
-                                                title
-                                            />
-                                        </TicketDateAndTitleContainer>
-                                        <TicketFormGroup>
-                                            <TicketFormLabel htmlFor="nameKana">ナマエ
-                                                <TicketFormRequiredSign>*</TicketFormRequiredSign>
-                                                {errors.nameKana && <TicketFormRequiredSign>こちらは必須項目です。</TicketFormRequiredSign>}
-                                            </TicketFormLabel>
-                                            <TicketFormTextField
-                                                name="nameKana"
-                                                id="nameKane"
-                                                type="text"
-                                                {...register('nameKana', {required: true})}
-                                            />
-                                            <TicketFormLabel htmlFor="email">メールアドレス
-                                                <TicketFormRequiredSign>*</TicketFormRequiredSign>
-                                                {errors.email && <TicketFormRequiredSign>こちらは必須項目です。</TicketFormRequiredSign>}
-                                            </TicketFormLabel>
-                                            <TicketFormTextField
-                                                name="email"
-                                                type="email"
-                                                id="email"
-                                                {...register('email', {required: true})}
-                                            />
-                                            <TicketFormLabel htmlFor="number">枚数
-                                                <TicketFormRequiredSign>*</TicketFormRequiredSign>
-                                                {errors.number && <TicketFormRequiredSign>こちらは必須項目です。</TicketFormRequiredSign>}
-                                            </TicketFormLabel>
-                                            <TicketFormNumber
-                                                name="number"
-                                                type="number"
-                                                id="number"
-                                                onChange={(e) => e.target.value}
-                                                defaultValue="1"
-                                                {...register('number', {required: true})}
-                                            />
-                                            <TicketFormLabel htmlFor="description">備考</TicketFormLabel>
-                                            <TicketFormTextField
-                                                name="description"
-                                                type="text"
-                                                id="description"
-                                                {...register('description', {required: false})}
-                                            />
-                                        </TicketFormGroup>
-                                        <TicketFormGroup className="right">
-                                            <TicketFormSubmitButton type="submit" value="確認する" />
-                                        </TicketFormGroup>
-                                    </TicketFormContainer>
-                                </TicketItemContainer>
-                            ):(
-                                <TicketConfirm
-                                    values={getValues()}
-                                    hideConfirmation={hideConfirmation}
-                                />
-                            )}
-                        </ModalContainer>
-                    </PcLiveContainer>
-                    {/* TAB */}
-                    {!isConfirmationVisible ? (
-                        <>
-                            <TabLiveContainer>
-                                {lives.map((item) => (
-                                    <TabLiveItemContainer key={item.id}>
-                                        <TabLiveButton cursorPointer={item.detail} onClick={toggleAccordion(item.id)} src={toggleAccordionButton(item.id, item.detail)} alt="accordion button" />
-                                        <TabLiveMainContainer>
-                                            <TabLiveContentsContainer>
-                                                <TabLiveDate cursorPointer={item.detail} onClick={toggleAccordion(item.id)}>{dateFormat(item.date)}</TabLiveDate>
-                                                <TabLiveTitle cursorPointer={item.detail} onClick={toggleAccordion(item.id)}>{item.title}<TabLiveFinishTag finish={pastTime(item.date)}>終了</TabLiveFinishTag></TabLiveTitle><br/>
-                                                {item.ticketLink ? (
-                                                    <TabLiveTicketButton rel="noopener noreferrer" target="_blank" href={item.ticketLink} active={futureTime(item.date)}>チケットをご希望の方はこちら</TabLiveTicketButton>
-                                                ):(
-                                                    <TabLiveTicketButton onClick={() => handleSpTicketButtonClick(item.date, item.title)} active={futureTime(item.date)}>チケットをご希望の方はこちら</TabLiveTicketButton>
-                                                )}
-                                                <TabLiveInfoContainer>
-                                                    <TabLiveInfoText>開場時間 | {notExistTime(openAndStartTime(item.openTime))}   開演時間 | {notExistTime(openAndStartTime(item.startTime))}</TabLiveInfoText>
-                                                    <TabLiveInfoText>場所 | {item.venue}</TabLiveInfoText>
-                                                    <TabLiveInfoText>料金 | {item.price}</TabLiveInfoText>
-                                                    <TabLiveInfoText>出演者 | {item.performer}</TabLiveInfoText>
-                                                    <TabLiveBottomImage loading="lazy" vertical={item.imageVertical} src={notExistImage(item.image.url)} alt={item.title} />
-                                                </TabLiveInfoContainer>
-                                                <TabLiveDetailText active={isActive(item.id) && item.detail}>
-                                                    詳細情報 |<br/>
-                                                    {stringLink(item.detail)}
-                                                </TabLiveDetailText>
-                                            </TabLiveContentsContainer>
-                                            <TabLiveImage onClick={() => setLiveImageModal({title: item.title, image: item.image.url, open: true, imageVertical: item.imageVertical})} loading="lazy" vertical={item.imageVertical} src={notExistImage(item.image.url)} alt={item.title} />
-                                        </TabLiveMainContainer>
-                                    </TabLiveItemContainer>
-                                ))}
-                            </TabLiveContainer>
-                            <SpLiveContainer>
-                                {lives.map((item) => (
-                                    <SpLiveItemContainer key={item.id}>
-                                        <SpLiveButton onClick={toggleAccordion(item.id)} src={spToggleAccordionButton(item.id)} alt="accordion button" />
-                                        <SpLiveMainContainer>
-                                            <SpLiveDate onClick={toggleAccordion(item.id)}>{dateFormat(item.date)}</SpLiveDate>
-                                            <SpLiveTitle onClick={toggleAccordion(item.id)}>{item.title}</SpLiveTitle><br/>
-                                            {item.ticketLink ? (
-                                                <SpLiveTicketButton rel="noopener noreferrer" target="_blank" href={item.ticketLink} active={futureTime(item.date)}>チケットをご希望の方はこちら</SpLiveTicketButton>
-                                            ):(
-                                                <SpLiveTicketButton onClick={() => handleSpTicketButtonClick(item.date, item.title)} active={futureTime(item.date)}>チケットをご希望の方はこちら</SpLiveTicketButton>
-                                            )}
-                                            <SpLiveFinishTag finish={pastTime(item.date)}>終了</SpLiveFinishTag>
-                                            <SpLiveInfoContainer active={isActive(item.id)}>
-                                                <SpLiveInfoText>開場時間 | {notExistTime(openAndStartTime(item.openTime))}   開演時間 | {notExistTime(openAndStartTime(item.startTime))}</SpLiveInfoText>
-                                                <SpLiveInfoText>場所 | {item.venue}</SpLiveInfoText>
-                                                <SpLiveInfoText>料金 | {item.price}</SpLiveInfoText>
-                                                <SpLiveInfoText>出演者 | {item.performer}</SpLiveInfoText>
-                                                <SpLiveImage onClick={() => setLiveImageModal({title: item.title, image: item.image.url, open: true, imageVertical: item.imageVertical})} loading="lazy" vertical={item.imageVertical} src={notExistImage(item.image.url)} alt={item.title} />
-                                                <SpLiveDetailText active={item.detail}>
-                                                    詳細情報 |<br/>
-                                                    {stringLink(item.detail)}
-                                                </SpLiveDetailText>
-                                            </SpLiveInfoContainer>
-                                        </SpLiveMainContainer>
-                                    </SpLiveItemContainer>
-                                ))}
-                            </SpLiveContainer>
-                            <SnsFixedContainer hidden={isConfirmationVisible}>
-                                <SnsFixedBorder></SnsFixedBorder>
-                                <SnsFixedText>our sns</SnsFixedText>
-                                <SnsFixedIconLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/retroriron"><SnsFixedIconImage loading="lazy" src={TwitterOrange} alt="レトロリロンのTwitter" /></SnsFixedIconLink>
-                                <SnsFixedIconLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/retroriron/?hl=ja"><SnsFixedIconImage loading="lazy" src={InstagramOrange} alt="レトロリロンのInstagram" /></SnsFixedIconLink>
-                                <SnsFixedIconLink rel="noopener noreferrer" target="_blank" href="https://www.youtube.com/channel/UCkE8tVIvmdos9b1OqEhePlg"><SnsFixedIconImage loading="lazy" src={YoutubeOrange} alt="レトロリロンのYouTube" /></SnsFixedIconLink>
-                                <SnsFixedBorder></SnsFixedBorder>
-                            </SnsFixedContainer>
-                        </>
-                    ):(
-                        <SpTicketForm
-                            date={spTicketDateAndTitle.date}
-                            title={spTicketDateAndTitle.title}
-                        />
-                    )}
-                    <LiveImageModalContainer open={noImageModal(liveImageModal.image)}>
-                        <LiveImageModalBack onClick={handleLiveImageModalClick}>
-                            <LiveImageModalItem vertical={liveImageModal.imageVertical} src={liveImageModal.image} alt={liveImageModal.title} />
-                        </LiveImageModalBack>
-                    </LiveImageModalContainer>
-                </>
-            )}
+                                            </TabLiveDetailText>
+                                        </TabLiveContentsContainer>
+                                        <TabLiveImage onClick={() => setLiveImageModal({title: item.title, image: item.image.url, open: true, imageVertical: item.imageVertical})} loading="lazy" vertical={item.imageVertical} src={notExistImage(item.image.url)} alt={item.title} />
+                                    </TabLiveMainContainer>
+                                </TabLiveItemContainer>
+                            ))}
+                        </TabLiveContainer>
+                        <SpLiveContainer>
+                            {lives.map((item) => (
+                                <SpLiveItemContainer key={item.id}>
+                                    <SpLiveButton onClick={toggleAccordion(item.id)} src={spToggleAccordionButton(item.id)} alt="accordion button" />
+                                    <SpLiveMainContainer>
+                                        <SpLiveDate onClick={toggleAccordion(item.id)}>{dateFormat(item.date)}</SpLiveDate>
+                                        <SpLiveTitle onClick={toggleAccordion(item.id)}>{item.title}</SpLiveTitle><br/>
+                                        {item.ticketLink ? (
+                                            <SpLiveTicketButton rel="noopener noreferrer" target="_blank" href={item.ticketLink} active={futureTime(item.date)}>チケットをご希望の方はこちら</SpLiveTicketButton>
+                                        ):(
+                                            <SpLiveTicketButton onClick={() => handleSpTicketButtonClick(item.date, item.title)} active={futureTime(item.date)}>チケットをご希望の方はこちら</SpLiveTicketButton>
+                                        )}
+                                        <SpLiveFinishTag finish={pastTime(item.date)}>終了</SpLiveFinishTag>
+                                        <SpLiveInfoContainer active={isActive(item.id)}>
+                                            <SpLiveInfoText>開場時間 | {notExistTime(openAndStartTime(item.openTime))}   開演時間 | {notExistTime(openAndStartTime(item.startTime))}</SpLiveInfoText>
+                                            <SpLiveInfoText>場所 | {item.venue}</SpLiveInfoText>
+                                            <SpLiveInfoText>料金 | {item.price}</SpLiveInfoText>
+                                            <SpLiveInfoText>出演者 | {item.performer}</SpLiveInfoText>
+                                            <SpLiveImage onClick={() => setLiveImageModal({title: item.title, image: item.image.url, open: true, imageVertical: item.imageVertical})} loading="lazy" vertical={item.imageVertical} src={notExistImage(item.image.url)} alt={item.title} />
+                                            <SpLiveDetailText active={item.detail}>
+                                                詳細情報 |<br/>
+                                                {stringLink(item.detail)}
+                                            </SpLiveDetailText>
+                                        </SpLiveInfoContainer>
+                                    </SpLiveMainContainer>
+                                </SpLiveItemContainer>
+                            ))}
+                        </SpLiveContainer>
+                        <SnsFixedContainer hidden={isConfirmationVisible}>
+                            <SnsFixedBorder></SnsFixedBorder>
+                            <SnsFixedText>our sns</SnsFixedText>
+                            <SnsFixedIconLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/retroriron"><SnsFixedIconImage loading="lazy" src={TwitterOrange} alt="レトロリロンのTwitter" /></SnsFixedIconLink>
+                            <SnsFixedIconLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/retroriron/?hl=ja"><SnsFixedIconImage loading="lazy" src={InstagramOrange} alt="レトロリロンのInstagram" /></SnsFixedIconLink>
+                            <SnsFixedIconLink rel="noopener noreferrer" target="_blank" href="https://www.youtube.com/channel/UCkE8tVIvmdos9b1OqEhePlg"><SnsFixedIconImage loading="lazy" src={YoutubeOrange} alt="レトロリロンのYouTube" /></SnsFixedIconLink>
+                            <SnsFixedBorder></SnsFixedBorder>
+                        </SnsFixedContainer>
+                    </>
+                ):(
+                    <SpTicketForm
+                        date={spTicketDateAndTitle.date}
+                        title={spTicketDateAndTitle.title}
+                    />
+                )}
+                <LiveImageModalContainer open={noImageModal(liveImageModal.image)}>
+                    <LiveImageModalBack onClick={handleLiveImageModalClick}>
+                        <LiveImageModalItem vertical={liveImageModal.imageVertical} src={liveImageModal.image} alt={liveImageModal.title} />
+                    </LiveImageModalBack>
+                </LiveImageModalContainer>
+            </LoadingContainer>
         </>
     )
 }
@@ -1033,4 +1031,9 @@ const LiveImageModalItem = styled.img`
     ${props => props.vertical && `
         width: 30%;
     `}
+`
+
+// ローディング
+const LoadingContainer = styled.div`
+    display: ${({ isLoading }) => (isLoading ? 'none' : 'block')};
 `

@@ -5,11 +5,13 @@ import styled from '@emotion/styled';
 import { getNews } from '../api';
 import Plus from '../images/open-btn.png'
 import Minus from '../images/close-btn.png'
+import Header from '../components/common/Header';
 import Loading from '../components/common/Loading';
 
 const News = () => {
+
     // ローディング
-    const [isLoading, setIsLoading] = useState(false)
+    const [isLoading, setIsLoading] = useState(true)
 
     // API
 
@@ -22,7 +24,7 @@ const News = () => {
         } catch(e){
             console.log(e)
         }
-        setIsLoading(true)
+        setIsLoading(false)
     }
 
     useEffect(() => {
@@ -81,10 +83,10 @@ const News = () => {
                 <meta name="the News page of a pop band called Retroriron." content="news page" />
             </Helmet>
             {/* HEAD */}
-            {/* PC */}
-            {!isLoading ? (
-                <Loading />
-            ):(
+            <Loading isLoading={isLoading} />
+            <LoadingContainer isLoading={isLoading}>
+                <Header />
+                {/* PC */}
                 <NewsContainer>
                     {news.map((item) => (
                         <NewsItemContainer key={item.id}>
@@ -134,7 +136,7 @@ const News = () => {
                         </NewsItemContainer>
                     ))}
                 </NewsContainer>
-            )}
+            </LoadingContainer>
         </>
     )
 }
@@ -427,4 +429,9 @@ const SpNewsImage = styled.img`
         width: 128px;
         height: 160px;
     `}
+`
+
+// ローディング
+const LoadingContainer = styled.div`
+    display: ${({ isLoading }) => (isLoading ? 'none' : 'block')};
 `

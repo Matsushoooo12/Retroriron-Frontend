@@ -1,9 +1,11 @@
 import React from 'react'
 import styled from '@emotion/styled';
 
-const Loading = () => {
+const Loading = ({isLoading}) => {
+    // const {isLoading} = props;
+    console.log(isLoading)
     return (
-        <SvgContainer>
+        <SvgContainer isLoading={isLoading}>
             <SvgContents version="1.1" id="レイヤー_1" xmlns="http://www.w3.org/2000/svg" x="0px"
                 y="0px" viewBox="0 0 632.4 268.44">
                 <g>
@@ -143,6 +145,7 @@ const SvgContainer = styled.div`
     background-color: #fff;
     position: relative;
     z-index: 400;
+    display: ${({ isLoading }) => (!isLoading ? 'none' : 'block')};
 `
 
 const SvgContents = styled.svg`
@@ -160,7 +163,7 @@ const PathItem = styled.path`
     fill: #000;
     stroke: #000;
     stroke-width: 2px;
-    animation: svg 5s ease-in both infinite;
+    animation: svg 2s ease-in both infinite;
     @keyframes svg {
         0% {
           fill: transparent;
@@ -170,10 +173,10 @@ const PathItem = styled.path`
         20%{
           stroke-dashoffset: 0;
         }
-        30%{
+        50%{
           fill: transparent;
         }
-        50%{
+        70%{
           fill: #000;
         }
     }
@@ -183,7 +186,7 @@ const OrangePathItem = styled.path`
     fill: #F1A11B;
     stroke: #F1A11B;
     stroke-width: 2px;
-    animation: orangeSvg 5s ease-in both infinite;
+    animation: orangeSvg 2s ease-in both infinite;
     @keyframes orangeSvg {
         0% {
           fill: transparent;
@@ -193,10 +196,10 @@ const OrangePathItem = styled.path`
         20%{
           stroke-dashoffset: 0;
         }
-        30%{
+        50%{
           fill: transparent;
         }
-        50%{
+        70%{
           fill: #F1A11B;
         }
     }
