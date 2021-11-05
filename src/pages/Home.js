@@ -401,7 +401,7 @@ const Home = () => {
           <SpTextTitle>
             ー "明日"ではなく
             <SpTextTitleBr />
-            <SpTextTitleSpace>ー-</SpTextTitleSpace>"今日"を生きよう
+            <SpTextTitleSpace>ー </SpTextTitleSpace>"今日"を生きよう
           </SpTextTitle>
           <SpTextItem>
             2020年6月1日に結成。
