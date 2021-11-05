@@ -129,11 +129,11 @@ const Live = () => {
 
   // FutureTime
   const futureTime = (date) => {
-    return now.add('days', -1) < moment(date);
+    return now < moment(date).add('days', 1);
   };
 
   const pastTime = (date) => {
-    return now.add('days', -1) > moment(date);
+    return now > moment(date).add('days', 1);
   };
 
   // 画像があるかどうか
