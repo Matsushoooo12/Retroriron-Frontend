@@ -1,9 +1,6 @@
 import React, { useState } from 'react'
 import styled from '@emotion/styled';
 import Logo from '../../images/logo.webp'
-import Twitter from '../../images/twitter-logo.png'
-import Instagram from '../../images/insta-logo.png'
-import Youtube from '../../images/youtube-logo.png'
 import { Link, useLocation } from 'react-router-dom';
 import TwitterOrange from '../../images/twitter-icon-orange.png'
 import InstagramOrange from '../../images/insta-icon-orange.png'
