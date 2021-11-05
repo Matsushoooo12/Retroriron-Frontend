@@ -67,9 +67,9 @@ const Header = () => {
                     <MenuLi><MenuLink active={location.pathname === "/contact"} to="/contact">Contact</MenuLink></MenuLi>
                 </MenuUl>
                 <SnsContainer>
-                    <SnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/retroriron"><SnsIcon loading="lazy" src={Twitter} alt="レトロリロンのTwitterアイコン" /></SnsLink>
-                    <SnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/retroriron/?hl=ja"><SnsIcon loading="lazy" src={Instagram} alt="レトロリロンのInstagramアイコン" /></SnsLink>
-                    <SnsLink rel="noopener noreferrer" target="_blank" href="https://www.youtube.com/channel/UCkE8tVIvmdos9b1OqEhePlg"><SnsIcon loading="lazy" src={Youtube} alt="レトロリロンのYouTubeアイコン" /></SnsLink>
+                    <SnsLink rel="noopener noreferrer" target="_blank" href="https://twitter.com/retroriron"><SnsIcon loading="lazy" src={TwitterOrange} alt="レトロリロンのTwitterアイコン" /></SnsLink>
+                    <SnsLink rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/retroriron/?hl=ja"><SnsIcon loading="lazy" src={InstagramOrange} alt="レトロリロンのInstagramアイコン" /></SnsLink>
+                    <SnsLink rel="noopener noreferrer" target="_blank" href="https://www.youtube.com/channel/UCkE8tVIvmdos9b1OqEhePlg"><SnsIcon loading="lazy" src={YoutubeOrange} alt="レトロリロンのYouTubeアイコン" /></SnsLink>
                 </SnsContainer>
             </HeaderContainer>
             {hamburger ? (

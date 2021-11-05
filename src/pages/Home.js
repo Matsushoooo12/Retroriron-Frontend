@@ -7,8 +7,8 @@ import NumaImage from '../images/numa.webp'
 import NagayamaImage from '../images/taiki.webp'
 import SuzuneImage from '../images/suzune.webp'
 import MiriImage from '../images/miri.webp'
-import Twitter from '../images/twitter-logo.png'
-import Instagram from '../images/insta-logo.png'
+import Twitter from '../images/twitter-icon-orange.png'
+import Instagram from '../images/insta-icon-orange.png'
 import Loading from '../components/common/Loading';
 import Header from '../components/common/Header';
 

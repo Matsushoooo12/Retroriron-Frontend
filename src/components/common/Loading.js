@@ -158,7 +158,7 @@ const SvgContents = styled.svg`
     bottom: 0;
     position: fixed;
     @media screen and (min-width: 900px){
-        width: 500px;
+        max-width: 500px;
     }
 `
 
