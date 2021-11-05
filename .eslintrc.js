@@ -13,7 +13,13 @@ module.exports = {
   },
   plugins: ['react'],
   rules: {
+    'no-undef': 'off',
     'react/prop-types': 'off',
     'react/no-unescaped-entities': 'off',
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
   },
 };
