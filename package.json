@@ -20,11 +20,13 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
+    "prepare": "husky install",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "format": "prettier --write \"src/**/*.js\"",
+    "format:check": "prettier --check \"src/**/*.js\"",
     "lint": "eslint --fix \"src/**/*.js\""
   },
   "eslintConfig": {
@@ -50,6 +52,14 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.26.1",
+    "husky": "^7.0.4",
+    "lint-staged": "^11.2.6",
     "prettier": "2.4.1"
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "prettier -c",
+      "eslint -c .eslintrc.js"
+    ]
   }
 }
