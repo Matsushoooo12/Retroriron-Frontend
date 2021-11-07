@@ -27,7 +27,7 @@ const SpTicketConfirm = (props) => {
       setIsCompleteVisible(true);
       window.scroll({ top: 0, behavior: 'smooth' });
     } catch (e) {
-      console.log(e);
+      alert(e);
     }
   };
 

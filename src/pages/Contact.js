@@ -27,8 +27,6 @@ const Contact = () => {
     window.scroll({ top: 0, behavior: 'smooth' });
   };
 
-  console.log(isConfirmationVisible);
-
   return (
     <>
       <Helmet>

@@ -26,7 +26,7 @@ const TicketConfirm = (props) => {
       console.log(res);
       setIsCompleteVisible(true);
     } catch (e) {
-      console.log(e);
+      alert(e);
     }
   };
 
