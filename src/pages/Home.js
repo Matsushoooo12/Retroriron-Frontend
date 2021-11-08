@@ -11,6 +11,7 @@ import Twitter from '../images/twitter-icon-orange.png';
 import Instagram from '../images/insta-icon-orange.png';
 import Loading from '../components/common/Loading';
 import Header from '../components/common/Header';
+import Footer from '../components/common/Footer';
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -212,6 +213,7 @@ const Home = () => {
             </PcMemberTextContainer>
           </PcMemberItemContainer>
         </PcMemberContainer>
+        <Footer />
         {/* PC */}
         {/* TAB */}
         <TabFv src={FvFrame} alt="レトロリロンのアー写" />

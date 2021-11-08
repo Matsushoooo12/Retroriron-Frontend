@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 import { useForm } from 'react-hook-form';
 import ContactConfirm2 from '../components/contact/ContactConfirm';
 import Header from '../components/common/Header';
+import Footer from '../components/common/Footer';
 
 const Contact = () => {
   // useForm
@@ -123,6 +124,7 @@ const Contact = () => {
           hideConfirmation={hideConfirmation}
         />
       )}
+      <Footer />
     </>
   );
 };
@@ -154,7 +156,7 @@ const ContactContainer = styled.div`
     height: 100%;
     width: 100%;
     padding-bottom: 160px;
-    max-width: 1000px;
+    max-width: 1200px;
   }
   @media screen and (min-width: 1440px) {
     margin: 0;

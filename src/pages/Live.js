@@ -14,6 +14,7 @@ import YoutubeOrange from '../images/youtube-icon-orange.png';
 import NilImageUrl from '../images/nil_image.JPG';
 import Loading from '../components/common/Loading';
 import Header from '../components/common/Header';
+import Footer from '../components/common/Footer';
 
 const Live = () => {
   // ローディング
@@ -399,6 +400,7 @@ const Live = () => {
               />
             )}
           </ModalContainer>
+          <Footer />
         </PcLiveContainer>
         {/* TAB */}
         {!isConfirmationVisible ? (

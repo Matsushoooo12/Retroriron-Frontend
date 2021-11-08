@@ -7,7 +7,7 @@ import News from './pages/News';
 import Discography from './pages/Discography';
 import Contact from './pages/Contact';
 import './components/common/reset.css';
-import Footer from './components/common/Footer';
+// import Footer from './components/common/Footer';
 
 function App() {
   return (
@@ -22,9 +22,9 @@ function App() {
               <Route exact path="/discography" component={Discography} />
               <Route exact path="/contact" component={Contact} />
             </Switch>
+            {/* <Footer /> */}
           </MainItem>
         </MainItemContainer>
-        <Footer />
       </MainAllContainer>
     </BrowserRouter>
   );

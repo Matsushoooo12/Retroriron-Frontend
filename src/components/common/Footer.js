@@ -17,15 +17,11 @@ const PcFooterContainer = styled.div`
   display: none;
   @media screen and (min-width: 900px) {
     display: block;
-    width: calc(100% - 250px);
+    width: 100%;
+    max-width: 1200px;
     height: 88px;
     background-color: #fff;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-  }
-  @media screen and (min-width: 1150px) {
-    width: calc(100% - 314px);
+    text-align: center;
   }
 `;
 

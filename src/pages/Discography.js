@@ -7,6 +7,7 @@ import SubscriptionIcon from '../images/vector-musuic.png';
 import { getDiscography } from '../api';
 import Loading from '../components/common/Loading';
 import Header from '../components/common/Header';
+import Footer from '../components/common/Footer';
 
 const Discography = () => {
   // ローディング
@@ -162,6 +163,7 @@ const Discography = () => {
             </SpDiscographyItemContainer>
           ))}
         </SpDiscographyContainer>
+        <Footer />
       </LoadingContainer>
     </>
   );

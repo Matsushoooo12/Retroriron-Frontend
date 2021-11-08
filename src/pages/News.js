@@ -7,6 +7,7 @@ import Plus from '../images/open-btn.png';
 import Minus from '../images/close-btn.png';
 import Header from '../components/common/Header';
 import Loading from '../components/common/Loading';
+import Footer from '../components/common/Footer';
 
 const News = () => {
   // ローディング
@@ -178,6 +179,7 @@ const News = () => {
             </NewsItemContainer>
           ))}
         </NewsContainer>
+        <Footer />
       </LoadingContainer>
     </>
   );
