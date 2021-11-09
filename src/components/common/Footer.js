@@ -21,7 +21,6 @@ const PcFooterContainer = styled.div`
     max-width: 1200px;
     height: 88px;
     background-color: #fff;
-    text-align: center;
   }
 `;
 
