@@ -700,7 +700,7 @@ const PcSnsIcon = styled.img`
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 13px rgba(108, 65, 0, 0.2);
 `;
 
 const PcSnsLink = styled.a`
@@ -822,7 +822,7 @@ const TabSnsIcon = styled.img`
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 13px rgba(108, 65, 0, 0.2);
 `;
 
 const TabSnsLink = styled.a`
@@ -950,7 +950,7 @@ const SpSnsIcon = styled.img`
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 13px rgba(108, 65, 0, 0.2);
 `;
 
 const SpSnsLink = styled.a`
