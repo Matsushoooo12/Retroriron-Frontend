@@ -225,7 +225,7 @@ const PcDiscographyTag = styled.p`
   font-weight: 900;
   padding: 2px 8px;
   background-color: #fff;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 13px rgba(108, 65, 0, 0.2);
   border-radius: 5px;
   position: absolute;
   left: 4px;
@@ -264,7 +264,7 @@ const PcDiscographyLinkItemContainer = styled.a`
   justify-content: space-between;
   background-color: #fff;
   border: 1px solid #ffffff;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 13px rgba(108, 65, 0, 0.2);
   border-radius: 20px;
   cursor: pointer;
   height: 40px;
@@ -362,7 +362,7 @@ const SpDiscographyTag = styled.p`
   font-weight: 700;
   padding: 2px 8px;
   background-color: #fff;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 13px rgba(108, 65, 0, 0.2);
   border-radius: 5px;
   position: absolute;
   left: 2px;
@@ -382,7 +382,7 @@ const SpDiscographyLinkItemContainer = styled.a`
   justify-content: space-between;
   background-color: #fff;
   border: 1px solid #ffffff;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 13px rgba(108, 65, 0, 0.2);
   border-radius: 20px;
   cursor: pointer;
   height: 40px;
