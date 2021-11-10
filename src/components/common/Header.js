@@ -538,7 +538,7 @@ const SnsIcon = styled.img`
     height: 60px;
     border-radius: 50%;
     margin-bottom: 32px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 13px rgba(108, 65, 0, 0.2);
   }
 `;
 
