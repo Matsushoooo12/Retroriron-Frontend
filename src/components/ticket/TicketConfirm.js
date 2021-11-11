@@ -7,8 +7,6 @@ const TicketConfirm = (props) => {
   const { ticket, values, hideConfirmation } = props;
 
   const value = {
-    title: ticket.title,
-    date: ticket.date,
     nameKana: values.nameKana,
     email: values.email,
     number: values.number,
@@ -47,12 +45,12 @@ const TicketConfirm = (props) => {
             <TicketDateAndTitleContainer>
               <TicketDateAndTitleTextField
                 type="text"
-                value={value.date}
+                value={ticket.date}
                 disabled
               />
               <TicketDateAndTitleTextField
                 type="text"
-                value={value.title}
+                value={ticket.title}
                 disabled
                 title
               />
@@ -120,7 +118,7 @@ const TicketConfirm = (props) => {
           </TicketFormContainer>
         </TicketItemContainer>
       ) : (
-        <TicketComplete values={values} />
+        <TicketComplete values={values} ticket={ticket} />
       )}
     </>
   );
