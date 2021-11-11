@@ -33,8 +33,11 @@ const Contact = () => {
       <Helmet>
         <title>レトロリロン - Contact page</title>
         <meta
-          name="the Contact page of a pop band called Retroriron."
-          content="contact page"
+          name="description"
+          content="
+            音楽大学出身の個性豊かな4人組バンド、レトロリロンのWebサイトのContactページ。
+            レトロリロンへのお問い合わせはこちらからどうぞ。
+          "
         />
       </Helmet>
       <Header />

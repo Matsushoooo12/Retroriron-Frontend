@@ -78,8 +78,11 @@ const News = () => {
       <Helmet>
         <title>レトロリロン - News page</title>
         <meta
-          name="the News page of a pop band called Retroriron."
-          content="news page"
+          name="description"
+          content="
+            音楽大学出身の個性豊かな4人組バンド、レトロリロンのWebサイトのNewsページ。
+            日頃のバンド活動や、個々のメンバーの活動についてのニュースを配信しています。
+          "
         />
       </Helmet>
       {/* HEAD */}

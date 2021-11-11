@@ -27,10 +27,14 @@ const Home = () => {
     <>
       {/* Head */}
       <Helmet>
-        <title>レトロリロン - Home page</title>
+        <title>レトロリロン</title>
         <meta
-          name="the Home page of a pop band called Retroriron."
-          content="home page"
+          name="description"
+          content="
+            音楽大学出身の個性豊かな4人組バンド、レトロリロンのWebサイト。
+            4人の多彩な音楽性によって紡がれるジャンルレスなサウンドは人々の心を震わせ、
+            ”明日”ではなく”今日”を生きようという力強い歌詞は生きる希望を与える。
+          "
         />
       </Helmet>
       {/* Head */}

@@ -197,8 +197,12 @@ const Live = () => {
       <Helmet>
         <title>レトロリロン - Live page</title>
         <meta
-          name="the Live page of a pop band called Retroriron."
-          content="live page"
+          name="description"
+          content="
+            音楽大学出身の個性豊かな4人組バンド、レトロリロンのWebサイトのLiveページ。
+            レトロリロンのライブ活動の情報を配信しています。
+            下北沢を拠点に日頃から精力的に活動しています。
+          "
         />
       </Helmet>
       <Loading isLoading={isLoading} />
