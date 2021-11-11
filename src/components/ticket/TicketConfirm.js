@@ -4,11 +4,9 @@ import { createTicket } from '../../api';
 import TicketComplete from './TicketComplete';
 
 const TicketConfirm = (props) => {
-  const { values, hideConfirmation } = props;
+  const { ticket, values, hideConfirmation } = props;
 
   const value = {
-    date: values.date,
-    title: values.title,
     nameKana: values.nameKana,
     email: values.email,
     number: values.number,
@@ -47,12 +45,12 @@ const TicketConfirm = (props) => {
             <TicketDateAndTitleContainer>
               <TicketDateAndTitleTextField
                 type="text"
-                value={value.date}
+                value={ticket.date}
                 disabled
               />
               <TicketDateAndTitleTextField
                 type="text"
-                value={value.title}
+                value={ticket.title}
                 disabled
                 title
               />
