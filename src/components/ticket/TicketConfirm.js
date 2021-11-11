@@ -120,7 +120,7 @@ const TicketConfirm = (props) => {
           </TicketFormContainer>
         </TicketItemContainer>
       ) : (
-        <TicketComplete values={values} />
+        <TicketComplete values={values} ticket={ticket} />
       )}
     </>
   );
