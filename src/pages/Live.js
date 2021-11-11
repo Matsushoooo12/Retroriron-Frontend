@@ -304,11 +304,13 @@ const Live = () => {
                     <TicketDateAndTitleTextField
                       type="text"
                       name="date"
+                      readonly
                       value={ticketValue.date}
                     />
                     <TicketDateAndTitleTextField
                       type="text"
                       name="title"
+                      readonly
                       value={ticketValue.title}
                       title
                     />
