@@ -748,6 +748,8 @@ const PcLiveFinishTag = styled.p`
   font-size: 1.2rem;
   font-weight: 900;
   padding: 0 8px;
+  height: 24px;
+  line-height: 24px;
   color: #fff;
   background-color: #f42626;
   border-radius: 3px;
@@ -990,7 +992,9 @@ const TabLiveFinishTag = styled.p`
   display: none;
   font-size: 1.2rem;
   font-weight: 900;
-  padding: 4px 8px;
+  padding: 0 8px;
+  height: 24px;
+  line-height: 24px;
   color: #fff;
   background-color: #f42626;
   border-radius: 3px;
@@ -1138,7 +1142,9 @@ const SpLiveFinishTag = styled.p`
   display: none;
   font-size: 1.2rem;
   font-weight: 900;
-  padding: 4px 8px;
+  padding: 0 8px;
+  height: 24px;
+  line-height: 24px;
   color: #fff;
   background-color: #f42626;
   border-radius: 3px;
