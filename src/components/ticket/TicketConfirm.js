@@ -7,6 +7,8 @@ const TicketConfirm = (props) => {
   const { ticket, values, hideConfirmation } = props;
 
   const value = {
+    title: ticket.title,
+    date: ticket.date,
     nameKana: values.nameKana,
     email: values.email,
     number: values.number,
@@ -45,12 +47,12 @@ const TicketConfirm = (props) => {
             <TicketDateAndTitleContainer>
               <TicketDateAndTitleTextField
                 type="text"
-                value={ticket.date}
+                value={value.date}
                 disabled
               />
               <TicketDateAndTitleTextField
                 type="text"
-                value={ticket.title}
+                value={value.title}
                 disabled
                 title
               />

@@ -311,18 +311,12 @@ const Live = () => {
                       name="date"
                       value={ticketValue.date}
                       readOnly
-                      {...register('date', {
-                        required: true,
-                      })}
                     />
                     <TicketDateAndTitleTextField
                       type="text"
                       name="title"
                       value={ticketValue.title}
                       readOnly
-                      {...register('title', {
-                        required: true,
-                      })}
                       title
                     />
                   </TicketDateAndTitleContainer>
@@ -399,6 +393,7 @@ const Live = () => {
               </TicketItemContainer>
             ) : (
               <TicketConfirm
+                ticket={ticketValue}
                 values={getValues()}
                 hideConfirmation={hideConfirmation}
               />
