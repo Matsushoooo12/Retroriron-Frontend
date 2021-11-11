@@ -120,9 +120,7 @@ const News = () => {
               </PcNewsMainContainer>
               {/* TAB */}
               <TabNewsItemOtherContainer>
-                <TabNewsTagText
-                  IsHidden={now.subtract(2, 'weeks') > moment(item.date)}
-                >
+                <TabNewsTagText IsHidden={newTagHidden(item.date)}>
                   New
                 </TabNewsTagText>
                 <TabNewsDate>{dateFormat(item.date)}</TabNewsDate>
@@ -157,11 +155,7 @@ const News = () => {
               <SpNewsMainContainer>
                 <SpNewsItemOtherContainer onClick={toggleAccordion(item.id)}>
                   <SpNewsDate>{dateFormat(item.date)}</SpNewsDate>
-                  <SpNewsTag
-                    IsHidden={now.subtract(2, 'weeks') > moment(item.date)}
-                  >
-                    New
-                  </SpNewsTag>
+                  <SpNewsTag IsHidden={newTagHidden(item.date)}>New</SpNewsTag>
                 </SpNewsItemOtherContainer>
                 <SpNewsTitle onClick={toggleAccordion(item.id)}>
                   {item.title}
