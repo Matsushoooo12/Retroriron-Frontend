@@ -37,9 +37,10 @@ const Live = () => {
   const hideConfirmation = () => setIsConfirmationVisible(false);
 
   //submitボタンを押した時、入力内容確認画面を表示させる
-  const onSubmitData = handleSubmit(() => {
+  const onSubmitData = () => {
     setIsConfirmationVisible(true);
-  });
+    console.log(isConfirmationVisible);
+  };
 
   // TicketValue
   const [ticketValue, setTicketValue] = useState({
@@ -200,7 +201,7 @@ const Live = () => {
           content="
             音楽大学出身の個性豊かな4人組バンド、レトロリロンのWebサイトのLiveページ。
             レトロリロンのライブ活動の情報を配信しています。
-            下北沢を拠点に日頃から精力的に活動しています。
+            下北沢を拠点に精力的にライブ活動を行っています。
           "
         />
       </Helmet>
@@ -303,19 +304,25 @@ const Live = () => {
                 <TicketCautionText>
                   ※下記のライブのお申し込みでお間違いないかご確認ください。
                 </TicketCautionText>
-                <form onSubmit={onSubmitData}>
+                <TicketFormContainer onSubmit={handleSubmit(onSubmitData)}>
                   <TicketDateAndTitleContainer>
                     <TicketDateAndTitleTextField
                       type="text"
                       name="date"
-                      readonly
                       value={ticketValue.date}
+                      readOnly
+                      {...register('date', {
+                        required: true,
+                      })}
                     />
                     <TicketDateAndTitleTextField
                       type="text"
                       name="title"
-                      readonly
                       value={ticketValue.title}
+                      readOnly
+                      {...register('title', {
+                        required: true,
+                      })}
                       title
                     />
                   </TicketDateAndTitleContainer>
@@ -388,11 +395,10 @@ const Live = () => {
                   <TicketFormGroup className="right">
                     <TicketFormSubmitButton type="submit" value="確認する" />
                   </TicketFormGroup>
-                </form>
+                </TicketFormContainer>
               </TicketItemContainer>
             ) : (
               <TicketConfirm
-                ticket={ticketValue}
                 values={getValues()}
                 hideConfirmation={hideConfirmation}
               />
@@ -811,6 +817,10 @@ const TicketCautionText = styled.p`
   color: #f42626;
   margin: 0 24px 24px;
 `;
+
+// TicketFormContainer
+
+const TicketFormContainer = styled.form``;
 
 // ContactFormContainer
 
