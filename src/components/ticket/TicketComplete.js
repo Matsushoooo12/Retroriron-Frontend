@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-const TicketComplete = (props) => {
-  const { values, ticket } = props;
-
+const TicketComplete = ({ values }) => {
   const handleClick = () => {
     // eslint-disable-next-line no-restricted-globals
     return location.reload();
@@ -21,8 +19,8 @@ const TicketComplete = (props) => {
       </TicketText>
       <TicketCompleteBlock>
         <TicketCompleteTitle>
-          {ticket.date}
-          <TicketCompleteTitleLeft>{ticket.title}</TicketCompleteTitleLeft>
+          {values.date}
+          <TicketCompleteTitleLeft>{values.title}</TicketCompleteTitleLeft>
         </TicketCompleteTitle>
         <TicketCompleteText>ナマエ｜{values.nameKana}</TicketCompleteText>
         <TicketCompleteText>メールアドレス｜{values.email}</TicketCompleteText>
