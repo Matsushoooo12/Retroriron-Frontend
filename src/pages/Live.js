@@ -726,7 +726,6 @@ const PcLiveImage = styled.img`
     props.vertical &&
     `
         width: 160px;
-        height: 200px;
     `}
 `;
 
@@ -1015,7 +1014,6 @@ const TabLiveImage = styled.img`
       props.vertical &&
       `
             width: 128px;
-            height: 160px;
         `}
   }
   @media screen and (min-width: 680px) {
@@ -1025,7 +1023,6 @@ const TabLiveImage = styled.img`
       props.vertical &&
       `
             width: 160px;
-            height: 200px;
         `}
   }
 `;
@@ -1178,7 +1175,6 @@ const SpLiveImage = styled.img`
     props.vertical &&
     `
         width: 128px;
-        height: 200px;
     `}
 `;
 

@@ -308,7 +308,6 @@ const PcNewsImage = styled.img`
     props.vertical &&
     `
         width: 160px;
-        height: 200px;
     `}
 `;
 
@@ -400,7 +399,6 @@ const TabNewsImage = styled.img`
     props.vertical &&
     `
         width: 160px;
-        height: 200px;
     `}
 `;
 
@@ -475,7 +473,6 @@ const SpNewsImage = styled.img`
     props.vertical &&
     `
         width: 128px;
-        height: 160px;
     `}
 `;
 
