@@ -37,10 +37,9 @@ const Live = () => {
   const hideConfirmation = () => setIsConfirmationVisible(false);
 
   //submitボタンを押した時、入力内容確認画面を表示させる
-  const onSubmitData = () => {
+  const onSubmitData = handleSubmit(() => {
     setIsConfirmationVisible(true);
-    console.log(isConfirmationVisible);
-  };
+  });
 
   // TicketValue
   const [ticketValue, setTicketValue] = useState({
@@ -300,25 +299,17 @@ const Live = () => {
                 <TicketCautionText>
                   ※下記のライブのお申し込みでお間違いないかご確認ください。
                 </TicketCautionText>
-                <TicketFormContainer onSubmit={handleSubmit(onSubmitData)}>
+                <form onSubmit={onSubmitData}>
                   <TicketDateAndTitleContainer>
                     <TicketDateAndTitleTextField
                       type="text"
                       name="date"
                       value={ticketValue.date}
-                      readOnly
-                      {...register('date', {
-                        required: true,
-                      })}
                     />
                     <TicketDateAndTitleTextField
                       type="text"
                       name="title"
                       value={ticketValue.title}
-                      readOnly
-                      {...register('title', {
-                        required: true,
-                      })}
                       title
                     />
                   </TicketDateAndTitleContainer>
@@ -391,10 +382,11 @@ const Live = () => {
                   <TicketFormGroup className="right">
                     <TicketFormSubmitButton type="submit" value="確認する" />
                   </TicketFormGroup>
-                </TicketFormContainer>
+                </form>
               </TicketItemContainer>
             ) : (
               <TicketConfirm
+                ticket={ticketValue}
                 values={getValues()}
                 hideConfirmation={hideConfirmation}
               />
@@ -813,10 +805,6 @@ const TicketCautionText = styled.p`
   color: #f42626;
   margin: 0 24px 24px;
 `;
-
-// TicketFormContainer
-
-const TicketFormContainer = styled.form``;
 
 // ContactFormContainer
 
