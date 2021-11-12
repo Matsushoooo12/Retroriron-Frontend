@@ -1191,46 +1191,44 @@ const SpLiveDetailText = styled.p`
   ${(props) => props.active && `display: block;`}
 `;
 
-// SP SNS固定
+// SpFixedSNS
 
 const SnsFixedContainer = styled.div`
-  display: flex;
+  display: block;
   position: fixed;
-  z-index: 50;
-  width: 100%;
-  left: -40%;
-  top: 72%;
-  transform: rotate(90deg);
-  align-items: center;
+  left: 8%;
+  top: 50%;
+  width: 32px;
   @media screen and (min-width: 900px) {
     display: none;
   }
-  ${(props) => props.hidden && `display: none;`}
+  ${(props) => props.location && `display: none;`}
 `;
 
 const SnsFixedBorder = styled.div`
-  height: 1px;
-  width: 24px;
+  height: 24px;
+  width: 1px;
   background-color: #000000;
+  margin: 0 auto 16px;
 `;
 
 const SnsFixedText = styled.p`
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
   font-size: 1rem;
   font-weight: 700;
-  margin-left: 16px;
-  margin-right: 16px;
-  white-space: pre-wrap;
+  margin: 0 auto 12px;
+  padding-left: 2px;
 `;
 
 const SnsFixedIconLink = styled.a`
   text-decoration: none;
-  margin-right: 16px;
 `;
 
 const SnsFixedIconImage = styled.img`
-  width: 32px;
+  width: 100%;
   height: 30px;
-  transform: rotate(-90deg);
+  margin-bottom: 16px;
 `;
 
 // ライブ画像モーダル

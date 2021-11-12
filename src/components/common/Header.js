@@ -203,6 +203,44 @@ const Header = () => {
       ) : (
         <HamburgerMenuContentContainer></HamburgerMenuContentContainer>
       )}
+      {/* <SnsFixedContainer location={hiddenFixedSns()}>
+        <SnsFixedBorder></SnsFixedBorder>
+        <SnsFixedText>our sns</SnsFixedText>
+        <SnsFixedIconLink
+          rel="noopener noreferrer"
+          target="_blank"
+          href="https://twitter.com/retroriron"
+        >
+          <SnsFixedIconImage
+            loading="lazy"
+            src={TwitterOrange}
+            alt="レトロリロンのTwitterアイコン"
+          />
+        </SnsFixedIconLink>
+        <SnsFixedIconLink
+          rel="noopener noreferrer"
+          target="_blank"
+          href="https://www.instagram.com/retroriron/?hl=ja"
+        >
+          <SnsFixedIconImage
+            loading="lazy"
+            src={InstagramOrange}
+            alt="レトロリロンのInstagramアイコン"
+          />
+        </SnsFixedIconLink>
+        <SnsFixedIconLink
+          rel="noopener noreferrer"
+          target="_blank"
+          href="https://www.youtube.com/channel/UCkE8tVIvmdos9b1OqEhePlg"
+        >
+          <SnsFixedIconImage
+            loading="lazy"
+            src={YoutubeOrange}
+            alt="レトロリロンのYouTubeアイコン"
+          />
+        </SnsFixedIconLink>
+        <SnsFixedBorder></SnsFixedBorder>
+      </SnsFixedContainer> */}
       <SnsFixedContainer location={hiddenFixedSns()}>
         <SnsFixedBorder></SnsFixedBorder>
         <SnsFixedText>our sns</SnsFixedText>
@@ -544,17 +582,14 @@ const SnsIcon = styled.img`
 
 const SnsLink = styled.a``;
 
-// SP SNS固定
+// SpFixedSNS
 
 const SnsFixedContainer = styled.div`
-  display: flex;
+  display: block;
   position: fixed;
-  z-index: 50;
-  width: 100%;
-  left: -40%;
-  top: 72%;
-  transform: rotate(90deg);
-  align-items: center;
+  left: 8%;
+  top: 50%;
+  width: 32px;
   @media screen and (min-width: 900px) {
     display: none;
   }
@@ -562,28 +597,27 @@ const SnsFixedContainer = styled.div`
 `;
 
 const SnsFixedBorder = styled.div`
-  height: 1px;
-  width: 24px;
+  height: 24px;
+  width: 1px;
   background-color: #000000;
+  margin: 0 auto 16px;
 `;
 
 const SnsFixedText = styled.p`
-  color: #292929;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
   font-size: 1rem;
-  font-family: 'Noto Sans JP', sans-serif;
   font-weight: 700;
-  margin-left: 16px;
-  margin-right: 16px;
-  white-space: pre-wrap;
+  margin: 0 auto 12px;
+  padding-left: 2px;
 `;
 
 const SnsFixedIconLink = styled.a`
   text-decoration: none;
-  margin-right: 16px;
 `;
 
 const SnsFixedIconImage = styled.img`
-  width: 32px;
+  width: 100%;
   height: 30px;
-  transform: rotate(-90deg);
+  margin-bottom: 16px;
 `;
