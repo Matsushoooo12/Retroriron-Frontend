@@ -7,7 +7,7 @@ const useTracking = () => {
   const [initialized, setInitialized] = useState(false);
 
   useEffect(() => {
-    if (!window.location.href.includes('localhost')) {
+    if (!window.location.href.includes('https://retroriron.com')) {
       ReactGA.initialize(process.env.GA_MEASUREMENT_ID);
       setInitialized(true);
     }
