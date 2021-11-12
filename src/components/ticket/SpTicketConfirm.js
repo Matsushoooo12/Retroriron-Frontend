@@ -213,6 +213,8 @@ const TicketDateAndTitleTextField = styled.input`
   font-size: 1.6rem;
   font-weight: 700;
   display: block;
+  width: 100%;
+  height: 100%;
 `;
 
 const TicketFormTextField = styled.input`
