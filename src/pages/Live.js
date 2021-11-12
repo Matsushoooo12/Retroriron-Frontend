@@ -15,6 +15,7 @@ import NilImageUrl from '../images/nil_image.JPG';
 import Loading from '../components/common/Loading';
 import Header from '../components/common/Header';
 import Footer from '../components/common/Footer';
+import { TicketFormLabel } from '../components/ticket/TicketFormLabel';
 
 const Live = () => {
   // ローディング
@@ -321,15 +322,12 @@ const Live = () => {
                     />
                   </TicketDateAndTitleContainer>
                   <TicketFormGroup>
-                    <TicketFormLabel htmlFor="nameKana">
-                      ナマエ
-                      <TicketFormRequiredSign>*</TicketFormRequiredSign>
-                      {errors.nameKana && (
-                        <TicketFormRequiredSign>
-                          こちらは必須項目です。
-                        </TicketFormRequiredSign>
-                      )}
-                    </TicketFormLabel>
+                    <TicketFormLabel
+                      title="ナマエ"
+                      htmlFor="nameKana"
+                      errors={errors.nameKana}
+                      required
+                    />
                     <TicketFormTextField
                       name="nameKana"
                       id="nameKane"
@@ -338,15 +336,13 @@ const Live = () => {
                         required: true,
                       })}
                     />
-                    <TicketFormLabel htmlFor="email">
-                      メールアドレス
-                      <TicketFormRequiredSign>*</TicketFormRequiredSign>
-                      {errors.email && (
-                        <TicketFormRequiredSign>
-                          こちらは必須項目です。
-                        </TicketFormRequiredSign>
-                      )}
-                    </TicketFormLabel>
+
+                    <TicketFormLabel
+                      title="メールアドレス"
+                      htmlFor="email"
+                      errors={errors.email}
+                      required
+                    />
                     <TicketFormTextField
                       name="email"
                       type="email"
@@ -355,15 +351,14 @@ const Live = () => {
                         required: true,
                       })}
                     />
-                    <TicketFormLabel htmlFor="number">
-                      枚数
-                      <TicketFormRequiredSign>*</TicketFormRequiredSign>
-                      {errors.number && (
-                        <TicketFormRequiredSign>
-                          こちらは必須項目です。
-                        </TicketFormRequiredSign>
-                      )}
-                    </TicketFormLabel>
+
+                    <TicketFormLabel
+                      title="枚数"
+                      htmlFor="number"
+                      errors={errors.number}
+                      required
+                    />
+
                     <TicketFormNumber
                       name="number"
                       type="number"
@@ -374,9 +369,8 @@ const Live = () => {
                         required: true,
                       })}
                     />
-                    <TicketFormLabel htmlFor="description">
-                      備考
-                    </TicketFormLabel>
+                    <TicketFormLabel title="備考" htmlFor="description" />
+
                     <TicketFormTextField
                       name="description"
                       type="text"
@@ -818,11 +812,6 @@ const TicketFormContainer = styled.form``;
 
 // ContactFormContainer
 
-const TicketFormLabel = styled.label`
-  font-size: 1.6rem;
-  font-weight: 700;
-`;
-
 const TicketFormGroup = styled.div`
   width: 90%;
   margin: 0 auto;
@@ -834,14 +823,6 @@ const TicketFormGroup = styled.div`
     border: none;
     padding: 0;
   }
-`;
-
-const TicketFormRequiredSign = styled.span`
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #f42626;
-  margin-left: 4px;
-  margin-right: 16px;
 `;
 
 // input:text
