@@ -399,7 +399,6 @@ const Live = () => {
               />
             )}
           </ModalContainer>
-          <Footer />
         </PcLiveContainer>
         {/* TAB */}
         {!isConfirmationVisible ? (
@@ -494,6 +493,7 @@ const Live = () => {
                 </TabLiveItemContainer>
               ))}
             </TabLiveContainer>
+            <Footer />
             <SpLiveContainer>
               {lives.map((item) => (
                 <SpLiveItemContainer key={item.id}>
