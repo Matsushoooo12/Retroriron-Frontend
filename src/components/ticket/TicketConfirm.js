@@ -2,18 +2,10 @@ import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import { createTicket } from '../../api';
 import TicketComplete from './TicketComplete';
+import { TicketFormLabel } from '../../components/ticket/TicketFormLabel';
 
 const TicketConfirm = (props) => {
-  const { ticket, values, hideConfirmation } = props;
-
-  const value = {
-    title: ticket.title,
-    date: ticket.date,
-    nameKana: values.nameKana,
-    email: values.email,
-    number: values.number,
-    description: values.description,
-  };
+  const { ticket, hideConfirmation } = props;
 
   // isCompleteVisibleにstateを持たせて、入力内容確認画面の表示・非表示をコントロール
   // isCompleteVisibleの初期値はfalseで入力内容確認画面は非表示に
@@ -22,7 +14,7 @@ const TicketConfirm = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await createTicket(value);
+      const res = await createTicket(ticket);
       console.log(res);
       setIsCompleteVisible(true);
     } catch (e) {
@@ -47,58 +39,51 @@ const TicketConfirm = (props) => {
             <TicketDateAndTitleContainer>
               <TicketDateAndTitleTextField
                 type="text"
-                value={value.date}
+                value={ticket.date}
                 disabled
               />
               <TicketDateAndTitleTextField
                 type="text"
-                value={value.title}
+                value={ticket.title}
                 disabled
               />
             </TicketDateAndTitleContainer>
             <TicketFormGroup>
-              <TicketFormLabel htmlFor="nameKana">
-                ナマエ
-                <TicketFormRequiredSign>*</TicketFormRequiredSign>
-              </TicketFormLabel>
+              <TicketFormLabel title="ナマエ" htmlFor="nameKana" />
               <TicketFormTextField
                 name="nameKana"
                 type="text"
                 id="nameKana"
-                value={value.nameKana}
+                value={ticket.nameKana}
                 disabled
                 className="disabled"
               />
-              <TicketFormLabel htmlFor="email">
-                メールアドレス
-                <TicketFormRequiredSign>*</TicketFormRequiredSign>
-              </TicketFormLabel>
+              <TicketFormLabel title="メールアドレス" htmlFor="email" />
               <TicketFormTextField
                 name="email"
                 type="email"
                 id="email"
-                value={value.email}
+                value={ticket.email}
                 disabled
                 className="disabled"
               />
-              <TicketFormLabel htmlFor="number">
-                枚数
-                <TicketFormRequiredSign>*</TicketFormRequiredSign>
-              </TicketFormLabel>
+
+              <TicketFormLabel title="枚数" htmlFor="number" />
               <TicketFormNumber
                 name="number"
                 type="number"
                 id="number"
-                value={value.number}
+                value={ticket.number}
                 disabled
                 className="disabled"
               />
-              <TicketFormLabel htmlFor="description">備考</TicketFormLabel>
+
+              <TicketFormLabel title="備考" htmlFor="description" />
               <TicketFormTextField
                 name="description"
                 type="text"
                 id="description"
-                value={value.description}
+                value={ticket.description}
                 disabled
                 className="disabled"
               />
@@ -119,7 +104,7 @@ const TicketConfirm = (props) => {
           </TicketFormContainer>
         </TicketItemContainer>
       ) : (
-        <TicketComplete values={values} ticket={ticket} />
+        <TicketComplete values={ticket} ticket={ticket} />
       )}
     </>
   );
@@ -166,13 +151,6 @@ const TicketCautionText = styled.p`
 
 const TicketFormContainer = styled.form``;
 
-// ContactFormContainer
-
-const TicketFormLabel = styled.label`
-  font-size: 1.6rem;
-  font-weight: 700;
-`;
-
 const TicketFormGroup = styled.div`
   width: 90%;
   margin: 0 auto;
@@ -185,16 +163,6 @@ const TicketFormGroup = styled.div`
     padding: 0;
   }
 `;
-
-const TicketFormRequiredSign = styled.span`
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #f42626;
-  margin-left: 4px;
-  margin-right: 16px;
-`;
-
-// input:text
 
 const TicketDateAndTitleContainer = styled.div`
   background-color: #f0f0f0;

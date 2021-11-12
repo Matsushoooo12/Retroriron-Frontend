@@ -387,8 +387,11 @@ const Live = () => {
               </TicketItemContainer>
             ) : (
               <TicketConfirm
-                ticket={ticketValue}
-                values={getValues()}
+                ticket={{
+                  date: ticketValue.date,
+                  title: ticketValue.title,
+                  ...getValues(),
+                }}
                 hideConfirmation={hideConfirmation}
               />
             )}
