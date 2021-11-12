@@ -7,10 +7,8 @@ import News from './pages/News';
 import Discography from './pages/Discography';
 import Contact from './pages/Contact';
 import './components/common/reset.css';
-import useTracking from './hooks/useTracking';
 
 function App() {
-  useTracking();
   return (
     <BrowserRouter>
       <MainAllContainer>
