@@ -203,44 +203,6 @@ const Header = () => {
       ) : (
         <HamburgerMenuContentContainer></HamburgerMenuContentContainer>
       )}
-      {/* <SnsFixedContainer location={hiddenFixedSns()}>
-        <SnsFixedBorder></SnsFixedBorder>
-        <SnsFixedText>our sns</SnsFixedText>
-        <SnsFixedIconLink
-          rel="noopener noreferrer"
-          target="_blank"
-          href="https://twitter.com/retroriron"
-        >
-          <SnsFixedIconImage
-            loading="lazy"
-            src={TwitterOrange}
-            alt="レトロリロンのTwitterアイコン"
-          />
-        </SnsFixedIconLink>
-        <SnsFixedIconLink
-          rel="noopener noreferrer"
-          target="_blank"
-          href="https://www.instagram.com/retroriron/?hl=ja"
-        >
-          <SnsFixedIconImage
-            loading="lazy"
-            src={InstagramOrange}
-            alt="レトロリロンのInstagramアイコン"
-          />
-        </SnsFixedIconLink>
-        <SnsFixedIconLink
-          rel="noopener noreferrer"
-          target="_blank"
-          href="https://www.youtube.com/channel/UCkE8tVIvmdos9b1OqEhePlg"
-        >
-          <SnsFixedIconImage
-            loading="lazy"
-            src={YoutubeOrange}
-            alt="レトロリロンのYouTubeアイコン"
-          />
-        </SnsFixedIconLink>
-        <SnsFixedBorder></SnsFixedBorder>
-      </SnsFixedContainer> */}
       <SnsFixedContainer location={hiddenFixedSns()}>
         <SnsFixedBorder></SnsFixedBorder>
         <SnsFixedText>our sns</SnsFixedText>
