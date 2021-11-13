@@ -45,18 +45,9 @@ const News = () => {
     return content === index ? Minus : Plus;
   };
 
-  // Date
-
-  const now = moment();
-
   // Active
 
   const isActive = (index) => content === index;
-
-  // 日にちが２週間前より古いか
-  const newTagHidden = (date) => {
-    return now.subtract(2, 'weeks') > moment(date);
-  };
 
   // dateフォーマット
   const dateFormat = (date) => {
@@ -95,7 +86,6 @@ const News = () => {
         {/* PC */}
         <NewsPc
           news={news}
-          newTagHidden={newTagHidden}
           dateFormat={dateFormat}
           toggleAccordion={toggleAccordion}
           toggleAccordionButton={toggleAccordionButton}
@@ -106,7 +96,6 @@ const News = () => {
         {/* Tablet */}
         <NewsTablet
           news={news}
-          newTagHidden={newTagHidden}
           dateFormat={dateFormat}
           toggleAccordion={toggleAccordion}
           toggleAccordionButton={toggleAccordionButton}
@@ -117,7 +106,6 @@ const News = () => {
         {/* Smartphone */}
         <NewsSmartphone
           news={news}
-          newTagHidden={newTagHidden}
           dateFormat={dateFormat}
           toggleAccordion={toggleAccordion}
           toggleAccordionButton={toggleAccordionButton}

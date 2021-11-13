@@ -1,46 +1,53 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import moment from 'moment';
 
 const NewsSmartphone = (props) => {
   const {
     news,
-    newTagHidden,
     dateFormat,
     toggleAccordion,
     toggleAccordionButton,
     isActive,
     stringLink,
   } = props;
+
+  // Date
+
+  const now = moment();
+
+  // 日にちが２週間前より古いか
+  const newTagHidden = (date) => {
+    return moment(date) < now.subtract(2, 'weeks');
+  };
   return (
     <NewsContainer>
       {news.map((item) => (
-        <>
-          <NewsItemContainer key={item.id}>
-            <NewsButton
-              onClick={toggleAccordion(item.id)}
-              src={toggleAccordionButton(item.id)}
-              alt="Toggle button"
-            />
-            <NewsMainContainer>
-              <NewsItemOtherContainer onClick={toggleAccordion(item.id)}>
-                <NewsDate>{dateFormat(item.date)}</NewsDate>
-                <NewsTag IsHidden={newTagHidden(item.date)}>New</NewsTag>
-              </NewsItemOtherContainer>
-              <NewsTitle onClick={toggleAccordion(item.id)}>
-                {item.title}
-              </NewsTitle>
-              <NewsText active={isActive(item.id)}>
-                {stringLink(item.content)}
-                <NewsImage
-                  loading="lazy"
-                  vertical={item.imageVertical}
-                  src={item.image.url}
-                  alt={item.title}
-                />
-              </NewsText>
-            </NewsMainContainer>
-          </NewsItemContainer>
-        </>
+        <NewsItemContainer key={item.id}>
+          <NewsButton
+            onClick={toggleAccordion(item.id)}
+            src={toggleAccordionButton(item.id)}
+            alt="Toggle button"
+          />
+          <NewsMainContainer>
+            <NewsItemOtherContainer onClick={toggleAccordion(item.id)}>
+              <NewsDate>{dateFormat(item.date)}</NewsDate>
+              <NewsTag IsHidden={newTagHidden(item.date)}>New</NewsTag>
+            </NewsItemOtherContainer>
+            <NewsTitle onClick={toggleAccordion(item.id)}>
+              {item.title}
+            </NewsTitle>
+            <NewsText active={isActive(item.id)}>
+              {stringLink(item.content)}
+              <NewsImage
+                loading="lazy"
+                vertical={item.imageVertical}
+                src={item.image.url}
+                alt={item.title}
+              />
+            </NewsText>
+          </NewsMainContainer>
+        </NewsItemContainer>
       ))}
     </NewsContainer>
   );
