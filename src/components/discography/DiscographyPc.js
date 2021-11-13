@@ -59,8 +59,6 @@ const DiscographyPc = (props) => {
 
 export default DiscographyPc;
 
-//
-
 const DiscographyContainer = styled.div`
   display: none;
   @media screen and (min-width: 500px) {

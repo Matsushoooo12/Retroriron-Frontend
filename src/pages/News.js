@@ -8,6 +8,9 @@ import Minus from '../images/close-btn.png';
 import Header from '../components/common/Header';
 import Loading from '../components/common/Loading';
 import Footer from '../components/common/Footer';
+import NewsPc from '../components/news/NewsPc';
+import NewsTablet from '../components/news/NewsTablet';
+import NewsSmartphone from '../components/news/NewsSmartphone';
 
 const News = () => {
   // ローディング
@@ -90,92 +93,38 @@ const News = () => {
       <LoadingContainer isLoading={isLoading}>
         <Header />
         {/* PC */}
-        <NewsContainer>
-          {news.map((item) => (
-            <NewsItemContainer key={item.id}>
-              {/* PC */}
-              <PcNewsItemOtherContainer>
-                <PcNewsTagText IsHidden={newTagHidden(item.date)}>
-                  New
-                </PcNewsTagText>
-                <PcNewsDate>{dateFormat(item.date)}</PcNewsDate>
-              </PcNewsItemOtherContainer>
-              <PcNewsMainContainer>
-                <PcNewsButton
-                  onClick={toggleAccordion(item.id)}
-                  src={toggleAccordionButton(item.id)}
-                  alt="Toggle button"
-                />
-                <PcNewsTextContainer>
-                  <PcNewsTitle onClick={toggleAccordion(item.id)}>
-                    {item.title}
-                  </PcNewsTitle>
-                  <PcNewsText active={isActive(item.id)}>
-                    {stringLink(item.content)}
-                    <PcNewsImage
-                      loading="lazy"
-                      vertical={item.imageVertical}
-                      src={item.image.url}
-                      alt={item.title}
-                    />
-                  </PcNewsText>
-                </PcNewsTextContainer>
-              </PcNewsMainContainer>
-              {/* TAB */}
-              <TabNewsItemOtherContainer>
-                <TabNewsTagText IsHidden={newTagHidden(item.date)}>
-                  New
-                </TabNewsTagText>
-                <TabNewsDate>{dateFormat(item.date)}</TabNewsDate>
-              </TabNewsItemOtherContainer>
-              <TabNewsMainContainer>
-                <TabNewsButton
-                  onClick={toggleAccordion(item.id)}
-                  src={toggleAccordionButton(item.id)}
-                  alt="Toggle button"
-                />
-                <TabNewsTextContainer>
-                  <TabNewsTitle onClick={toggleAccordion(item.id)}>
-                    {item.title}
-                  </TabNewsTitle>
-                  <TabNewsText active={isActive(item.id)}>
-                    {stringLink(item.content)}
-                    <TabNewsImage
-                      loading="lazy"
-                      vertical={item.imageVertical}
-                      src={item.image.url}
-                      alt={item.title}
-                    />
-                  </TabNewsText>
-                </TabNewsTextContainer>
-              </TabNewsMainContainer>
-              {/* SP */}
-              <SpNewsButton
-                onClick={toggleAccordion(item.id)}
-                src={toggleAccordionButton(item.id)}
-                alt="Toggle button"
-              />
-              <SpNewsMainContainer>
-                <SpNewsItemOtherContainer onClick={toggleAccordion(item.id)}>
-                  <SpNewsDate>{dateFormat(item.date)}</SpNewsDate>
-                  <SpNewsTag IsHidden={newTagHidden(item.date)}>New</SpNewsTag>
-                </SpNewsItemOtherContainer>
-                <SpNewsTitle onClick={toggleAccordion(item.id)}>
-                  {item.title}
-                </SpNewsTitle>
-                <SpNewsText active={isActive(item.id)}>
-                  {stringLink(item.content)}
-                  <SpNewsImage
-                    loading="lazy"
-                    vertical={item.imageVertical}
-                    src={item.image.url}
-                    alt={item.title}
-                  />
-                </SpNewsText>
-              </SpNewsMainContainer>
-            </NewsItemContainer>
-          ))}
-        </NewsContainer>
+        <NewsPc
+          news={news}
+          newTagHidden={newTagHidden}
+          dateFormat={dateFormat}
+          toggleAccordion={toggleAccordion}
+          toggleAccordionButton={toggleAccordionButton}
+          isActive={isActive}
+          stringLink={stringLink}
+        />
+        {/* PC */}
+        {/* Tablet */}
+        <NewsTablet
+          news={news}
+          newTagHidden={newTagHidden}
+          dateFormat={dateFormat}
+          toggleAccordion={toggleAccordion}
+          toggleAccordionButton={toggleAccordionButton}
+          isActive={isActive}
+          stringLink={stringLink}
+        />
+        {/* Tablet */}
+        {/* Smartphone */}
+        <NewsSmartphone
+          news={news}
+          newTagHidden={newTagHidden}
+          dateFormat={dateFormat}
+          toggleAccordion={toggleAccordion}
+          toggleAccordionButton={toggleAccordionButton}
+          isActive={isActive}
+          stringLink={stringLink}
+        />
+        {/* Smartphone */}
         <Footer />
       </LoadingContainer>
     </>
@@ -183,298 +132,6 @@ const News = () => {
 };
 
 export default News;
-
-const NewsContainer = styled.ul`
-  display: block;
-  width: 240px;
-  height: 100%;
-  margin-left: 5%;
-  margin-bottom: 96px;
-  @media screen and (min-width: 300px) {
-    width: 100%;
-  }
-  @media screen and (min-width: 768px) {
-    display: block;
-    width: 100%;
-    height: 100%;
-    margin-bottom: 24px;
-  }
-  @media screen and (min-width: 900px) {
-    display: block;
-    width: 100%;
-    height: 100%;
-    padding-bottom: 160px;
-    margin-left: 0;
-    max-width: 1200px;
-  }
-`;
-
-const NewsItemContainer = styled.li`
-  border-top: 1px solid #bebebe;
-  padding: 16px 0;
-  display: flex;
-  align-items: flex-start;
-  @media screen and (min-width: 768px) {
-    border-top: 1px solid #bebebe;
-    padding: 16px 0;
-    display: flex;
-  }
-  @media screen and (min-width: 900px) {
-    border-top: 1px solid #bebebe;
-    padding: 16px 0;
-    display: flex;
-  }
-`;
-
-// PC
-
-// PC-タグ、日付
-
-const PcNewsItemOtherContainer = styled.div`
-  display: none;
-  @media screen and (min-width: 900px) {
-    display: flex;
-    justify-content: left;
-    aling-items: flex-start;
-  }
-`;
-
-const PcNewsTagText = styled.p`
-  color: #f42626;
-  font-weight: 900;
-  font-size: 1.2rem;
-  margin-right: 24px;
-  margin-top: 2px;
-  ${(props) => props.IsHidden && `color: #fff;`}
-`;
-
-const PcNewsDate = styled.p`
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-top: 3px;
-`;
-
-// PC-テキスト
-
-const PcNewsMainContainer = styled.div`
-  display: none;
-  @media screen and (min-width: 900px) {
-    display: flex;
-    align-items: flex-start;
-    justify-content: left;
-  }
-`;
-
-const PcNewsButton = styled.img`
-  display: block;
-  width: 14px;
-  height: 14px;
-  margin-left: 32px;
-  margin-right: 32px;
-  margin-top: 4px;
-  cursor: pointer;
-`;
-
-const PcNewsTextContainer = styled.div`
-  display: block;
-`;
-
-const PcNewsTitle = styled.a`
-  font-size: 1.6rem;
-  font-weight: 700;
-  cursor: pointer;
-  line-height: 2.4rem;
-`;
-
-const PcNewsText = styled.p`
-  display: none;
-  font-size: 1.6rem;
-  font-weight: 500;
-  line-height: 2.4rem;
-  margin-top: 16px;
-  margin-bottom: 16px;
-  white-space: pre-wrap;
-  word-break: break-all;
-  transition: all 0.3s;
-  ${(props) => props.active && `display: block;`}
-`;
-
-const PcNewsImage = styled.img`
-  display: block;
-  width: 200px;
-  height: 100%;
-  margin-top: 16px;
-  ${(props) =>
-    props.vertical &&
-    `
-        width: 160px;
-    `}
-`;
-
-// Tab
-
-// Tab-タグ、日付
-
-const TabNewsItemOtherContainer = styled.div`
-  display: none;
-  @media screen and (min-width: 768px) {
-    display: flex;
-    justify-content: left;
-    aling-items: flex-start;
-  }
-  @media screen and (min-width: 900px) {
-    display: none;
-  }
-`;
-
-const TabNewsTagText = styled.p`
-  color: #f42626;
-  font-weight: 900;
-  font-size: 1.2rem;
-  margin-right: 24px;
-  margin-top: 2px;
-  ${(props) => props.IsHidden && `color: #fff;`}
-`;
-
-const TabNewsDate = styled.p`
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-top: 3px;
-`;
-
-// Tab-テキスト
-
-const TabNewsMainContainer = styled.div`
-  display: none;
-  @media screen and (min-width: 768px) {
-    display: flex;
-    align-items: flex-start;
-    justify-content: left;
-  }
-  @media screen and (min-width: 900px) {
-    display: none;
-  }
-`;
-
-const TabNewsButton = styled.img`
-  display: block;
-  width: 14px;
-  height: 14px;
-  margin-left: 32px;
-  margin-right: 32px;
-  margin-top: 4px;
-  cursor: pointer;
-`;
-
-const TabNewsTextContainer = styled.div`
-  display: block;
-`;
-
-const TabNewsTitle = styled.a`
-  font-size: 1.6rem;
-  font-weight: 700;
-  cursor: pointer;
-  line-height: 2.4rem;
-`;
-
-const TabNewsText = styled.p`
-  display: none;
-  font-size: 1.6rem;
-  font-weight: 500;
-  line-height: 2.4rem;
-  margin-top: 16px;
-  margin-bottom: 16px;
-  white-space: pre-wrap;
-  word-break: break-all;
-  transition: all 0.3s;
-  ${(props) => props.active && `display: block;`}
-`;
-
-const TabNewsImage = styled.img`
-  display: block;
-  width: 200px;
-  height: 100%;
-  margin-top: 16px;
-  ${(props) =>
-    props.vertical &&
-    `
-        width: 160px;
-    `}
-`;
-
-// SP
-
-const SpNewsButton = styled.img`
-  display: block;
-  width: 14px;
-  height: 14px;
-  cursor: pointer;
-  @media screen and (min-width: 768px) {
-    display: none;
-  }
-`;
-
-const SpNewsMainContainer = styled.div`
-  display: block;
-  margin-left: 24px;
-  @media screen and (min-width: 768px) {
-    display: none;
-  }
-`;
-
-const SpNewsItemOtherContainer = styled.div`
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 16px;
-  cursor: pointer;
-`;
-
-const SpNewsDate = styled.p`
-  font-size: 1rem;
-  font-weight: 700;
-  margin-top: 2px;
-  margin-right: 8px;
-`;
-
-const SpNewsTag = styled.p`
-  color: #f42626;
-  font-weight: 900;
-  font-size: 1.2rem;
-  margin-right: 24px;
-  ${(props) => props.IsHidden && `color: #fff;`}
-`;
-
-const SpNewsTitle = styled.a`
-  font-size: 1.4rem;
-  font-weight: 700;
-  cursor: pointer;
-  line-height: 2.4rem;
-`;
-
-const SpNewsText = styled.p`
-  display: none;
-  font-size: 1.4rem;
-  font-weight: 500;
-  line-height: 2.4rem;
-  margin-top: 16px;
-  margin-bottom: 16px;
-  white-space: pre-wrap;
-  word-break: break-all;
-  transition: all 0.3s;
-  ${(props) => props.active && `display: block;`}
-`;
-
-const SpNewsImage = styled.img`
-  display: block;
-  width: 160px;
-  height: 100%;
-  margin-top: 16px;
-  ${(props) =>
-    props.vertical &&
-    `
-        width: 128px;
-    `}
-`;
 
 // ローディング
 const LoadingContainer = styled.div`
