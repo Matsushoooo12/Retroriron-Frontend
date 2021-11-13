@@ -1,25 +1,10 @@
 import React from 'react';
-import moment from 'moment';
 import styled from '@emotion/styled';
 import MvIcon from '../../images/vector-mv.png';
 import SubscriptionIcon from '../../images/vector-musuic.png';
 
-const DiscographySmartphone = ({ discographies }) => {
-  // dateフォーマット
-  const dateFormat = (date) => {
-    return moment(date).format('YYYY.MM.DD');
-  };
-
-  // 全角２文字・半角１文字
-  const count = (str) => {
-    let len = 0;
-
-    for (let i = 0; i < str.length; i++) {
-      str[i].match(/[ -~]/) ? (len += 1) : (len += 2);
-    }
-
-    return len;
-  };
+const DiscographySmartphone = (props) => {
+  const { discographies, dateFormat, count } = props;
   return (
     <DiscographyContainer>
       {discographies.map((item) => (

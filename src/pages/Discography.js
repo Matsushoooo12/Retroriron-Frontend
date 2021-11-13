@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import moment from 'moment';
 import Helmet from 'react-helmet';
 import styled from '@emotion/styled';
 import { getDiscography } from '../api';
@@ -30,6 +31,22 @@ const Discography = () => {
     handleGetDiscography();
   }, [setDiscographies]);
 
+  // dateフォーマット
+  const dateFormat = (date) => {
+    return moment(date).format('YYYY.MM.DD');
+  };
+
+  // 全角２文字・半角１文字
+  const count = (str) => {
+    let len = 0;
+
+    for (let i = 0; i < str.length; i++) {
+      str[i].match(/[ -~]/) ? (len += 1) : (len += 2);
+    }
+
+    return len;
+  };
+
   return (
     <>
       <Helmet>
@@ -47,9 +64,17 @@ const Discography = () => {
       <LoadingContainer isLoading={isLoading}>
         <Header />
         {/* PC */}
-        <DiscographyPc discographies={discographies} />
+        <DiscographyPc
+          dateFormat={dateFormat}
+          count={count}
+          discographies={discographies}
+        />
         {/* SP */}
-        <DiscographySmartphone discographies={discographies} />
+        <DiscographySmartphone
+          dateFormat={dateFormat}
+          count={count}
+          discographies={discographies}
+        />
         <Footer />
       </LoadingContainer>
     </>
