@@ -42,7 +42,6 @@ const MainAllContainer = styled.div`
     position: absolute;
     right: 0;
     width: calc(100% - 250px);
-    overflow-y: scroll;
   }
   @media screen and (min-width: 1150px) {
     width: calc(100% - 314px);
