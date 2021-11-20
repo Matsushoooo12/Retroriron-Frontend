@@ -48,6 +48,7 @@ const NewsPc = (props) => {
                   vertical={item.imageVertical}
                   src={item.image.url}
                   alt={item.title}
+                  displayNone={!item.image.url}
                 />
               </NewsText>
             </NewsTextContainer>
@@ -149,6 +150,11 @@ const NewsImage = styled.img`
   ${(props) =>
     props.vertical &&
     `
-        width: 160px;
+      width: 160px;
+    `}
+  ${(props) =>
+    props.displayNone &&
+    `
+      display: none;
     `}
 `;

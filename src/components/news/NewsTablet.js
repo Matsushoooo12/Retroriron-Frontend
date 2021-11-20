@@ -45,6 +45,7 @@ const NewsTablet = (props) => {
                   vertical={item.imageVertical}
                   src={item.image.url}
                   alt={item.title}
+                  displayNone={!item.image.url}
                 />
               </NewsText>
             </NewsTextContainer>
@@ -152,5 +153,10 @@ const NewsImage = styled.img`
     props.vertical &&
     `
         width: 160px;
+    `}
+  ${(props) =>
+    props.displayNone &&
+    `
+      display: none;
     `}
 `;

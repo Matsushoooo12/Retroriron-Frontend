@@ -44,6 +44,7 @@ const NewsSmartphone = (props) => {
                 vertical={item.imageVertical}
                 src={item.image.url}
                 alt={item.title}
+                displayNone={!item.image.url}
               />
             </NewsText>
           </NewsMainContainer>
@@ -141,6 +142,11 @@ const NewsImage = styled.img`
   ${(props) =>
     props.vertical &&
     `
-        width: 128px;
+      width: 128px;
+    `}
+  ${(props) =>
+    props.displayNone &&
+    `
+      display: none;
     `}
 `;
