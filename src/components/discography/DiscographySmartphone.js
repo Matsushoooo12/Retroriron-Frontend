@@ -67,7 +67,7 @@ const DiscographyContainer = styled.div`
   display: block;
   width: 100%;
   height: 100%;
-  margin-bottom: 42px;
+  padding-bottom: 96px;
   margin-left: 5%;
   @media screen and (min-width: 500px) {
     display: none;
