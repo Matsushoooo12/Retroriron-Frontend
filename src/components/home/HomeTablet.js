@@ -101,10 +101,10 @@ const HomeTablet = () => {
           </MemberSnsContainer>
         </MemberItemContainer>
         <MemberItemContainer>
-          <MemberImage loading="lazy" src={MiriImage} alt="友野美里" />
+          <MemberImage loading="lazy" src={MiriImage} alt="Miri" />
           <MemberInstrument>Key.</MemberInstrument>
           <MemberName>
-            友野美里 <MemberNameRomaji>/ Tomono Miri</MemberNameRomaji>
+            Miri <MemberNameRomaji>/ Tomono Miri</MemberNameRomaji>
           </MemberName>
           <MemberText>
             1997年8月31日生まれ。
@@ -118,18 +118,14 @@ const HomeTablet = () => {
                 target="_blank"
                 href="https://twitter.com/mirinomoto"
               >
-                <SnsIcon loading="lazy" src={Twitter} alt="友野美里のTwitter" />
+                <SnsIcon loading="lazy" src={Twitter} alt="MiriのTwitter" />
               </SnsLink>
               <SnsLink
                 rel="noopener noreferrer"
                 target="_blank"
                 href="https://www.instagram.com/miri_tomono/?hl=ja"
               >
-                <SnsIcon
-                  loading="lazy"
-                  src={Instagram}
-                  alt="友野美里のInstagram"
-                />
+                <SnsIcon loading="lazy" src={Instagram} alt="MiriのInstagram" />
               </SnsLink>
             </MemberSnsContainer>
           </MemberSnsContainer>
