@@ -12,6 +12,9 @@
 - リッチな画面遷移を実現するため SPA アプリを作成。
 - なるべく１年間無料にこだわってリリース。
 
+URL<br>
+https://retroriron.com
+
 ## 使用技術
 
 ### Backend
@@ -94,15 +97,5 @@
 ## ページ説明
 
 ### Home
-
-**PC**
-
-<img width="445" alt="スクリーンショット 2021-11-26 22 39 34" src="https://user-images.githubusercontent.com/66903388/143589596-598a922c-8715-4830-ab73-607a1a3f663d.png">
-
-**Tablet**
-
-<img width="187" alt="スクリーンショット 2021-11-26 22 42 45" src="https://user-images.githubusercontent.com/66903388/143589900-75a6b9c0-2af7-44a6-be02-64d11bbb2268.png">
-
-**Smartphone**
 
 <img width="103" alt="スクリーンショット 2021-11-26 22 44 35" src="https://user-images.githubusercontent.com/66903388/143590159-e758881f-98ef-4cb1-b557-1a67cab8d405.png">
