@@ -56,9 +56,3 @@ Heroku は無料プランだと 30 分でスリープモードに入り、30 分
 - eslint
 - prettier
   - コードリファクタリング
-
-## ページ説明
-
-### Home
-
-<img width="103" alt="スクリーンショット 2021-11-26 22 44 35" src="https://user-images.githubusercontent.com/66903388/143590159-e758881f-98ef-4cb1-b557-1a67cab8d405.png">
