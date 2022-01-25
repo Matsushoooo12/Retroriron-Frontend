@@ -16,48 +16,12 @@ https://retroriron.com
 
 ## 使用技術
 
-### Backend
+- 使用言語：Ruby、JavaScript
+- 使用フレームワーク：Ruby on Rails、React
+- その他使用技術：画像アップロード →AWS 　 S3
+- デプロイ：Rails→Heroku、React→Netlify
 
----
-
-- Ruby 2.7.2
-- Rails 6.1.4
-
-### Frontend
-
----
-
-- JavaScript
-- React 17.0.2
-
-### DB
-
----
-
-- PostgreSQL 1.1
-
-### Rails Gem
-
----
-
-- rails_admin 2.0.0
-
-  - 管理画面
-
-- carrierwave
-
-  - 画像アップロード
-
-- fog-aws
-
-  - AWS 　 S3 への画像アップロード
-
-- dotenv-rails
-
-  - .env ファイル
-
-- rack-cors
-  - HTTP 通信設定
+Heroku は無料プランだと 30 分でスリープモードに入り、30 分アクセスがない場合、次にアクセスする際に時間がかかってしまうため、「UptimeRobot」という 5 分おきにサイトをパトロールしてくれるツールを使用して解決しました。
 
 ### npm package
 
