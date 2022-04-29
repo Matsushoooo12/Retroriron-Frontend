@@ -19,6 +19,8 @@ const Header = () => {
       return 'live';
     } else if (location.pathname === '/discography') {
       return 'discography';
+    } else if (location.pathname === '/goods') {
+      return 'goods';
     } else if (location.pathname === '/contact') {
       return 'contact';
     } else if (location.pathname === '/live/sp/ticketform') {
@@ -84,6 +86,11 @@ const Header = () => {
               to="/discography"
             >
               Discography
+            </MenuLink>
+          </MenuLi>
+          <MenuLi>
+            <MenuLink active={location.pathname === '/goods'} to="/goods">
+              Goods
             </MenuLink>
           </MenuLi>
           <MenuLi>
@@ -158,6 +165,14 @@ const Header = () => {
                 href="/discography"
               >
                 Discography
+              </HamburgerMenuLink>
+            </HamburgerMenuContentText>
+            <HamburgerMenuContentText>
+              <HamburgerMenuLink
+                active={location.pathname === '/goods'}
+                href="/goods"
+              >
+                Goods
               </HamburgerMenuLink>
             </HamburgerMenuContentText>
             <HamburgerMenuContentText>
