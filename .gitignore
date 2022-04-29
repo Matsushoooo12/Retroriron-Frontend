@@ -22,12 +22,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# development
-/.env.local
-
-# production
-/.env.production
-
 /.env
 
 # IDEA
