@@ -12,19 +12,17 @@ import Page404 from './pages/Page404';
 function App() {
   return (
     <BrowserRouter>
-      <Switch>
-        <Route exact path="*" component={Page404} />
-      </Switch>
       <MainAllContainer>
         <MainItemContainer>
           <MainItem>
-            {/* <Switch>
-              <Route exact path="/" component={Home} />
+            <Switch>
+              {/* <Route exact path="/" component={Home} />
               <Route exact path="/news" component={News} />
               <Route exact path="/live" component={Live} />
               <Route exact path="/discography" component={Discography} />
-              <Route exact path="/contact" component={Contact} />
-            </Switch> */}
+              <Route exact path="/contact" component={Contact} /> */}
+              <Route exact path="*" component={Page404} />
+            </Switch>
           </MainItem>
         </MainItemContainer>
       </MainAllContainer>
