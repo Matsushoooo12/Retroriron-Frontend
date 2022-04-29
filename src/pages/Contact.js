@@ -90,7 +90,7 @@ const Contact = () => {
             <ContactFormGroup>
               <ContactFormLabel htmlFor="phone">電話番号</ContactFormLabel>
               <ContactFormTextField
-                type="number"
+                type="text"
                 name="phone"
                 id="phone"
                 {...register('phone', { required: false })}

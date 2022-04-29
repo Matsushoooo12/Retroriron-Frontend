@@ -46,7 +46,7 @@ const ContactComplete = ({ values }) => {
           <ContactFormLabel htmlFor="phone">電話番号</ContactFormLabel>
           <ContactFormTextField
             disabled
-            type="number"
+            type="text"
             name="phone"
             value={values.phone}
           />

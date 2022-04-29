@@ -16,9 +16,11 @@ const ContactConfirm = (props) => {
   // isCompleteVisibleにstateを持たせて、入力内容確認画面の表示・非表示をコントロール
   // isCompleteVisibleの初期値はfalseで入力内容確認画面は非表示に
   const [isCompleteVisible, setIsCompleteVisible] = useState(false);
+  const [isSubmit, setIsSubmit] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmit(true);
     try {
       const res = await createContact(value);
       console.log(res);
@@ -27,6 +29,7 @@ const ContactConfirm = (props) => {
     } catch (e) {
       alert(e);
     }
+    setIsSubmit(false);
   };
 
   return (
@@ -74,7 +77,7 @@ const ContactConfirm = (props) => {
               <ContactFormLabel htmlFor="phone">電話番号</ContactFormLabel>
               <ContactFormTextField
                 disabled
-                type="number"
+                type="text"
                 name="phone"
                 value={values.phone}
                 id="phone"
@@ -106,6 +109,7 @@ const ContactConfirm = (props) => {
               <ContactFormSubmitButton
                 type="submit"
                 value="送信する"
+                disabled={isSubmit ? true : false}
                 onClick={(e) => handleSubmit(e)}
               />
             </ContactFormSubmitButtonContainer>

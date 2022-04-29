@@ -18,9 +18,11 @@ const SpTicketConfirm = (props) => {
   // isCompleteVisibleにstateを持たせて、入力内容確認画面の表示・非表示をコントロール
   // isCompleteVisibleの初期値はfalseで入力内容確認画面は非表示に
   const [isCompleteVisible, setIsCompleteVisible] = useState(false);
+  const [isSubmit, setIsSubmit] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmit(true);
     try {
       const res = await createTicket(value);
       console.log(res);
@@ -29,6 +31,7 @@ const SpTicketConfirm = (props) => {
     } catch (e) {
       alert(e);
     }
+    setIsSubmit(false);
   };
 
   return (
@@ -114,6 +117,7 @@ const SpTicketConfirm = (props) => {
               <TicketFormSubmitButton
                 type="submit"
                 value="予約する"
+                disabled={isSubmit ? true : false}
                 onClick={(e) => handleSubmit(e)}
               />
             </TicketFormGroup>
