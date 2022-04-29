@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Helmet from 'react-helmet';
 import styled from '@emotion/styled';
 import { useForm } from 'react-hook-form';
-import ContactConfirm2 from '../components/contact/ContactConfirm';
+import ContactConfirm from '../components/contact/ContactConfirm';
 import Header from '../components/common/Header';
 import Footer from '../components/common/Footer';
 
@@ -122,7 +122,7 @@ const Contact = () => {
           </ContactFormContainer>
         </ContactContainer>
       ) : (
-        <ContactConfirm2
+        <ContactConfirm
           values={getValues()}
           hideConfirmation={hideConfirmation}
         />
