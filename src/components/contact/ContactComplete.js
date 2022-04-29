@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-const ContactComplete2 = ({ values }) => {
+const ContactComplete = ({ values }) => {
   const handleClick = () => {
     window.scroll({ top: 0, behavior: 'smooth' });
     // eslint-disable-next-line no-restricted-globals
@@ -78,7 +78,7 @@ const ContactComplete2 = ({ values }) => {
   );
 };
 
-export default ContactComplete2;
+export default ContactComplete;
 
 // ContactContainer
 

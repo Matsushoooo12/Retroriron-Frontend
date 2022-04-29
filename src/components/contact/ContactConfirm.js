@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { createContact } from '../../api';
 import ContactComplete from './ContactComplete';
 
-const ContactConfirm2 = (props) => {
+const ContactConfirm = (props) => {
   const { values, hideConfirmation } = props;
 
   const value = {
@@ -118,7 +118,7 @@ const ContactConfirm2 = (props) => {
   );
 };
 
-export default ContactConfirm2;
+export default ContactConfirm;
 
 // ContactContainer
 
