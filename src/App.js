@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Home from './pages/Home';
-import Live from './pages/Live';
-import News from './pages/News';
-import Discography from './pages/Discography';
-import Contact from './pages/Contact';
+// import Home from './pages/Home';
+// import Live from './pages/Live';
+// import News from './pages/News';
+// import Discography from './pages/Discography';
+// import Contact from './pages/Contact';
 import './components/common/reset.css';
 import Page404 from './pages/Page404';
 
@@ -16,11 +16,11 @@ function App() {
         <MainItemContainer>
           <MainItem>
             <Switch>
-              <Route exact path="/" component={Home} />
+              {/* <Route exact path="/" component={Home} />
               <Route exact path="/news" component={News} />
               <Route exact path="/live" component={Live} />
               <Route exact path="/discography" component={Discography} />
-              <Route exact path="/contact" component={Contact} />
+              <Route exact path="/contact" component={Contact} /> */}
               <Route exact path="*" component={Page404} />
             </Switch>
           </MainItem>
