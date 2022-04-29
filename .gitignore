@@ -28,5 +28,7 @@ yarn-error.log*
 # production
 /.env.production
 
+/.env
+
 # IDEA
 .idea
