@@ -16,8 +16,6 @@ const NewsPc = (props) => {
 
   const now = moment();
 
-  console.log(now);
-
   // 日にちが２週間前より古いか
   const newTagHidden = (date) => {
     return moment(date) < now.subtract(2, 'weeks');
