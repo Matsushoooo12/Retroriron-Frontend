@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-// import Helmet from 'react-helmet';
+import Helmet from 'react-helmet';
 import styled from '@emotion/styled';
 import Loading from '../components/common/Loading';
 import Header from '../components/common/Header';
@@ -21,7 +21,7 @@ const Home = () => {
   return (
     <>
       {/* Head */}
-      {/* <Helmet>
+      <Helmet>
         <title>レトロリロン</title>
         <meta
           name="description"
@@ -31,7 +31,7 @@ const Home = () => {
             ”明日”ではなく”今日”を生きようという力強い歌詞は生きる希望を与える。
           "
         />
-      </Helmet> */}
+      </Helmet>
       {/* Head */}
       <Loading isLoading={isLoading} />
       <LoadingContainer isLoading={isLoading}>
