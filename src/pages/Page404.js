@@ -3,7 +3,9 @@ import React from 'react';
 const Page404 = () => {
   return (
     <>
-      <p>404 Not Found</p>
+      <p style={{ fontSize: '56px', fontWeight: 'bold' }}>
+        ただいま準備中。。。。。
+      </p>
     </>
   );
 };
