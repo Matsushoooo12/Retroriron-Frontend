@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import FvFrame from '../../images/main_visual.webp';
+import FvImage from '../../images/retroriron-firstview.webp';
 import BandTitle from '../../images/title.webp';
 import NumaImage from '../../images/numa.webp';
 import NagayamaImage from '../../images/taiki.webp';
@@ -12,7 +12,7 @@ import Instagram from '../../images/insta-icon-orange.png';
 const HomeSmartphone = () => {
   return (
     <>
-      <Fv src={FvFrame} alt="レトロリロンのアー写" />
+      <Fv src={FvImage} alt="レトロリロンのアー写" />
       <TextContainer>
         <TextBandname loading="lazy" src={BandTitle} alt="レトロリロン" />
         <TextTitle>
