@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import FvImage from '../../images/retroriron-firstview.webp';
+import FvImage from '../../images/retroriron-main.webp';
 import BandTitle from '../../images/title.webp';
 import NumaImage from '../../images/numa.webp';
 import NagayamaImage from '../../images/taiki.webp';
@@ -67,44 +67,6 @@ const HomeSmartphone = () => {
           </MemberSnsContainer>
         </MemberItemContainer>
         <MemberItemContainer>
-          <MemberImage loading="lazy" src={NagayamaImage} alt="永山タイキ" />
-          <MemberInstrument>Dr.</MemberInstrument>
-          <MemberName>
-            永山タイキ <MemberNameRomaji>/ Nagayama Taiki</MemberNameRomaji>
-          </MemberName>
-          <MemberText>
-            1997年5月20日生まれ。
-            <br />
-            大分県出身。
-          </MemberText>
-          <MemberSnsContainer>
-            <MemberSnsContainer>
-              <SnsLink
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://twitter.com/drums_taiki"
-              >
-                <SnsIcon
-                  loading="lazy"
-                  src={Twitter}
-                  alt="永山タイキのTwitter"
-                />
-              </SnsLink>
-              <SnsLink
-                rel="noopener noreferrer"
-                target="_blank"
-                href="https://www.instagram.com/taikidrummer/?hl=ja"
-              >
-                <SnsIcon
-                  loading="lazy"
-                  src={Instagram}
-                  alt="永山タイキのInstagram"
-                />
-              </SnsLink>
-            </MemberSnsContainer>
-          </MemberSnsContainer>
-        </MemberItemContainer>
-        <MemberItemContainer>
           <MemberImage loading="lazy" src={MiriImage} alt="Miri" />
           <MemberInstrument>Key.</MemberInstrument>
           <MemberName>
@@ -163,6 +125,44 @@ const HomeSmartphone = () => {
                   loading="lazy"
                   src={Instagram}
                   alt="飯沼一暁のInstagram"
+                />
+              </SnsLink>
+            </MemberSnsContainer>
+          </MemberSnsContainer>
+        </MemberItemContainer>
+        <MemberItemContainer>
+          <MemberImage loading="lazy" src={NagayamaImage} alt="永山タイキ" />
+          <MemberInstrument>Dr.</MemberInstrument>
+          <MemberName>
+            永山タイキ <MemberNameRomaji>/ Nagayama Taiki</MemberNameRomaji>
+          </MemberName>
+          <MemberText>
+            1997年5月20日生まれ。
+            <br />
+            大分県出身。
+          </MemberText>
+          <MemberSnsContainer>
+            <MemberSnsContainer>
+              <SnsLink
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://twitter.com/drums_taiki"
+              >
+                <SnsIcon
+                  loading="lazy"
+                  src={Twitter}
+                  alt="永山タイキのTwitter"
+                />
+              </SnsLink>
+              <SnsLink
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://www.instagram.com/taikidrummer/?hl=ja"
+              >
+                <SnsIcon
+                  loading="lazy"
+                  src={Instagram}
+                  alt="永山タイキのInstagram"
                 />
               </SnsLink>
             </MemberSnsContainer>

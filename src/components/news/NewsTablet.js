@@ -22,6 +22,23 @@ const NewsTablet = (props) => {
   };
   return (
     <NewsContainer>
+      <>
+        {news.length === 0 && (
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              width: '100%',
+              height: '100px',
+            }}
+          >
+            <p style={{ fontSize: '24px', textAlign: 'center' }}>
+              わくわくする情報をご準備しています。
+            </p>
+          </div>
+        )}
+      </>
       {news.map((item) => (
         <NewsItemContainer key={item.id}>
           <NewsItemOtherContainer>
