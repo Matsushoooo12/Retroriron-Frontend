@@ -33,6 +33,7 @@ const Goods = () => {
         ライブ会場で主に取り扱っているので、足を運んでお求めください。
         "
         />
+        <link rel="canonical" href="https://retroriron.com/goods" />
       </Helmet>
       {/* <Loading isLoading={false} />
       <LoadingContainer isLoading={false}> */}

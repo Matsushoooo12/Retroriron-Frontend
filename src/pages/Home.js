@@ -31,6 +31,7 @@ const Home = () => {
             ”明日”ではなく”今日”を生きようという力強い歌詞は生きる希望を与える。
           "
         />
+        <link rel="canonical" href="https://retroriron.com" />
       </Helmet>
       {/* Head */}
       <Loading isLoading={isLoading} />

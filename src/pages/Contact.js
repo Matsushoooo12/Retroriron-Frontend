@@ -39,6 +39,7 @@ const Contact = () => {
             レトロリロンへのお問い合わせはこちらからどうぞ。
           "
         />
+        <link rel="canonical" href="https://retroriron.com/contact" />
       </Helmet>
       <Header />
       {!isConfirmationVisible ? (

@@ -131,7 +131,7 @@ const NewsTag = styled.p`
   ${(props) => props.IsHidden && `color: #fff;`}
 `;
 
-const NewsTitle = styled.a`
+const NewsTitle = styled.h1`
   font-size: 1.4rem;
   font-weight: 700;
   cursor: pointer;

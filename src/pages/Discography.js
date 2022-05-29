@@ -59,6 +59,7 @@ const Discography = () => {
             MVやサブスクリプションへのリンクも配置しています。
           "
         />
+        <link rel="canonical" href="https://retroriron.com/discography" />
       </Helmet>
       <Loading isLoading={isLoading} />
       <LoadingContainer isLoading={isLoading}>

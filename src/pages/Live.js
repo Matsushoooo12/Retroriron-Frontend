@@ -169,6 +169,7 @@ const Live = () => {
             取り置き予約やチケット予約も承っています。
           "
         />
+        <link rel="canonical" href="https://retroriron.com/live" />
       </Helmet>
       <Loading isLoading={isLoading} />
       <LoadingContainer isLoading={isLoading}>
