@@ -61,23 +61,23 @@ const LiveTablet = (props) => {
               </LiveTitle>
               <br />
               {item.ticketLink ? (
-                <LiveTicketButton
+                <LiveTicketAButton
                   rel="noopener noreferrer"
                   target="_blank"
                   href={item.ticketLink}
                   active={futureTime(item.date)}
                 >
                   チケットをご希望の方はこちら
-                </LiveTicketButton>
+                </LiveTicketAButton>
               ) : (
-                <LiveTicketButton
+                <LiveTicketDivButton
                   onClick={() =>
                     handleSpTicketButtonClick(item.date, item.title)
                   }
                   active={futureTime(item.date)}
                 >
                   チケットをご希望の方はこちら
-                </LiveTicketButton>
+                </LiveTicketDivButton>
               )}
               <LiveInfoContainer>
                 <LiveInfoText>
@@ -180,7 +180,20 @@ const LiveTitle = styled.h1`
   ${(props) => props.cursorPointer && `cursor: pointer;`}
 `;
 
-const LiveTicketButton = styled.a`
+const LiveTicketAButton = styled.a`
+  display: none;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+  background-color: #f1a01a;
+  padding: 10px 16px;
+  border-radius: 7px;
+  cursor: pointer;
+  margin-top: 16px;
+  ${(props) => props.active && `display: inline-block;`}
+`;
+
+const LiveTicketDivButton = styled.div`
   display: none;
   font-size: 1.6rem;
   font-weight: 700;

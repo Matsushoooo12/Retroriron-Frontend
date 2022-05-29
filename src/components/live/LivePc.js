@@ -102,16 +102,16 @@ const LivePc = (props) => {
                 </LiveTitle>
                 <br />
                 {item.ticketLink ? (
-                  <LiveTicketButton
+                  <LiveTicketAButton
                     rel="noopener noreferrer"
                     target="_blank"
                     href={item.ticketLink}
                     active={futureTime(item.date)}
                   >
                     チケットをご希望の方はこちら
-                  </LiveTicketButton>
+                  </LiveTicketAButton>
                 ) : (
-                  <LiveTicketButton
+                  <LiveTicketDivButton
                     onClick={() =>
                       setTicketValue({
                         date: item.date,
@@ -122,7 +122,7 @@ const LivePc = (props) => {
                     active={futureTime(item.date)}
                   >
                     チケットをご希望の方はこちら
-                  </LiveTicketButton>
+                  </LiveTicketDivButton>
                 )}
                 <LiveInfoContainer>
                   <LiveInfoText>
@@ -345,7 +345,20 @@ const LiveInfoText = styled.p`
   }
 `;
 
-const LiveTicketButton = styled.a`
+const LiveTicketAButton = styled.a`
+  display: none;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+  background-color: #f1a01a;
+  padding: 10px 16px;
+  border-radius: 7px;
+  cursor: pointer;
+  margin-top: 16px;
+  ${(props) => props.active && `display: inline-block;`}
+`;
+
+const LiveTicketDivButton = styled.div`
   display: none;
   font-size: 1.6rem;
   font-weight: 700;

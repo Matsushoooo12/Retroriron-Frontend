@@ -52,21 +52,21 @@ const LiveSmartphone = (props) => {
             </LiveTitle>
             <br />
             {item.ticketLink ? (
-              <LiveTicketButton
+              <LiveTicketAButton
                 rel="noopener noreferrer"
                 target="_blank"
                 href={item.ticketLink}
                 active={futureTime(item.date)}
               >
                 チケットをご希望の方はこちら
-              </LiveTicketButton>
+              </LiveTicketAButton>
             ) : (
-              <LiveTicketButton
+              <LiveTicketDivButton
                 onClick={() => handleSpTicketButtonClick(item.date, item.title)}
                 active={futureTime(item.date)}
               >
                 チケットをご希望の方はこちら
-              </LiveTicketButton>
+              </LiveTicketDivButton>
             )}
             <LiveFinishTag finish={pastTime(item.date)}>終了</LiveFinishTag>
             <LiveInfoContainer active={isActive(item.id)}>
@@ -151,7 +151,20 @@ const LiveTitle = styled.h1`
   margin-bottom: 16px;
 `;
 
-const LiveTicketButton = styled.a`
+const LiveTicketAButton = styled.a`
+  display: none;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  background-color: #f1a01a;
+  padding: 10px 16px;
+  border-radius: 7px;
+  cursor: pointer;
+  margin-top: 16px;
+  ${(props) => props.active && `display: inline-block;`}
+`;
+
+const LiveTicketDivButton = styled.div`
   display: none;
   font-size: 1.2rem;
   font-weight: 700;
