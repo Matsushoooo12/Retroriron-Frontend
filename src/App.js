@@ -8,7 +8,7 @@ import Discography from './pages/Discography';
 import Goods from './pages/Goods';
 import Contact from './pages/Contact';
 import './components/common/reset.css';
-import Page404 from './pages/Page404';
+// import Page404 from './pages/Page404';
 
 function App() {
   return (
@@ -23,7 +23,7 @@ function App() {
               <Route exact path="/discography" component={Discography} />
               <Route exact path="/contact" component={Contact} />
               <Route exact path="/goods" component={Goods} />
-              <Route exact path="*" component={Page404} />
+              {/* <Route exact path="*" component={Page404} /> */}
             </Switch>
           </MainItem>
         </MainItemContainer>
