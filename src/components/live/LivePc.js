@@ -321,7 +321,7 @@ const LiveTextContainer = styled.div`
   display: block;
 `;
 
-const LiveTitle = styled.a`
+const LiveTitle = styled.h1`
   font-weight: 700;
   font-size: 2rem;
   line-height: 3.2rem;

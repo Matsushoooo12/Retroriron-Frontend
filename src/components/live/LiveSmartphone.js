@@ -143,7 +143,7 @@ const LiveDate = styled.p`
   cursor: pointer;
 `;
 
-const LiveTitle = styled.a`
+const LiveTitle = styled.h1`
   font-weight: 700;
   font-size: 1.4rem;
   line-height: 2.4rem;
