@@ -1,12 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import styled from '@emotion/styled';
 import { Helmet } from 'react-helmet';
+import Footer from '../components/common/Footer';
 // import styled from '@emotion/styled';
 import Header from '../components/common/Header';
+import Loading from '../components/common/Loading';
+import GoodsPc from '../components/goods/GoodsPc';
+import GoodsTablet from '../components/goods/GoodsTablet';
+import GoodsSmartphone from '../components/goods/GoodsSmartphone';
 // import Loading from '../components/common/Loading';
 
 const Goods = () => {
   // ローディング
-  //   const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 500);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <>
@@ -23,18 +36,27 @@ const Goods = () => {
       </Helmet>
       {/* <Loading isLoading={false} />
       <LoadingContainer isLoading={false}> */}
-      <Header />
-      <div>
-        <p>Goods</p>
-      </div>
+      <Loading isLoading={isLoading} />
+      <LoadingContainer isLoading={isLoading}>
+        <Header />
+        {/* PC */}
+        <GoodsPc />
+        <Footer />
+        {/* PC */}
+        {/* TAB */}
+        <GoodsTablet />
+        {/* TAB */}
+        {/* Sp */}
+        <GoodsSmartphone />
+        {/* Sp */}
+      </LoadingContainer>
       {/* </LoadingContainer> */}
     </>
   );
 };
 
-// ローディング
-// const LoadingContainer = styled.div`
-//   display: none;
-// `;
+const LoadingContainer = styled.div`
+  display: ${({ isLoading }) => (isLoading ? 'none' : 'block')};
+`;
 
 export default Goods;
