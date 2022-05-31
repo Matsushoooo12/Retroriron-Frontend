@@ -14,7 +14,9 @@ const Page404 = () => {
           "
         />
       </Helmet>
-      <p style={{ fontSize: '56px', fontWeight: 'bold' }}>404</p>
+      <p style={{ fontSize: '56px', fontWeight: 'bold' }}>
+        レトロリロン - 404Page
+      </p>
     </>
   );
 };
