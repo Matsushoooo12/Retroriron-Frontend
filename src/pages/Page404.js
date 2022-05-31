@@ -15,9 +15,7 @@ const Page404 = () => {
         />
         <link rel="canonical" href="https://retroriron.com/news" />
       </Helmet>
-      <p style={{ fontSize: '56px', fontWeight: 'bold' }}>
-        ただいま準備中。。。。。
-      </p>
+      <p style={{ fontSize: '56px', fontWeight: 'bold' }}>404</p>
     </>
   );
 };
