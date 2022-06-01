@@ -54,7 +54,7 @@ const Discography = () => {
         <meta
           name="description"
           content="
-            音楽大学出身の個性豊かな4人組バンド、レトロリロンのWebサイトのDiscographyページ。
+          レトロリロン：音楽大学出身の個性豊かな4人組バンド、レトロリロンのWebサイトのDiscographyページ。
             レトロリロンの楽曲情報を配信しています。
             MVやサブスクリプションへのリンクも配置しています。
           "

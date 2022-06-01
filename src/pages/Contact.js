@@ -35,7 +35,7 @@ const Contact = () => {
         <meta
           name="description"
           content="
-            音楽大学出身の個性豊かな4人組バンド、レトロリロンのWebサイトのContactページ。
+          レトロリロン：音楽大学出身の個性豊かな4人組バンド、レトロリロンのWebサイトのContactページ。
             レトロリロンへのお問い合わせはこちらからどうぞ。
           "
         />
