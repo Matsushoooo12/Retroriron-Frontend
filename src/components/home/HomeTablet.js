@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import FvImage from '../../images/retroriron-main.webp';
+import FvImage from '../../images/retroriron-main-v2.webp';
 import BandTitle from '../../images/title.webp';
 import NumaImage from '../../images/numa.webp';
 import NagayamaImage from '../../images/taiki.webp';
@@ -17,18 +17,13 @@ const HomeTablet = () => {
         <TextBandname loading="lazy" src={BandTitle} alt="レトロリロン" />
         <TextTitle>ー "明日"ではなく"今日"を生きよう</TextTitle>
         <TextItem>
-          2020年6月1日に結成。
-          <br />
-          音楽大学出身の個性豊かな4人組バンド。
+          2020年6月にシンガーソングライター
+          として活動していだ涼音を中心に東京にて結成。
         </TextItem>
         <TextItem>
-          4人の多彩な音楽性によって紡がれるジャンルレスなサウンドは人々の心を震わせ、
+          各メンバーの多種多様な音楽性によって生まれるジャンルレスなサウンド、
           <br />
-          ”明日”ではなく”今日”を生きようという力強い歌詞は生きる希望を与える。
-        </TextItem>
-        <TextItem>
-          2021年にはオフィスオーガスタが新人発掘・開発のために立ち上げたプロジェクト"CANVAS
-          vol.1"にも出演した、今注目のポップスバンド。
+          "今"を必死に生きようとする等身大の歌詞が心に響く、注目のポップスバンド。
         </TextItem>
       </TextContainer>
       <MemberContainer>
