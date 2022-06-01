@@ -172,13 +172,13 @@ const LivePc = (props) => {
             </TicketCautionText>
             <TicketFormContainer onSubmit={handleSubmit(onSubmitData)}>
               <TicketDateAndTitleContainer>
-                <TicketDateAndTitleTextField
+                <TicketDateTextField
                   type="text"
                   name="date"
                   value={ticketValue.date}
                   readOnly
                 />
-                <TicketDateAndTitleTextField
+                <TicketTitleTextField
                   type="text"
                   name="title"
                   value={ticketValue.title}
@@ -187,7 +187,7 @@ const LivePc = (props) => {
               </TicketDateAndTitleContainer>
               <TicketFormGroup>
                 <TicketFormLabel
-                  title="ナマエ"
+                  title="オナマエ"
                   htmlFor="nameKana"
                   errors={errors.nameKana}
                   required
@@ -497,7 +497,7 @@ const TicketDateAndTitleContainer = styled.div`
   border-radius: 6px;
 `;
 
-const TicketDateAndTitleTextField = styled.input`
+const TicketTitleTextField = styled.input`
   border: none;
   font-size: 1.6rem;
   font-weight: 500;
@@ -506,6 +506,19 @@ const TicketDateAndTitleTextField = styled.input`
   height: 100%;
   &:first-of-type {
     width: 120px;
+    padding: 0 16px;
+  }
+`;
+
+const TicketDateTextField = styled.input`
+  border: none;
+  font-size: 2rem;
+  font-weight: 500;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  &:first-of-type {
+    width: 140px;
     padding: 0 16px;
   }
 `;

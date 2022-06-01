@@ -62,7 +62,7 @@ const HomePc = () => {
           <MemberTextContainer>
             <MemberInstrument>Key.</MemberInstrument>
             <MemberName>
-              Miri <MemberNameRomaji>/ Tomono Miri</MemberNameRomaji>
+              miri <MemberNameRomaji>/ Tomono Miri</MemberNameRomaji>
             </MemberName>
             <MemberText>
               1997年8月31日生まれ。

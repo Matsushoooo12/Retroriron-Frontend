@@ -56,7 +56,7 @@ const Contact = () => {
           <ContactFormContainer onSubmit={handleSubmit(onSubmitData)}>
             <ContactFormGroup>
               <ContactFormLabel htmlFor="name">
-                名前
+                お名前
                 <ContactFormRequiredSign>*</ContactFormRequiredSign>
                 {errors.name && (
                   <ContactFormRequiredSign>

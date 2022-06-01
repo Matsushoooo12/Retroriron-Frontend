@@ -52,7 +52,7 @@ const TicketConfirm = (props) => {
               />
             </TicketDateAndTitleContainer>
             <TicketFormGroup>
-              <TicketFormLabel title="ナマエ" htmlFor="nameKana" />
+              <TicketFormLabel title="オナマエ" htmlFor="nameKana" />
               <TicketFormTextField
                 name="nameKana"
                 type="text"

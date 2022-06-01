@@ -23,7 +23,7 @@ const TicketComplete = (props) => {
           {ticket.date}
           <TicketCompleteTitleLeft>{ticket.title}</TicketCompleteTitleLeft>
         </TicketCompleteTitle>
-        <TicketCompleteText>ナマエ｜{values.nameKana}</TicketCompleteText>
+        <TicketCompleteText>オナマエ｜{values.nameKana}</TicketCompleteText>
         <TicketCompleteText>メールアドレス｜{values.email}</TicketCompleteText>
         <TicketCompleteText>{values.number}</TicketCompleteText>
         <TicketCompleteText>備考：{values.description}</TicketCompleteText>

@@ -42,14 +42,14 @@ const SpTicketForm = (props) => {
           </TicketCautionText>
           <TicketFormContainer onSubmit={handleSubmit(onSubmitData)}>
             <TicketDateAndTitleContainer>
-              <TicketDateAndTitleTextField
+              <TicketDateTextField
                 type="text"
                 name="date"
                 value={date}
                 readOnly
                 {...register('date', { required: true })}
               />
-              <TicketDateAndTitleTextField
+              <TicketTitleTextField
                 type="text"
                 name="title"
                 value={title}
@@ -59,7 +59,7 @@ const SpTicketForm = (props) => {
             </TicketDateAndTitleContainer>
             <TicketFormGroup>
               <TicketFormLabel htmlFor="nameKana">
-                ナマエ
+                オナマエ
                 <TicketFormRequiredSign>*</TicketFormRequiredSign>
                 {errors.nameKana && (
                   <TicketFormRequiredSign>
@@ -213,9 +213,18 @@ const TicketDateAndTitleContainer = styled.div`
   padding: 16px;
 `;
 
-const TicketDateAndTitleTextField = styled.input`
+const TicketTitleTextField = styled.input`
   border: none;
   font-size: 1.6rem;
+  font-weight: 700;
+  display: block;
+  width: 100%;
+  height: 100%;
+`;
+
+const TicketDateTextField = styled.input`
+  border: none;
+  font-size: 2rem;
   font-weight: 700;
   display: block;
   width: 100%;

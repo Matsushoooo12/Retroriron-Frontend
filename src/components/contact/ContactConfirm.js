@@ -49,7 +49,7 @@ const ContactConfirm = (props) => {
           <ContactFormContainer>
             <ContactFormGroup>
               <ContactFormLabel htmlFor="name">
-                名前
+                お名前
                 <ContactFormRequiredSign>*</ContactFormRequiredSign>
               </ContactFormLabel>
               <ContactFormTextField

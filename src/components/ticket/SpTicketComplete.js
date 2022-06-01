@@ -21,7 +21,7 @@ const SpTicketComplete = ({ values }) => {
           {values.title}
         </TicketCompleteTitle>
         <TicketCompleteText>
-          ナマエ
+          オナマエ
           <br />
           {values.nameKana}
         </TicketCompleteText>

@@ -62,7 +62,7 @@ const SpTicketConfirm = (props) => {
             </TicketDateAndTitleContainer>
             <TicketFormGroup>
               <TicketFormLabel htmlFor="nameKana">
-                ナマエ
+                オナマエ
                 <TicketFormRequiredSign>*</TicketFormRequiredSign>
               </TicketFormLabel>
               <TicketFormTextField
