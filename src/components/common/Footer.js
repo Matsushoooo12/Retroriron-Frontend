@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 const Footer = () => {
   return (
     <PcFooterContainer>
-      <FooterCopyright>© 2021 retririon.</FooterCopyright>
+      <FooterCopyright>© 2022 retririon.</FooterCopyright>
     </PcFooterContainer>
   );
 };
