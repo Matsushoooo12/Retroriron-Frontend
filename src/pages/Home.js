@@ -31,7 +31,6 @@ const Home = () => {
           ｀今｀を必死に生きようとする等身大の歌詞が心に響く、注目のポップスバンド。
           "
         />
-        <link rel="canonical" href="https://retroriron.com" />
       </Helmet>
       {/* Head */}
       <Loading isLoading={isLoading} />

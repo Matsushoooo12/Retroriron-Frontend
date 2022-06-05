@@ -78,7 +78,6 @@ const News = () => {
             日頃のバンド活動や、個々のメンバーの活動についてのニュースを配信しています。
           "
         />
-        <link rel="canonical" href="https://retroriron.com/news" />
       </Helmet>
       {/* HEAD */}
       <Loading isLoading={isLoading} />
