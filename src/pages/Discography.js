@@ -50,11 +50,11 @@ const Discography = () => {
   return (
     <>
       <Helmet>
-        <title>レトロリロン - Discography page</title>
+        <title>レトロリロン/OFFICIAL SITE - Discography page</title>
         <meta
           name="description"
           content="
-          レトロリロン：音楽大学出身の個性豊かな4人組バンド、レトロリロンのWebサイトのDiscographyページ。
+          レトロリロン/OFFICIAL SITE：音楽大学出身の個性豊かな4人組バンド、レトロリロンのWebサイトのDiscographyページ。
             レトロリロンの楽曲情報を配信しています。
             MVやサブスクリプションへのリンクも配置しています。
           "
