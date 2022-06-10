@@ -49,7 +49,7 @@ const Contact = () => {
         <meta
           name="description"
           content="
-          レトロリロン / OFFICIAL SITE 音楽大学出身の個性豊かな4人組バンド、レトロリロンのWebサイトのContactページ。
+            音楽大学出身の個性豊かな4人組バンド、レトロリロンのWebサイトのContactページ。
             レトロリロンへのお問い合わせはこちらからどうぞ。
           "
         />
