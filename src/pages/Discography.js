@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import moment from 'moment';
 import Helmet from 'react-helmet';
+import ReactGA from 'react-ga4';
 import styled from '@emotion/styled';
 import { getDiscography } from '../api';
 import Loading from '../components/common/Loading';
@@ -8,10 +9,22 @@ import Header from '../components/common/Header';
 import Footer from '../components/common/Footer';
 import DiscographyPc from '../components/discography/DiscographyPc';
 import DiscographySmartphone from '../components/discography/DiscographySmartphone';
+import { useLocation } from 'react-router-dom';
 
 const Discography = () => {
   // ローディング
   const [isLoading, setIsLoading] = useState(true);
+  const location = useLocation();
+
+  useEffect(() => {
+    // Google Analytics 測定 ID を入力して設定
+    ReactGA.initialize(`${process.env.GAID}`);
+    ReactGA.send({
+      hitType: 'pageview',
+      // アクセスしたパス (pathname) とクエリ文字列 (search) を送付する (必要に応じて編集する)
+      page: location.pathname,
+    });
+  }, [location]);
 
   // API
 

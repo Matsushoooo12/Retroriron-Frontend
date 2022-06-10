@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Helmet from 'react-helmet';
 import moment from 'moment';
 import styled from '@emotion/styled';
+import ReactGA from 'react-ga4';
 import Plus from '../images/open-btn.png';
 import Minus from '../images/close-btn.png';
 import { getLive } from '../api';
@@ -16,10 +17,23 @@ import Footer from '../components/common/Footer';
 import LivePc from '../components/live/LivePc';
 import LiveTablet from '../components/live/LiveTablet';
 import LiveSmartphone from '../components/live/LiveSmartphone';
+import { useLocation } from 'react-router-dom';
 
 const Live = () => {
   // ローディング
   const [isLoading, setIsLoading] = useState(true);
+
+  const location = useLocation();
+
+  useEffect(() => {
+    // Google Analytics 測定 ID を入力して設定
+    ReactGA.initialize(`${process.env.GAID}`);
+    ReactGA.send({
+      hitType: 'pageview',
+      // アクセスしたパス (pathname) とクエリ文字列 (search) を送付する (必要に応じて編集する)
+      page: location.pathname,
+    });
+  }, [location]);
 
   // isConfirmationVisibleにstateを持たせて、入力内容確認画面の表示・非表示をコントロール
   // isConfirmationVisibleの初期値はfalseで入力内容確認画面は非表示に

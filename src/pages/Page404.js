@@ -1,7 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
+import { useLocation } from 'react-router-dom';
+import ReactGA from 'react-ga4';
 
 const Page404 = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Google Analytics 測定 ID を入力して設定
+    ReactGA.initialize(process.env.GAID);
+    ReactGA.send({
+      hitType: 'pageview',
+      // アクセスしたパス (pathname) とクエリ文字列 (search) を送付する (必要に応じて編集する)
+      page: location.pathname,
+    });
+  }, [location]);
   return (
     <>
       {/* HEAD */}
