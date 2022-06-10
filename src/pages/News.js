@@ -70,11 +70,11 @@ const News = () => {
     <>
       {/* HEAD */}
       <Helmet>
-        <title>レトロリロン/OFFICIAL SITE - News page</title>
+        <title>レトロリロン / OFFICIAL SITE - News page</title>
         <meta
           name="description"
           content="
-          レトロリロン/OFFICIAL SITE：音楽大学出身の個性豊かな4人組バンド、レトロリロンのWebサイトのNewsページ。
+          レトロリロン / OFFICIAL SITE 音楽大学出身の個性豊かな4人組バンド、レトロリロンのWebサイトのNewsページ。
             日頃のバンド活動や、個々のメンバーの活動についてのニュースを配信しています。
           "
         />

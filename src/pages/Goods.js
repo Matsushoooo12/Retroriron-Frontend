@@ -24,11 +24,11 @@ const Goods = () => {
   return (
     <>
       <Helmet>
-        <title>レトロリロン/OFFICIAL SITEs - Goods page</title>
+        <title>レトロリロン / OFFICIAL SITE - Goods page</title>
         <meta
           name="description"
           content="
-          レトロリロン/OFFICIAL SITE：音楽大学出身の個性豊かな4人組バンド、レトロリロンのWebサイトのGoodsページ。
+          レトロリロン / OFFICIAL SITE 音楽大学出身の個性豊かな4人組バンド、レトロリロンのWebサイトのGoodsページ。
         レトロリロンのオリジナルグッズを掲載しています。
         ライブ会場で主に取り扱っているので、足を運んでお求めください。
         "

@@ -31,11 +31,11 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>レトロリロン/OFFICIAL SITE - Contact page</title>
+        <title>レトロリロン / OFFICIAL SITE - Contact page</title>
         <meta
           name="description"
           content="
-          レトロリロン/OFFICIAL SITE：音楽大学出身の個性豊かな4人組バンド、レトロリロンのWebサイトのContactページ。
+          レトロリロン / OFFICIAL SITE 音楽大学出身の個性豊かな4人組バンド、レトロリロンのWebサイトのContactページ。
             レトロリロンへのお問い合わせはこちらからどうぞ。
           "
         />

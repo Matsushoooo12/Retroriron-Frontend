@@ -6,11 +6,11 @@ const Page404 = () => {
     <>
       {/* HEAD */}
       <Helmet>
-        <title>レトロリロン/OFFICIAL SITE - 404Page</title>
+        <title>レトロリロン / OFFICIAL SITE - 404Page</title>
         <meta
           name="description"
           content="
-          レトロリロン/OFFICIAL SITE：音楽大学出身の個性豊かな4人組バンド、レトロリロンのWebサイトの404ページ。
+          レトロリロン / OFFICIAL SITE 音楽大学出身の個性豊かな4人組バンド、レトロリロンのWebサイトの404ページ。
           "
         />
       </Helmet>
