@@ -31,7 +31,7 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>レトロリロン / OFFICIAL SITE - Contact page</title>
+        <title>Contact page / レトロリロン OFFICIAL SITE</title>
         <meta
           name="description"
           content="

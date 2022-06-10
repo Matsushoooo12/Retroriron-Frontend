@@ -70,7 +70,7 @@ const News = () => {
     <>
       {/* HEAD */}
       <Helmet>
-        <title>レトロリロン / OFFICIAL SITE - News page</title>
+        <title>News page / レトロリロン OFFICIAL SITE</title>
         <meta
           name="description"
           content="

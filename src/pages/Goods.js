@@ -24,7 +24,7 @@ const Goods = () => {
   return (
     <>
       <Helmet>
-        <title>レトロリロン / OFFICIAL SITE - Goods page</title>
+        <title>Goods page / レトロリロン OFFICIAL SITE</title>
         <meta
           name="description"
           content="

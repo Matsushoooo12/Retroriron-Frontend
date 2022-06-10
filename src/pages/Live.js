@@ -159,7 +159,7 @@ const Live = () => {
   return (
     <>
       <Helmet>
-        <title>レトロリロン / OFFICIAL SITE - Live page</title>
+        <title>Live page / レトロリロン OFFICIAL SITE</title>
         <meta
           name="description"
           content="

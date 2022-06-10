@@ -22,7 +22,7 @@ const Home = () => {
     <>
       {/* Head */}
       <Helmet>
-        <title>レトロリロン / OFFICIAL SITE - Home</title>
+        <title>レトロリロン OFFICIAL SITE</title>
         <meta
           name="description"
           content="

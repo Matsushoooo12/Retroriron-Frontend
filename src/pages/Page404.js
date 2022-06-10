@@ -6,7 +6,7 @@ const Page404 = () => {
     <>
       {/* HEAD */}
       <Helmet>
-        <title>レトロリロン / OFFICIAL SITE - 404Page</title>
+        <title>404Page / レトロリロン OFFICIAL SITE</title>
         <meta
           name="description"
           content="

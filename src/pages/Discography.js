@@ -50,7 +50,7 @@ const Discography = () => {
   return (
     <>
       <Helmet>
-        <title>レトロリロン / OFFICIAL SITE - Discography page</title>
+        <title>Discography page / レトロリロン OFFICIAL SITE</title>
         <meta
           name="description"
           content="
