@@ -57,10 +57,33 @@ const Live = () => {
 
   const [lives, setLives] = useState([]);
 
+  // Date
+
+  const now = moment();
+
+  // FutureTime
+  const futureTime = (date) => {
+    return now < moment(date).add(1, 'days');
+  };
+
   const handleGetLive = async () => {
     try {
       const res = await getLive();
-      setLives(res.data);
+      const data = res.data;
+      let featureLives = data.filter(
+        (d) => moment(now).format('YYYY-MM-DD') < d.date
+      );
+      featureLives.sort((a, b) => {
+        return a > b ? 1 : -1;
+      });
+      let pastLives = data.filter(
+        (d) => moment(now).format('YYYY-MM-DD') > d.date
+      );
+      pastLives.sort((a, b) => {
+        return b > a ? 1 : -1;
+      });
+      const newArray = featureLives.concat(pastLives);
+      setLives(newArray);
     } catch (e) {
       alert(e);
     }
@@ -88,10 +111,6 @@ const Live = () => {
     return content === index ? Minus : Plus;
   };
 
-  // Date
-
-  const now = moment();
-
   // Active
 
   const isActive = (index) => content === index;
@@ -104,11 +123,6 @@ const Live = () => {
   // 開場・開演時間
   const openAndStartTime = (time) => {
     return moment(time).add(15, 'H').format('HH:mm');
-  };
-
-  // FutureTime
-  const futureTime = (date) => {
-    return now < moment(date).add(1, 'days');
   };
 
   const pastTime = (date) => {
