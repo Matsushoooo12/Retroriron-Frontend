@@ -1,21 +1,14 @@
-import React, { lazy } from 'react';
+import React from 'react';
 import styled from '@emotion/styled';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-// import Home from './pages/Home';
-// import Live from './pages/Live';
-// import News from './pages/News';
-// import Discography from './pages/Discography';
-// import Goods from './pages/Goods';
-// import Contact from './pages/Contact';
+import Home from './pages/Home';
+import Live from './pages/Live';
+import News from './pages/News';
+import Discography from './pages/Discography';
+import Goods from './pages/Goods';
+import Contact from './pages/Contact';
 import './components/common/reset.css';
 // import Page404 from './pages/Page404';
-
-const Home = lazy(() => import('./pages/Home'));
-const Live = lazy(() => import('./pages/Live'));
-const News = lazy(() => import('./pages/News'));
-const Discography = lazy(() => import('./pages/Discography'));
-const Goods = lazy(() => import('./pages/Goods'));
-const Contact = lazy(() => import('./pages/Contact'));
 
 function App() {
   return (
