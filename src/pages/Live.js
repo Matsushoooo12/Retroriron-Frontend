@@ -73,14 +73,22 @@ const Live = () => {
       let featureLives = data.filter(
         (d) => moment(now).format('YYYY-MM-DD') < d.date
       );
-      featureLives.sort((a, b) => {
-        return a > b ? 1 : -1;
+      featureLives.sort(function (x, y) {
+        let firstDate = new Date(x.date),
+          secondDate = new Date(y.date);
+        if (firstDate < secondDate) return -1;
+        if (firstDate > secondDate) return 1;
+        return 0;
       });
       let pastLives = data.filter(
         (d) => moment(now).format('YYYY-MM-DD') > d.date
       );
-      pastLives.sort((a, b) => {
-        return b > a ? 1 : -1;
+      pastLives.sort(function (x, y) {
+        let firstDate = new Date(x.date),
+          secondDate = new Date(y.date);
+        if (firstDate > secondDate) return -1;
+        if (firstDate < secondDate) return 1;
+        return 0;
       });
       const newArray = featureLives.concat(pastLives);
       setLives(newArray);
