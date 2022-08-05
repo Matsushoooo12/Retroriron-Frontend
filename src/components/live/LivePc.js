@@ -126,8 +126,14 @@ const LivePc = (props) => {
                 )}
                 <LiveInfoContainer>
                   <LiveInfoText>
-                    開場時間 | {notExistTime(openAndStartTime(item.openTime))}{' '}
-                    開演時間 | {notExistTime(openAndStartTime(item.startTime))}
+                    開場時間 |{' '}
+                    {item.openTime
+                      ? notExistTime(openAndStartTime(item.openTime))
+                      : '未定'}{' '}
+                    開演時間 |{' '}
+                    {item.startTime
+                      ? notExistTime(openAndStartTime(item.startTime))
+                      : '未定'}
                   </LiveInfoText>
                   <LiveInfoText>場所 | {item.venue}</LiveInfoText>
                   <LiveInfoText>料金 | {item.price}</LiveInfoText>
