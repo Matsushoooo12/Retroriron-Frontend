@@ -19,7 +19,7 @@ import LiveTablet from '../components/live/LiveTablet';
 import LiveSmartphone from '../components/live/LiveSmartphone';
 import { useLocation } from 'react-router-dom';
 
-const Live = () => {
+const PastLive = () => {
   // ローディング
   const [isLoading, setIsLoading] = useState(true);
 
@@ -91,7 +91,7 @@ const Live = () => {
         return 0;
       });
       // const newArray = featureLives.concat(pastLives);
-      setLives(featureLives);
+      setLives(pastLives);
     } catch (e) {
       alert(e);
     }
@@ -199,10 +199,8 @@ const Live = () => {
         <meta
           name="description"
           content="
-            音楽大学出身の個性豊かな4人組バンド、レトロリロンのWebサイトのLive Scheduleページ。
-            レトロリロンのライブ活動の情報を配信しています。
-            下北沢を拠点に精力的にライブ活動を行っています。
-            取り置き予約やチケット予約も承っています。
+            音楽大学出身の個性豊かな4人組バンド、レトロリロンのWebサイトのPast Liveページ。
+            レトロリロンの過去出演ライブ活動の情報を配信しています。
           "
         />
       </Helmet>
@@ -317,7 +315,7 @@ const Live = () => {
   );
 };
 
-export default Live;
+export default PastLive;
 
 // SpFixedSNS
 
