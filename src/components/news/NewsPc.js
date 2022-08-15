@@ -18,7 +18,7 @@ const NewsPc = (props) => {
 
   // 日にちが２週間前より古いか
   const newTagHidden = (date) => {
-    return dayjs(date).format() < now.subtract(2, 'w').format();
+    return dayjs(date).format() < now.subtract(5, 'd').format();
   };
 
   return (
