@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import moment from 'moment';
+import dayjs from 'dayjs';
 
 const NewsPc = (props) => {
   const {
@@ -14,11 +14,11 @@ const NewsPc = (props) => {
 
   // Date
 
-  const now = moment();
+  const now = dayjs();
 
   // 日にちが２週間前より古いか
   const newTagHidden = (date) => {
-    return moment(date) < now.subtract(2, 'weeks');
+    return dayjs(date).format() < now.subtract(2, 'w').format();
   };
 
   return (

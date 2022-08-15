@@ -15,7 +15,7 @@ const HomeTablet = () => {
       <Fv src={FvImage} alt="レトロリロンのアー写" />
       <TextContainer>
         <TextBandname loading="lazy" src={BandTitle} alt="レトロリロン" />
-        <TextTitle>ー "明日"ではなく"今日"を生きよう</TextTitle>
+        <TextTitle>ー "明日"ではなく"今日"を生きる</TextTitle>
         <TextItem>
           2020年6月にシンガーソングライター
           として活動していた涼音を中心に東京にて結成。

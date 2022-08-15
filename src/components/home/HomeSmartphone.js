@@ -18,7 +18,7 @@ const HomeSmartphone = () => {
         <TextTitle>
           ー "明日"ではなく
           <TextTitleBr />
-          <TextTitleSpace>ー </TextTitleSpace>"今日"を生きよう
+          <TextTitleSpace>ー </TextTitleSpace>"今日"を生きる
         </TextTitle>
         <TextItem>
           2020年6月にシンガーソングライター
