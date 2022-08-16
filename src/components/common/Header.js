@@ -16,9 +16,7 @@ const Header = () => {
     } else if (location.pathname === '/news') {
       return 'news';
     } else if (location.pathname === '/live') {
-      return 'live schedule';
-    } else if (location.pathname === '/past-live') {
-      return 'past live';
+      return 'live';
     } else if (location.pathname === '/discography') {
       return 'discography';
     } else if (location.pathname === '/goods') {
@@ -79,15 +77,7 @@ const Header = () => {
           </MenuLi>
           <MenuLi>
             <MenuLink active={location.pathname === '/live'} to="/live">
-              Live Schedule
-            </MenuLink>
-          </MenuLi>
-          <MenuLi>
-            <MenuLink
-              active={location.pathname === '/past-live'}
-              to="/past-live"
-            >
-              Past Live
+              Live
             </MenuLink>
           </MenuLi>
           <MenuLi>
@@ -166,15 +156,7 @@ const Header = () => {
                 active={location.pathname === '/live'}
                 href="/live"
               >
-                Live Schedule
-              </HamburgerMenuLink>
-            </HamburgerMenuContentText>
-            <HamburgerMenuContentText>
-              <HamburgerMenuLink
-                active={location.pathname === '/past-live'}
-                href="/past-live"
-              >
-                Past Live
+                Live
               </HamburgerMenuLink>
             </HamburgerMenuContentText>
             <HamburgerMenuContentText>

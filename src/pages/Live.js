@@ -90,8 +90,8 @@ const Live = () => {
         if (firstDate < secondDate) return 1;
         return 0;
       });
-      // const newArray = featureLives.concat(pastLives);
-      setLives(featureLives);
+      const newArray = featureLives.concat(pastLives);
+      setLives(newArray);
     } catch (e) {
       alert(e);
     }

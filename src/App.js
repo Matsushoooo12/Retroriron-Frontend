@@ -8,7 +8,6 @@ import Discography from './pages/Discography';
 import Goods from './pages/Goods';
 import Contact from './pages/Contact';
 import './components/common/reset.css';
-import PastLive from './pages/PastLive';
 // import Page404 from './pages/Page404';
 
 function App() {
@@ -21,7 +20,6 @@ function App() {
               <Route exact path="/" component={Home} />
               <Route exact path="/news" component={News} />
               <Route exact path="/live" component={Live} />
-              <Route exact path="/past-live" component={PastLive} />
               <Route exact path="/discography" component={Discography} />
               <Route exact path="/contact" component={Contact} />
               <Route exact path="/goods" component={Goods} />
