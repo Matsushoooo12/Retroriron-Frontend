@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import GoodsImagePC from '../../images/goods-image-pc.webp';
+// import GoodsImagePC from '../../images/goods-image-pc.webp';
+import GoodsImageV2 from '../../images/goods-image-v2.webp';
 
 const GoodsPc = () => {
   return (
     <>
-      <GoodsImage src={GoodsImagePC} alt="goods画像" />
+      <GoodsImage src={GoodsImageV2} alt="goods画像" />
       <AttentionText>※ライブ会場でのみお買い上げいただけます。</AttentionText>
     </>
   );

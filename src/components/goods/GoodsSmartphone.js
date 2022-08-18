@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import GoodsImageSP from '../../images/goods-image-sp.webp';
+import GoodsImageV2 from '../../images/goods-image-v2.webp';
 
 const GoodsSmartphone = () => {
   return (
     <>
       <div style={{ width: '100%' }}>
-        <GoodsImage src={GoodsImageSP} alt="goods画像" />
+        <GoodsImage src={GoodsImageV2} alt="goods画像" />
         <AttentionText>※ライブ会場でのみお買い上げいただけます。</AttentionText>
       </div>
     </>
