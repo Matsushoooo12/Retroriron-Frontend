@@ -18,7 +18,7 @@ const GoodsImage = styled.img`
   display: none;
   @media screen and (min-width: 900px) {
     display: block;
-    width: 80%;
+    width: 60%;
   }
 `;
 
