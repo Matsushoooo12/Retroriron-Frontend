@@ -36,16 +36,16 @@ const News = () => {
   const handleGetNews = async () => {
     try {
       const res = await getNews();
-      setNews(res.data);
+      await setNews(res.data);
     } catch (e) {
       alert(e);
     }
-    setIsLoading(false);
+    await setIsLoading(false);
   };
 
-  useEffect(() => {
-    handleGetNews();
-  }, [setNews]);
+  useEffect(async () => {
+    await handleGetNews();
+  }, []);
 
   // アコーディオン
 

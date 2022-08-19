@@ -95,11 +95,11 @@ const Live = () => {
     } catch (e) {
       alert(e);
     }
-    setIsLoading(false);
+    await setIsLoading(false);
   };
 
-  useEffect(() => {
-    handleGetLive();
+  useEffect(async () => {
+    await handleGetLive();
   }, []);
 
   // アコーディオン
