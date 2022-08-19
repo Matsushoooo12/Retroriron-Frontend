@@ -224,7 +224,6 @@ const Live = () => {
           notExistImage={notExistImage}
           setLiveImageModal={setLiveImageModal}
         />
-        <Footer />
         {/* TAB */}
         {!isConfirmationVisible ? (
           <>
@@ -312,6 +311,7 @@ const Live = () => {
             />
           </LiveImageModalBack>
         </LiveImageModalContainer>
+        <Footer />
       </LoadingContainer>
     </>
   );
