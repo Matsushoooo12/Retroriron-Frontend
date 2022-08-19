@@ -91,14 +91,11 @@ const Live = () => {
         return 0;
       });
       const newArray = featureLives.concat(pastLives);
-      setLives(newArray);
+      await setLives(newArray);
     } catch (e) {
       alert(e);
     }
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1000);
-    return () => clearTimeout(timer);
+    setIsLoading(false);
   };
 
   useEffect(() => {
