@@ -98,9 +98,9 @@ const Live = () => {
     setIsLoading(false);
   };
 
-  useEffect(() => {
-    handleGetLive();
-  }, [setLives]);
+  useEffect(async () => {
+    await handleGetLive();
+  }, []);
 
   // アコーディオン
 
