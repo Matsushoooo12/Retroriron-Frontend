@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import FvImage from '../../images/retroriron-main-v2.webp';
+import FvImage from '../../images/retroriron-main.webp';
 import BandTitle from '../../images/title.webp';
 import NumaImage from '../../images/numa.webp';
 import NagayamaImage from '../../images/taiki.webp';
