@@ -98,8 +98,8 @@ const Live = () => {
     setIsLoading(false);
   };
 
-  useEffect(async () => {
-    await handleGetLive();
+  useEffect(() => {
+    handleGetLive();
   }, []);
 
   // アコーディオン
