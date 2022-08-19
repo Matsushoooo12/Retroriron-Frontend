@@ -95,7 +95,10 @@ const Live = () => {
     } catch (e) {
       alert(e);
     }
-    setIsLoading(false);
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+    return () => clearTimeout(timer);
   };
 
   useEffect(() => {
