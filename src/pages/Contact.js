@@ -126,7 +126,7 @@ const Contact = () => {
                 id="contact"
                 rows="8"
                 minLength="1"
-                maxLength="500"
+                maxLength="1000"
                 {...register('contact', { required: true })}
               />
             </ContactFormGroup>
