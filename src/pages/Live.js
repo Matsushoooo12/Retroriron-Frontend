@@ -76,8 +76,8 @@ const Live = () => {
       featureLives.sort(function (x, y) {
         let firstDate = new Date(x.date),
           secondDate = new Date(y.date);
-        if (firstDate > secondDate) return -1;
-        if (firstDate < secondDate) return 1;
+        if (firstDate < secondDate) return -1;
+        if (firstDate > secondDate) return 1;
         return 0;
       });
       console.log(featureLives);
