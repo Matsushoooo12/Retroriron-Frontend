@@ -76,10 +76,11 @@ const Live = () => {
       featureLives.sort(function (x, y) {
         let firstDate = new Date(x.date),
           secondDate = new Date(y.date);
-        if (firstDate < secondDate) return -1;
-        if (firstDate > secondDate) return 1;
+        if (firstDate > secondDate) return -1;
+        if (firstDate < secondDate) return 1;
         return 0;
       });
+      console.log(featureLives);
       let pastLives = data.filter(
         (d) => moment(now).format('YYYY-MM-DD') > d.date
       );
@@ -91,16 +92,17 @@ const Live = () => {
         return 0;
       });
       const newArray = featureLives.concat(pastLives);
+      console.log('aaa', newArray);
       await setLives(newArray);
     } catch (e) {
       alert(e);
     }
-    await setIsLoading(false);
+    setIsLoading(false);
   };
 
-  useEffect(async () => {
-    await handleGetLive();
-  }, []);
+  useEffect(() => {
+    handleGetLive();
+  }, [setLives]);
 
   // アコーディオン
 
