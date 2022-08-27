@@ -51,7 +51,6 @@ const Goods = () => {
       <Loading isLoading={isLoading} />
       <LoadingContainer isLoading={isLoading}>
         <Header />
-        {/* image-v3 */}
         {/* PC */}
         <GoodsPc />
         <Footer />
