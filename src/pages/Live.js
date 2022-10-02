@@ -80,7 +80,6 @@ const Live = () => {
         if (firstDate > secondDate) return 1;
         return 0;
       });
-      console.log(featureLives);
       let pastLives = data.filter(
         (d) => moment(now).format('YYYY-MM-DD') > d.date
       );

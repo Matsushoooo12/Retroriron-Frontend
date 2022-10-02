@@ -16,8 +16,7 @@ const TicketConfirm = (props) => {
     e.preventDefault();
     setIsSubmit(true);
     try {
-      const res = await createTicket(ticket);
-      console.log(res);
+      await createTicket(ticket);
       setIsCompleteVisible(true);
     } catch (e) {
       alert(e);

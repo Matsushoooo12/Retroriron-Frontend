@@ -22,8 +22,7 @@ const ContactConfirm = (props) => {
     e.preventDefault();
     setIsSubmit(true);
     try {
-      const res = await createContact(value);
-      console.log(res);
+      await createContact(value);
       setIsCompleteVisible(true);
       window.scroll({ top: 0, behavior: 'smooth' });
     } catch (e) {

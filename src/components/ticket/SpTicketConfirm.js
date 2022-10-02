@@ -24,8 +24,7 @@ const SpTicketConfirm = (props) => {
     e.preventDefault();
     setIsSubmit(true);
     try {
-      const res = await createTicket(value);
-      console.log(res);
+      await createTicket(value);
       setIsCompleteVisible(true);
       window.scroll({ top: 0, behavior: 'smooth' });
     } catch (e) {

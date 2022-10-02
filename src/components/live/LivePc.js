@@ -37,7 +37,6 @@ const LivePc = (props) => {
   //submitボタンを押した時、入力内容確認画面を表示させる
   const onSubmitData = () => {
     setIsConfirmationVisible(true);
-    console.log(isConfirmationVisible);
   };
 
   // TicketValue
