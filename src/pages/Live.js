@@ -92,7 +92,6 @@ const Live = () => {
         return 0;
       });
       const newArray = featureLives.concat(pastLives);
-      console.log('aaa', newArray);
       await setLives(newArray);
     } catch (e) {
       alert(e);
