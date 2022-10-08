@@ -103,7 +103,6 @@ const Live = () => {
   }, [setLives]);
 
   // アコーディオン
-
   const [content, setContent] = useState(null);
 
   const toggleAccordion = (i) => {
