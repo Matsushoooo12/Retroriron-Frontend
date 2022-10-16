@@ -28,7 +28,7 @@ const HomePc = () => {
       </TextContainer>
       <MemberContainer>
         <MemberItemContainer>
-          <MemberImage loading="lazy" src={SuzuneImage} alt="涼音" />
+          <SuzuneImg loading="lazy" src={SuzuneImage} alt="涼音" />
           <MemberTextContainer>
             <MemberInstrument>Ag. Vo.</MemberInstrument>
             <MemberName>
@@ -58,7 +58,7 @@ const HomePc = () => {
           </MemberTextContainer>
         </MemberItemContainer>
         <MemberItemContainer>
-          <MemberImage loading="lazy" src={MiriImage} alt="Miri" />
+          <MiriImg loading="lazy" src={MiriImage} alt="Miri" />
           <MemberTextContainer>
             <MemberInstrument>Key.</MemberInstrument>
             <MemberName>
@@ -88,7 +88,7 @@ const HomePc = () => {
           </MemberTextContainer>
         </MemberItemContainer>
         <MemberItemContainer>
-          <MemberImage loading="lazy" src={NumaImage} alt="飯沼一暁" />
+          <NumaImg loading="lazy" src={NumaImage} alt="飯沼一暁" />
           <MemberTextContainer>
             <MemberInstrument>Ba.</MemberInstrument>
             <MemberName>
@@ -122,7 +122,7 @@ const HomePc = () => {
           </MemberTextContainer>
         </MemberItemContainer>
         <MemberItemContainer>
-          <MemberImage loading="lazy" src={NagayamaImage} alt="永山タイキ" />
+          <TaikiImg loading="lazy" src={NagayamaImage} alt="永山タイキ" />
           <MemberTextContainer>
             <MemberInstrument>Dr.</MemberInstrument>
             <MemberName>
@@ -231,9 +231,36 @@ const MemberItemContainer = styled.div`
   }
 `;
 
-const MemberImage = styled.img`
+// const MemberImage = styled.img`
+//   width: 360px;
+//   height: 250px;
+//   object-fit: cover;
+// `;
+
+const SuzuneImg = styled.img`
   width: 360px;
   height: 250px;
+  object-fit: cover;
+`;
+
+const MiriImg = styled.img`
+  width: 360px;
+  height: 250px;
+  object-fit: cover;
+`;
+
+const NumaImg = styled.img`
+  width: 360px;
+  height: 250px;
+  object-fit: cover;
+  object-position: 0 80%;
+`;
+
+const TaikiImg = styled.img`
+  width: 360px;
+  height: 250px;
+  object-fit: cover;
+  object-position: 0 80%;
 `;
 
 // メンバ-テキスト
