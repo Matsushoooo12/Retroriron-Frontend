@@ -12,7 +12,7 @@ import Instagram from '../../images/insta-icon-orange.png';
 const HomePc = () => {
   return (
     <>
-      <Fv src={FvImage} alt="レトロリロンの写真" />
+      <Fv src={FvImage} alt="レトロリロンのアー写" />
       <TextContainer>
         <TextBandname loading="lazy" src={BandTitle} alt="レトロリロン" />
         <TextTitle>ー "明日"ではなく"今日"を生きる </TextTitle>
