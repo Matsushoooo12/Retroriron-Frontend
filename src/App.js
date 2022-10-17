@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Route, Switch, HashRouter } from 'react-router-dom';
 import Home from './pages/Home';
 import Live from './pages/Live';
 import News from './pages/News';
@@ -14,7 +14,7 @@ import { HelmetProvider } from 'react-helmet-async';
 function App() {
   return (
     <HelmetProvider>
-      <BrowserRouter>
+      <HashRouter>
         <MainAllContainer>
           <MainItemContainer>
             <MainItem>
@@ -30,7 +30,7 @@ function App() {
             </MainItem>
           </MainItemContainer>
         </MainAllContainer>
-      </BrowserRouter>
+      </HashRouter>
     </HelmetProvider>
   );
 }
