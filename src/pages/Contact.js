@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import ReactGA from 'react-ga4';
 import styled from '@emotion/styled';
 import { useForm } from 'react-hook-form';

@@ -8,27 +8,30 @@ import Discography from './pages/Discography';
 import Goods from './pages/Goods';
 import Contact from './pages/Contact';
 import './components/common/reset.css';
+import { HelmetProvider } from 'react-helmet-async';
 // import Page404 from './pages/Page404';
 
 function App() {
   return (
-    <BrowserRouter>
-      <MainAllContainer>
-        <MainItemContainer>
-          <MainItem>
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/news" component={News} />
-              <Route exact path="/live" component={Live} />
-              <Route exact path="/discography" component={Discography} />
-              <Route exact path="/contact" component={Contact} />
-              <Route exact path="/goods" component={Goods} />
-              {/* <Route exact path="*" component={Page404} /> */}
-            </Switch>
-          </MainItem>
-        </MainItemContainer>
-      </MainAllContainer>
-    </BrowserRouter>
+    <HelmetProvider>
+      <BrowserRouter>
+        <MainAllContainer>
+          <MainItemContainer>
+            <MainItem>
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/news" component={News} />
+                <Route exact path="/live" component={Live} />
+                <Route exact path="/discography" component={Discography} />
+                <Route exact path="/contact" component={Contact} />
+                <Route exact path="/goods" component={Goods} />
+                {/* <Route exact path="*" component={Page404} /> */}
+              </Switch>
+            </MainItem>
+          </MainItemContainer>
+        </MainAllContainer>
+      </BrowserRouter>
+    </HelmetProvider>
   );
 }
 

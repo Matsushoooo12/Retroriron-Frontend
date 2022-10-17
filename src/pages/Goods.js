@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from '@emotion/styled';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import Footer from '../components/common/Footer';
 import ReactGA from 'react-ga4';
 import Header from '../components/common/Header';

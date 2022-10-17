@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import moment from 'moment';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import ReactGA from 'react-ga4';
 import styled from '@emotion/styled';
 import { getDiscography } from '../api';
