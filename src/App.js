@@ -1,20 +1,20 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { Route, Switch, HashRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './pages/Home';
 import Live from './pages/Live';
 import News from './pages/News';
 import Discography from './pages/Discography';
 import Goods from './pages/Goods';
 import Contact from './pages/Contact';
-import './components/common/reset.css';
 import { HelmetProvider } from 'react-helmet-async';
+import './components/common/reset.css';
 // import Page404 from './pages/Page404';
 
 function App() {
   return (
     <HelmetProvider>
-      <HashRouter>
+      <BrowserRouter>
         <MainAllContainer>
           <MainItemContainer>
             <MainItem>
@@ -30,7 +30,7 @@ function App() {
             </MainItem>
           </MainItemContainer>
         </MainAllContainer>
-      </HashRouter>
+      </BrowserRouter>
     </HelmetProvider>
   );
 }
