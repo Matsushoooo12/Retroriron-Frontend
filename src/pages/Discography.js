@@ -72,7 +72,6 @@ const Discography = () => {
             MVやサブスクリプションへのリンクも配置しています。
           "
         />
-        <meta name="thumbnail" content={FVImage} />
       </Helmet>
       <Loading isLoading={isLoading} />
       <LoadingContainer isLoading={isLoading}>

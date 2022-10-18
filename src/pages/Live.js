@@ -204,7 +204,6 @@ const Live = () => {
             取り置き予約やチケット予約も承っています。
           "
         />
-        <meta name="thumbnail" content={FVImage} />
       </Helmet>
       <Loading isLoading={isLoading} />
       <LoadingContainer isLoading={isLoading}>
