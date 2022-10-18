@@ -92,6 +92,7 @@ const News = () => {
             日頃のバンド活動や、個々のメンバーの活動についてのニュースを配信しています。
           "
         />
+        <meta name="thumbnail" content={FVImage} />
       </Helmet>
       {/* HEAD */}
       <Loading isLoading={isLoading} />

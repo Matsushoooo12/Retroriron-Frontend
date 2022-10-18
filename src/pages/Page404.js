@@ -26,6 +26,7 @@ const Page404 = () => {
             音楽大学出身の個性豊かな4人組バンド、レトロリロンのWebサイトの404ページ。
           "
         />
+        <meta name="thumbnail" content={FVImage} />
       </Helmet>
       <p style={{ fontSize: '56px', fontWeight: 'bold' }}>
         レトロリロン - 404Page

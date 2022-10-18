@@ -53,6 +53,7 @@ const Contact = () => {
             レトロリロンへのお問い合わせはこちらからどうぞ。
           "
         />
+        <meta name="thumbnail" content={FVImage} />
       </Helmet>
       <Header />
       {!isConfirmationVisible ? (

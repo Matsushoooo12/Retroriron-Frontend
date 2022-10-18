@@ -45,6 +45,7 @@ const Goods = () => {
             ライブ会場で主に取り扱っているので、足を運んでお求めください。
           "
         />
+        <meta name="thumbnail" content={FVImage} />
       </Helmet>
       {/* <Loading isLoading={false} />
       <LoadingContainer isLoading={false}> */}

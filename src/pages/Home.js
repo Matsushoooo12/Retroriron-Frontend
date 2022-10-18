@@ -9,6 +9,7 @@ import HomePc from '../components/home/HomePc';
 import HomeTablet from '../components/home/HomeTablet';
 import HomeSmartphone from '../components/home/HomeSmartphone';
 import { useLocation } from 'react-router-dom';
+import FVImage from '../images/retroriron-main.webp';
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -44,6 +45,7 @@ const Home = () => {
             ｀今｀を必死に生きようとする等身大の歌詞が心に響く、注目のポップスバンド。
           "
         />
+        <meta name="thumbnail" content={FVImage} />
       </Helmet>
       {/* Head */}
       <Loading isLoading={isLoading} />
