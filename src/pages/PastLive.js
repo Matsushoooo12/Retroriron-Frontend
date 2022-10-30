@@ -284,7 +284,7 @@ const PastLive = () => {
               <SnsFixedIconLink
                 rel="noopener noreferrer"
                 target="_blank"
-                href="https://www.youtube.com/channel/UCkE8tVIvmdos9b1OqEhePlg"
+                href="https://youtube.com/@retroriron"
               >
                 <SnsFixedIconImage
                   loading="lazy"
