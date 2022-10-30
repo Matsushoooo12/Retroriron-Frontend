@@ -63,6 +63,17 @@ const NewsSmartphone = (props) => {
                 alt={item.title}
                 displayNone={!item.image.url}
               />
+              {item.id === 35 && (
+                <YoutubeMovie
+                  width="100%"
+                  height="200"
+                  src="https://www.youtube.com/embed/goxNZmaPxHU"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></YoutubeMovie>
+              )}
             </NewsText>
           </NewsMainContainer>
         </NewsItemContainer>
@@ -156,6 +167,7 @@ const NewsImage = styled.img`
   width: 160px;
   height: 100%;
   margin-top: 16px;
+  margin-bottom: 16px;
   ${(props) =>
     props.vertical &&
     `
@@ -167,3 +179,5 @@ const NewsImage = styled.img`
       display: none;
     `}
 `;
+
+const YoutubeMovie = styled.iframe``;
