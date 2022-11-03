@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import GoodsImageV2 from '../../images/goods-image-v5.webp';
+import GoodsImageV2 from '../../images/goods-image.webp';
 
 const GoodsSmartphone = () => {
   return (
