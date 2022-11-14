@@ -16,9 +16,9 @@ const NewsSmartphone = (props) => {
 
   const now = dayjs();
 
-  // 日にちが２週間前より古いか
+  // 日にちが3日前より古いか
   const newTagHidden = (date) => {
-    return dayjs(date).format() < now.subtract(1, 'w').format();
+    return dayjs(date).format() < now.subtract(3, 'd').format();
   };
   return (
     <NewsContainer>

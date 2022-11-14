@@ -7,8 +7,18 @@ import ContactConfirm from '../components/contact/ContactConfirm';
 import Header from '../components/common/Header';
 import Footer from '../components/common/Footer';
 import { useLocation } from 'react-router-dom';
+import Loading from '../components/common/Loading';
 
 const Contact = () => {
+  // ローディング
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
   // useForm
   const {
     register,
@@ -54,94 +64,97 @@ const Contact = () => {
           "
         />
       </Helmet>
-      <Header />
-      {!isConfirmationVisible ? (
-        <ContactContainer>
-          <ContactTitle>お問い合わせフォーム</ContactTitle>
-          <ContactText>
-            レトロリロンへの出演依頼等、お気軽にお問い合わせください。
-            <br />
-            担当者から折り返しご連絡いたします。
-          </ContactText>
-          <ContactText caution>
-            ※取得した個人情報は、お問い合わせへの円滑な対応を目的としその他の目的では使用しませんのでご安心ください。
-          </ContactText>
-          <ContactFormContainer onSubmit={handleSubmit(onSubmitData)}>
-            <ContactFormGroup>
-              <ContactFormLabel htmlFor="name">
-                お名前
-                <ContactFormRequiredSign>*</ContactFormRequiredSign>
-                {errors.name && (
-                  <ContactFormRequiredSign>
-                    こちらは必須項目です。
-                  </ContactFormRequiredSign>
-                )}
-              </ContactFormLabel>
-              <ContactFormTextField
-                type="text"
-                id="name"
-                name="name"
-                {...register('name', { required: true })}
-              />
-            </ContactFormGroup>
-            <ContactFormGroup>
-              <ContactFormLabel htmlFor="email">
-                メールアドレス
-                <ContactFormRequiredSign>*</ContactFormRequiredSign>
-                {errors.email && (
-                  <ContactFormRequiredSign>
-                    こちらは必須項目です。
-                  </ContactFormRequiredSign>
-                )}
-              </ContactFormLabel>
-              <ContactFormTextField
-                type="email"
-                name="email"
-                id="email"
-                {...register('email', { required: true })}
-              />
-            </ContactFormGroup>
-            <ContactFormGroup>
-              <ContactFormLabel htmlFor="phone">電話番号</ContactFormLabel>
-              <ContactFormTextField
-                type="text"
-                name="phone"
-                id="phone"
-                {...register('phone', { required: false })}
-              />
-            </ContactFormGroup>
-            <ContactFormGroup>
-              <ContactFormLabel htmlFor="contact">
-                お問い合わせ内容
-                <ContactFormRequiredSign>*</ContactFormRequiredSign>
-                {errors.contact && (
-                  <ContactFormRequiredSign>
-                    こちらは必須項目です。
-                  </ContactFormRequiredSign>
-                )}
-              </ContactFormLabel>
-              <ContactFormTextArea
-                type="text"
-                name="contact"
-                id="contact"
-                rows="8"
-                minLength="1"
-                maxLength="3000"
-                {...register('contact', { required: true })}
-              />
-            </ContactFormGroup>
-            <ContactFormSubmitButtonContainer>
-              <ContactFormSubmitButton type="submit" value="内容を確認する" />
-            </ContactFormSubmitButtonContainer>
-          </ContactFormContainer>
-        </ContactContainer>
-      ) : (
-        <ContactConfirm
-          values={getValues()}
-          hideConfirmation={hideConfirmation}
-        />
-      )}
-      <Footer />
+      <Loading isLoading={isLoading} />
+      <LoadingContainer isLoading={isLoading}>
+        <Header />
+        {!isConfirmationVisible ? (
+          <ContactContainer>
+            <ContactTitle>お問い合わせフォーム</ContactTitle>
+            <ContactText>
+              レトロリロンへの出演依頼等、お気軽にお問い合わせください。
+              <br />
+              担当者から折り返しご連絡いたします。
+            </ContactText>
+            <ContactText caution>
+              ※取得した個人情報は、お問い合わせへの円滑な対応を目的としその他の目的では使用しませんのでご安心ください。
+            </ContactText>
+            <ContactFormContainer onSubmit={handleSubmit(onSubmitData)}>
+              <ContactFormGroup>
+                <ContactFormLabel htmlFor="name">
+                  お名前
+                  <ContactFormRequiredSign>*</ContactFormRequiredSign>
+                  {errors.name && (
+                    <ContactFormRequiredSign>
+                      こちらは必須項目です。
+                    </ContactFormRequiredSign>
+                  )}
+                </ContactFormLabel>
+                <ContactFormTextField
+                  type="text"
+                  id="name"
+                  name="name"
+                  {...register('name', { required: true })}
+                />
+              </ContactFormGroup>
+              <ContactFormGroup>
+                <ContactFormLabel htmlFor="email">
+                  メールアドレス
+                  <ContactFormRequiredSign>*</ContactFormRequiredSign>
+                  {errors.email && (
+                    <ContactFormRequiredSign>
+                      こちらは必須項目です。
+                    </ContactFormRequiredSign>
+                  )}
+                </ContactFormLabel>
+                <ContactFormTextField
+                  type="email"
+                  name="email"
+                  id="email"
+                  {...register('email', { required: true })}
+                />
+              </ContactFormGroup>
+              <ContactFormGroup>
+                <ContactFormLabel htmlFor="phone">電話番号</ContactFormLabel>
+                <ContactFormTextField
+                  type="text"
+                  name="phone"
+                  id="phone"
+                  {...register('phone', { required: false })}
+                />
+              </ContactFormGroup>
+              <ContactFormGroup>
+                <ContactFormLabel htmlFor="contact">
+                  お問い合わせ内容
+                  <ContactFormRequiredSign>*</ContactFormRequiredSign>
+                  {errors.contact && (
+                    <ContactFormRequiredSign>
+                      こちらは必須項目です。
+                    </ContactFormRequiredSign>
+                  )}
+                </ContactFormLabel>
+                <ContactFormTextArea
+                  type="text"
+                  name="contact"
+                  id="contact"
+                  rows="8"
+                  minLength="1"
+                  maxLength="3000"
+                  {...register('contact', { required: true })}
+                />
+              </ContactFormGroup>
+              <ContactFormSubmitButtonContainer>
+                <ContactFormSubmitButton type="submit" value="内容を確認する" />
+              </ContactFormSubmitButtonContainer>
+            </ContactFormContainer>
+          </ContactContainer>
+        ) : (
+          <ContactConfirm
+            values={getValues()}
+            hideConfirmation={hideConfirmation}
+          />
+        )}
+        <Footer />
+      </LoadingContainer>
     </>
   );
 };
@@ -456,4 +469,9 @@ const ContactFormSubmitButton = styled.input`
     cursor: pointer;
     margin-top: 16px;
   }
+`;
+
+// ローディング
+const LoadingContainer = styled.div`
+  display: ${({ isLoading }) => (isLoading ? 'none' : 'block')};
 `;

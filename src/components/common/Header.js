@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
-import Logo from '../../images/logo.webp';
+import Logo from '../../images/RR_logo_image.svg';
 import { Link, useLocation } from 'react-router-dom';
 import TwitterOrange from '../../images/twitter-icon-orange.png';
 import InstagramOrange from '../../images/insta-icon-orange.png';
@@ -481,16 +481,17 @@ const HamburgerMenuCopyright = styled.p`
 
 const LogoImage = styled.img`
   cursor: pointer;
-  width: 88px;
+  width: 40px;
   height: 40px;
   @media screen and (min-width: 768px) {
-    width: 150px;
-    height: 69px;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 8px;
   }
   @media screen and (min-width: 900px) {
-    margin: 64px auto 0;
-    width: 150px;
-    height: 69px;
+    margin: 64px 0 0;
+    width: 70px;
+    height: 70px;
     display: block;
   }
 `;

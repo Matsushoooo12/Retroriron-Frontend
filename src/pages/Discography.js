@@ -17,6 +17,13 @@ const Discography = () => {
   const location = useLocation();
 
   useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
     // Google Analytics 測定 ID を入力して設定
     ReactGA.initialize(`${process.env.GAID}`);
     ReactGA.send({
@@ -37,7 +44,6 @@ const Discography = () => {
     } catch (e) {
       alert(e);
     }
-    setIsLoading(false);
   };
 
   useEffect(() => {

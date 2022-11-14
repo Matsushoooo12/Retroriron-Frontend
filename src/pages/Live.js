@@ -26,6 +26,13 @@ const Live = () => {
   const location = useLocation();
 
   useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
     // Google Analytics 測定 ID を入力して設定
     ReactGA.initialize(`${process.env.GAID}`);
     ReactGA.send({
@@ -95,7 +102,6 @@ const Live = () => {
     } catch (e) {
       alert(e);
     }
-    setIsLoading(false);
   };
 
   useEffect(() => {
