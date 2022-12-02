@@ -110,7 +110,7 @@ const HomePc = () => {
               <SnsLink
                 rel="noopener noreferrer"
                 target="_blank"
-                href="https://www.instagram.com/numw69/?hl=ja"
+                href="https://instagram.com/kazuaki_iinuma?igshid=YmMyMTA2M2Y="
               >
                 <SnsIcon
                   loading="lazy"
