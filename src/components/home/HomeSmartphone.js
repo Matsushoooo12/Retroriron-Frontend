@@ -114,7 +114,7 @@ const HomeSmartphone = () => {
               <SnsLink
                 rel="noopener noreferrer"
                 target="_blank"
-                href="https://instagram.com/kazuaki_iinuma?igshid=YmMyMTA2M2Y="
+                href="https://instagram.com/numw69?igshid=YmMyMTA2M2Y="
               >
                 <SnsIcon
                   loading="lazy"
