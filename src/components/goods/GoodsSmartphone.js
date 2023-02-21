@@ -7,7 +7,9 @@ const GoodsSmartphone = () => {
     <>
       <div style={{ width: '100%' }}>
         <GoodsImage src={GoodsImageV2} alt="goods画像" />
-        <AttentionText>※ライブ会場でのみお買い上げいただけます。</AttentionText>
+        <AttentionText>
+          ※ライブ会場でお買い上げいただけます。 オンラインショップ準備中です。
+        </AttentionText>
       </div>
     </>
   );
