@@ -8,7 +8,15 @@ const GoodsPc = () => {
     <>
       <GoodsImage src={GoodsImageV2} alt="goods画像" />
       <AttentionText>
-        ※ライブ会場でお買い上げいただけます。 オンラインショップ準備中です。
+        ※ライブ会場でお買い上げいただけます。オンラインショップは
+        <GoodsLink
+          target="_blank"
+          href="https://retroriron.theshop.jp/"
+          rel="noreferrer"
+        >
+          こちら
+        </GoodsLink>
+        から。
       </AttentionText>
     </>
   );
@@ -32,4 +40,8 @@ const AttentionText = styled.p`
     margin-top: 16px;
     color: #292929;
   }
+`;
+
+const GoodsLink = styled.a`
+  color: blue;
 `;
