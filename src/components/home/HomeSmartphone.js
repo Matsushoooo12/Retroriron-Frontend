@@ -95,7 +95,7 @@ const HomeSmartphone = () => {
           <MemberImage loading="lazy" src={NumaImage} alt="飯沼一暁" />
           <MemberInstrument>Ba.</MemberInstrument>
           <MemberName>
-            飯沼一暁 <MemberNameRomaji>/ Inuma Kazuaki</MemberNameRomaji>
+            飯沼一暁 <MemberNameRomaji>/ Iinuma Kazuaki</MemberNameRomaji>
           </MemberName>
           <MemberText>
             1997年8月8日生まれ。
