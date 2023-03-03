@@ -89,9 +89,13 @@ const Header = () => {
             </MenuLink>
           </MenuLi>
           <MenuLi>
-            <MenuLink active={location.pathname === '/goods'} to="/goods">
+            <GoodsLink
+              active={location.pathname === '/goods'}
+              href="https://retroriron.theshop.jp/"
+              target="_blank"
+            >
               Goods
-            </MenuLink>
+            </GoodsLink>
           </MenuLi>
           <MenuLi>
             <MenuLink active={location.pathname === '/contact'} to="/contact">
@@ -170,7 +174,8 @@ const Header = () => {
             <HamburgerMenuContentText>
               <HamburgerMenuLink
                 active={location.pathname === '/goods'}
-                href="/goods"
+                href="https://retroriron.theshop.jp/"
+                target="_blank"
               >
                 Goods
               </HamburgerMenuLink>
@@ -533,6 +538,21 @@ const MenuLink = styled(Link)`
       `
             color: #F1A11B;
         `}
+  }
+`;
+
+const GoodsLink = styled.a`
+  @media screen and (min-width: 900px) {
+    text-decoration: none;
+    color: #292929;
+    &:hover {
+      color: #f1a11b;
+    }
+    ${(props) =>
+      props.active &&
+      `
+          color: #F1A11B;
+      `}
   }
 `;
 
