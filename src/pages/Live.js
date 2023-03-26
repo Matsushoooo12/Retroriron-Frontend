@@ -64,6 +64,8 @@ const Live = () => {
 
   const [lives, setLives] = useState([]);
 
+  console.log('lives', lives);
+
   // Date
 
   const now = moment();
@@ -88,7 +90,7 @@ const Live = () => {
         return 0;
       });
       let pastLives = data.filter(
-        (d) => moment(now).format('YYYY-MM-DD') > d.date
+        (d) => moment(now).format('YYYY-MM-DD') >= d.date
       );
       pastLives.sort(function (x, y) {
         let firstDate = new Date(x.date),
