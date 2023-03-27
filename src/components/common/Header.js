@@ -274,7 +274,7 @@ const HeaderContainer = styled.div`
   right: 0;
   margin: auto;
   width: 100%;
-  height: 93px;
+  height: 60px;
   background-color: #fff;
   display: flex;
   justify-content: space-between;
