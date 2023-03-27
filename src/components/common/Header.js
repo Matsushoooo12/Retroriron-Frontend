@@ -274,7 +274,7 @@ const HeaderContainer = styled.div`
   right: 0;
   margin: auto;
   width: 100%;
-  height: 93px;
+  height: 60px;
   background-color: #fff;
   display: flex;
   justify-content: space-between;
@@ -376,7 +376,6 @@ const HamburgerButtonText = styled.p`
 
 const HamburgerMenuContentContainer = styled.div`
   position: fixed;
-  top: 93px;
   right: 100%;
   width: 100%;
   z-index: 100;
@@ -392,7 +391,7 @@ const HamburgerMenuContentContainer = styled.div`
 `;
 
 const HamburgerMenuContentTextContainer = styled.ul`
-  margin: 40px 0 56px;
+  margin: 10px 0 56px;
 `;
 
 const HamburgerMenuContentText = styled.li`
