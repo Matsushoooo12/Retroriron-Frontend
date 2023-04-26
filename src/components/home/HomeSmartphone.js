@@ -20,14 +20,11 @@ const HomeSmartphone = () => {
           <TextTitleBr />
           <TextTitleSpace>ー </TextTitleSpace>"今日"を生きる
         </TextTitle>
+        <TextItem>2020年6月、東京にて結成。</TextItem>
         <TextItem>
-          2020年6月にシンガーソングライター
-          として活動していた涼音を中心に東京にて結成。
-        </TextItem>
-        <TextItem>
-          各メンバーの多種多様な音楽性によって生まれるジャンルレスなサウンド、
+          “今日を生きる”ありのままの気持ちを歌った歌詞、中毒性のあるソウルフルな歌声、
           <br />
-          "今"を必死に生きようとする等身大の歌詞が心に響く、注目のポップスバンド。
+          バックグラウンドが異なるメンバーが織りなすジャンルレスなプレイが魅力のポップスバンド。
         </TextItem>
       </TextContainer>
       <MemberContainer>
