@@ -19,7 +19,6 @@ const HomeTablet = () => {
         <TextItem>2020年6月、東京にて結成。</TextItem>
         <TextItem>
           “今日を生きる”ありのままの気持ちを歌った歌詞、中毒性のあるソウルフルな歌声、
-          <br />
           バックグラウンドが異なるメンバーが織りなすジャンルレスなプレイが魅力のポップスバンド。
         </TextItem>
       </TextContainer>
