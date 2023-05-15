@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import ReactGA from 'react-ga4';
 import styled from '@emotion/styled';
-import { useForm } from 'react-hook-form';
+// import { useForm } from 'react-hook-form';
 import ContactConfirm from '../components/contact/ContactConfirm';
 import Header from '../components/common/Header';
 import Footer from '../components/common/Footer';
@@ -20,12 +20,12 @@ const Contact = () => {
     return () => clearTimeout(timer);
   }, []);
   // useForm
-  const {
-    register,
-    formState: { errors },
-    getValues,
-    handleSubmit,
-  } = useForm();
+  // const {
+  //   register,
+  //   formState: { errors },
+  //   getValues,
+  //   handleSubmit,
+  // } = useForm();
 
   const location = useLocation();
 
@@ -47,10 +47,10 @@ const Contact = () => {
   const hideConfirmation = () => setIsConfirmationVisible(false);
 
   //submitボタンを押した時、入力内容確認画面を表示させる
-  const onSubmitData = () => {
-    setIsConfirmationVisible(true);
-    window.scroll({ top: 0, behavior: 'smooth' });
-  };
+  // const onSubmitData = () => {
+  //   setIsConfirmationVisible(true);
+  //   window.scroll({ top: 0, behavior: 'smooth' });
+  // };
 
   return (
     <>
@@ -69,16 +69,19 @@ const Contact = () => {
         <Header />
         {!isConfirmationVisible ? (
           <ContactContainer>
-            <ContactTitle>お問い合わせフォーム</ContactTitle>
+            <ContactTitle>お問い合わせ</ContactTitle>
             <ContactText>
-              レトロリロンへの出演依頼等、お気軽にお問い合わせください。
+              レトロリロンへの出演依頼等、お気軽に以下のメールアドレスにお問い合わせください。
               <br />
               担当者から折り返しご連絡いたします。
             </ContactText>
             <ContactText caution>
               ※取得した個人情報は、お問い合わせへの円滑な対応を目的としその他の目的では使用しませんのでご安心ください。
             </ContactText>
-            <ContactFormContainer onSubmit={handleSubmit(onSubmitData)}>
+            <ContactMailText href="mailto:retroriron@gmail.com">
+              retroriron@gmail.com
+            </ContactMailText>
+            {/* <ContactFormContainer onSubmit={handleSubmit(onSubmitData)}>
               <ContactFormGroup>
                 <ContactFormLabel htmlFor="name">
                   お名前
@@ -145,7 +148,7 @@ const Contact = () => {
               <ContactFormSubmitButtonContainer>
                 <ContactFormSubmitButton type="submit" value="内容を確認する" />
               </ContactFormSubmitButtonContainer>
-            </ContactFormContainer>
+            </ContactFormContainer> */}
           </ContactContainer>
         ) : (
           <ContactConfirm
@@ -270,206 +273,212 @@ const ContactText = styled.p`
   }
 `;
 
+const ContactMailText = styled.a`
+  font-weight: 800;
+  font-size: 1.6rem;
+  color: #f1a11b;
+`;
+
 // FormContainer
 
-const ContactFormContainer = styled.form`
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
-  @media screen and (min-width: 600px) {
-    width: 90%;
-    height: 100%;
-    margin: 0 auto;
-  }
-  @media screen and (min-width: 1024px) {
-    width: 90%;
-    height: 100%;
-    margin: 0 auto;
-  }
-`;
+// const ContactFormContainer = styled.form`
+//   width: 100%;
+//   height: 100%;
+//   margin: 0 auto;
+//   @media screen and (min-width: 600px) {
+//     width: 90%;
+//     height: 100%;
+//     margin: 0 auto;
+//   }
+//   @media screen and (min-width: 1024px) {
+//     width: 90%;
+//     height: 100%;
+//     margin: 0 auto;
+//   }
+// `;
 
-const ContactFormGroup = styled.div`
-  display: block;
-  margin-bottom: 16px;
-  @media screen and (min-width: 600px) {
-    display: block;
-    margin-bottom: 16px;
-  }
-  @media screen and (min-width: 1024px) {
-    display: block;
-    margin-bottom: 16px;
-  }
-`;
+// const ContactFormGroup = styled.div`
+//   display: block;
+//   margin-bottom: 16px;
+//   @media screen and (min-width: 600px) {
+//     display: block;
+//     margin-bottom: 16px;
+//   }
+//   @media screen and (min-width: 1024px) {
+//     display: block;
+//     margin-bottom: 16px;
+//   }
+// `;
 
-const ContactFormLabel = styled.label`
-  font-size: 1.4rem;
-  font-weight: 700;
-  @media screen and (min-width: 600px) {
-    font-size: 1.4rem;
-    font-weight: 700;
-  }
-  @media screen and (min-width: 1024px) {
-    font-size: 1.6rem;
-    font-weight: 700;
-  }
-`;
+// const ContactFormLabel = styled.label`
+//   font-size: 1.4rem;
+//   font-weight: 700;
+//   @media screen and (min-width: 600px) {
+//     font-size: 1.4rem;
+//     font-weight: 700;
+//   }
+//   @media screen and (min-width: 1024px) {
+//     font-size: 1.6rem;
+//     font-weight: 700;
+//   }
+// `;
 
-const ContactFormRequiredSign = styled.span`
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #f42626;
-  margin-left: 4px;
-  margin-right: 16px;
-  @media screen and (min-width: 600px) {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #f42626;
-    margin-left: 4px;
-    margin-right: 16px;
-  }
-  @media screen and (min-width: 1024px) {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #f42626;
-    margin-left: 4px;
-    margin-right: 16px;
-  }
-`;
+// const ContactFormRequiredSign = styled.span`
+//   font-size: 1.2rem;
+//   font-weight: 700;
+//   color: #f42626;
+//   margin-left: 4px;
+//   margin-right: 16px;
+//   @media screen and (min-width: 600px) {
+//     font-size: 1.2rem;
+//     font-weight: 700;
+//     color: #f42626;
+//     margin-left: 4px;
+//     margin-right: 16px;
+//   }
+//   @media screen and (min-width: 1024px) {
+//     font-size: 1.2rem;
+//     font-weight: 700;
+//     color: #f42626;
+//     margin-left: 4px;
+//     margin-right: 16px;
+//   }
+// `;
 
-const ContactFormTextField = styled.input`
-  font-size: 1.4rem;
-  font-weight: 500;
-  padding: 8px 16px;
-  display: block;
-  border: 1px solid #bebebe;
-  border-radius: 7px;
-  width: 100%;
-  background-color: #fff;
-  margin-top: 8px;
-  &:focus {
-    outline: none;
-  }
-  @media screen and (min-width: 600px) {
-    font-size: 1.4rem;
-    font-weight: 500;
-    padding: 8px 16px;
-    display: block;
-    border: 1px solid #bebebe;
-    border-radius: 7px;
-    width: 100%;
-    background-color: #fff;
-    margin-top: 8px;
-    &:focus {
-      outline: none;
-    }
-  }
-  @media screen and (min-width: 1024px) {
-    font-size: 1.6rem;
-    font-weight: 500;
-    padding: 8px 16px;
-    display: block;
-    border: 1px solid #bebebe;
-    border-radius: 7px;
-    width: 100%;
-    background-color: #fff;
-    margin-top: 8px;
-    &:focus {
-      outline: none;
-    }
-  }
-`;
+// const ContactFormTextField = styled.input`
+//   font-size: 1.4rem;
+//   font-weight: 500;
+//   padding: 8px 16px;
+//   display: block;
+//   border: 1px solid #bebebe;
+//   border-radius: 7px;
+//   width: 100%;
+//   background-color: #fff;
+//   margin-top: 8px;
+//   &:focus {
+//     outline: none;
+//   }
+//   @media screen and (min-width: 600px) {
+//     font-size: 1.4rem;
+//     font-weight: 500;
+//     padding: 8px 16px;
+//     display: block;
+//     border: 1px solid #bebebe;
+//     border-radius: 7px;
+//     width: 100%;
+//     background-color: #fff;
+//     margin-top: 8px;
+//     &:focus {
+//       outline: none;
+//     }
+//   }
+//   @media screen and (min-width: 1024px) {
+//     font-size: 1.6rem;
+//     font-weight: 500;
+//     padding: 8px 16px;
+//     display: block;
+//     border: 1px solid #bebebe;
+//     border-radius: 7px;
+//     width: 100%;
+//     background-color: #fff;
+//     margin-top: 8px;
+//     &:focus {
+//       outline: none;
+//     }
+//   }
+// `;
 
-const ContactFormTextArea = styled.textarea`
-  font-size: 1.4rem;
-  font-weight: 500;
-  padding: 8px 16px;
-  display: block;
-  border: 1px solid #bebebe;
-  border-radius: 7px;
-  width: 100%;
-  resize: none;
-  background-color: #fff;
-  margin-top: 8px;
-  &:focus {
-    outline: none;
-  }
-  @media screen and (min-width: 600px) {
-    font-size: 1.4rem;
-    font-weight: 500;
-    padding: 8px 16px;
-    display: block;
-    border: 1px solid #bebebe;
-    border-radius: 7px;
-    width: 100%;
-    background-color: #fff;
-    margin-top: 8px;
-    &:focus {
-      outline: none;
-    }
-  }
-  @media screen and (min-width: 1024px) {
-    font-size: 1.6rem;
-    font-weight: 500;
-    padding: 8px 16px;
-    display: block;
-    border: 1px solid #bebebe;
-    border-radius: 7px;
-    width: 100%;
-    resize: none;
-    background-color: #fff;
-    margin-top: 8px;
-    &:focus {
-      outline: none;
-    }
-  }
-`;
+// const ContactFormTextArea = styled.textarea`
+//   font-size: 1.4rem;
+//   font-weight: 500;
+//   padding: 8px 16px;
+//   display: block;
+//   border: 1px solid #bebebe;
+//   border-radius: 7px;
+//   width: 100%;
+//   resize: none;
+//   background-color: #fff;
+//   margin-top: 8px;
+//   &:focus {
+//     outline: none;
+//   }
+//   @media screen and (min-width: 600px) {
+//     font-size: 1.4rem;
+//     font-weight: 500;
+//     padding: 8px 16px;
+//     display: block;
+//     border: 1px solid #bebebe;
+//     border-radius: 7px;
+//     width: 100%;
+//     background-color: #fff;
+//     margin-top: 8px;
+//     &:focus {
+//       outline: none;
+//     }
+//   }
+//   @media screen and (min-width: 1024px) {
+//     font-size: 1.6rem;
+//     font-weight: 500;
+//     padding: 8px 16px;
+//     display: block;
+//     border: 1px solid #bebebe;
+//     border-radius: 7px;
+//     width: 100%;
+//     resize: none;
+//     background-color: #fff;
+//     margin-top: 8px;
+//     &:focus {
+//       outline: none;
+//     }
+//   }
+// `;
 
-const ContactFormSubmitButtonContainer = styled.div`
-  display: block;
-  text-align: center;
-  @media screen and (min-width: 600px) {
-    display: block;
-    text-align: right;
-  }
-  @media screen and (min-width: 1024px) {
-    display: block;
-    text-align: right;
-  }
-`;
+// const ContactFormSubmitButtonContainer = styled.div`
+//   display: block;
+//   text-align: center;
+//   @media screen and (min-width: 600px) {
+//     display: block;
+//     text-align: right;
+//   }
+//   @media screen and (min-width: 1024px) {
+//     display: block;
+//     text-align: right;
+//   }
+// `;
 
-const ContactFormSubmitButton = styled.input`
-  background-color: #f1a11b;
-  font-size: 1.6rem;
-  font-weight: 700;
-  padding: 8px 16px;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-top: 16px;
-  @media screen and (min-width: 600px) {
-    background-color: #f1a11b;
-    font-size: 1.6rem;
-    font-weight: 700;
-    padding: 8px 16px;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    margin-top: 16px;
-  }
-  @media screen and (min-width: 1024px) {
-    background-color: #f1a11b;
-    font-size: 1.6rem;
-    font-weight: 700;
-    padding: 8px 16px;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    margin-top: 16px;
-  }
-`;
+// const ContactFormSubmitButton = styled.input`
+//   background-color: #f1a11b;
+//   font-size: 1.6rem;
+//   font-weight: 700;
+//   padding: 8px 16px;
+//   color: #fff;
+//   border: none;
+//   border-radius: 6px;
+//   cursor: pointer;
+//   margin-top: 16px;
+//   @media screen and (min-width: 600px) {
+//     background-color: #f1a11b;
+//     font-size: 1.6rem;
+//     font-weight: 700;
+//     padding: 8px 16px;
+//     color: #fff;
+//     border: none;
+//     border-radius: 6px;
+//     cursor: pointer;
+//     margin-top: 16px;
+//   }
+//   @media screen and (min-width: 1024px) {
+//     background-color: #f1a11b;
+//     font-size: 1.6rem;
+//     font-weight: 700;
+//     padding: 8px 16px;
+//     color: #fff;
+//     border: none;
+//     border-radius: 6px;
+//     cursor: pointer;
+//     margin-top: 16px;
+//   }
+// `;
 
 // ローディング
 const LoadingContainer = styled.div`
