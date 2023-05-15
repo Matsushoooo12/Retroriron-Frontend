@@ -234,29 +234,27 @@ const MemberItemContainer = styled.div`
 // `;
 
 const SuzuneImg = styled.img`
-  width: 360px;
+  width: 250px;
   height: 250px;
-  object-fit: cover;
+  object-fit: contain;
 `;
 
 const MiriImg = styled.img`
-  width: 360px;
+  width: 250px;
   height: 250px;
-  object-fit: cover;
+  object-fit: contain;
 `;
 
 const NumaImg = styled.img`
-  width: 360px;
+  width: 250px;
   height: 250px;
-  object-fit: cover;
-  object-position: 0 80%;
+  object-fit: contain;
 `;
 
 const TaikiImg = styled.img`
-  width: 360px;
+  width: 250px;
   height: 250px;
-  object-fit: cover;
-  object-position: 0 80%;
+  object-fit: contain;
 `;
 
 // メンバ-テキスト
