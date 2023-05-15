@@ -75,12 +75,12 @@ const Contact = () => {
               <br />
               担当者から折り返しご連絡いたします。
             </ContactText>
-            <ContactText caution>
-              ※取得した個人情報は、お問い合わせへの円滑な対応を目的としその他の目的では使用しませんのでご安心ください。
-            </ContactText>
             <ContactMailText href="mailto:retroriron@gmail.com">
               retroriron@gmail.com
             </ContactMailText>
+            <ContactText caution>
+              ※取得した個人情報は、お問い合わせへの円滑な対応を目的としその他の目的では使用しませんのでご安心ください。
+            </ContactText>
             {/* <ContactFormContainer onSubmit={handleSubmit(onSubmitData)}>
               <ContactFormGroup>
                 <ContactFormLabel htmlFor="name">
@@ -223,6 +223,7 @@ const ContactText = styled.p`
         font-weight: 700;
         font-size: 1.2rem;
         line-height: 1.6rem;
+        margin-top: 16px;
     `}
   border-bottom: 1px solid #BEBEBE;
   &:first-of-type {
